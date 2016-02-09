@@ -1,0 +1,114 @@
+
+/*
+Print style
+Black prints faster: h5bp.com/s
+
+Author : Axel Roche <axel@aquelito.fr>
+MIT 2016
+
+*/
+
+// Helpers
+@import
+  'helpers/vars',
+  'helpers/functions',
+  'helpers/mixins';
+
+* {
+  background: transparent !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  text-rendering: optimizeLegibility;
+}
+
+// Supprimer les éventuelles marges et largeur de <body>.
+// Initialiser la taille de police en points.
+body {
+  font-family: serif;
+  font-size: 12pt;
+  background: #fff !important;
+  color: #333 !important;
+}
+
+body,
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  page-break-after: avoid;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+blockquote,
+code, pre,
+tr,
+img {
+  page-break-inside: avoid;
+}
+
+a {
+  &, &:visited {
+    text-decoration: underline; // Souligner les liens
+  }
+  &[href]:after {
+    content: " (" attr(href) ")"; // Affiche les liens
+  }
+  &.logo__link:after,
+  &[href^="#"]:after,
+  &[href^="javascript:"]:after {
+    content: ""; // Don't show links for images, or javascript/internal links
+  }
+  ul &[href]:after,
+  ol &[href]:after {
+    content: "";
+  }
+}
+
+// Afficher la signification des abréviations
+abbr[title]:after,
+dfn[title]:after {
+  content: " (" attr(title) ")";
+}
+
+p,
+blockquote {
+  orphans: 3;
+  widows: 3;
+}
+
+// Restreindre la largeur de l’image à celle de son conteneur
+img {
+  max-width: 100% !important;
+}
+
+pre,
+blockquote {
+  border: 1px solid #999;
+}
+
+thead {
+  display: table-header-group;
+}
+
+.noprint,
+.contentinfo, .aside,
+.skiplinks, .pagination, .message {
+  display: none;
+}
+
+.alignleft,
+.alignright {
+  display: block;
+  margin-bottom: 1.5em;
+}

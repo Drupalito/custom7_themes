@@ -1,0 +1,34 @@
+
+/*doc
+---
+title: Cover
+category: Components - Cover
+---
+
+```html_example
+
+  <div class="cover mvl clearfix">
+    <div class="cover__capture">
+      <img class="cover__image" src="http://lorempixel.com/200/100/animals/1" alt="" width="200" height="100" />
+    </div>
+    <div class="cover__content pll">
+      <p class="cover__excerpt mvn">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, reprehenderit, ipsam molestias aliquam officiis ratione natus consectetur numquam cum hic.</p>
+     </div>
+  </div>
+
+```
+
+*/
+
+.cover {
+  display: table;
+  &__capture {
+    width: 200px;
+  }
+  &__content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__title { }
+  &__excerpt { }
+}

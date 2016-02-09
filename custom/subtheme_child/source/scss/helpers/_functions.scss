@@ -1,0 +1,26 @@
+
+/*doc
+---
+title: Convert px to em
+category: Global - Functions
+---
+
+Convert px to em. Exemple `font-size: pem(16px);`.
+
+@function color($name, $opacity: 1, $lighten, $darken)
+
+-   __$px:__ pixel value
+-   __$base:__ default: `$base-font-size`
+
+````
+
+  .class-name {
+    font-size: pem(16px);
+  }
+
+````
+
+*/
+@function pem($px, $base: $base-font-size) {
+  @return ($px / $base) * 1em;
+}

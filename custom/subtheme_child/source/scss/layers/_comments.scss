@@ -1,0 +1,57 @@
+
+/*doc
+---
+title: Comment
+category: Layout - Comment
+---
+
+```html_example
+
+<div id="comments" class="comments">
+  <h1 class="comments__title">Comments</h1>
+  <ul class="comments__list list-none">
+    <li id="comment-171">
+      <p class="metas">By <a href="#" rel="external nofollow" title="John Doe (show John Doe Website)">John Doe</a>, 25 july 2015 at 16h23.</p>
+      <img alt="" src="http://placehold.it/40" class="avatar" height="40" width="40" />
+
+      <p class="repondre"><a href="#" title="Reply to John Doe at 25 july 2015, 16h23.">Répondre</a></p>
+
+    </li>
+  </ul>
+</div>
+
+```
+
+*/
+
+.commentsAdd {
+  padding: 40px;
+  margin-top: 20px;
+  background: #fff;
+}
+
+.comments,
+.comment-form .node {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.commentsSubmit {
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.comment {
+  margin-top: 20px;
+  // margin-bottom: 20px;
+  &__description {
+    background: #fff;
+  }
+}
+
+.indented {
+  padding-left: 40px;
+}

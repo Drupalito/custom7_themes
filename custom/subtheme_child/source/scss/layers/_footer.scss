@@ -1,0 +1,43 @@
+
+/*doc
+---
+title: Footer
+category: Layout - Layer
+---
+
+```html_example
+
+  <div class="contentinfo">
+    <footer id="contentinfo" role="contentinfo" class="container clearfix">
+      ...
+    </footer>
+  </div>
+
+```
+
+*/
+
+.banner,
+#container,
+.contentinfo,
+.contentinfoRelated {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.contentinfoRelated {
+  background: #fff;
+}
+
+.contentinfo {
+  background: #333;
+  &,
+  a {
+    color: #999;
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    color: #fff;
+  }
+}

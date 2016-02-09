@@ -1,0 +1,233 @@
+
+// Active form support
+// ===================
+$active-form-support: true;
+
+// Typo size
+// =========
+
+// $base-font: (
+//   font-family: map-get($font-families, sans-serif),
+//   line-height: 24px,
+//   font-size: 16px,
+//   color: map-get($colors, black),
+// );
+
+$base-font-size:              16px;
+$base-line-height:            24px;
+$browser-default-font-size:   16px;
+$rhythm-unit:                 'em';
+$relative-font-sizing:        true;
+$default-rhythm-border-style: solid;
+$font-unit: if($relative-font-sizing, 1em, $base-font-size);
+
+// Font stack
+//
+// font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+// font-family: Verdana, Geneva, sans-serif;
+$font-serifs:   Helvetica, Arial, sans-serif;
+$font-sans:     "Open Sans", Helvetica, Arial, sans-serif;
+$font-mono:     Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// $font-families: (
+//   serif: (Georgia, "Times New Roman", Times, serif),
+//   sans-serif: (Helvetica Neue, Helvetica, Arial, sans-serif),
+//   pre: (Menlo, Monaco, Consolas, "Courier New", monospace)
+// );
+
+$font-body:     $font-serifs;
+$font-headline: $font-sans;
+$font-pre:      $font-mono;
+
+/*doc
+---
+title: Heading Font Size
+category: Global - Variables
+---
+
+| Key | Value | Example
+|-----|-------|--------
+| h1  |  36px | <h1>.h1 Lorem Ipsum</h1>
+| h2  |  28px | <h2>.h2 Lorem Ipsum</h2>
+| h3  |  24px | <h3>.h3 Lorem Ipsum</h3>
+| h4  |  18px | <h4>.h4 Lorem Ipsum</h4>
+| h5  |  16px | <h5>.h5 Lorem Ipsum</h5>
+| h6  |  14px | <h6>.h6 Lorem Ipsum</h6>
+
+*/
+$font_size: (
+  h1: 36px,
+  h2: 28px,
+  h3: 24px,
+  h4: 18px,
+  h5: 16px,
+  h6: 14px
+);
+
+/*doc
+---
+title: Other Font Size
+category: Global - Variables
+---
+
+| Key     | Value | Example
+|---------|-------|---------
+| smaller |  12px | <span class="smaller">Lorem Ipsum</span>
+| small   |  14px | <span class="small">Lorem Ipsum</span>
+| meduim  |  20px | <span class="medium">Lorem Ipsum</span>
+| big     |  26px | <span class="big">Lorem Ipsum</span>
+| bigger  |  30px | <span class="bigger">Lorem Ipsum</span>
+
+*/
+$other_size: (
+  smaller: 12px,
+  small:   14px,
+  medium:  20px,
+  big:     26px,
+  bigger:  30px
+);
+
+// Color Setting
+// =============
+
+// Body color
+$body-background:    #f0f3f4;
+
+// Body Text color
+$body-color:         #333;
+
+// Links colors
+$link-color:         #333;
+$link-color-hover:   #aa5c39;
+$link-color-active:  #aa5c39;
+$link-color-visited: #452224;
+
+$selection-background: #fff8ab;
+$selection-color: #666;
+
+/*doc
+---
+title: Colorz
+category: Global - Variables
+---
+
+Available for selectors :
+
+* `<key>-color`
+* `<key>-background`
+* `<key>-border`
+
+| Key | Hexa  | Background | Colorz
+|-----|-------|------------|--------
+| default | <span style="color:#2a4e6e">#2a4e6e</span> | <span class="default-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="default-color pas">Lorem Ipsum</span>
+| primary | <span style="color:#aa5c39">#aa5c39</span> | <span class="primary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="primary-color pas">Lorem Ipsum</span>
+| secondary | <span style="color:#aa8c39">#aa8c39</span> | <span class="secondary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="secondary-color pas">Lorem Ipsum</span>
+| black | <span style="color:#333">#333</span> | <span class="black-background white-color bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="black-color pas">Lorem Ipsum</span>
+| white | <span style="color:#fff">#fff</span> | <span class="white-background black-color bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="black-background white-color pas">Lorem Ipsum</span>
+| grey | <span style="color:#555566">#555566</span> | <span class="grey-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="grey-color pas">Lorem Ipsum</span>
+*/
+$colorz: (
+  default:   #2a4e6e,
+  primary:   #aa5c39,
+  secondary: #aa8c39,
+);
+
+/// Theme Message
+/// @type Map
+/// @prop {Map} theme
+/// @prop {Color} message.key.color  - Theme color
+/// @prop {Number} message.key.index - Theme background color
+/// @prop {String} message.key.icon  - Theme icon
+$message: (
+  info: (
+    color: #31708f,
+    background: #cfeffc,
+    icon:  '.i-info'
+  ),
+  warning: (
+    color: null,
+    background: #d44116,
+    icon:  '.i-warning'
+  ),
+  error: (
+    color: null,
+    background: #990000,
+    icon:  '.i-error'
+  ),
+  status: (
+    color: null,
+    background: #2d8611,
+    icon:  '.i-check'
+  )
+);
+
+// Grid
+// ====
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs: 480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min: $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone: $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet: $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md`as of v3.0.1
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop: $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop: $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns: 12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet: ((720px + $grid-gutter-width)) !default;
+//** For `$screen-sm-min` and up.
+$container-sm: $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop: ((940px + $grid-gutter-width)) !default;
+//** For `$screen-md-min` and up.
+$container-md: $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop: ((1140px + $grid-gutter-width)) !default;
+//** For `$screen-lg-min` and up.
+$container-lg: $container-large-desktop !default;

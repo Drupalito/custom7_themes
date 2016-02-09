@@ -1,0 +1,195 @@
+
+/*doc
+---
+title: Message
+category: Components - Messages
+---
+
+Message d'avertissement délivré par le site (CMS)
+Lorsque vous avez besoin de dévlivrer un message de notification, utiliser des alertes.
+
+```html_example
+
+  <div role="alert" class="message message--info mvn clearfix">
+    <h2 class="message__title hide">Message</h2>
+    <div class="message__content">
+      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="message__list">
+        <li class="message__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="message__item">Le champ Mot de passe est requis.</li>
+      </ul>
+    </div>
+  </div>
+
+```
+
+*/
+
+/*doc
+---
+title: Message error
+category: Components - Messages
+---
+
+Add `.message--error`
+
+  <div role="alert" class="message message--error mvn clearfix">
+    <h2 class="message__title hide">Message d'erreur</h2>
+    <div class="message__content">
+      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a><br />
+      Nous vous recommadons de vérifier les données.</p>
+    </div>
+  </div>
+
+*/
+
+/*doc
+---
+title: Message warning
+category: Components - Messages
+---
+
+Add `.message--warning`
+
+  <div role="alert" class="message message--warning mvn clearfix">
+    <h2 class="message__title hide">Message d'alerte</h2>
+    <div class="message__content">
+      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="message__list">
+        <li class="message__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="message__item">Le champ Mot de passe est requis.</li>
+      </ul>
+    </div>
+  </div>
+
+*/
+
+/*doc
+---
+title: Message success
+category: Components - Messages
+---
+
+Add `.message--status`
+
+  <div role="alert" class="message message--status clearfix">
+    <h2 class="message__title hide">Message succès</h2>
+    <div class="message__content">
+      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="message__list">
+        <li class="message__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="message__item">Le champ Mot de passe est requis.</li>
+      </ul>
+    </div>
+  </div>
+
+*/
+
+.message {
+  min-height: $base-line-height * 4;
+  padding: rhythm(1) 20px;
+  margin: rhythm(1) 0;
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+  p {
+    margin-top: rhythm(0.5);
+    margin-bottom: rhythm(0.5);
+    &:last-child  { @extend .mbn; }
+  }
+  &, p:first-child { @extend .mtn; }
+  a {
+    @extend .bold;
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+    }
+  }
+  &__title,
+  &__list {
+    @extend .mvn;
+  }
+  &__content {
+    position: relative;
+    padding-left: 50px;
+    margin-left: 20px;
+    &:before {
+      @extend .i;
+      position: absolute;
+      left: -10px;
+      font-size: 42px;
+    }
+  }
+  @each $name, $values in $message {
+    $icon: map-get($values, 'icon'); // map-deep-get($values, $name, 'icon');
+    $background: map-get($values, 'background'); // map-deep-get($values, $name, 'background');
+    &--#{$name} {
+      border-color: darken($background, 20%);
+      background-color: $background;
+      &, &__title, a {
+        @if $name == 'info' {
+          color: #333;
+        }
+        @else {
+          color: #fff;
+        }
+      }
+      .message__content {
+        &:before {
+          @extend #{$icon};
+        }
+      }
+    }
+  }
+}
+
+/*doc
+---
+title: Texte alerte
+category: Components - Messages
+---
+
+```html_example
+
+  <p class="muted mvn">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--info mvn">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--error mvn">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--warning mvn">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--status mtn mbl">Lorem ipsum dolor sit amet.</p>
+
+```
+*/
+
+/*doc
+---
+title: Texte alerte icons
+category: Components - Messages
+---
+
+```html_example
+
+  <p class="muted mtl mbn"><span class="i i-info"></span> Lorem ipsum dolor sit amet.</p>
+  <p class="text text--info mvn"><span class="i i-info"></span> Lorem ipsum dolor sit amet.</p>
+  <p class="text text--error mvn"><span class="i i-error"></span> Lorem ipsum dolor sit amet.</p>
+  <p class="text text--warning mvn"><span class="i i-danger"></span> Lorem ipsum dolor sit amet.</p>
+  <p class="text text--status mvn"><span class="i i-check"></span> Lorem ipsum dolor sit amet.</p>
+
+```
+
+*/
+
+.muted { color: #999; }
+
+.text {
+  @each $name, $values in $message {
+    $color: map-get($values, 'background');
+    &--#{$name} {
+      @if map-get($values, 'color') {
+        color: map-get($values, 'color');
+      }
+      @else {
+        color: $color;
+      }
+    }
+  }
+}

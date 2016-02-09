@@ -1,0 +1,51 @@
+core        = 7.x
+engine      = phptemplate
+name        = astarter
+description = Theme created by <a href="http://aquelito.fr">aQuelito</a>.<br />Please see the included README or our <a href="http://aquelito.fr">support</a>.
+screenshot  = screenshot.png
+
+; Then we add our own stylesheet.
+; stylesheets[screen][] = css/screen.css
+; stylesheets[print][]  = css/print.css
+
+; Optionally add some JavaScripts to your theme.
+; scripts[] = js/vendor.js
+; scripts[] = js/main.js
+
+; This section lists the regions defined in Starter
+regions[header]         = Banner (Header)
+regions[navigation]     = Primary Navigation (Nav)
+regions[highlighted]    = Highlighted
+regions[help]           = Help
+regions[breadcrumb]     = Breadcrumb
+regions[content]        = Content
+regions[sidebar_first]  = Left sidebar (Aside)
+regions[sidebar_second] = Right sidebar (Aside)
+regions[footer_related] = Contentinfo Releated (Before Footer)
+regions[footer]         = Contentinfo (Footer)
+
+; The page_top and page_bottom regions are hidden, which means they will not
+; show up on the blocks administration page. But they are required in order for
+; the html.tpl.php to work properly, so do not delete them.
+regions[page_top]    = Page top
+regions[page_bottom] = Page bottom
+
+; Set the default values of settings on the theme-settings.php form.
+settings[astarter_company_name]         = ''
+settings[astarter_company_email]        = 'axel@aquelito.fr'
+settings[astarter_company_street_line1] = ''
+settings[astarter_company_street_line2] = ''
+settings[astarter_company_postal_code]  = ''
+settings[astarter_company_locality]     = ''
+settings[astarter_company_phone1]       = ''
+settings[astarter_company_fax1]         = ''
+
+settings[astarter_breadcrumb]           = yes
+settings[astarter_breadcrumb_separator] = ' › '
+settings[astarter_breadcrumb_home]      = 1
+settings[astarter_breadcrumb_trailing]  = 0
+settings[astarter_breadcrumb_title]     = 1
+settings[astarter_rebuild_registry]     = 1
+
+settings[astarter_header_fix]           = 0
+settings[astarter_debug_css_grid]       = 0

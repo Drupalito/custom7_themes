@@ -1,0 +1,36 @@
+
+// ==========================================================================
+// Colorz
+// ==========================================================================
+
+@each $name, $color in $colorz {
+  .#{$name}-color { color: $color; }
+  .#{$name}-border { border-color: $color; }
+  .#{$name}-background { color: #fff; background-color: $color; }
+}
+
+// White color & background
+.white-color {
+  color: #fff;
+}
+.white-background {
+  background-color: #fff;
+}
+
+// Black color & background
+.black-color {
+  color: #000;
+}
+.black-background {
+  @extend .white-color;
+  background-color: #000;
+}
+
+// Grey color & background
+.grey-color {
+  color: #666;
+}
+.grey-background {
+  @extend .white-color;
+  background-color: #666;
+}

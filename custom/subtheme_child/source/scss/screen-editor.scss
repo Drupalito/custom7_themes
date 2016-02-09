@@ -1,0 +1,37 @@
+
+/*
+Main stylesheet for editor WYSIWYG
+
+Author : Axel Roche <axel@aquelito.fr>
+MIT 2016
+
+*/
+
+// Helpers
+@import
+  'helpers/vars',
+  'helpers/functions',
+  'helpers/mixins';
+
+// Base
+@import
+  'base/fonts',
+  'base/reset',
+  'base/colorz',
+  'base/typo',
+  'base/helper',
+  'base/form';
+
+// Components
+@import
+  'components/button',
+  'components/icons';
+
+// Layers
+@import
+  'layers/grid',
+  'helpers/debug-grid';
+
+body.cke_show_borders {
+  padding: 10px;
+}

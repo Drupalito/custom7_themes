@@ -1,0 +1,47 @@
+
+/*doc
+---
+title: Header
+category: Layout - Layer
+---
+
+```html_example
+
+<div class="banner">
+  <header id="banner" role="banner" class="container clearfix">
+    ...
+  </header>
+</div>
+
+```
+
+*/
+
+/*
+---
+title: Logo
+category: Layout - Layer
+---
+
+Default markup. (`title` = `alt`)
+
+```html_example
+
+  <p id="logo" class="logo mvn">
+    <a href="/" title="Starter (Back to home)" rel="home"><img src="http://placehold.it/250x72" alt="Starter (back to home)" width="250" height="72" class="logo__image" /></a>
+  </p>
+
+<div class="logo">
+  <p class="logo__inner">
+    <a href="/" title="starterProjectName (Home)" rel="home" class="logo__link nounderline">
+      <img class="logo__image" src="http://starterdrupal.localhost/sites/all/themes/astarter/logo.png" alt="starterProjectName (Home)">
+      <span class="logo__inner inbl amiddle pls">
+        <span class="logo__name h4 caps bl mvn">starterProjectName</span>
+      </span>
+    </a>
+  </p>
+</div>
+
+```
+
+*/

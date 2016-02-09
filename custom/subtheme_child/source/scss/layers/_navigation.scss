@@ -1,0 +1,56 @@
+
+/*doc
+---
+title: Navigation
+category: Layout - Layer
+---
+
+```html_example
+
+  <div class="navigation">
+    <nav id="navigation" role="navigation" class="container clearfix">
+      ...
+    </nav>
+  </div>
+
+```
+
+*/
+
+/*doc
+---
+title: Primary menu
+category: Layout - Menu
+---
+
+```html_example
+
+  <ul class="menu list-inline">
+    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">About</span></a></li>
+    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Works</span></a></li>
+    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Services</span></a></li>
+    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Portfolio</span></a></li>
+    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Contact</span></a></li>
+  </ul>
+
+```
+
+*/
+
+.navigation {
+  background: #333;
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px;
+    border-bottom: 0;
+    color: #fff;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: #fff;
+      color: $link-color-hover;
+    }
+  }
+}

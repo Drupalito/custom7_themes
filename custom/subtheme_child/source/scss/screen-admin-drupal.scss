@@ -1,0 +1,81 @@
+
+/*
+Override Drupal admin default CSS
+
+Author : Axel Roche <axel@aquelito.fr>
+MIT 2016
+
+*/
+
+// Helpers
+@import
+  'helpers/vars',
+  'helpers/functions',
+  'helpers/mixins';
+
+.tabs.primary {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  li {
+    display: inline;
+  }
+  a {
+    padding: 5px;
+    line-height: 1;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      background: #fff;
+    }
+  }
+  a:active,
+  .active {
+    color: #fff;
+    background-color: #d96459;
+    border-bottom: 0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+/* */
+
+.tabs.primary,
+.contextual-links-wrapper {
+  position: absolute;
+  top: 0; right: 0;
+}
+
+.contextual-links-wrapper {
+  text-align: right;
+  > a {
+    color: #fff;
+    background-color: #d96459;
+    padding: 8px;
+    display: inline-block;
+    border-bottom: 0;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  .contextual-links {
+    display: none;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 80%;
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+      color: #000 !important;
+    }
+  }
+}

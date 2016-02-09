@@ -1,0 +1,74 @@
+
+/*doc
+---
+title: Icons
+category: Components - Icons
+---
+
+Liste de tous les icônes. Et toutes les class CSS pour les obtenir
+Toutes les class d'icones doivent être associé avec `.i`
+
+```html_example
+
+  <span class="i i-close" aria-hidden="true"></span>
+  <span class="i i-navicon" aria-hidden="true"></span>
+  <span class="i i-chevron-left" aria-hidden="true"></span>
+  <span class="i i-chevron-right" aria-hidden="true"></span>
+  <span class="i i-arrow-left" aria-hidden="true"></span>
+  <span class="i i-arrow-right" aria-hidden="true"></span>
+  <span class="i i-external" aria-hidden="true"></span>
+  <span class="i i-search" aria-hidden="true"></span>
+  <span class="i i-upload" aria-hidden="true"></span>
+  <span class="i i-warning" aria-hidden="true"></span>
+  <span class="i i-help" aria-hidden="true"></span>
+  <span class="i i-info" aria-hidden="true"></span>
+  <span class="i i-error" aria-hidden="true"></span>
+  <span class="i i-check" aria-hidden="true"></span>
+
+```
+
+*/
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?pz2hm9");
+  src: url("../fonts/icomoon.eot?#iefixpz2hm9") format("embedded-opentype"),
+       url("../fonts/icomoon.woff?pz2hm9") format("woff"),
+       url("../fonts/icomoon.ttf?pz2hm9") format("truetype"),
+       url("../fonts/icomoon.svg?pz2hm9#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.i,
+.ligature-icons {
+  @extend .inbl;
+  @extend .amiddle;
+  @extend .regular;
+  position: relative;
+  top: -1px;
+  font-family: "icomoon";
+  line-height: 1;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Icons
+.i-close:before         { content: "\e605"; }
+.i-navicon:before       { content: "\e606"; }
+.i-chevron-left:before  { content: "\e601"; }
+.i-chevron-right:before { content: "\e602"; }
+.i-arrow-left:before    { content: "\e603"; }
+.i-arrow-right:before   { content: "\e604"; }
+.i-external:before      { content: "\e925"; }
+.i-search:before        { content: "\e986"; }
+.i-upload:before        { content: "\e9c7"; }
+.i-warning:before       { content: "\ea07"; }
+.i-help:before          { content: "\ea09"; }
+.i-info:before          { content: "\ea0c"; }
+.i-error:before         { content: "\ea0d"; }
+.i-check:before         { content: "\ea10"; }
