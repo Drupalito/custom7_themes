@@ -23,10 +23,10 @@
               <?php if ($site_name || $site_slogan): ?>
                 <span class="logo__inner inbl amiddle pls">
                   <?php if ($site_name): ?>
-                    <span class="logo__name h4 caps bl mvn"><?php print $site_name; ?></span>
+                    <span class="logo__name h4 caps show mvn"><?php print $site_name; ?></span>
                   <?php endif; ?>
                   <?php if ($site_slogan): ?>
-                    <span class="logo__slogan bl"><?php print $site_slogan; ?></span>
+                    <span class="logo__slogan show"><?php print $site_slogan; ?></span>
                   <?php endif; ?>
                 </span>
               <?php endif; ?>

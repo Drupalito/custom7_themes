@@ -49,11 +49,7 @@
     <?php endif; ?>
       <?php print render($content); ?>
     </div>
-    <?php if (!empty($image_node)) : ?>
-      <div class="col-xs-12 col-sm-push-4 col-sm-8 mtm">
-    <?php else: ?>
-      <div class="col-xs-12 mtm">
-    <?php endif; ?>
+    <div class="col-xs-12 mtm">
       <?php print render($content['links']); ?>
     </div>
   </div>
