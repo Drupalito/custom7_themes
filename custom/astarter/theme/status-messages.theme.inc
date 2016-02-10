@@ -30,7 +30,6 @@ function astarter_status_messages($variables) {
       $output .= '<h2 class="message__title hide">' . $status_heading[$type] . '</h2>';
     }
     $output .= '<div class="message__content">';
-    var_dump($message[0]);
     if (count($message) > 1) {
       $output .= '<ul class="message__list">';
       foreach ($message as $message) {
