@@ -12,7 +12,7 @@
  */
 
 ?>
-<div class="<?php print $classes; ?> <?php print $extra_classes; ?>"<?php print $attributes; ?>>
+<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="node node--table">
     <div class="node__content">
       <a class="node__link" href="<?php echo $url; ?>">

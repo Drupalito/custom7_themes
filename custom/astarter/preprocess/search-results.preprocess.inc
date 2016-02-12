@@ -15,8 +15,6 @@ function astarter_preprocess_search_results(&$variables) {
   $index = 0;
   $len = count($variables['results']);
 
-  var_dump($variables);
-
   $variables['search_results'] = '';
   foreach ($variables['results'] as $result) {
 
