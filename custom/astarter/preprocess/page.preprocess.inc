@@ -56,6 +56,16 @@ function astarter_preprocess_page(&$variables) {
     $variables['title_attributes_array']['itemprop'] = 'name';
   }
 
+  if (arg(0) == 'user') {
+    $variables['title_prefix'] = '<div class="main__header">';
+  }
+  else {
+    if (!drupal_is_front_page()) {
+      $variables['title_prefix'] = '<div class="main__header">';
+      $variables['title_suffix'] = '</div>';
+    }
+  }
+
   // if ((arg(0) == 'search')) {
 
   //   // Search.module shows 10 items per page (this isn't customizable).

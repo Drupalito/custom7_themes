@@ -27,6 +27,7 @@ function astarter_form_element($variables) {
   if (isset($element['#markup']) && !empty($element['#id'])) {
     $attributes['id'] = $element['#id'];
   }
+
   // Add element's #type and #name as class to aid with JS/CSS selectors.
   $attributes['class'] = array('form-item');
   if (!empty($element['#type'])) {
@@ -38,10 +39,7 @@ function astarter_form_element($variables) {
     );
   }
 
-  if (arg(0) == 'user' && arg(1) == 'password') {
-    $attributes['class'][] = 'form-item--block';
-  }
-  else if (arg(0) == 'user' && arg(1) === false || arg(1) == 'login') {
+  if (arg(0) == 'user') {
     $attributes['class'][] = 'form-item--block';
   }
 
@@ -82,7 +80,7 @@ function astarter_form_element($variables) {
   }
 
   if (!empty($element['#description'])) {
-    $output .= '<small class="description bl">' . $element['#description'] . "</small>\n";
+    $output .= '<small class="description show">' . $element['#description'] . "</small>\n";
   }
 
   $output .= "</div>\n";

@@ -59,7 +59,7 @@ function astarter_webform_element($variables) {
   }
 
   if (!empty($element['#description'])) {
-    $output .= '<small class="description bl">' . $element['#description'] . "</small>\n";
+    $output .= '<small class="description show">' . $element['#description'] . "</small>\n";
   }
 
   $output .= "</div>\n";

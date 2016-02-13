@@ -30,9 +30,30 @@ category: Layout - Layer
 //   padding-top: 40px;
 // }
 
+.main {
+  &__title {
+    @extend .caps;
+    margin-bottom: 0;
+  }
+  &__header {
+    border-top: 1px solid #ccc;
+    padding-top: rhythm(0.5, $base-font-size);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: rhythm(0.5, $base-font-size);
+    margin-bottom: rhythm(1, $base-font-size);
+  }
+}
+
 .content,
 .node, .block {
   position: relative;
+}
+
+.banner,
+#container,
+.contentinfo {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .node {

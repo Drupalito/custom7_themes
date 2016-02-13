@@ -3,6 +3,25 @@
 // Tabs
 // ==========================================================================
 
+ul.links,
+.tabs--user {
+  list-style-type: none;
+  padding-left: 0;
+  @extend .list-inline;
+  @extend .list-separate;
+  a {
+    text-transform: uppercase;
+    border-bottom: 0;
+  }
+  .active {
+    color: #{map-get($colorz, 'primary')};
+    border-bottom: 0;
+    @extend .bold;
+  }
+}
+
+
+
 /*doc
 ---
 title: Tabs
@@ -34,50 +53,50 @@ category: Components - Tabs
 
 */
 
-.tabPane {
-  &__list {
-    @extend .pln;
-    border-left: 1px solid #ccc;
-  }
-  &__item {
-    display: inline-block;
-    vertical-align: bottom;
-    margin-bottom: -1px;
-    &.active {
-      a,
-      a:hover,
-      a:focus {
-        font-weight: bold;
-        background: #ccc;
-        color: #000;
-      }
-      a:before {
-        content: " ";
-        position: absolute;
-        top: -4px; right: -1px; left: -1px;
-        border-top: 3px solid #{map-get($colorz, 'primary')};
-      }
-    }
-    a {
-      display: inline-block;
-      position: relative;
-      padding: 10px 15px;
-      margin: 0;
-      border-right: 1px solid #ccc;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      background: #f7f7f7;
-      color: #333;
-    }
-  }
-  &__panels {
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
-  &__content {
-    @extend .hide;
-    &.active {
-      @extend .show;
-    }
-  }
-}
+// .tabPane {
+//   &__list {
+//     @extend .pln;
+//     border-left: 1px solid #ccc;
+//   }
+//   &__item {
+//     display: inline-block;
+//     vertical-align: bottom;
+//     margin-bottom: -1px;
+//     &.active {
+//       a,
+//       a:hover,
+//       a:focus {
+//         font-weight: bold;
+//         background: #ccc;
+//         color: #000;
+//       }
+//       a:before {
+//         content: " ";
+//         position: absolute;
+//         top: -4px; right: -1px; left: -1px;
+//         border-top: 3px solid #{map-get($colorz, 'primary')};
+//       }
+//     }
+//     a {
+//       display: inline-block;
+//       position: relative;
+//       padding: 10px 15px;
+//       margin: 0;
+//       border-right: 1px solid #ccc;
+//       border-top: 1px solid #ccc;
+//       border-bottom: 1px solid #ccc;
+//       background: #f7f7f7;
+//       color: #333;
+//     }
+//   }
+//   &__panels {
+//     padding: 20px;
+//     border: 1px solid #ccc;
+//   }
+//   &__content {
+//     @extend .hide;
+//     &.active {
+//       @extend .show;
+//     }
+//   }
+// }

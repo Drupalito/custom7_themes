@@ -1,0 +1,9 @@
+
+.page-user {
+  .main__title {
+    margin-bottom: 0;
+    + .tabs {
+      margin-top: 0;
+    }
+  }
+}

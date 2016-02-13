@@ -10,16 +10,20 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
-    <header class="header mbm">
+    <header class="header">
       <?php if (!$page && $title): ?>
         <?php print render($title_prefix); ?>
           <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
         <?php print render($title_suffix); ?>
       <?php endif; ?>
-
+      <?php if ($unpublished): ?>
+        <mark class="mark mark--unpublished"><?php print t('Unpublished'); ?></mark>
+      <?php endif; ?>
       <?php if ($display_submitted) : ?>
         <?php if (!empty($teaser)) : ?>
         <?php elseif (!empty($page)) : ?>
+          <meta itemprop="url" content="<?php print url('node/' . $node->nid, array('absolute' => TRUE)); ?>" />
+          <meta itemprop="interactionCount" content="UserComments:<?php print $comment_count; ?>" />
           <ul>
             <li><span id="author-<?php print check_plain(strip_tags($variables['name'])); ?>" itemprop="author" itemscope itemtype="http://schema.org/Person"><?php print l($variables['name'], 'user/' . $node->uid, array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))); ?></span></li>
             <li><?php print format_plural($comment_count, t('@count comment'), t('@count comments')); ?></li>
@@ -28,12 +32,7 @@
               <li><time datetime="<?php print format_date($node->changed, 'custom', 'c'); ?>" itemprop="dateModified"><?php print format_date($changed); ?></time></li>
             <?php endif; ?>
           </ul>
-          <meta itemprop="url" content="<?php print url('node/' . $node->nid, array('absolute' => TRUE)); ?>" />
-          <meta itemprop="interactionCount" content="UserComments:<?php print $comment_count; ?>" />
         <?php endif; ?>
-      <?php endif; ?>
-      <?php if ($unpublished): ?>
-        <mark class="mark mark--unpublished"><?php print t('Unpublished'); ?></mark>
       <?php endif; ?>
     </header>
   <?php endif; ?>
