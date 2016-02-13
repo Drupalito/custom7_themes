@@ -2,19 +2,8 @@
 
 /**
  * @file
- * Theme functions override
+ * Theme functions overrides
  */
-
-/**
- * Theme templates, functions and preprocess / process functions.
- */
-$include_dir_files = array('preprocess', 'process', 'theme');
-for ($i = 0; $i < count($include_dir_files); $i++) {
-  $files_extensions = dirname(__FILE__) . '/' . $include_dir_files[$i] . '/*.' . $include_dir_files[$i] . '.inc';
-  foreach (glob($files_extensions) as $filename) {
-    include_once $filename;
-  }
-}
 
 /**
  * Implements hook_menu_link_alter().
