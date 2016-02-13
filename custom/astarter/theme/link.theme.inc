@@ -13,7 +13,7 @@
  * @ingroup themeable
  */
 function astarter_link($variables) {
-  // Remove title attribute if empty
+  // Remove title attribute if empty.
   if (empty($variables['options']['attributes']['title'])) {
     unset($variables['options']['attributes']['title']);
   }

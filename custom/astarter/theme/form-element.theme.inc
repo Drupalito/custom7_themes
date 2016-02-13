@@ -47,7 +47,7 @@ function astarter_form_element($variables) {
   if (!empty($element['#attributes']['disabled'])) {
     $attributes['class'][] = 'form-item--disabled';
   }
-  // Add class error on parent
+  // Add class error on parent.
   if (isset($element['#parents']) && form_get_error($element)) {
     $attributes['class'][] = 'has--error';
   }

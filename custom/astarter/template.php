@@ -75,12 +75,12 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
  */
 function astarter_page_alter(&$page) {
 
-  // Logged in
+  // Logged in.
   if (!empty($page['content']['system_main']['content']['search_form'])) {
     unset($page['content']['system_main']['content']['search_form']);
   }
 
-  // Not logged in
+  // Not logged in.
   if (!empty($page['content']['system_main']['search_form'])) {
     unset($page['content']['system_main']['search_form']);
   }

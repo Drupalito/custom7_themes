@@ -16,8 +16,8 @@
  * @see hook_preprocess()
  */
 function astarter_preprocess_field(&$variables) {
-  $function = __FUNCTION__ . '__'. $variables['element']['#field_name'];
-  if(function_exists($function)) {
+  $function = __FUNCTION__ . '__' . $variables['element']['#field_name'];
+  if (function_exists($function)) {
     $function($variables);
   }
 

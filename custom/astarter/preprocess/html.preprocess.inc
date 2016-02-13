@@ -71,6 +71,7 @@ function astarter_preprocess_html(&$variables, $hook) {
         // Is this a Views page ?
         $variables['classes_array'][] = 'page--views';
         break;
+
       case 'page_manager_blog':
       case 'page_manager_blog_user':
       case 'page_manager_contact_site':
@@ -84,7 +85,7 @@ function astarter_preprocess_html(&$variables, $hook) {
       case 'page_manager_term_view_page':
       case 'page_manager_user_edit_page':
       case 'page_manager_user_view_page':
-        // Is this a Panels page?
+        // Is this a Panels page ?
         $variables['classes_array'][] = 'page--panels';
         break;
     }

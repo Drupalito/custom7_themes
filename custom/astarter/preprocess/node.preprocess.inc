@@ -23,10 +23,10 @@ function astarter_preprocess_node(&$variables, $hook) {
     $variables['theme_hook_suggestions'][] = 'node__teaser';
   }
 
-  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes
+  // Make "node--NODETYPE--VIEWMODE.tpl.php" templates available for nodes.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
-  // Add css class "node--NODETYPE--VIEWMODE" to nodes
+  // Add css class "node--NODETYPE--VIEWMODE" to nodes.
   $variables['classes_array'][] = 'node-' . $variables['type'] . '-' . $variables['view_mode'];
 
   // Add $unpublished variable to submitted variable.
@@ -72,20 +72,19 @@ function astarter_preprocess_node(&$variables, $hook) {
   // Change modifier classes to use BEM syntax.
   $variables['classes_array'] = preg_replace('/^node-/', 'node--', $variables['classes_array']);
 
-
   if ($css_view_mode == 'teaser') {
     $variables['title_attributes_array']['class'][] = 'mbn';
-    // Teaser : clean link 'number comments'
+    // Teaser : clean link 'number comments'.
     if (isset($variables['content']['links']['comment']['#links']['comment-comments'])) {
       $variables['content']['links']['comment']['#links']['comment-comments']['attributes']['class'][] = 'node__link--comments';
       $variables['content']['links']['comment']['#links']['comment-comments']['attributes']['title'] = $variables['content']['links']['comment']['#links']['comment-comments']['title'] . ' ' . t('on') . ' ' . $variables['title'];
     }
-    // Teaser : clean link 'add comment'
+    // Teaser : clean link 'add comment'.
     if (isset($variables['content']['links']['comment']['#links']['comment-add'])) {
       $variables['content']['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'node__link--comments';
       $variables['content']['links']['comment']['#links']['comment-add']['attributes']['title'] = $variables['content']['links']['comment']['#links']['comment-add']['title'] . ' ' . t('on') . ' ' .  $variables['title'];
     }
-    // Teaser : clean link 'readmore'
+    // Teaser : clean link 'readmore'.
     $variables['content']['links']['node']['#links']['node-readmore']['attributes']['rel'] = 'bookmark';
     $variables['content']['links']['node']['#links']['node-readmore']['title'] = '<span class="i i-chevron-right"></span> ' . t('Read more');
     $variables['content']['links']['node']['#links']['node-readmore']['attributes']['class'][] = 'node__link--readmore';

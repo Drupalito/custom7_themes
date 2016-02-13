@@ -17,7 +17,8 @@
 function astarter_webform_element($variables) {
   $element = $variables['element'];
 
-  // managed_file uses a different id, make sure the label points to the correct id.
+  // managed_file uses a different id,
+  // make sure the label points to the correct id.
   if (isset($element['#type']) && $element['#type'] === 'managed_file') {
     if (!empty($variables['element']['#id'])) {
       $variables['element']['#id'] .= '-upload';
@@ -29,7 +30,7 @@ function astarter_webform_element($variables) {
     $element['#wrapper_attributes']['class'][] = 'form-item--disabled';
   }
 
-  // Add class error input
+  // Add class error input.
   if (isset($element['#parents']) && form_get_error($element)) {
     $element['#wrapper_attributes']['class'][] = 'has--error';
   }

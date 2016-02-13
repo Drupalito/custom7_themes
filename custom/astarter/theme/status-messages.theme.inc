@@ -37,7 +37,7 @@ function astarter_status_messages($variables) {
       }
       $output .= '</ul>';
     }
-    else if (strpos($message[0], '<pre>') !== false) {
+    elseif (strpos($message[0], '<pre>') !== TRUE) {
       $output .= '<div class="message__description">' . $message[0] . '</div>';
     }
     else {

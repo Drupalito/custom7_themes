@@ -21,7 +21,8 @@
 ?>
 <?php if (!empty($q)): ?>
   <?php
-    // This ensures that, if clean URLs are off, the 'q' is added first so that
+    // This ensures that, if clean URLs are off,
+    // the 'q' is added first so that
     // it shows up first in the URL.
     print $q;
   ?>

@@ -19,9 +19,9 @@ function astarter_views_mini_pager($vars) {
   $element = $vars['element'];
   $parameters = $vars['parameters'];
 
-  // current is the page we are currently paged to
+  // Current is the page we are currently paged to.
   $pager_current = $pager_page_array[$element] + 1;
-  // max is the maximum page number
+  // Max is the maximum page number.
   $pager_max = $pager_total[$element];
   // End of marker calculations.
 
@@ -76,12 +76,5 @@ function astarter_views_mini_pager($vars) {
           ),
         ),
       )) . '</div>';
-
-    // return theme('item_list', array(
-    //   'items' => $items,
-    //   'title' => NULL,
-    //   'type' => 'ul',
-    //   'attributes' => array('class' => array('pager')),
-    // ));
   }
 }

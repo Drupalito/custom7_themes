@@ -48,7 +48,7 @@ function astarter_preprocess_block(&$variables, $hook) {
     $variables['classes_array'][] = 'col-xs-12';
   }
 
-  // Add default CSS class on block region
+  // Add default CSS class on block region.
   if (isset($variables['block']->region) && in_array($variables['block']->region, $array_block_region)) {
     $variables['classes_array'][] = 'col-xs-12';
     $variables['classes_array'][] = 'col-sm-6';
@@ -56,7 +56,6 @@ function astarter_preprocess_block(&$variables, $hook) {
     $variables['classes_array'][] = 'sm-mbl';
   }
 
-  // $css_module = drupal_clean_css_identifier($variables['block']->module);
   $variables['classes_array'] = preg_replace('/^block-/', 'block--', $variables['classes_array']);
 
   $variables['title_attributes_array']['class'][] = 'h4 caps bold';

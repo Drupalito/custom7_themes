@@ -18,12 +18,26 @@ class OmegaThemeRegistryHandler {
   // The name of the active theme.
   protected $theme;
 
+  /**
+   * Constructs a OmegaThemeRegistryHandler object.
+   *
+   * @param array &$registry
+   *   The theme registry.
+   * @param string $theme
+   *   The name of the active theme.
+   */
   public function __construct(&$registry, $theme) {
     $this->theme = $theme;
     $this->trail = omega_theme_trail($theme);
     $this->registry = &$registry;
   }
 
+  /**
+   * Discovers and registers (pre-)process hooks on behalf of a given theme.
+   *
+   * @param string $theme
+   *   The name of the theme for which to register (pre-)process hooks.
+   */
   public function registerHooks($theme) {
     foreach (array('process', 'preprocess') as $type) {
       // Iterate over all preprocess/process files in the current theme.
@@ -45,8 +59,17 @@ class OmegaThemeRegistryHandler {
     }
   }
 
+  /**
+   * Discovers and registers theme functions on behalf of a given theme.
+   *
+   * @param string $theme
+   *   The name of the theme for which to register (pre-)process hooks.
+   * @param array $trail
+   *   The theme trail of the given theme.
+   */
   public function registerThemeFunctions($theme, $trail) {
-
+    // Recursively scan the folder for the current step for (pre-)process
+    // files and write them to the registry.
     foreach ($this->discoverFiles($theme, 'theme') as $item) {
       // Keep a copy of the hook name to accomodate for theme hook suggestions.
       $base = $item->hook;
@@ -111,6 +134,17 @@ class OmegaThemeRegistryHandler {
     }
   }
 
+  /**
+   * Scans for files of a certain type in the given theme's path.
+   *
+   * @param string $theme
+   *   The name of the theme scan.
+   * @param string $type
+   *   The file type (e.g. 'preprocess', 'process', or 'theme') to scan for.
+   *
+   * @return array
+   *   An array of file objects that matched the given type.
+   */
   protected function discoverFiles($theme, $type) {
     $length = -(strlen($type) + 1);
 
