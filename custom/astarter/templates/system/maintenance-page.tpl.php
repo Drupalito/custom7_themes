@@ -29,8 +29,8 @@
 <div id="page" class="page">
   <div class="banner">
     <header id="banner" role="banner" class="banner__region container">
-      <div class="row row-height">
-        <div class="branding col-xs-12">
+      <div class="row row-sm-height">
+        <div class="col-xs-12">
           <p class="logo"><a href="<?php print $front_page; ?>" title="<?php print variable_get('site_name'); ?> (<?php print t('Home'); ?>)" rel="home" class="logo__link nounderline">
             <?php if ($logo): ?>
               <img class="logo__image" src="<?php print $logo; ?>" alt="<?php print variable_get('site_name'); ?> (<?php print t('Home'); ?>)" />
@@ -38,10 +38,10 @@
             <?php if ($site_name || $site_slogan): ?>
               <span class="logo__inner inbl amiddle plm">
                 <?php if ($site_name): ?>
-                  <span class="logo__name h4 caps bl mvn"><?php print $site_name; ?></span>
+                  <span class="logo__name h4 caps show mvn"><?php print $site_name; ?></span>
                 <?php endif; ?>
                 <?php if ($site_slogan): ?>
-                  <span class="logo__slogan bl"><?php print $site_slogan; ?></span>
+                  <span class="logo__slogan show"><?php print $site_slogan; ?></span>
                 <?php endif; ?>
               </span>
             <?php endif; ?>
@@ -55,7 +55,9 @@
       <div id="content" class="content col-xs-12">
         <main id="main" class="main text-center" role="main">
           <?php if (!empty($title)) : ?>
-            <h1 class="main__title caps mvn"><?php print $title; ?></h1>
+            <div class="main__header">
+              <h1 class="main__title"><?php print $title; ?></h1>
+            </div>
           <?php endif; ?>
           <?php if (!empty($messages)): print $messages; endif; ?>
           <p class="mvn"><?php print $content; ?></p>
@@ -69,6 +71,7 @@
         <?php print render($page['contentinfo']); ?>
       </div>
     </footer>
+  </div>
 </div>
 </body>
 </html>

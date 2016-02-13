@@ -13,7 +13,7 @@
  * @see hook_process()
  */
 function astarter_process_maintenance_page(&$variables, $hook) {
-  astarter_process_html($variables, $hook);
+
   // Ensure default regions get a variable.
   // Theme authors often forget to remove
   // a deleted region's variable in maintenance-page.tpl.

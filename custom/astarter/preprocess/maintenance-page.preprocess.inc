@@ -13,7 +13,5 @@
  * @see hook_preprocess()
  */
 function astarter_preprocess_maintenance_page(&$variables, $hook) {
-  astarter_preprocess_html($variables, $hook);
-  // There's nothing maintenance-related in astarter_preprocess_page(). Yet.
-  // astarter_preprocess_page($variables, $hook);
+
 }
