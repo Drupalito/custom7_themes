@@ -948,7 +948,7 @@ Divers styles de typographie
 |Strike | <span class="strike">Long Text</span> | ``` <span class="strike">Text</span> or <del>Text</del> ```
 
 */
-.caps {
+.caps, .main__title {
   text-transform: uppercase; }
 
 .small-caps {
@@ -968,7 +968,8 @@ Divers styles de typographie
   font-weight: normal;
   font-style: normal; }
 
-.bold, strong, dt, dfn[title], .message a {
+.bold, strong, dt, dfn[title], .message a, ul.links .active,
+.tabs--user .active {
   font-weight: bold; }
 
 .italic, dfn[title], figcaption, caption {
@@ -1098,7 +1099,8 @@ category: Base - Typo
 ```
 
 */
-.list-none, .list-inline, .list-pull-left, .collection-list {
+.list-none, .list-inline, ul.links,
+.tabs--user, .node-type-article .header ul, .list-pull-left, .collection-list {
   list-style-type: none;
   padding-left: 0; }
 
@@ -1124,7 +1126,8 @@ category: Base - Typo
 ```
 
 */
-.list-inline li {
+.list-inline li, ul.links li,
+.tabs--user li, .node-type-article .header ul li {
   display: inline; }
 
 /*doc
@@ -1147,12 +1150,14 @@ category: Base - Typo
 ```
 
 */
-.list-separate li:before {
+.list-separate li:before, ul.links li:before,
+.tabs--user li:before, .node-type-article .header ul li:before {
   content: " · ";
   padding-left: 5px;
   padding-right: 5px; }
 
-.list-separate li:first-child:before {
+.list-separate li:first-child:before, ul.links li:first-child:before,
+.tabs--user li:first-child:before, .node-type-article .header ul li:first-child:before {
   content: "";
   padding-left: 0;
   padding-right: 0; }
@@ -1252,11 +1257,11 @@ category: Base - Helpers
 * `.element-invisible` - Cacher de facon accessible
 
 */
-.hide, .tabPane__content, .collapse, .none, [hidden],
+.hide, .collapse, .none, [hidden],
 audio:not([controls]) {
   display: none !important; }
 
-.show, blockquote cite, .tabPane__content.active, .collapse.in {
+.show, blockquote cite, .collapse.in {
   display: block !important; }
 
 .hidden {
@@ -1370,7 +1375,7 @@ Size
 .pbl, .pvl, .pal {
   padding-bottom: 24px !important; }
 
-.pln, .tabPane__list, .phn, .pan, .form-item .form-item--fake {
+.pln, .phn, .pan, .form-item .form-item--fake {
   padding-left: 0 !important; }
 
 .pls, .phs, .pas {
@@ -2823,6 +2828,19 @@ category: Components - Modal
   .modal--lg {
     width: 900px; } }
 
+ul.links,
+.tabs--user {
+  list-style-type: none;
+  padding-left: 0; }
+  ul.links a,
+  .tabs--user a {
+    text-transform: uppercase;
+    border-bottom: 0; }
+  ul.links .active,
+  .tabs--user .active {
+    color: #aa5c39;
+    border-bottom: 0; }
+
 /*doc
 ---
 title: Tabs
@@ -2853,41 +2871,6 @@ category: Components - Tabs
 ```
 
 */
-.tabPane__list {
-  border-left: 1px solid #ccc; }
-
-.tabPane__item {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-bottom: -1px; }
-  .tabPane__item.active a,
-  .tabPane__item.active a:hover,
-  .tabPane__item.active a:focus {
-    font-weight: bold;
-    background: #ccc;
-    color: #000; }
-  .tabPane__item.active a:before {
-    content: " ";
-    position: absolute;
-    top: -4px;
-    right: -1px;
-    left: -1px;
-    border-top: 3px solid #aa5c39; }
-  .tabPane__item a {
-    display: inline-block;
-    position: relative;
-    padding: 10px 15px;
-    margin: 0;
-    border-right: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background: #f7f7f7;
-    color: #333; }
-
-.tabPane__panels {
-  padding: 20px;
-  border: 1px solid #ccc; }
-
 /*doc
 ---
 title: Poll
@@ -3689,9 +3672,25 @@ category: Layout - Layer
 ```
 
 */
+.main__title {
+  margin-bottom: 0; }
+
+.main__header {
+  border-top: 1px solid #ccc;
+  padding-top: 0.75em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.75em;
+  margin-bottom: 1.5em; }
+
 .content,
 .node, .block {
   position: relative; }
+
+.banner,
+#container,
+.contentinfo {
+  padding-top: 40px;
+  padding-bottom: 40px; }
 
 .node--teaser {
   padding: 40px;
@@ -3748,6 +3747,9 @@ Default markup. (`title` = `alt`)
 ```
 
 */
+.branding {
+  text-align: right; }
+
 /*doc
 ---
 title: Footer
@@ -3765,16 +3767,6 @@ category: Layout - Layer
 ```
 
 */
-.banner,
-#container,
-.contentinfo,
-.contentinfoRelated {
-  padding-top: 40px;
-  padding-bottom: 40px; }
-
-.contentinfoRelated {
-  background: #fff; }
-
 .contentinfo {
   background: #333; }
   .contentinfo,
@@ -3948,3 +3940,19 @@ category: Pages - Page
 Content type : **Page**
 
 */
+.node-type-article .main__header {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+.node-type-article .header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.75em;
+  margin-bottom: 1.5em; }
+  .node-type-article .header ul {
+    margin-top: 0; }
+
+.page-user .main__title {
+  margin-bottom: 0; }
+  .page-user .main__title + .tabs {
+    margin-top: 0; }
