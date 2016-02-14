@@ -26,21 +26,20 @@ MIT 2016
 @import
   'components/breadcrumb',
   'components/button',
-  'components/collection',
   'components/icons',
   'components/message',
   'components/pagination',
+  'components/poll',
+  'components/progress-bar',
   'components/video';
 
 @import
-  'components/search-form',
-  'components/cover',
-  'components/modal',
-  'components/tabs',
-  'components/poll',
-  'components/progress-bar',
   'components/carousel',
-  'components/collapse';
+  'components/collapse',
+  'components/comments',
+  'components/modal',
+  'components/search-form',
+  'components/tabs';
 
 // Layers
 @import
@@ -50,7 +49,6 @@ MIT 2016
   'layers/footer',
   'layers/navigation',
   'layers/aside',
-  'layers/comments',
   'layers/form';
 
 // Pages
