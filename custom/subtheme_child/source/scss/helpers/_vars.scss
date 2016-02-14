@@ -141,23 +141,23 @@ $colorz: (
 /// @prop {String} message.key.icon  - Theme icon
 $message: (
   info: (
-    color: #31708f,
-    background: #cfeffc,
+    color: null,
+    background: #477bb6,
     icon:  '.i-info'
   ),
   warning: (
     color: null,
-    background: #d44116,
+    background: #ddae1e,
     icon:  '.i-warning'
   ),
   error: (
     color: null,
-    background: #990000,
+    background: #b64747,
     icon:  '.i-error'
   ),
   status: (
     color: null,
-    background: #2d8611,
+    background: #77b647,
     icon:  '.i-check'
   )
 );
