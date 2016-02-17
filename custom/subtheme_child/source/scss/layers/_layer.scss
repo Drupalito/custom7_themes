@@ -26,25 +26,7 @@ category: Layout - Layer
 
 */
 
-// #container {
-//   padding-top: 40px;
-// }
-
-.main {
-  &__title {
-    @extend .caps;
-    margin-bottom: 0;
-  }
-  &__header {
-    border-top: 1px solid #ccc;
-    padding-top: rhythm(0.5, $base-font-size);
-    border-bottom: 1px solid #ccc;
-    padding-bottom: rhythm(0.5, $base-font-size);
-    margin-bottom: rhythm(1, $base-font-size);
-  }
-}
-
-.content,
+.content, .main,
 .node, .block {
   position: relative;
 }
@@ -56,19 +38,42 @@ category: Layout - Layer
   padding-bottom: 40px;
 }
 
-.node {
-  &--teaser {
-    padding: 40px;
-    margin-bottom: 40px;
-    background: #fff;
-  }
-  &--teaser.node--promoted {
+/*doc
+---
+title: Main header
+category: Layout - Layer
+---
 
-  }
-  &--teaser.node--sticky {
-    background: #333;
-    &, a {
-      color: #fff;
+```html_example
+
+  <main id="main" class="main" role="main">
+    <div class="main__header">
+      <h1 class="main__title">Lorem ipsum dolor sit</h1>
+      <ul class="tabs tabs--user">
+        <li class="active"><a href="#" class="active">View<span class="element-invisible">(active tab)</span></a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </main>
+
+```
+
+*/
+
+.main {
+  &__title {
+    @extend .caps;
+    margin-bottom: 0;
+    & + * {
+      margin-top: 0;
     }
+  }
+  &__header {
+    border-top: pem(1px) solid #ccc;
+    padding-top: rhythm(0.5, $base-font-size);
+    border-bottom: pem(1px) solid #ccc;
+    padding-bottom: rhythm(0.5, $base-font-size);
+    margin-bottom: rhythm(1, $base-font-size);
   }
 }

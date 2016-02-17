@@ -23,7 +23,7 @@ Combine `.aside` with the modifier `.aside--right`
 .aside {
 
   .block {
-    padding: 20px;
+    padding: 1.5em;
     margin-top: 40px;
     margin-bottom: 40px;
     background: #fff;
@@ -45,6 +45,16 @@ Combine `.aside` with the modifier `.aside--right`
     background: #333;
     &, a {
       color: #fff;
+    }
+    .menu {
+      display: block;
+      position: relative;
+      left: 0;
+      width: auto;
+      li {
+        display: block;
+        border-top: 0;
+      }
     }
   }
 

@@ -194,6 +194,32 @@ input::-moz-focus-inner {
   border: 0;
 }
 
+fieldset {
+  border: 1px solid #ccc;
+  border-top: 3px solid #{map-get($colorz, 'primary')};
+  padding: $base-line-height;
+  margin: 0 0 rhythm(1);
+  &.collapsed {
+    a {
+      color: #{map-get($colorz, 'primary')};
+    }
+  }
+  legend {
+    padding: 0 $base-line-height/2;
+    margin: 0;
+    margin-left: -($base-line-height/2)/2;
+    font-size: pem(18px);
+    font-weight: 700;
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+.fieldset-description {
+  padding-bottom: 1em;
+}
+
 /*doc
 ---
 title: All inputs
@@ -469,6 +495,10 @@ category: Base - Forms
   .form-item {
     float: left;
   }
+}
+
+.form-wrapper button + button {
+  margin-left: $grid-gutter-width;
 }
 
 .form-managed-file {

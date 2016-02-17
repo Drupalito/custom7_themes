@@ -25,7 +25,7 @@
           <meta itemprop="url" content="<?php print url('node/' . $node->nid, array('absolute' => TRUE)); ?>" />
           <meta itemprop="interactionCount" content="UserComments:<?php print $comment_count; ?>" />
           <ul>
-            <li><span id="author-<?php print check_plain(strip_tags($variables['name'])); ?>" itemprop="author" itemscope itemtype="http://schema.org/Person"><?php print l($variables['name'], 'user/' . $node->uid, array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))); ?></span></li>
+            <?php if (!empty($node->uid)) : ?><li><span id="author-<?php print check_plain(strip_tags($variables['name'])); ?>" itemprop="author" itemscope itemtype="http://schema.org/Person"><?php print l($variables['name'], 'user/' . $node->uid, array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))); ?></span></li><?php endif; ?>
             <li><?php print format_plural($comment_count, t('@count comment'), t('@count comments')); ?></li>
             <li><time datetime="<?php print format_date($node->created, 'custom', 'c'); ?>" itemprop="dateCreated"><?php print format_date($created); ?></time></li>
             <?php if ($node->created != $node->changed) : ?>
@@ -42,15 +42,14 @@
       hide($content['field_image']);
       hide($content['comments']);
       hide($content['links']);
-
-      $image_node = render($content['field_image']);
     ?>
 
-    <?php if (!empty($image_node)) : ?>
-      <div class="text-center mbl">
-        <?php print $image_node; ?>
-      </div>
-    <?php endif; ?>
+    <?php
+      $image_node = render($content['field_image']);
+      if (!empty($image_node)) :
+        print $image_node;
+      endif;
+    ?>
 
     <?php print render($content); ?>
   </div>

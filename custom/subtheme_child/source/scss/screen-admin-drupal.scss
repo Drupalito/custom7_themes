@@ -1,5 +1,6 @@
 
 /*
+subtheme_child Drupal Theme
 Override Drupal admin default CSS
 
 Author : Axel Roche <axel@aquelito.fr>
@@ -18,6 +19,7 @@ MIT 2016
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
+  background: #fff;
   li {
     display: inline;
   }
@@ -25,17 +27,19 @@ MIT 2016
     padding: 5px;
     line-height: 1;
     display: inline-block;
-    &:hover,
-    &:focus {
-      background: #fff;
-    }
+    border-bottom: 0;
+    background: #fff;
   }
+  a:hover,
+  a:focus,
   a:active,
   .active {
     color: #fff;
     background-color: #d96459;
     border-bottom: 0;
     text-decoration: none;
+  }
+  .active {
     font-weight: bold;
   }
 }
@@ -53,6 +57,7 @@ MIT 2016
 .contextual-links-wrapper {
   position: absolute;
   top: 0; right: 0;
+  z-index: 10;
 }
 
 .contextual-links-wrapper {
@@ -75,7 +80,7 @@ MIT 2016
   .contextual-links {
     display: none;
     background: #fff;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
     font-size: 80%;
     a,

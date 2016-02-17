@@ -25,13 +25,13 @@ category: Layout - Menu
 
 ```html_example
 
-  <ul class="menu list-inline">
-    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">About</span></a></li>
-    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Works</span></a></li>
-    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Services</span></a></li>
-    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Portfolio</span></a></li>
-    <li class="menu__item"><a class="menu__link" href="#"><span class="menu__title">Contact</span></a></li>
-  </ul>
+  <div od="block-system-main-menu">
+    <ul class="menu">
+      <li class="menu__item menu__item--hasmenu"><a class="menu__link" href="#">About</a></li><li class="menu__item"><a class="menu__link" href="#">Works</a><ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Work 1</a></li><li class="menu__item"><a class="menu__link" href="#">Work 2</a></li><li class="menu__item"><a class="menu__link" href="#">Work 3</a></li><li class="menu__item"><a class="menu__link" href="#">Work 4</a></li>
+    </ul></li><li class="menu__item"><a class="menu__link" href="#">Services</a></li><li class="menu__item"><a class="menu__link" href="#">Portfolio</a></li><li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+    </ul>
+  </div>
 
 ```
 
@@ -39,18 +39,202 @@ category: Layout - Menu
 
 .navigation {
   background: #333;
+}
+
+.menu {
+  list-style-type: none;
+  padding:0; margin: 0;
   a {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 20px;
+    display: block;
+    padding: 10px;
     border-bottom: 0;
+    text-decoration: none;
+    font-size: 14px;
+    background: #333;
     color: #fff;
     &:hover,
     &:focus,
-    &:active,
-    &.active {
-      background-color: #fff;
-      color: $link-color-hover;
+    &:active {
+      background: #{map-get($colorz, 'secondary')};
+      color: #fff;
     }
+    &.active {
+      background: #{map-get($colorz, 'primary')};
+      color: #fff;
+    }
+  }
+  li {
+    position: relative;
+    li a {
+      padding-left: 25px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    li li a {
+      padding-left: 35px;
+    }
+  }
+  > li > a {
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+  ul {
+    display: none;
+    position: absolute;
+    left: -9999px;
+    z-index: 30;
+    > li > a {
+      font-size: 12px;
+      font-weight: normal;
+      text-transform: none;
+      z-index: 40;
+    }
+  }
+  @include mq("small") {
+    & {
+      // display: flex;
+      // width: 100%;
+      li {
+        // flex: 1;
+        display: inline-block;
+        vertical-align: middle;
+        li {
+          display: block;
+          border-top: 1px solid #969696;
+          ul {
+            left: 180px!important;
+          }
+          a, li a {
+            padding: 5px 10px;
+          }
+          ul {
+            top: -1px;
+          }
+        }
+      }
+      li:hover > ul,
+      li > a:hover + ul,
+      li > a:focus + ul {
+        display: block;
+        left: 0;
+        width: 180px;
+      }
+    }
+  }
+}
+
+@include mq("smaller") {
+  .navigation {
+    .col-sm-12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .menu {
+    li {
+      border-top: 1px solid #494949;
+    }
+    ul.is-opened {
+      display: block;
+      position: relative;
+      left: 0;
+    }
+    .menu__item--expanded {
+      &.active-trail {
+        & > ul {
+          display: block;
+          position: relative;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.menu__btn {
+  position: absolute;
+  top: 0; right: 0;
+  z-index: 99;
+  display: block;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border-left: 1px solid #494949;
+  background: #333;
+  color: #fff;
+  overflow: hidden;
+  outline: none;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: #000;
+    color: #fff;
+  }
+  .menu ul & {
+    width: 34px;
+    height: 34px;
+  }
+  @include mq("small") {
+    & {
+      display: none;
+    }
+  }
+}
+
+.menu-button {
+  position: relative;
+  display: block;
+  padding: 1em;
+  margin: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 700;
+  background: #333;
+  color: #fff;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 1.75em;
+    right: 1em;
+    display: block;
+    width: 20px;
+  }
+  &:after {
+    height: 9px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+  &:before {
+    top: 1.29em;
+    height: 2px;
+    background: #fff;
+  }
+  &.is-actived {
+    background: #{map-get($colorz, 'default')};
+    &:before,
+    &:after {
+      border: 0;
+      height: 2px;
+      width: 20px;
+      background: #fff;
+    }
+    &:after {
+      transform: rotate(45deg);
+    }
+    &:before {
+      top: 1.75em;
+      transform: rotate(-45deg);
+    }
+  }
+  @include mq("smaller") {
+    & + .menu { display: none; }
+  }
+  @include mq("small") {
+    & { display: none; }
   }
 }

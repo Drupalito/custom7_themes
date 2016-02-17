@@ -85,11 +85,8 @@ Variable `$keyword` possible egal to :
 
 */
 @mixin mq($keyword) {
-  @if $keyword == tiny {
-    @media (max-width: $screen-xs-min) { @content; }
-  }
   @if $keyword == smaller {
-    @media (max-width: $screen-xs-max) { @content; }
+    @media (max-width: $screen-sm-min) { @content; }
   }
   @if $keyword == small {
     @media (min-width: $screen-sm-min) { @content; }

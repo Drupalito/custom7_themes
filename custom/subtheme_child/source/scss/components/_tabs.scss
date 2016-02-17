@@ -1,7 +1,15 @@
 
-// ==========================================================================
-// Tabs
-// ==========================================================================
+/*doc
+---
+title: Tabs
+category: Components - Tabs
+---
+
+```html_example
+
+```
+
+*/
 
 ul.links,
 .tabs--user {
@@ -14,89 +22,8 @@ ul.links,
     border-bottom: 0;
   }
   .active {
-    color: #{map-get($colorz, 'primary')};
-    border-bottom: 0;
     @extend .bold;
+    border-bottom: 0;
+    color: #{map-get($colorz, 'primary')};
   }
 }
-
-
-
-/*doc
----
-title: Tabs
-category: Components - Tabs
----
-
-```html_example
-
-  <div class="tab">
-    <div class="tabPane">
-      <ul class="tabPane__list clearfix">
-        <li class="tabPane__item"><a role="tab" data-toggle="tab" class="tabPane__link" href="#panel-01">First Tab</a></li><li class="tabPane__item active"><a role="tab" data-toggle="tab" class="tabPane__link" href="#panel-02">Second Tab</a></li><li class="tabPane__item"><a role="tab" data-toggle="tab" class="tabPane__link" href="#panel-03">Thrid Tab</a></li>
-      </ul>
-    </div>
-    <div class="tabPane tabPane__panels">
-      <div class="tabPane__content fade" id="panel-01" role="tabpanel" tabindex="0">
-        ...
-      </div>
-      <div class="tabPane__content fade active in" id="panel-02" role="tabpanel" tabindex="1">
-        ...
-      </div>
-      <div class="tabPane__content fade" id="panel-03" role="tabpanel" tabindex="0">
-        ...
-      </div>
-    </div>
-  </div>
-
-```
-
-*/
-
-// .tabPane {
-//   &__list {
-//     @extend .pln;
-//     border-left: 1px solid #ccc;
-//   }
-//   &__item {
-//     display: inline-block;
-//     vertical-align: bottom;
-//     margin-bottom: -1px;
-//     &.active {
-//       a,
-//       a:hover,
-//       a:focus {
-//         font-weight: bold;
-//         background: #ccc;
-//         color: #000;
-//       }
-//       a:before {
-//         content: " ";
-//         position: absolute;
-//         top: -4px; right: -1px; left: -1px;
-//         border-top: 3px solid #{map-get($colorz, 'primary')};
-//       }
-//     }
-//     a {
-//       display: inline-block;
-//       position: relative;
-//       padding: 10px 15px;
-//       margin: 0;
-//       border-right: 1px solid #ccc;
-//       border-top: 1px solid #ccc;
-//       border-bottom: 1px solid #ccc;
-//       background: #f7f7f7;
-//       color: #333;
-//     }
-//   }
-//   &__panels {
-//     padding: 20px;
-//     border: 1px solid #ccc;
-//   }
-//   &__content {
-//     @extend .hide;
-//     &.active {
-//       @extend .show;
-//     }
-//   }
-// }

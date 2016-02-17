@@ -119,7 +119,7 @@ function astarter_pager($variables) {
       );
     }
     return '
-    <div class="pagination mtl text-center clearfix">
+    <div class="pagination text-center clearfix">
       <h2 class="pagination__title hide">' .
         t('Page @current of @max', array('@current' => $pager_current, '@max' => $pager_max))
       . '</h2>' . theme('item_list', array(

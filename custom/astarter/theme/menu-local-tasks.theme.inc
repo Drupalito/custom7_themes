@@ -2,11 +2,11 @@
 
 /**
  * @file
- * Contains the theme function override for 'menu_link'.
+ * Contains the theme function override for 'menu_local_tasks'.
  */
 
 /**
- * Implements theme_menu_link().
+ * Implements theme_menu_local_tasks().
  *
  * Remove Title Hn
  *

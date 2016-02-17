@@ -13,7 +13,7 @@
     <header class="header mbm">
       <?php if (!$page && $title): ?>
         <?php print render($title_prefix); ?>
-          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+          <h2<?php print $title_attributes; ?>><a class="node__link" href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
         <?php print render($title_suffix); ?>
       <?php endif; ?>
 

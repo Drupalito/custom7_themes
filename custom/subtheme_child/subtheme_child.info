@@ -22,7 +22,6 @@ regions[breadcrumb]     = Breadcrumb
 regions[content]        = Content
 regions[sidebar_first]  = Left sidebar (Aside)
 regions[sidebar_second] = Right sidebar (Aside)
-regions[footer_related] = Contentinfo Releated (Before Footer)
 regions[footer]         = Contentinfo (Footer)
 
 ; The page_top and page_bottom regions are hidden, which means they will not
@@ -32,21 +31,21 @@ regions[page_top]    = Page top
 regions[page_bottom] = Page bottom
 
 ; Set the default values of settings on the theme-settings.php form.
-settings[newtheme_sub_company_name]         = ''
-settings[newtheme_sub_company_email]        = 'axel@aquelito.fr'
-settings[newtheme_sub_company_street_line1] = ''
-settings[newtheme_sub_company_street_line2] = ''
-settings[newtheme_sub_company_postal_code]  = ''
-settings[newtheme_sub_company_locality]     = ''
-settings[newtheme_sub_company_phone1]       = ''
-settings[newtheme_sub_company_fax1]         = ''
+settings[subtheme_child_company_name]         = ''
+settings[subtheme_child_company_email]        = 'axel@aquelito.fr'
+settings[subtheme_child_company_street_line1] = ''
+settings[subtheme_child_company_street_line2] = ''
+settings[subtheme_child_company_postal_code]  = ''
+settings[subtheme_child_company_locality]     = ''
+settings[subtheme_child_company_phone1]       = ''
+settings[subtheme_child_company_fax1]         = ''
 
-settings[newtheme_sub_breadcrumb]           = yes
-settings[newtheme_sub_breadcrumb_separator] = ' › '
-settings[newtheme_sub_breadcrumb_home]      = 1
-settings[newtheme_sub_breadcrumb_trailing]  = 0
-settings[newtheme_sub_breadcrumb_title]     = 1
-settings[newtheme_sub_rebuild_registry]     = 1
+settings[subtheme_child_breadcrumb]           = yes
+settings[subtheme_child_breadcrumb_separator] = ' › '
+settings[subtheme_child_breadcrumb_home]      = 1
+settings[subtheme_child_breadcrumb_trailing]  = 0
+settings[subtheme_child_breadcrumb_title]     = 1
+settings[subtheme_child_rebuild_registry]     = 1
 
-settings[newtheme_sub_header_fix]           = 0
-settings[newtheme_sub_debug_css_grid]       = 0
+settings[subtheme_child_header_fix]           = 0
+settings[subtheme_child_debug_css_grid]       = 0

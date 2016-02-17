@@ -1,5 +1,6 @@
 
 /*
+subtheme_child Drupal Theme
 Main stylesheet
 
 Author : Axel Roche <axel@aquelito.fr>
@@ -24,8 +25,10 @@ MIT 2016
 
 // Components
 @import
+  'components/block',
   'components/breadcrumb',
   'components/button',
+  'components/fields',
   'components/icons',
   'components/message',
   'components/pagination',
@@ -34,8 +37,6 @@ MIT 2016
   'components/video';
 
 @import
-  'components/carousel',
-  'components/collapse',
   'components/comments',
   'components/modal',
   'components/search-form',
@@ -49,11 +50,11 @@ MIT 2016
   'layers/footer',
   'layers/navigation',
   'layers/aside',
+  'layers/nodes',
   'layers/form';
 
 // Pages
 @import
   'pages/contact',
   'pages/frontpage',
-  'pages/page',
   'pages/user';

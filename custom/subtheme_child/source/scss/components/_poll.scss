@@ -42,7 +42,10 @@ category: Components - Poll
     background: #fff;
   }
   &-bars {
-    margin-top: 10px;
+    margin-top: rhythm(1);
+    &:first-child {
+      margin-top: 0;
+    }
     &__bar {
     }
     .foreground {
@@ -51,6 +54,6 @@ category: Components - Poll
     }
   }
   &-results {
-    padding: 20px;
+    padding: 1.5em;
   }
 }

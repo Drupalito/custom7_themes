@@ -39,9 +39,9 @@ Pour une action, préférer un `<button>` à un lien `<a>`
   white-space: nowrap;
   cursor: pointer;
   outline: none;
-  transition-timing-function: ease;
+  transition-timing-function: ease-in;
   transition-property: background-color;
-  transition-duration: .3s;
+  transition-duration: .250s;
   &:hover,
   &:focus,
   &:active,
@@ -101,7 +101,7 @@ Couleurs disponibles.
   .btn--#{$name} {
     background-color: $color;
     color: #fff;
-    &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active, &.active {
       border-color: $color;
       background-color: darken($color, 10%);
     }
@@ -118,10 +118,10 @@ category: Components - Buttons
 
 ```html_example
 
-  <button class="btn btn--active">Submit</button>
-  <input id="submit" name="submit" class="btn btn--active" type="submit" value="Submit" />
-  <span class="btn btn--active">Submit</span>
-  <a href="#" class="btn btn--active">Submit</a>
+  <button class="btn active">Submit</button>
+  <input id="submit" name="submit" class="btn active" type="submit" value="Submit" />
+  <span class="btn active">Submit</span>
+  <a href="#" class="btn active">Submit</a>
 
 ```
 

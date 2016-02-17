@@ -21,7 +21,6 @@ regions[breadcrumb]     = Breadcrumb
 regions[content]        = Content
 regions[sidebar_first]  = Left sidebar (Aside)
 regions[sidebar_second] = Right sidebar (Aside)
-regions[footer_related] = Contentinfo Releated (Before Footer)
 regions[footer]         = Contentinfo (Footer)
 
 ; The page_top and page_bottom regions are hidden, which means they will not

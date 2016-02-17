@@ -10,13 +10,24 @@ Lorsque vous avez besoin de dévlivrer un message de notification, utiliser des 
 
 ```html_example
 
-  <div role="alert" class="message message--info mvn clearfix">
-    <h2 class="message__title hide">Message</h2>
-    <div class="message__content">
-      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
-      <ul class="message__list">
-        <li class="message__item">Le champ Nom d'utilisateur est requis.</li>
-        <li class="message__item">Le champ Mot de passe est requis.</li>
+  <div role="alert" class="messages messages--info messages--icon clearfix">
+    <h2 class="messages__title hide">Message</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="messages__list">
+        <li class="messages__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="messages__item">Le champ Mot de passe est requis.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div role="alert" class="messages messages--info clearfix">
+    <h2 class="messages__title hide">Message</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="messages__list">
+        <li class="messages__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="messages__item">Le champ Mot de passe est requis.</li>
       </ul>
     </div>
   </div>
@@ -31,12 +42,20 @@ title: Message error
 category: Components - Messages
 ---
 
-Add `.message--error`
+Modifier `.messages--error` && `.messages--icon`
 
-  <div role="alert" class="message message--error mvn clearfix">
-    <h2 class="message__title hide">Message d'erreur</h2>
-    <div class="message__content">
-      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a><br />
+  <div role="alert" class="messages messages--error messages--icon clearfix">
+    <h2 class="messages__title hide">Message d'erreur</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a><br />
+      Nous vous recommadons de vérifier les données.</p>
+    </div>
+  </div>
+
+  <div role="alert" class="messages messages--error clearfix">
+    <h2 class="messages__title hide">Message d'erreur</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a><br />
       Nous vous recommadons de vérifier les données.</p>
     </div>
   </div>
@@ -49,15 +68,26 @@ title: Message warning
 category: Components - Messages
 ---
 
-Add `.message--warning`
+Modifier `.messages--warning` && `.messages--icon`
 
-  <div role="alert" class="message message--warning mvn clearfix">
-    <h2 class="message__title hide">Message d'alerte</h2>
-    <div class="message__content">
-      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
-      <ul class="message__list">
-        <li class="message__item">Le champ Nom d'utilisateur est requis.</li>
-        <li class="message__item">Le champ Mot de passe est requis.</li>
+  <div role="alert" class="messages messages--warning messages--icon clearfix">
+    <h2 class="messages__title hide">Message d'alerte</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="messages__list">
+        <li class="messages__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="messages__item">Le champ Mot de passe est requis.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div role="alert" class="messages messages--warning clearfix">
+    <h2 class="messages__title hide">Message d'alerte</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="messages__list">
+        <li class="messages__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="messages__item">Le champ Mot de passe est requis.</li>
       </ul>
     </div>
   </div>
@@ -70,33 +100,45 @@ title: Message success
 category: Components - Messages
 ---
 
-Add `.message--status`
+Modifier `.messages--status` && `.messages--icon`
 
-  <div role="alert" class="message message--status clearfix">
-    <h2 class="message__title hide">Message succès</h2>
-    <div class="message__content">
-      <p class="message__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
-      <ul class="message__list">
-        <li class="message__item">Le champ Nom d'utilisateur est requis.</li>
-        <li class="message__item">Le champ Mot de passe est requis.</li>
+  <div role="alert" class="messages messages--status messages--icon clearfix">
+    <h2 class="messages__title hide">Message succès</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="messages__list">
+        <li class="messages__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="messages__item">Le champ Mot de passe est requis.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div role="alert" class="messages messages--status clearfix">
+    <h2 class="messages__title hide">Message succès</h2>
+    <div class="messages__content">
+      <p class="messages__description">Nous avons trouver des erreurs, <a href="#">lien texte</a></p>
+      <ul class="messages__list">
+        <li class="messages__item">Le champ Nom d'utilisateur est requis.</li>
+        <li class="messages__item">Le champ Mot de passe est requis.</li>
       </ul>
     </div>
   </div>
 
 */
 
-.message {
+.messages {
+  @extend .mtn;
   min-height: $base-line-height * 4;
   padding: 1.5em;
   margin: rhythm(1) 0;
   border-left: 1.5em solid;
   background: #ccc;
-  p {
-    margin-top: rhythm(0.5);
-    margin-bottom: rhythm(0.5);
-    &:last-child  { @extend .mbn; }
+  p, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    // &:first-child { @extend .mtn; }
+    // &:last-child { @extend .mbn; }
   }
-  &, p:first-child { @extend .mtn; }
   a {
     @extend .bold;
     &:hover,
@@ -111,21 +153,26 @@ Add `.message--status`
   }
   &__content {
     position: relative;
-    padding-left: 4.5em;
-    &:before {
-      @extend .i;
-      position: absolute;
-      top: 0; left: 0;
-      font-size: 3em;
+  }
+  &--icon {
+    .messages__content {
+      position: relative;
+      padding-left: 4.5em;
+      &:before {
+        @extend .i;
+        position: absolute;
+        top: 0; left: 0;
+        font-size: 3em;
+      }
     }
   }
   @each $name, $values in $message {
-    $icon: map-get($values, 'icon'); // map-deep-get($values, $name, 'icon');
-    $background: map-get($values, 'background'); // map-deep-get($values, $name, 'background');
+    $icon: map-get($values, 'icon');
+    $background: map-get($values, 'background');
     &--#{$name} {
       border-color: $background;
       background: lighten($background, 45%);
-      .message__content {
+      &.messages--icon .messages__content {
         &:before {
           @extend #{$icon};
           color: $background;
@@ -143,11 +190,11 @@ category: Components - Messages
 
 ```html_example
 
-  <p class="muted mvn">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--muted mtl mbn">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, magni voluptatum, earum porro asperiores, quam quos dolorum quia quae quod laborum consequuntur. Laboriosam voluptates ex minus quidem a non officiis.</p>
   <p class="text text--info mvn">Lorem ipsum dolor sit amet.</p>
   <p class="text text--error mvn">Lorem ipsum dolor sit amet.</p>
   <p class="text text--warning mvn">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--status mtn mbl">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--status mvn">Lorem ipsum dolor sit amet.</p>
 
 ```
 */
@@ -158,21 +205,28 @@ title: Texte alerte icons
 category: Components - Messages
 ---
 
+Combine `.text` with `.text--icon` and icon `.i-info`
+
 ```html_example
 
-  <p class="muted mtl mbn"><span class="i i-info"></span> Lorem ipsum dolor sit amet.</p>
-  <p class="text text--info mvn"><span class="i i-info"></span> Lorem ipsum dolor sit amet.</p>
-  <p class="text text--error mvn"><span class="i i-error"></span> Lorem ipsum dolor sit amet.</p>
-  <p class="text text--warning mvn"><span class="i i-warning"></span> Lorem ipsum dolor sit amet.</p>
-  <p class="text text--status mvn"><span class="i i-check"></span> Lorem ipsum dolor sit amet.</p>
+  <p class="text text--muted mtl mbn text--icon i-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, magni voluptatum, earum porro asperiores, quam quos dolorum quia quae quod laborum consequuntur. Laboriosam voluptates ex minus quidem a non officiis.</p>
+  <p class="text text--info mvn text--icon i-info">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--error mvn text--icon i-error">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--warning mvn text--icon i-warning">Lorem ipsum dolor sit amet.</p>
+  <p class="text text--status mvn text--icon i-check">Lorem ipsum dolor sit amet.</p>
 
 ```
 
 */
 
-.muted { color: #999; }
-
 .text {
+  &--icon:before {
+    @extend .i;
+    margin-right: 5px;
+  }
+  &--muted {
+    color: #999;
+  }
   @each $name, $values in $message {
     $color: map-get($values, 'background');
     &--#{$name} {

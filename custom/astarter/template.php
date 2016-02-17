@@ -30,7 +30,7 @@ function astarter_theme_registry_alter(&$registry) {
  * @see theme_menu_tree()
  */
 function astarter_menu_tree__main_menu($variables) {
-  return '<ul class="menu list-inline">' . $variables['tree'] . '</ul>';
+  return '<ul class="menu">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -136,8 +136,7 @@ function astarter_html_head_alter(&$head_elements) {
  */
 function astarter_js_alter(&$js) {
   $exclude = array(
-    'misc/tableheader.js' => FALSE,
-    // 'misc/textarea.js' => FALSE,
+    // 'misc/tableheader.js' => FALSE,
   );
   $js = array_diff_key($js, $exclude);
 }
@@ -203,8 +202,8 @@ function astarter_css_alter(&$css) {
     'modules/system/system-rtl.css' => FALSE,
     'modules/system/system-log.css' => FALSE,
     'modules/system/system.admin.css' => FALSE,
-    'modules/system/system.base.css' => FALSE,
-    'modules/system/system.base-rtl.css' => FALSE,
+    // 'modules/system/system.base.css' => FALSE,
+    // 'modules/system/system.base-rtl.css' => FALSE,
     'modules/system/system.behavior.css' => FALSE,
     'modules/system/system.behavior-rtl.css' => FALSE,
     'modules/system/system.maintenance.css' => FALSE,

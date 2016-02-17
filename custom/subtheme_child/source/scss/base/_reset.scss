@@ -98,6 +98,7 @@ ul,
 ol,
 dl,
 table,
+.table-responsive,
 .alignleft,
 .alignright,
 .alignnone {
@@ -112,6 +113,7 @@ ol:first-child,
 dl:first-child,
 pre:first-child,
 blockquote:first-child,
+table:first-child,
 h1:first-child,
 h2:first-child,
 h3:first-child,
@@ -126,7 +128,8 @@ ul:last-child,
 ol:last-child,
 dl:last-child,
 pre:last-child,
-blockquote:last-child {
+blockquote:last-child,
+table:last-child {
   margin-bottom: 0;
 }
 
@@ -419,10 +422,10 @@ category: Base - Base
 
 */
 
-blockquote,
-pre {
-  padding-left: $grid-gutter-width;
-  border-left: 3px solid;
+pre,
+blockquote {
+  padding-left: 1.5em;
+  border-left: 1.5em solid;
   clear: both;
 }
 
@@ -661,11 +664,29 @@ table {
   table-layout: fixed;
 }
 
+th, th a {
+  background: $body-color;
+  color: #fff;
+}
+
+th.active,
+th.active a {
+  background: #{map-get($colorz, 'primary')};
+  color: #fff;
+}
+
+td.active {
+  background: #ddd;
+}
+
 th,
 td {
   padding: rhythm(0.5) ($grid-gutter-width / 2);
   border-bottom: 1px solid #ccc;
   text-align: left;
+  .views-row-last & {
+    border-bottom: 0;
+  }
 }
 
 tfoot {
@@ -686,29 +707,39 @@ caption {
 
 tbody {
   border: 1px solid #ccc;
-  tr:nth-child(odd) {
-    background: #f7f7f7;
-  }
-  tr > * + * {
-    border-left: 1px solid #ccc;
+  tr {
+    &:nth-child(odd) {
+      background: #ececec;
+    }
+    &:nth-child(even) {
+      background: #f7f7f7;
+    }
+    > * + * {
+      border-left: 1px solid #ccc;
+    }
   }
 }
 
-@include mq('small') {
-  .table-responsive {
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: 1px solid #ccc;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    th,
-    td {
-      white-space: nowrap;
+.table-responsive {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border: 1px solid #ccc;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  th,
+  td {
+    white-space: nowrap;
+  }
+  td {
+    .views-row-last & {
+      border-bottom: 0;
     }
-    tbody {
-      border-left: 0;
-    }
+  }
+  tbody {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
   }
 }
 

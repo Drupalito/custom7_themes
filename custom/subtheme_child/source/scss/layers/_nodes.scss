@@ -1,0 +1,57 @@
+
+/*doc
+---
+title: Node
+category: Pages - Node
+---
+
+Content type : **Node**
+
+*/
+
+// Global
+.node {
+  &__title {
+    text-transform: uppercase;
+  }
+  &__link {
+    border-bottom: 0;
+    text-decoration: none;
+  }
+  &--table,
+  &--teaser {
+    padding: 2em;
+    margin-bottom: 2em;
+    background: #fff;
+  }
+  &--teaser {
+    &.node--promoted {
+    }
+    &.node--sticky {
+      background: #333;
+      &, a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Node type article
+.node-type-article {
+
+  .main__header {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: rhythm(0.5, $base-font-size);
+    margin-bottom: rhythm(1, $base-font-size);
+    ul {
+      @extend .list-inline;
+      @extend .list-separate;
+      margin-top: 0;
+    }
+  }
+}

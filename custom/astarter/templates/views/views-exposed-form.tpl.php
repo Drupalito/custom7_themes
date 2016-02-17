@@ -30,7 +30,7 @@
 <div class="views-exposed-form clearfix">
   <?php foreach ($widgets as $id => $widget): ?>
     <div class="views-widget">
-      <?php print str_replace('form-item form-type--select', 'col-xs-12 text-center', $widget->widget); ?>
+      <?php print $widget->widget; ?>
     </div>
   <?php endforeach; ?>
 </div>

@@ -15,9 +15,9 @@
       <?php print $search_results; ?>
     </div>
   <?php else: ?>
-    <div class="message message--info mbn clearfix">
-      <div class="message__content">
-        <p class="messsage__description mvn"><?php print t('No result for your search'); ?> <q class="bold"></q>.</p>
+    <div class="messages messages--info messages--icon mbn clearfix">
+      <div class="messages__content">
+        <p class="messages__description mvn"><?php print t('No result for your search'); ?> <q class="bold"></q>.</p>
         <?php print search_help('search#noresults', drupal_help_arg()); ?>
       </div>
     </div>

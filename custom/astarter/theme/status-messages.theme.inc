@@ -25,23 +25,23 @@ function astarter_status_messages($variables) {
   );
 
   foreach (drupal_get_messages($display) as $type => $message) {
-    $output .= '<div class="message message--' . $type . ' clearfix">';
+    $output .= '<div class="messages messages--icon messages--' . $type . ' clearfix">';
     if (!empty($status_heading[$type])) {
-      $output .= '<h2 class="message__title hide">' . $status_heading[$type] . '</h2>';
+      $output .= '<h2 class="messages__title hide">' . $status_heading[$type] . '</h2>';
     }
-    $output .= '<div class="message__content">';
+    $output .= '<div class="messages__content">';
     if (count($message) > 1) {
-      $output .= '<ul class="message__list">';
+      $output .= '<ul class="messages__list">';
       foreach ($message as $message) {
-        $output .= '<li class="message__item">' . $message . '</li>';
+        $output .= '<li class="messages__item">' . $message . '</li>';
       }
       $output .= '</ul>';
     }
     elseif (strpos($message[0], '<pre>') !== TRUE) {
-      $output .= '<div class="message__description">' . $message[0] . '</div>';
+      $output .= '<div class="messages__description">' . $message[0] . '</div>';
     }
     else {
-      $output .= '<p class="message__description">' . $message[0] . '</p>';
+      $output .= '<p class="messages__description">' . $message[0] . '</p>';
     }
     $output .= '</div>';
     $output .= '</div>';

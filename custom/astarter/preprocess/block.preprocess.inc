@@ -45,7 +45,7 @@ function astarter_preprocess_block(&$variables, $hook) {
   if (isset($variables['block_html_id']) && $variables['block_html_id'] == 'block-system-main-menu') {
     $variables['theme_hook_suggestions'][] = 'block__minimal';
     unset($variables['classes_array']);
-    $variables['classes_array'][] = 'col-xs-12';
+    $variables['classes_array'][] = 'col-sm-12';
   }
 
   // Add default CSS class on block region.

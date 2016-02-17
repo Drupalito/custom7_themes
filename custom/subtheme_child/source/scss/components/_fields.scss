@@ -1,0 +1,15 @@
+
+/*doc
+---
+title: Fields
+category: Components - Fields
+---
+
+*/
+
+.field--name-field-image {
+  .node--full & {
+    @extend .text-center;
+    @extend .mvl;
+  }
+}

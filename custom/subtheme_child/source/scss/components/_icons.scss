@@ -10,20 +10,26 @@ Toutes les class d'icones doivent être associé avec `.i`
 
 ```html_example
 
-  <span class="i i-close" aria-hidden="true"></span>
-  <span class="i i-navicon" aria-hidden="true"></span>
-  <span class="i i-chevron-left" aria-hidden="true"></span>
-  <span class="i i-chevron-right" aria-hidden="true"></span>
-  <span class="i i-arrow-left" aria-hidden="true"></span>
-  <span class="i i-arrow-right" aria-hidden="true"></span>
-  <span class="i i-external" aria-hidden="true"></span>
+  <span class="i i-mail" aria-hidden="true"></span>
+  <span class="i i-bubble" aria-hidden="true"></span>
   <span class="i i-search" aria-hidden="true"></span>
-  <span class="i i-upload" aria-hidden="true"></span>
-  <span class="i i-warning" aria-hidden="true"></span>
   <span class="i i-help" aria-hidden="true"></span>
-  <span class="i i-info" aria-hidden="true"></span>
+  <span class="i i-plus" aria-hidden="true"></span>
+  <span class="i i-minus" aria-hidden="true"></span>
   <span class="i i-error" aria-hidden="true"></span>
+  <span class="i i-info" aria-hidden="true"></span>
+  <span class="i i-warning" aria-hidden="true"></span>
+  <span class="i i-blocked" aria-hidden="true"></span>
+  <span class="i i-cross" aria-hidden="true"></span>
   <span class="i i-check" aria-hidden="true"></span>
+  <span class="i i-arrow-up" aria-hidden="true"></span>
+  <span class="i i-arrow-right" aria-hidden="true"></span>
+  <span class="i i-arrow-down" aria-hidden="true"></span>
+  <span class="i i-arrow-left" aria-hidden="true"></span>
+  <span class="i i-arrow-up5" aria-hidden="true"></span>
+  <span class="i i-arrow-right5" aria-hidden="true"></span>
+  <span class="i i-arrow-down5" aria-hidden="true"></span>
+  <span class="i i-arrow-left5" aria-hidden="true"></span>
 
 ```
 
@@ -58,17 +64,24 @@ Toutes les class d'icones doivent être associé avec `.i`
 }
 
 // Icons
-.i-close:before         { content: "\e605"; }
-.i-navicon:before       { content: "\e606"; }
-.i-chevron-left:before  { content: "\e601"; }
-.i-chevron-right:before { content: "\e602"; }
-.i-arrow-left:before    { content: "\e603"; }
-.i-arrow-right:before   { content: "\e604"; }
-.i-external:before      { content: "\e925"; }
-.i-search:before        { content: "\e986"; }
-.i-upload:before        { content: "\e9c7"; }
-.i-warning:before       { content: "\ea07"; }
-.i-help:before          { content: "\ea09"; }
-.i-info:before          { content: "\ea0c"; }
-.i-error:before         { content: "\ea0d"; }
-.i-check:before         { content: "\ea10"; }
+.i-mail:before { content: "\ea30"; }
+.i-bubble:before { content: "\ead8"; }
+.i-search:before { content: "\eb30"; }
+.i-help:before { content: "\ed55"; }
+.i-plus:before { content: "\ed5d"; }
+.i-minus:before { content: "\ed5e"; }
+.i-error:before { content: "\ed65"; }
+.i-info:before { content: "\ed51"; }
+.i-warning:before { content: "\ed4f"; }
+.i-blocked:before { content: "\ed67"; }
+.i-cross:before { content: "\ed6d"; }
+.i-check:before { content: "\ed6f"; }
+.menu__btn.submenu-opened > .i-arrow-down:before,
+.i-arrow-up:before { content: "\edb9"; }
+.i-arrow-right:before { content: "\edbd"; }
+.i-arrow-down:before { content: "\edc1"; }
+.i-arrow-left:before { content: "\edc5"; }
+.i-arrow-up5:before { content: "\edc7"; }
+.i-arrow-right5:before { content: "\edc8"; }
+.i-arrow-down5:before { content: "\edc9"; }
+.i-arrow-left5:before { content: "\edca"; }
