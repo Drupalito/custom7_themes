@@ -120,9 +120,38 @@
         }
       });
 
-      $("#block-system-main-menu").navigation();
+      $('#block-system-main-menu', context).navigation();
 
     }
   };
 
+
+/**
+ * Generate the themed representation of a Drupal object.
+ *
+ * All requests for themed output must go through this function. It examines
+ * the request and routes it to the appropriate theme function. If the current
+ * theme does not provide an override function, the generic theme function is
+ * called.
+ *
+ * For example, to retrieve the HTML for text that should be emphasized and
+ * displayed as a placeholder inside a sentence, call
+ * Drupal.theme('placeholder', text).
+ *
+ * @param func
+ *   The name of the theme function to call.
+ * @param ...
+ *   Additional arguments to pass along to the theme function.
+ * @return
+ *   Any data the theme function returns. This could be a plain HTML string,
+ *   but also a complex object.
+ */
+// Drupal.theme = function (func) {
+//   var args = Array.prototype.slice.apply(arguments, [1]);
+console.log(Drupal.behaviors);
+//   return (Drupal.theme[func] || Drupal.theme.prototype[func]).apply(this, args);
+// };
+
+
 })(jQuery, window, Drupal);
+

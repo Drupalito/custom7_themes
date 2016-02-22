@@ -7,6 +7,13 @@ category: Components - Fields
 
 */
 
+// DrupalCSSDefault
+.field {
+  &-label {
+    @extend .strong;
+  }
+}
+
 .field--name-field-image {
   .node--full & {
     @extend .text-center;

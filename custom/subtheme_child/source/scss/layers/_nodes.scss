@@ -9,6 +9,13 @@ Content type : **Node**
 
 */
 
+.preview .node {
+  background: #ffffea;
+}
+td.revision-current {
+  background: #ffc;
+}
+
 // Global
 .node {
   &__title {
@@ -23,6 +30,10 @@ Content type : **Node**
     padding: 2em;
     margin-bottom: 2em;
     background: #fff;
+  }
+  &--unpublished {
+    padding: 10px;
+    background: #fff4f4;
   }
   &--teaser {
     &.node--promoted {
