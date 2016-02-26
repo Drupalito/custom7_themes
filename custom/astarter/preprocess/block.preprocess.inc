@@ -53,13 +53,10 @@ function astarter_preprocess_block(&$variables, $hook) {
     $variables['classes_array'][] = 'col-xs-12';
     $variables['classes_array'][] = 'col-sm-6';
     $variables['classes_array'][] = 'col-md-3';
-    $variables['classes_array'][] = 'sm-mbl';
   }
 
   $variables['classes_array'] = preg_replace('/^block-/', 'block--', $variables['classes_array']);
 
-  $variables['title_attributes_array']['class'][] = 'h4 caps bold';
   $variables['title_attributes_array']['class'][] = 'block__title';
-  $variables['title_attributes_array']['class'][] = 'mbm';
   $variables['content_attributes_array']['class'][] = 'block__content';
 }
