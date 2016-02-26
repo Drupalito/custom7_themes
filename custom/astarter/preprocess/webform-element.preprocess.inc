@@ -48,6 +48,16 @@ function astarter_preprocess_webform_element(&$variables) {
     $wrapper_classes[] = 'form-item--block';
   }
 
+  // Add a class for disabled elements to facilitate cross-browser styling.
+  if (!empty($element['#webform_component']['extra']['disabled'])) {
+    $wrapper_classes[] = 'form-item--disabled';
+  }
+
+  // Add class error input.
+  if (isset($element['#parents']) && form_get_error($element)) {
+    $wrapper_classes[] = 'has--error';
+  }
+
   $element['#wrapper_attributes']['class'] = array_merge($element['#wrapper_attributes']['class'], $wrapper_classes);
 
   // If #title_display is none, set it to invisible instead - none only used if
