@@ -16,11 +16,11 @@
         title: "Open",
         icon: '<span class="i i-arrow-down" aria-hidden="true"></span>'
       }
-    }
+    };
 
     var plugin = this;
 
-    plugin.settings = {}
+    plugin.settings = {};
 
     var $element = $(element),
          element = element;
@@ -78,21 +78,21 @@
 
 (function ($, window, Drupal) {
 
-  // 'use strict';
-
-  // var jsChildTheme = (function() {
-  //   var custom = {};
-  //   custom.customMethod = function (context, settings) {
-  //     console.log(context);
-  //     console.log(settings);
-  //   };
-  //   return custom;
-  // }());
+  // Smooth scroll anchor
+  Drupal.smoothScroll = function (element) {
+    $(element).on('click', function (e) {
+      e.preventDefault();
+      var target = (this.hash) ? this.hash : 'html';
+      $('html, body').stop().animate({
+        'scrollTop': $(target).offset().top
+      }, 900, function () {
+        window.location.hash = target;
+      });
+    });
+  };
 
   Drupal.behaviors.subtheme_child = {
     attach: function (context, settings) {
-
-      // jsChildTheme.customMethod(context, settings);
 
       // Open links in new window
       $('body', context).on('click', 'a[rel*="external"]', function() {
@@ -100,58 +100,9 @@
         return false;
       });
 
-      // Smooth scroll anchor
-      $('.scroll, #scrollToTop').on('click', function (e) {
-        e.preventDefault();
-        var target = (this.hash) ? this.hash : 'html';
-        $('html, body').stop().animate({
-            'scrollTop': $(target).offset().top
-        }, 900, function () {
-            window.location.hash = target;
-        });
-      });
-
-      // Scrolltop visible or invisible
-      var $scrolltoTop = $('#scrollToTop');
-      $(window).scroll(function() {
-        ($(this).scrollTop() > 300) ? $scrolltoTop.addClass('scrollToTop-visible') : $scrolltoTop.removeClass('scrollToTop-visible scrollToTop-invisible');
-        if ($(this).scrollTop() > 1200) {
-          $scrolltoTop.addClass('scrollToTop-invisible');
-        }
-      });
-
+      // Responsive menu
       $('#block-system-main-menu', context).navigation();
-
     }
   };
 
-
-/**
- * Generate the themed representation of a Drupal object.
- *
- * All requests for themed output must go through this function. It examines
- * the request and routes it to the appropriate theme function. If the current
- * theme does not provide an override function, the generic theme function is
- * called.
- *
- * For example, to retrieve the HTML for text that should be emphasized and
- * displayed as a placeholder inside a sentence, call
- * Drupal.theme('placeholder', text).
- *
- * @param func
- *   The name of the theme function to call.
- * @param ...
- *   Additional arguments to pass along to the theme function.
- * @return
- *   Any data the theme function returns. This could be a plain HTML string,
- *   but also a complex object.
- */
-// Drupal.theme = function (func) {
-//   var args = Array.prototype.slice.apply(arguments, [1]);
-console.log(Drupal.behaviors);
-//   return (Drupal.theme[func] || Drupal.theme.prototype[func]).apply(this, args);
-// };
-
-
 })(jQuery, window, Drupal);
-
