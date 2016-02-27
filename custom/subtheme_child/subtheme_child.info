@@ -1,7 +1,7 @@
 core        = 7.x
 engine      = phptemplate
-name        = Childtheme astarter
-description = Sub Theme for astarter created by <a href="http://aquelito.fr">aQuelito</a>.<br />Please see the included README or our <a href="http://aquelito.fr">support</a>.
+name        = subtheme_child
+description = subtheme_child's sub theme for astarter created by <a href="parms_owner_website">parms_owner</a>.<br />Please see the included README or our <a href="parms_owner_website">support</a>.
 screenshot  = screenshot.png
 base theme  = astarter
 
@@ -32,7 +32,7 @@ regions[page_bottom] = Page bottom
 
 ; Set the default values of settings on the theme-settings.php form.
 settings[subtheme_child_company_name]         = ''
-settings[subtheme_child_company_email]        = 'axel@aquelito.fr'
+settings[subtheme_child_company_email]        = 'parms_owner_email'
 settings[subtheme_child_company_street_line1] = ''
 settings[subtheme_child_company_street_line2] = ''
 settings[subtheme_child_company_postal_code]  = ''
