@@ -25,7 +25,7 @@
     <?php endif; ?>
     </p>
   </div>
-  <div<?php print $content_attributes; ?>>
+  <div class="comment__description col-xs-12 col-sm-9">
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['links']);

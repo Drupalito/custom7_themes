@@ -59,11 +59,6 @@ function astarter_preprocess_comment(&$variables, $hook) {
 
   $variables['classes_array'][] = $variables['zebra'];
 
-  // $variables['title_attributes_array']['class'][] = 'comment__title';
-  $variables['content_attributes_array']['class'][] = 'comment__description';
-  $variables['content_attributes_array']['class'][] = ' col-xs-12 col-sm-9';
-  $variables['content_attributes_array']['itemprop'][] = 'commentText';
-
   // Add pubdate to submitted variable.
   $variables['pubdate'] = $variables['created'];
   $variables['submitted'] = t('!username replied on !datetime', array('!username' => $variables['author'], '!datetime' => $variables['pubdate']));
