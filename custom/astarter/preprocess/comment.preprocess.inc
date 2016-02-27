@@ -12,7 +12,7 @@
  *
  * @see hook_preprocess()
  */
-function astarter_preprocess_comment(&$variables, $hook) {
+function astarter_preprocess_comment(&$variables) {
 
   // Added ID to each comment.
   $variables['attributes_array']['id'][] = 'comment-' . $variables['comment']->cid;
@@ -28,31 +28,22 @@ function astarter_preprocess_comment(&$variables, $hook) {
     $variables['attributes_array']['itemprop'][] = 'comment';
   }
 
+  $variables['picture'] = !empty($variables['picture']) ? '<span class="mrm">' . theme('user_picture', array('account' => $variables['elements']['#comment'])) . '</span>' : '';
+
   // If comment subjects are disabled, don't display them.
   if (variable_get('comment_subject_field_' . $variables['node']->type, 1) == 0) {
     $variables['title'] = '';
   }
 
-  $comment_class_extend = '';
   // Zebra striping.
   if ($variables['id'] == 1) {
-    $comment_class_extend = 'comment-first first';
+    $variables['classes_array'][] = 'comment-first';
+    $variables['classes_array'][] = 'first';
   }
 
   if (isset($variables['node']->comment_count) && $variables['id'] == $variables['node']->comment_count) {
-    $comment_class_extend = 'comment-last last';
-  }
-
-  $variables['classes_array'][] = $comment_class_extend;
-
-  // Check if a commenter is registered. If true then add a class showing so and
-  // also add a class to allow styling based on commenter name. Otherwise flag
-  // the commenter as anonymous.
-  if ($variables['comment']->uid > 0) {
-    $variables['classes_array'][]  = 'comment-author-' . strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', $variables['comment']->registered_name));
-  }
-  else {
-    $variables['classes_array'][]  = 'comment-author-anonymous';
+    $variables['classes_array'][] = 'comment-last';
+    $variables['classes_array'][] = 'last';
   }
 
   $variables['classes_array'] = preg_replace('/^comment-/', 'comment--', $variables['classes_array']);
