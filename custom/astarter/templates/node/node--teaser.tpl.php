@@ -19,7 +19,6 @@
 
       <?php if ($display_submitted): ?>
         <p class="node__submitted submitted mtn">
-          <?php print $user_picture; ?>
           <?php print $submitted; ?>
         </p>
       <?php endif; ?>
