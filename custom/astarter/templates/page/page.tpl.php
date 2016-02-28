@@ -21,7 +21,7 @@
                 <img class="logo__image" src="<?php print $logo; ?>" alt="<?php print variable_get('site_name'); ?> (<?php print t('Home'); ?>)" />
               <?php endif; ?>
               <?php if ($site_name || $site_slogan): ?>
-                <span class="logo__inner inbl amiddle pls">
+                <span class="logo__content inbl amiddle pls">
                   <?php if ($site_name): ?>
                     <span class="logo__name h4 caps show mvn"><?php print $site_name; ?></span>
                   <?php endif; ?>
@@ -57,7 +57,7 @@
 
       <?php
         // Render the sidebars to see if there's anything in them.
-        $sidebar_first  = render($page['sidebar_first']);
+        $sidebar_first = render($page['sidebar_first']);
         if ($sidebar_first): ?>
         <div class="aside aside--left col-xs-12 col-sm-4 xs-mbl">
           <aside id="aside_left" role="complementary" class="aside__region">
@@ -93,7 +93,7 @@
 
       <?php
         // Render the sidebars to see if there's anything in them.
-        $sidebar_second  = render($page['sidebar_second']);
+        $sidebar_second = render($page['sidebar_second']);
         if ($sidebar_second): ?>
         <div class="aside aside--right col-xs-12 col-sm-4 xs-mtl">
           <aside id="aside_right" role="complementary" class="aside__region">
