@@ -31,6 +31,6 @@
   </div>
 
   <div class="links mtm">
-    <a class="btn" href="<?php print $url; ?>"><span class="i i-arrow-left2" aria-hidden="true"></span> <?php print t('Go back to the form') ?></a>
+    <a class="btn btn--primary" href="<?php print $url; ?>"><span class="i i-arrow-left2" aria-hidden="true"></span> <?php print t('Go back to the form') ?></a>
   </div>
 </div>
