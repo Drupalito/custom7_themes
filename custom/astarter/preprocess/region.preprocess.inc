@@ -32,6 +32,5 @@ function astarter_preprocess_region(&$variables, $hook) {
     unset($variables['classes_array'][1]);
     $variables['classes_array'][] = 'breadcrumb';
     $variables['classes_array'][] = 'col-xs-12';
-    $variables['classes_array'][] = 'mbl';
   }
 }
