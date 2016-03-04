@@ -6,19 +6,6 @@
  */
 
 /**
- * Implements hook_menu_breadcrumb_alter().
- *
- * @ingroup themeable
- */
-function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
-  foreach ($active_trail as $id => $trail) {
-    $active_trail[$id]['title'] = '<span itemprop="title">' . $trail['title'] . '</span>';
-    $active_trail[$id]['localized_options']['html'] = TRUE;
-    $active_trail[$id]['localized_options']['attributes']['itemprop'] = 'url';
-  }
-}
-
-/**
  * Implements theme_breadcrumb().
  *
  * @ingroup themeable
@@ -95,14 +82,18 @@ function astarter_breadcrumb(&$variables) {
       $i++;
     }
 
-    $output = '<div id="breadcrumb">';
-    $output .= '<p class="mvn">';
+    $output = '<p class="mvn">';
     $output .= '<span>' . $variables['title'] . '&nbsp;:</span> ';
     $output .= $output_breadcrumb;
     $output .= '</p>';
-    $output .= '</div>';
 
-    // drupal_set_message("<pre>".print_r($crumbs, TRUE)."</pre>");
-    return $output;
+    $render_output = array(
+      '#theme' => 'container',
+      '#children' => $output,
+      '#attributes' => array(
+        'id' => 'breadcrumb'
+      )
+    );
+    return render($render_output);
   }
 }

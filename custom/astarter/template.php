@@ -34,6 +34,19 @@ function astarter_menu_tree__main_menu($variables) {
 }
 
 /**
+ * Implements hook_menu_breadcrumb_alter().
+ *
+ * @ingroup themeable
+ */
+function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
+  foreach ($active_trail as $id => $trail) {
+    $active_trail[$id]['title'] = '<span itemprop="title">' . $trail['title'] . '</span>';
+    $active_trail[$id]['localized_options']['html'] = TRUE;
+    $active_trail[$id]['localized_options']['attributes']['itemprop'] = 'url';
+  }
+}
+
+/**
  * Implements hook_form_alter().
  *
  * @see hook_form_alter()
@@ -75,15 +88,15 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
  */
 function astarter_page_alter(&$page) {
 
-  // Logged in.
-  if (!empty($page['content']['system_main']['content']['search_form'])) {
-    unset($page['content']['system_main']['content']['search_form']);
-  }
+  // // Logged in.
+  // if (!empty($page['content']['system_main']['content']['search_form'])) {
+  //   unset($page['content']['system_main']['content']['search_form']);
+  // }
 
-  // Not logged in.
-  if (!empty($page['content']['system_main']['search_form'])) {
-    unset($page['content']['system_main']['search_form']);
-  }
+  // // Not logged in.
+  // if (!empty($page['content']['system_main']['search_form'])) {
+  //   unset($page['content']['system_main']['search_form']);
+  // }
 
   // Look in each visible region for blocks.
   foreach (system_region_list($GLOBALS['theme'], REGIONS_VISIBLE) as $region => $name) {
@@ -107,23 +120,21 @@ function astarter_page_alter(&$page) {
  * Remove meta generator (module metatag)
  * Remove viewport (module metatag)
  * Remove meta content type
+ * Remove shortlink
  *
  * @ingroup themeable
  */
 function astarter_html_head_alter(&$head_elements) {
 
   $remove = array(
-    'system_meta_generator',
-    'metatag_generator_0',
-    'system_meta_content_type',
-    'viewport',
+    'system_meta_generator' => FALSE,
+    'metatag_generator_0' => FALSE,
+    'system_meta_content_type' => FALSE,
+    'viewport' => FALSE,
+    'metatag_shortlink' => FALSE,
   );
 
-  foreach ($remove as $key) {
-    if (isset($head_elements[$key])) {
-      unset($head_elements[$key]);
-    }
-  }
+  $head_elements = array_diff_key($head_elements, $remove);
 }
 
 /**
@@ -149,75 +160,152 @@ function astarter_js_alter(&$js) {
  * @see hook_css_alter()
  */
 function astarter_css_alter(&$css) {
+  global $theme_key;
+
+  if (isset($css['modules/filter/filter.css'])) {
+    $name = 'modules/filter/filter.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/filter.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/poll/poll.css'])) {
+    $name = 'modules/poll/poll.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/poll.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/search/search.css'])) {
+    $name = 'modules/search/search.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/search.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/node/node.css'])) {
+    $name = 'modules/node/node.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/node.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/block/block.css'])) {
+    $name = 'modules/block/block.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/block.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/field/theme/field.css'])) {
+    $name = 'modules/field/theme/field.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/field.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/comment/comment.css'])) {
+    $name = 'modules/comment/comment.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/comment.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/system/system.base.css'])) {
+    $name = 'modules/system/system.base.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/system.base.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/system/system.menus.css'])) {
+    $name = 'modules/system/system.menus.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/system.menus.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['sites/all/modules/contrib/webform/css/webform.css'])) {
+    $name = 'sites/all/modules/contrib/webform/css/webform.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/webform.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['sites/all/modules/contrib/date/date_api/date.css'])) {
+    $name = 'sites/all/modules/contrib/date/date_api/date.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/date_api.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+
+  // Load custom CSS module after
+  foreach ($css as $key => $value) {
+    if (preg_match("@sites\/all\/modules\/custom@", $key)) {
+      $css[$key]['group'] = CSS_THEME;
+      $css[$key]['weight'] = 0;
+    }
+  }
+
   $exclude = array(
     'misc/vertical-tabs.css' => FALSE,
-    'sites/all/modules/contrib/date/date_api/date.css' => FALSE,
-    'sites/all/modules/contrib/date/date_repeat_field/date_repeat_field.css' => FALSE,
+    // 'sites/all/modules/contrib/date/date_api/date.css' => FALSE,
+    // 'sites/all/modules/contrib/date/date_repeat_field/date_repeat_field.css' => FALSE,
     'sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css' => FALSE,
     'sites/all/modules/contrib/files_undo_remove/files_undo_remove.css' => FALSE,
     'modules/aggregator/aggregator.css' => FALSE,
     'modules/aggregator/aggregator-rtl.css' => FALSE,
-    'modules/block/block.css' => FALSE,
-    'modules/block/block-rtl.css' => FALSE,
+    // 'modules/block/block.css' => FALSE,
     'modules/book/book.css' => FALSE,
     'modules/book/book-rtl.css' => FALSE,
-    'modules/comment/comment.css' => FALSE,
+    // 'modules/comment/comment.css' => FALSE,
     'modules/comment/comment-rtl.css' => FALSE,
     'modules/contextual/contextual.css' => FALSE,
     'modules/dashboard/dashboard.css' => FALSE,
     'modules/dashboard/dashboard-rtl.css' => FALSE,
-    'modules/system/defaults.css' => FALSE,
-    'modules/system/defaults-rtl.css' => FALSE,
     'modules/dblog/dblog.css' => FALSE,
     'modules/dblog/dblog-rtl.css' => FALSE,
-    'modules/field/theme/field.css' => FALSE,
+    // 'modules/field/theme/field.css' => FALSE,
     'modules/field/field-rtl.css' => FALSE,
     'modules/field_ui/field_ui.css' => FALSE,
     'modules/field_ui/field_ui-rtl.css' => FALSE,
     'sites/all/modules/contrib/field_group/field_group.field_ui.css' => FALSE,
-    'modules/contrib/file/file.css' => FALSE,
-    'modules/contrib/filter/filter.css' => FALSE,
-    'modules/contrib/filter/filter-rtl.css' => FALSE,
+    'modules/file/file.css' => FALSE,
+    // 'modules/filter/filter.css' => FALSE,
+    'modules/filter/filter-rtl.css' => FALSE,
     'modules/forum/forum.css' => FALSE,
     'modules/forum/forum-rtl.css' => FALSE,
     'modules/help/help.css' => FALSE,
     'modules/locale/locale.css' => FALSE,
     'modules/locale/locale-rtl.css' => FALSE,
     'modules/menu/menu.css' => FALSE,
-    'modules/node/node.css' => FALSE,
+    // 'modules/node/node.css' => FALSE,
     'modules/node/node-rtl.css' => FALSE,
-    'sites/all/modules/contrib/openid/openid.css' => FALSE,
-    'sites/all/modules/openid/openid-rtl.css' => FALSE,
-    'modules/poll/poll.css' => FALSE,
+    'modules/openid/openid.css' => FALSE,
+    'modules/openid/openid-rtl.css' => FALSE,
+    // 'modules/poll/poll.css' => FALSE,
     'modules/poll/poll-rtl.css' => FALSE,
     'modules/profile/profile.css' => FALSE,
-    'modules/search/search.css' => FALSE,
+    // 'modules/search/search.css' => FALSE,
     'modules/search/search-rtl.css' => FALSE,
-    'modules/statistics/statistics.css' => FALSE,
-    'modules/syslog/syslog.css' => FALSE,
-    'modules/system/admin.css' => FALSE,
-    'modules/system/admin-rtl.css' => FALSE,
-    'modules/system/maintenance.css' => FALSE,
-    'modules/system/system.css' => FALSE,
-    'modules/system/system-rtl.css' => FALSE,
-    'modules/system/system-log.css' => FALSE,
     'modules/system/system.admin.css' => FALSE,
+    'modules/system/system.admin-rtl.css' => FALSE,
     // 'modules/system/system.base.css' => FALSE,
     // 'modules/system/system.base-rtl.css' => FALSE,
-    'modules/system/system.behavior.css' => FALSE,
-    'modules/system/system.behavior-rtl.css' => FALSE,
     'modules/system/system.maintenance.css' => FALSE,
-    'modules/system/system.menus.css' => FALSE,
+    // 'modules/system/system.menus.css' => FALSE,
     'modules/system/system.menus-rtl.css' => FALSE,
     'modules/system/system.messages.css' => FALSE,
     'modules/system/system.messages-rtl.css' => FALSE,
     'modules/system/system.theme.css' => FALSE,
     'modules/system/system.theme-rtl.css' => FALSE,
-    'sites/all/modules/contrib/taxonomy/taxonomy.css' => FALSE,
-    'sites/all/modules/contrib/tracker/tracker.css' => FALSE,
-    'modules/contrib/update/update.css' => FALSE,
+    'modules/taxonomy/taxonomy.css' => FALSE,
+    'modules/tracker/tracker.css' => FALSE,
+    'modules/update/update.css' => FALSE,
     'modules/user/user.css' => FALSE,
     'modules/user/user-rtl.css' => FALSE,
+    // 'sites/all/modules/contrib/webform/css/webform.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor-rtl.css' => FALSE,
     'sites/all/modules/contrib/panels/css/panels.css' => FALSE,
