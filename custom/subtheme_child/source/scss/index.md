@@ -1,7 +1,11 @@
 
 # subtheme_child
 
-Documentation CSS et Styleguide. [Idiomatic CSS](idiomatic.html).
+subtheme_child's sub theme for astarter created by [parms_owner](parms_owner_website).<br/>Please see the included README or our [support](parms_owner_website).
+
+The styleguide, settings components, and guidelines that help define the next Thème Drupal.
+
+[Idiomatic CSS](idiomatic.html).
 
 ## Settings
 
@@ -32,6 +36,3 @@ Typography
 | default | <span style="color:#2a4e6e">#2a4e6e</span> | <span class="default-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="default-color pas">Lorem Ipsum</span>
 | primary | <span style="color:#aa5c39">#aa5c39</span> | <span class="primary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="primary-color pas">Lorem Ipsum</span>
 | secondary | <span style="color:#aa8c39">#aa8c39</span> | <span class="secondary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="secondary-color pas">Lorem Ipsum</span>
-| black | <span style="color:#333">#333</span> | <span class="black-background white-color bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="black-color pas">Lorem Ipsum</span>
-| white | <span style="color:#fff">#fff</span> | <span class="white-background black-color bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="black-background white-color pas">Lorem Ipsum</span>
-| grey | <span style="color:#555566">#555566</span> | <span class="grey-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="grey-color pas">Lorem Ipsum</span>

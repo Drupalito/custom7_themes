@@ -38,30 +38,41 @@ category: Layout - Menu
 */
 
 .navigation {
-  background: #333;
+  background: #{map-get($colorz, 'default')};
+  .menu {
+    a {
+      padding: .5em 1em;
+      background: #{map-get($colorz, 'default')};
+      color: #fff;
+      &:hover,
+      &:focus,
+      &:active {
+        background: #fff;
+        color: #{map-get($colorz, 'default')};
+      }
+    }
+    a.active,
+    li.active-trail > a {
+      background: #{map-get($colorz, 'primary')};
+      color: #fff;
+    }
+    li.expanded > a,
+    li.collapsed > a {
+      padding-right: 2em;
+    }
+  }
 }
 
 .menu {
   list-style-type: none;
   padding:0; margin: 0;
   a {
+    position: relative;
     display: block;
-    padding: 10px;
+    padding: 10px 0;
     border-bottom: 0;
     text-decoration: none;
     font-size: 14px;
-    background: #333;
-    color: #fff;
-    &:hover,
-    &:focus,
-    &:active {
-      background: #{map-get($colorz, 'secondary')};
-      color: #fff;
-    }
-    &.active {
-      background: #{map-get($colorz, 'primary')};
-      color: #fff;
-    }
   }
   li {
     position: relative;
@@ -93,23 +104,17 @@ category: Layout - Menu
   }
   @include mq("small") {
     & {
-      // display: flex;
-      // width: 100%;
       li {
-        // flex: 1;
         display: inline-block;
         vertical-align: middle;
         li {
           display: block;
-          border-top: 1px solid #969696;
-          ul {
-            left: 180px!important;
-          }
           a, li a {
             padding: 5px 10px;
           }
           ul {
             top: -1px;
+            left: 178px!important;
           }
         }
       }
@@ -122,47 +127,80 @@ category: Layout - Menu
       }
     }
   }
-}
-
-@include mq("smaller") {
-  .navigation {
-    .col-sm-12 {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .menu {
-    li {
-      border-top: 1px solid #494949;
-    }
-    ul.is-opened {
-      display: block;
-      position: relative;
-      left: 0;
-    }
-    .menu__item--expanded {
-      &.active-trail {
-        & > ul {
-          display: block;
-          position: relative;
-          left: 0;
+  @include mq("smaller") {
+    & {
+      li {
+        li.last {
+          border-bottom: 0;
+        }
+      }
+      ul.is-opened {
+        display: block;
+        position: relative;
+        left: 0;
+      }
+      .menu__item--expanded {
+        &.active-trail {
+          & > ul {
+            display: block;
+            position: relative;
+            left: 0;
+          }
         }
       }
     }
   }
 }
 
+@include mq("small") {
+  .navigation {
+    .menu {
+      li {
+        li {
+          border-top-width: 1px;
+          border-top-style: solid;
+          border-right-width: 1px;
+          border-right-style: solid;
+          border-left-width: 1px;
+          border-left-style: solid;
+          border-color: #{darken(map-get($colorz, 'default'), 15%)};
+          &.last {
+            border-bottom: 1px solid #{darken(map-get($colorz, 'default'), 15%)};
+          }
+        }
+      }
+    }
+  }
+}
+@include mq("smaller") {
+  .navigation {
+    .col-sm-12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .menu {
+      li {
+        border-bottom: 1px solid #{darken(map-get($colorz, 'default'), 15%)};
+        &.first {
+          border-top: 1px solid #{darken(map-get($colorz, 'default'), 15%)};
+        }
+      }
+    }
+  }
+}
+
+// Expanded item menu
 .menu__btn {
   position: absolute;
   top: 0; right: 0;
   z-index: 99;
   display: block;
   border: 0;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   cursor: pointer;
-  border-left: 1px solid #494949;
-  background: #333;
+  border-left: 1px solid #{darken(map-get($colorz, 'default'), 15%)};
+  background: #{map-get($colorz, 'default')};
   color: #fff;
   overflow: hidden;
   outline: none;
@@ -170,12 +208,12 @@ category: Layout - Menu
   &:focus,
   &:active,
   &.active {
-    background: #000;
+    background: #{map-get($colorz, 'secondary')};
     color: #fff;
   }
   .menu ul & {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
   }
   @include mq("small") {
     & {
@@ -184,6 +222,7 @@ category: Layout - Menu
   }
 }
 
+// Toggle menu mobile first
 .menu-button {
   position: relative;
   display: block;
@@ -193,8 +232,8 @@ category: Layout - Menu
   text-transform: uppercase;
   font-size: 1em;
   font-weight: 700;
-  background: #333;
-  color: #fff;
+  background: #f2f2f2;
+  color: #{map-get($colorz, 'secondary')};
   &:before,
   &:after {
     content: "";
@@ -206,16 +245,17 @@ category: Layout - Menu
   }
   &:after {
     height: 9px;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #{map-get($colorz, 'secondary')};
+    border-bottom: 2px solid #{map-get($colorz, 'secondary')};
   }
   &:before {
     top: 1.29em;
     height: 2px;
-    background: #fff;
+    background: #{map-get($colorz, 'secondary')};
   }
   &.is-actived {
-    background: #{map-get($colorz, 'default')};
+    background: #{map-get($colorz, 'secondary')};
+    color: #fff;
     &:before,
     &:after {
       border: 0;

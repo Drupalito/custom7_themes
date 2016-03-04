@@ -72,7 +72,7 @@ Le titre peut être caché avec `.hide`
     color: #7d7d7d;
   }
   &--current strong {
-    background: #{darken(map-get($colorz, 'default'), 10%)};
+    background: #{map-get($colorz, 'primary')};
     color: #fff;
   }
   &__link {

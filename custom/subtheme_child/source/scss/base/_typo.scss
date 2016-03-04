@@ -1,9 +1,9 @@
 
-// Loop other font size
-@each $name, $size in $other_size {
-  .#{$name} {
-    @include font-size($size);
-  }
+// Base colorz
+@each $name, $color in $colorz {
+  .#{$name}-color { color: $color; }
+  .#{$name}-border { border-color: $color; }
+  .#{$name}-background { color: #fff; background-color: $color; }
 }
 
 /*doc
@@ -77,7 +77,7 @@ category: Base - Typo
 
 ```html_example
 
-  <div class="clearifx">
+  <div class="clearfix">
     <p class="pull-left mvn">Text</p>
     <p class="pull-right mvn">Text</p>
   </div>
@@ -156,7 +156,8 @@ category: Base - Typo
 
 */
 
-.list-none {
+.list-none,
+.item-list ul {
   list-style-type: none;
   padding-left: 0;
 }

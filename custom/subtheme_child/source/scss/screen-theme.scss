@@ -1,7 +1,7 @@
 
 /*
 subtheme_child Drupal Theme
-Debug stylesheet
+Theme stylesheet
 
 Author : parms_owner <parms_email>
 MIT 2016
@@ -14,6 +14,6 @@ MIT 2016
   'helpers/functions',
   'helpers/mixins';
 
-// Layers
+// Base
 @import
-  'helpers/debug-grid';
+  'themes/theme';

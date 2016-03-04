@@ -26,10 +26,10 @@ Toutes les class d'icones doivent être associé avec `.i`
   <span class="i i-arrow-right" aria-hidden="true"></span>
   <span class="i i-arrow-down" aria-hidden="true"></span>
   <span class="i i-arrow-left" aria-hidden="true"></span>
-  <span class="i i-arrow-up5" aria-hidden="true"></span>
-  <span class="i i-arrow-right5" aria-hidden="true"></span>
-  <span class="i i-arrow-down5" aria-hidden="true"></span>
-  <span class="i i-arrow-left5" aria-hidden="true"></span>
+  <span class="i i-arrow-up2" aria-hidden="true"></span>
+  <span class="i i-arrow-right2" aria-hidden="true"></span>
+  <span class="i i-arrow-down2" aria-hidden="true"></span>
+  <span class="i i-arrow-left2" aria-hidden="true"></span>
 
 ```
 
@@ -47,13 +47,15 @@ Toutes les class d'icones doivent être associé avec `.i`
 }
 
 .i,
-.ligature-icons {
-  @extend .inbl;
-  @extend .amiddle;
-  @extend .regular;
+.ligature-icons,
+.search .btn:before {
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
   top: -1px;
   font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
   line-height: 1;
   speak: none;
   text-decoration: inherit;
@@ -66,6 +68,7 @@ Toutes les class d'icones doivent être associé avec `.i`
 // Icons
 .i-mail:before { content: "\ea30"; }
 .i-bubble:before { content: "\ead8"; }
+.search .btn:before,
 .i-search:before { content: "\eb30"; }
 .i-help:before { content: "\ed55"; }
 .i-plus:before { content: "\ed5d"; }
@@ -81,7 +84,8 @@ Toutes les class d'icones doivent être associé avec `.i`
 .i-arrow-right:before { content: "\edbd"; }
 .i-arrow-down:before { content: "\edc1"; }
 .i-arrow-left:before { content: "\edc5"; }
-.i-arrow-up5:before { content: "\edc7"; }
-.i-arrow-right5:before { content: "\edc8"; }
-.i-arrow-down5:before { content: "\edc9"; }
-.i-arrow-left5:before { content: "\edca"; }
+.i-arrow-up2:before { content: "\edc7"; }
+.menu ul li.expanded > a:before,
+.i-arrow-right2:before { content: "\edc8"; }
+.i-arrow-down2:before { content: "\edc9"; }
+.i-arrow-left2:before { content: "\edca"; }

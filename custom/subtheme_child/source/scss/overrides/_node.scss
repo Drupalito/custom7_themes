@@ -1,0 +1,30 @@
+
+/*doc
+---
+title: Theme Node
+category: Overrides - Node
+---
+
+Content type : **Node**
+
+*/
+
+// Node type article
+.node-type-article {
+
+  .main__header {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: rhythm(0.5);
+    margin-bottom: rhythm(1);
+    ul {
+      @extend .list-inline;
+      @extend .list-separate;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 core        = 7.x
 engine      = phptemplate
 name        = subtheme_child
-description = subtheme_child's sub theme for astarter created by <a href="parms_owner_website">parms_owner</a>.<br />Please see the included README or our <a href="parms_owner_website">support</a>.
+description = subtheme_child's sub theme for astarter created by <a href="parms_website">parms_owner</a>.<br />Please see the included README or our <a href="parms_website">support</a>.
 screenshot  = screenshot.png
 base theme  = astarter
 

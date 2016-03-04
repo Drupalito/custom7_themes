@@ -1,8 +1,4 @@
 
-// ==========================================================================
-// Helper
-// ==========================================================================
-
 /*doc
 ---
 title: Inline-block (Elements)
@@ -57,6 +53,9 @@ category: Base - Helpers
   background-color: transparent;
   border: 0;
 }
+
+// Prevent text wrapping.
+.nowrap { white-space: nowrap; }
 
 /*doc
 ---

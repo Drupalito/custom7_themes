@@ -19,6 +19,14 @@ category: Layout - Layer
 
 */
 
+.banner {
+  @include mq("smaller") {
+    .col-xs-12.col-sm-8 {
+      margin-bottom: 1em;
+    }
+  }
+}
+
 .branding {
   @extend .text-right;
 }
@@ -37,7 +45,7 @@ Default markup. (`title` = `alt`)
     <p class="logo__inner">
       <a href="/" title="starterProjectName, Lorem ipsum dolor sit (Home)" rel="home" class="logo__link nounderline">
         <img class="logo__image" src="http://placehold.it/250x72" alt="starterProjectName, Lorem ipsum dolor sit (Home)">
-        <span class="logo__inner inbl amiddle pls">
+        <span class="logo__content inbl amiddle pls">
           <span class="logo__name h4 caps show mvn">starterProjectName</span>
           <span class="logo__slogan show">Lorem ipsum dolor sit</span>
         </span>
@@ -48,3 +56,11 @@ Default markup. (`title` = `alt`)
 ```
 
 */
+.logo {
+  @include mq("smaller") {
+    text-align: center;
+    .logo__content {
+      text-align: left;
+    }
+  }
+}

@@ -4,6 +4,11 @@
 Configuration Mixins
 
 */
+$browser-default-font-size:   16px;
+$rhythm-unit:                 'em';
+$relative-font-sizing:        true;
+$default-rhythm-border-style: solid;
+$font-unit: if($relative-font-sizing, 1em, $base-font-size);
 
 // bootstrap - More easily include all the states
 // for responsive-utilities.
@@ -22,7 +27,7 @@ Configuration Mixins
 }
 
 // @mixin establish-baseline
-@mixin establish-baseline($font-size: $base-font-size, $font-family: $font-serifs) {
+@mixin establish-baseline($font-size: $base-font-size, $font-family: map-get($font-families, 'body')) {
   $taille: ($font-size / $browser-default-font-size * 100%);
   $line-height: rhythm(1, $font-size);
   html {

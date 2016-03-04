@@ -3,7 +3,7 @@
 subtheme_child Drupal Theme
 Override Drupal admin default CSS
 
-Author : Axel Roche <axel@aquelito.fr>
+Author : parms_owner <parms_email>
 MIT 2016
 
 */
@@ -14,53 +14,10 @@ MIT 2016
   'helpers/functions',
   'helpers/mixins';
 
-.tabs.primary {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  background: #fff;
-  li {
-    display: inline;
-  }
-  a {
-    padding: 5px;
-    line-height: 1;
-    display: inline-block;
-    border-bottom: 0;
-    background: #fff;
-  }
-  a:hover,
-  a:focus,
-  a:active,
-  .active {
-    color: #fff;
-    background-color: #d96459;
-    border-bottom: 0;
-    text-decoration: none;
-  }
-  .active {
-    font-weight: bold;
-  }
-}
-
-/* */
-
-.admin-menu .block-region {
-  background-color: #ff0;
-  padding: 10px;
-}
-
-/* */
-
-.tabs.primary,
 .contextual-links-wrapper {
   position: absolute;
   top: 0; right: 0;
   z-index: 10;
-}
-
-.contextual-links-wrapper {
   text-align: right;
   > a {
     color: #fff;

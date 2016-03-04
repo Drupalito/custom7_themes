@@ -1,8 +1,14 @@
 
+// Helpers
+@import
+  '../helpers/vars',
+  '../helpers/functions',
+  '../helpers/mixins';
+
 /*doc
 ---
 title: Poll
-category: Components - Poll
+category: Module - Poll
 ---
 
 ```html_example
@@ -34,7 +40,6 @@ category: Components - Poll
 ```
 
 */
-
 .poll {
   &-bars__bar,
   &-results {

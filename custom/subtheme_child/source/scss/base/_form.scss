@@ -62,9 +62,9 @@ textarea {
   resize: vertical;
   font-family: inherit;
   // width: 92%;
-  &.resize-auto {
-    resize: auto;
-  }
+  // &.resize-auto {
+  //   resize: auto;
+  // }
 }
 
 button, label {
@@ -86,7 +86,6 @@ input[type="radio"][disabled] + label,
 input[type="checkbox"][disabled] + label {
   cursor: not-allowed; // 2
   background-color: #eee;
-  opacity: 1;
 }
 
 input[type="radio"][disabled] + label,
@@ -194,32 +193,6 @@ input::-moz-focus-inner {
   border: 0;
 }
 
-fieldset {
-  border: 1px solid #ccc;
-  border-top: 3px solid #{map-get($colorz, 'primary')};
-  padding: $base-line-height;
-  margin: 0 0 rhythm(1);
-  &.collapsed {
-    a {
-      color: #{map-get($colorz, 'primary')};
-    }
-  }
-  legend {
-    padding: 0 $base-line-height/2;
-    margin: 0;
-    margin-left: -($base-line-height/2)/2;
-    font-size: pem(18px);
-    font-weight: 700;
-    a {
-      border-bottom: 0;
-    }
-  }
-}
-
-.fieldset-description {
-  padding-bottom: 1em;
-}
-
 /*doc
 ---
 title: All inputs
@@ -229,53 +202,53 @@ category: Base - Forms
 ```html_example
 
   <form action="" id="formExample">
-    <p class="form-item">
+    <div class="form-item">
       <label for="name">Name</label>
-      <input class="field-txt" id="name" name="name" type="text" />
-    </p>
-    <p class="form-item has--error">
+      <input id="name" name="name" type="text" />
+    </div>
+    <div class="form-item has--error">
       <label for="email">Email</label>
       <input class="field-txt error" id="email" name="email" type="email" />
       <br /><small>Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </p>
-    <p class="form-item">
+    </div>
+    <div class="form-item">
       <label for="password">Password</label>
-      <input class="field-txt" id="password" name="password" type="password" value="Password" />
-    </p>
-    <p class="form-item">
+      <input name="password" type="password" value="Password" />
+    </div>
+    <div class="form-item">
       <label for="url">Url</label>
-      <input class="field-txt" id="url" name="url" type="url" />
-    </p>
-    <p class="form-item">
+      <input id="url" name="url" type="url" />
+    </div>
+    <div class="form-item">
       <label for="message">Textarea</label>
-      <textarea class="field-txt" cols="30" id="message" name="message" rows="5"></textarea>
-    </p>
-    <p class="form-item">
+      <textarea cols="30" id="message" name="message" rows="5"></textarea>
+    </div>
+    <div class="form-item">
       <label for="message">Disabled textarea</label>
-      <textarea class="field-txt" cols="30" id="message" name="message" rows="5" disabled="disabled"></textarea>
-    </p>
-    <p class="form-item">
+      <textarea cols="30" id="message" name="message" rows="5" disabled="disabled"></textarea>
+    </div>
+    <div class="form-item">
       <label for="file">File</label>
-      <input class="field-txt" id="file" name="file" type="file" />
-    </p>
-    <p class="form-item">
+      <input id="file" name="file" type="file" />
+    </div>
+    <div class="form-item">
       <label for="select">Select</label>
-      <select class="field-txt" id="select" name="select">
+      <select id="select" name="select">
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
       </select>
-    </p>
-    <p class="form-item">
+    </div>
+    <div class="form-item">
       <label for="select">Disabled select</label>
-      <select class="field-txt" id="select" name="select" disabled="disabled">
+      <select id="select" name="select" disabled="disabled">
         <option>1</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
       </select>
-    </p>
+    </div>
     <fieldset class="form-item">
       <legend class="label">Birthday</legend>
       <div class="form-item"><input id="jj" maxlength="2" name="birth[jj]" placeholder="DD" size="4" title="DD" type="text" class="w20" /><input id="mm" maxlength="2" name="birth[mm]" placeholder="MM" size="4" title="MM" type="text" class="w20" /><input id="aaaa" maxlength="4" name="birth[aaaa]" placeholder="YYYY" size="4" title="YYYY" type="text" class="w20" /></div></fieldset>
@@ -288,10 +261,10 @@ category: Base - Forms
         <label for="radio_on">Radio is on</label>
         <br />
         <input id="radio_off_disabled" name="optionsRadiosDisabled" type="radio" disabled="disabled" />
-        <label class="muted" for="radio_off_disabled">Disabled radio is off</label>
+        <label class="text--muted" for="radio_off_disabled">Disabled radio is off</label>
         <br />
         <input id="radio_on_disabled" name="optionsRadiosDisabled" type="radio" checked="checked" disabled="disabled" />
-        <label class="muted" for="radio_on_disabled">Disabled radio is on</label>
+        <label class="text--muted" for="radio_on_disabled">Disabled radio is on</label>
       </div>
     </div>
     <div class="form-item form-item--fake">
@@ -303,47 +276,59 @@ category: Base - Forms
         <label for="checkbox_on">Checkbox is on</label>
         <br />
         <input id="checkbox_off_disabled" name="optionsCheckboxesDisabled" type="checkbox" disabled="disabled" />
-        <label class="muted" for="checkbox_off_disabled">Disabled checkbox is off</label>
+        <label class="text--muted" for="checkbox_off_disabled">Disabled checkbox is off</label>
         <br />
         <input id="checkbox_on_disabled" name="optionsCheckboxesDisabled" type="checkbox" checked="checked" disabled="disabled" />
-        <label class="muted" for="checkbox_on_disabled">Disabled checkbox is on</label>
+        <label class="text--muted" for="checkbox_on_disabled">Disabled checkbox is on</label>
       </div>
     </div>
-    <p class="form-item form-item--fake">
+    <div class="form-item form-item--fake">
       <button class="btn btn--primary" type="submit" name="submit">Send your message</button>
       <button class="btn btn--cancel" type="submit" name="cancel">Cancel</button>
-    </p>
+    </div>
   </form>
 
 ```
 
 */
 
-// Required
-// <abbr class="field-required" title="This field is required.">*</abbr>
-// ==========================================================================
+/*doc
+---
+title: Field required
+category: Base - Forms
+---
 
+[TODO]
+
+```html_example
+
+  <abbr class="field-required" title="This field is required.">*</abbr>
+
+```
+
+*/
 .field-required {
-  @extend .smaller;
+  font-size: pem(12px);
+  line-height: 1.2;
   color: #666;
 }
 
 /*doc
 ---
-title: Static Field
+title: Field static
 category: Base - Forms
 ---
 
 ```html_example
 
-  <p class="form-item">
+  <div class="form-item">
     <span class="label">Email</span>
-    <span class="bold">email@example.com</span>
-  </p>
-  <p class="form-item">
+    <strong>email@example.com</strong>
+  </div>
+  <div class="form-item">
     <label for="password">Password</label>
-    <input class="field-txt" id="password" name="password" type="text" placeholder="Password" />
-  </p>
+    <input name="password" type="text" placeholder="Password" />
+  </div>
 
 ```
 
@@ -369,7 +354,7 @@ category: Base - Forms
     text-align: right;
     > span {
       display: inline-block;
-      line-height: 1;
+      line-height: normal;
     }
   }
   .form-item {
@@ -383,7 +368,6 @@ category: Base - Forms
       margin-right: 0;
       font-weight: normal;
       text-align: left;
-      // line-height: normal;
     }
   }
   .form-item--fake {
@@ -413,35 +397,83 @@ category: Base - Forms
 
 }
 
-// .form-radios,
-// .form-checkboxes,
-// .container-inline-date {
-//   .form-item {
-//     display: inline-block;
-//     margin-right: 10px;
-//   }
-// }
-
 /*doc
 ---
-title: Fake Field
+title: Fieldset + Legend
 category: Base - Forms
 ---
 
+Collapsed
+
+[TODO]
+
+*/
+fieldset {
+  border: 1px solid #ccc;
+  border-top: 3px solid #{map-get($colorz, 'primary')};
+  padding: $base-line-height;
+  margin: 0 0 rhythm(1);
+  &.collapsed {
+    position: relative;
+    padding-bottom: 0;
+    a {
+      color: #{map-get($colorz, 'primary')};
+    }
+    .fieldset-legend {
+      display: block;
+    }
+    html.js & {
+      border-bottom-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      height: 1em;
+    }
+    html.js & .fieldset-wrapper {
+      display: none;
+    }
+  }
+  legend {
+    padding: 0 $base-line-height/2;
+    margin: 0;
+    margin-left: -($base-line-height/2)/2;
+    font-size: pem(18px);
+    font-weight: 700;
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+.fieldset-wrapper > .form-item:last-child {
+  margin-bottom: 0;
+}
+
+.fieldset-description {
+  padding-bottom: 1em;
+}
+
+/*doc
+---
+title: Field Fake
+category: Base - Forms
+---
+
+Add class `form-item--fake` on parent `div.form-item`
+And remove label
+
 ```html_example
 
-  <p class="form-item form-item--fake">
-    <span class="bold">email@example.com</span>
-  </p>
-  <p class="form-item">
+  <div class="form-item form-item--fake">
+    <strong>email@example.com</strong>
+  </div>
+  <div class="form-item">
     <label for="password">Password</label>
-    <input class="field-txt" id="password" name="password" type="text" placeholder="Password" />
-  </p>
+    <input name="password" type="text" placeholder="Password" />
+  </div>
 
 ```
 
 */
-
 .form-item--fake,
 .form-item--block {
   label, .label {
@@ -451,33 +483,28 @@ category: Base - Forms
   }
 }
 
-.form-item--date-day,
-.form-item--date-month,
-.form-item--date-year {
-  display: inline-block;
-}
-
 /*doc
 ---
-title: Block Field
+title: Field Block
 category: Base - Forms
 ---
 
+Add class `form-item--block` on parent `div.form-item`
+
 ```html_example
 
-  <p class="form-item form-item--block">
+  <div class="form-item form-item--block">
     <span class="label">Email</span>
-    <span class="bold">email@example.com</span>
-  </p>
-  <p class="form-item form-item--block">
+    <strong>email@example.com</strong>
+  </div>
+  <div class="form-item form-item--block">
     <label for="password">Password</label>
-    <input class="field-txt" id="password" name="password" type="text" placeholder="Password" />
-  </p>
+    <input name="password" type="text" placeholder="Password" />
+  </div>
 
 ```
 
 */
-
 .form-item--block {
   padding: 0;
   > label,
@@ -488,6 +515,30 @@ category: Base - Forms
   }
 }
 
+/*doc
+---
+title: Field Inline
+category: Base - Forms
+---
+
+Add class `form-item--inline` on parent `div.form-item`
+
+```html_example
+
+  <div class="form-item form-item--block form-item--inline">
+    <div class="form-item">
+      <label for="Login">Login</label>
+      <input name="Login" type="text" placeholder="Login" />
+    </div>
+    <div class="form-item">
+      <label for="password">Password</label>
+      <input name="password" type="text" placeholder="Password" />
+    </div>
+  </div>
+
+```
+
+*/
 .form-item--inline {
   .form-item:first-child {
     margin-right: 20px;
@@ -497,10 +548,35 @@ category: Base - Forms
   }
 }
 
+/*doc
+---
+title: Action confirm
+category: Base - Forms
+---
+
+Drupal example HTML
+
+  <form action="" id="formConfirm">
+    <div><p>This action cannot be undone.</p>
+    <div class="form-actions form-wrapper">
+      <button name="op" value="Confirm" type="submit" class="btn btn--primary btn--submit form-submit">Confirm</button><a href="#" id="edit-cancel">Cancel</a></div>
+    </div>
+  </form>
+
+*/
 .form-wrapper button + button {
-  margin-left: $grid-gutter-width;
+  margin-left: 2em;
 }
 
+/*doc
+---
+title: Field file manager
+category: Base - Forms
+---
+
+[TODO]
+
+*/
 .form-managed-file {
   white-space: nowrap;
   .btn {
@@ -517,9 +593,48 @@ category: Base - Forms
   }
 }
 
+// .form-radios,
+// .form-checkboxes,
+// .container-inline-date {
+//   .form-item {
+//     display: inline-block;
+//     margin-right: 10px;
+//   }
+// }
+
+// .form-item--date-day,
+// .form-item--date-month,
+// .form-item--date-year {
+//   display: inline-block;
+// }
+
+/*doc
+---
+title: Password Confirm
+category: Base - Forms
+---
+
+Drupal example HTML
+
+  <form action="" id="formPassword">
+    <div class="form-item form-type--password-confirm form-item--password-confirm">
+      <label for="edit-password-confirm">Password confirm </label>
+      <div class="form-item form-type--password form-item--password-confirm-pass1 password-parent"><div class="password-strength"><div class="password-strength-text" aria-live="assertive">Weak</div><div class="password-strength-title">Password strength:</div><div class="password-indicator"><div class="indicator" style="width: 0%;"></div></div></div>
+      <label for="edit-password-confirm-pass1">Password </label>
+      <input class="password-field form-text password-processed" type="password" id="edit-password-confirm-pass1" name="password_confirm[pass1]" size="60" maxlength="128">
+    </div>
+    <div class="form-item form-type--password form-item--password-confirm-pass2 confirm-parent">
+      <div class="password-confirm" style="visibility: hidden;">Passwords match: <span></span></div>
+        <label for="edit-password-confirm-pass2">Confirm password </label>
+        <input class="password-confirm form-text" type="password" id="edit-password-confirm-pass2" name="password_confirm[pass2]" size="60" maxlength="128">
+      </div>
+    </div>
+  </form>
+
+*/
 div.password-confirm,
 .password-strength {
-  float: right;
+  @extend .pull-right;
   line-height: 32px;
 }
 
@@ -532,7 +647,7 @@ div.password-confirm {
     display: inline-block;
   }
   &-text {
-    float: right;
+    @extend .pull-right;
     font-weight: 700;
     font-style: normal;
     margin-left: 5px;
@@ -551,35 +666,30 @@ title: Field states
 category: Base - Forms
 ---
 
-```html_example
-
   <form action="" id="formErrors">
-    <p class="form-item has--info">
+    <div class="form-item has--info">
       <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
       <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
       <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </p>
-    <p class="form-item has--warning">
+    </div>
+    <div class="form-item has--warning">
       <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
       <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
       <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </p>
-    <p class="form-item has--error">
+    </div>
+    <div class="form-item has--error">
       <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
       <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
       <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </p>
-    <p class="form-item has--status">
+    </div>
+    <div class="form-item has--status">
       <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
       <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
       <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </p>
+    </div>
   </form>
 
-```
-
 */
-
 @each $name, $values in $message {
   $color: map-get($values, 'background');
   .has--#{$name} {
@@ -604,17 +714,17 @@ category: Base - Forms
   }
 }
 
-/*
+/*doc
 ---
 title: Placeholder
 category: Base - Forms
 ---
 
 Couleurs de placeholder : ne pas fusionner les sélecteurs !
+
 @see http://stackoverflow.com/a/2610741
 
 */
-
 $field-placeholder: #999;
 ::-webkit-input-placeholder { // WebKit browsers
   color: $field-placeholder; }
@@ -626,4 +736,4 @@ $field-placeholder: #999;
   color: $field-placeholder; }
 
 /* */
-} // enf if
+} // end if

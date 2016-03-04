@@ -23,14 +23,15 @@ Combine `.aside` with the modifier `.aside--right`
 .aside {
 
   .block {
-    padding: 1.5em;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     background: #fff;
     // Element
     &__title {
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ddd;
+      padding-bottom: rhythm(0.5);
+      border-bottom: pem(1px) solid #ccc;
+      margin-bottom: rhythm(0.5);
     }
     // Modifier
     &--first {
@@ -42,10 +43,8 @@ Combine `.aside` with the modifier `.aside--right`
     }
   }
   .block--menu {
-    background: #333;
-    &, a {
-      color: #fff;
-    }
+    border: pem(1px) solid #ccc;
+    background: #f2f2f2;
     .menu {
       display: block;
       position: relative;
@@ -61,4 +60,9 @@ Combine `.aside` with the modifier `.aside--right`
   // Modifier
   &--right { }
 
+  @include mq("smaller") {
+    & {
+      margin-bottom: 1.5em;
+    }
+  }
 }

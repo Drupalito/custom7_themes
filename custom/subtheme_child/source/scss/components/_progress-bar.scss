@@ -32,7 +32,7 @@ category: Components - Progress bar
     background: #{map-get($colorz, 'default')};
   }
   .percentage {
-    float: right;
+    @extend .pull-right;
   }
   .message {
     min-height: 100%;

@@ -34,8 +34,8 @@ category: Layout - Layer
 .banner,
 #container,
 .contentinfo {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: rhythm(1);
+  padding-bottom: rhythm(1);
 }
 
 /*doc
@@ -71,9 +71,9 @@ category: Layout - Layer
   }
   &__header {
     border-top: pem(1px) solid #ccc;
-    padding-top: rhythm(0.5, $base-font-size);
+    padding-top: rhythm(0.5);
     border-bottom: pem(1px) solid #ccc;
-    padding-bottom: rhythm(0.5, $base-font-size);
-    margin-bottom: rhythm(1, $base-font-size);
+    padding-bottom: rhythm(0.5);
+    margin-bottom: rhythm(1);
   }
 }

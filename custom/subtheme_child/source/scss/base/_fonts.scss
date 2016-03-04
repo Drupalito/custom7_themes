@@ -5,7 +5,7 @@ title: Heading
 category: Global - Typography
 ---
 
-## Font heading #{$font-headline}
+## Font heading #{map-get($font-families, 'heading')}
 
 When we define a heading we also define a corresponding class to go with it.
 This allows us to apply, say, `class="h1"` to a `h3`; a double-stranded
@@ -26,7 +26,7 @@ title: Body
 category: Global - Typography
 ---
 
-## Font body #{$font-body}
+## Font body #{map-get($font-families, 'body')}
 
 <pre>
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
@@ -38,7 +38,7 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 </pre>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, saepe, et, commodi repellat praesentium vel officia libero maiores odio sit eaque id alias minus eos voluptatem sed nisi quasi tempore aut vitae velit nostrum nesciunt quae reprehenderit veritatis quis facilis.</p>
 
-## Font `italic` body #{$font-body}
+## Font `italic` body #{map-get($font-families, 'body')}
 
 <pre class="italic">
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
@@ -50,7 +50,7 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 </pre>
 <p class="italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, saepe, et, commodi repellat praesentium vel officia libero maiores odio sit eaque id alias minus eos voluptatem sed nisi quasi tempore aut vitae velit nostrum nesciunt quae reprehenderit veritatis quis facilis.</p>
 
-## Font `bold` body #{$font-body}
+## Font `bold` body #{map-get($font-families, 'body')}
 
 <pre class="bold">
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z

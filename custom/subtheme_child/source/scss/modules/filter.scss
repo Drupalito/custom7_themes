@@ -1,0 +1,66 @@
+
+// Helpers
+@import
+  '../helpers/vars',
+  '../helpers/functions',
+  '../helpers/mixins';
+
+/*doc
+---
+title: Filter
+category: Module - Filter
+---
+
+[TODO]
+
+*/
+.filter {
+  &-help {
+    a {
+      border-bottom: 0;
+      &:before {
+        content: "\ed55";
+        font-family: "icomoon";
+        margin-right: .5em;
+      }
+    }
+  }
+  &-wrapper {
+    background: #fff;
+    padding: rhythm(0.5) rhythm(1);
+    border-top: 0;
+  }
+}
+
+.text-format-wrapper {
+  .form-item {
+    padding-left: 0;
+    margin-bottom: 0;
+    label,
+    .label {
+      position: relative;
+      width: auto;
+      margin-right: 0;
+      text-align: left;
+    }
+  }
+}
+
+.ckeditor_links {
+  display: block;
+  padding: rhythm(0.5) rhythm(1);
+  border-right: pem(1px) solid #ccc;
+  border-bottom: 0;
+  border-left: pem(1px) solid #ccc;
+  background: #fff;
+  &:hover, &:focus {
+    border-right: pem(1px) solid #ccc;
+    border-left: pem(1px) solid #ccc;
+    background: #{map-get($colorz, 'default')};
+    color: #fff;
+  }
+}
+
+.tips {
+  font-size: 80%;
+}

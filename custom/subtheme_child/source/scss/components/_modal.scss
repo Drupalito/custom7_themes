@@ -1,8 +1,4 @@
 
-// ==========================================================================
-// Modal
-// ==========================================================================
-
 /*doc
 ---
 title: Modal
@@ -34,7 +30,6 @@ category: Components - Modal
 ```
 
 */
-
 .modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -72,7 +67,7 @@ category: Components - Modal
   &__header,
   &__footer,
   &__body {
-    padding: 15px;
+    padding: 1.5em;
     border-color: #ccc;
   }
   &-open {

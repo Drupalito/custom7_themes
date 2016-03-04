@@ -11,13 +11,6 @@ https://github.com/twbs/bootstrap-sass
 
 */
 
-// Not work with IE9
-.row-height {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /*
 Container widths
 
@@ -56,6 +49,12 @@ Rows contain and clear the floats of your columns.
   @include make-row();
 }
 
+.row-xs-height {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*
 Columns
 
@@ -79,6 +78,12 @@ to tablets.
 */
 @media (min-width: $screen-sm-min) {
   @include make-grid(sm);
+
+  .row-sm-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /*
@@ -88,6 +93,12 @@ Columns, offsets, pushes, and pulls for the desktop device range.
 */
 @media (min-width: $screen-md-min) {
   @include make-grid(md);
+
+  .row-md-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /*
@@ -97,4 +108,10 @@ Columns, offsets, pushes, and pulls for the large desktop device range.
 */
 @media (min-width: $screen-lg-min) {
   @include make-grid(lg);
+
+  .row-lg-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

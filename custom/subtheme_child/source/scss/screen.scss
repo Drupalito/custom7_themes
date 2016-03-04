@@ -3,7 +3,7 @@
 subtheme_child Drupal Theme
 Main stylesheet
 
-Author : Axel Roche <axel@aquelito.fr>
+Author : parms_owner <parms_email>
 MIT 2016
 
 */
@@ -18,28 +18,20 @@ MIT 2016
 @import
   'base/fonts',
   'base/reset',
-  'base/colorz',
   'base/typo',
   'base/helper',
   'base/form';
 
 // Components
 @import
-  'components/block',
   'components/breadcrumb',
   'components/button',
-  'components/fields',
   'components/icons',
   'components/message',
   'components/pagination',
-  'components/poll',
   'components/progress-bar',
-  'components/video';
-
-@import
-  'components/comments',
+  'components/video',
   'components/modal',
-  'components/search-form',
   'components/tabs';
 
 // Layers
@@ -49,12 +41,11 @@ MIT 2016
   'layers/header',
   'layers/footer',
   'layers/navigation',
-  'layers/aside',
-  'layers/nodes',
-  'layers/form';
+  'layers/aside';
 
-// Pages
+// Overrides Druapl
 @import
-  'pages/contact',
-  'pages/frontpage',
-  'pages/user';
+  'overrides/block',
+  'overrides/field',
+  'overrides/node',
+  'overrides/search';

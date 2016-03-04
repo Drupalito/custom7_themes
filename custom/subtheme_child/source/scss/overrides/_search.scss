@@ -1,0 +1,69 @@
+
+/*doc
+---
+title: Theme Search
+category: Overrides - Search
+---
+
+```html_example
+
+  <div id="search" class="search">
+    <form class="search__form" role="search" action="/" method="post" id="search-form">
+      <input title="Search by keywords" placeholder="Enter your keywords…" type="search" name="search_block_form" value="" size="30" class="search__input form-text" /><button class="search__submit" title="Search on website Starter" type="submit" name="op"><span class="i i-search" aria-hidden="true"></span> Search</button>
+    </form>
+  </div>
+
+```
+
+*/
+.search {
+  .btn {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+    max-width: 100%;
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0;
+    line-height: 1;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: #{map-get($colorz, 'default')};
+    color: #fff;
+    &:hover,
+    &:focus {
+      background: #{map-get($colorz, 'primary')};
+    }
+    &:before {
+      top: 0;
+      font-size: 16px;
+    }
+  }
+  .form-text {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    float: left;
+    height: 36px;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    width: calc(100% - 36px);
+    &+.btn {
+      left: -1px;
+    }
+  }
+}
+
+.search-results .odd {
+  @extend .views-row-odd;
+}
+.search-results .even {
+  @extend .views-row-even;
+}

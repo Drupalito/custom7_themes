@@ -1,18 +1,11 @@
 
 /*doc
 ---
-title: Fields
-category: Components - Fields
+title: Theme Field
+category: Overrides - Field
 ---
 
 */
-
-// DrupalCSSDefault
-.field {
-  &-label {
-    @extend .strong;
-  }
-}
 
 .field--name-field-image {
   .node--full & {
