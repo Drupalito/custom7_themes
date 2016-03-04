@@ -17,17 +17,10 @@ function astarter_menu_local_tasks(array $variables) {
 
   $output = '';
 
-  if (!empty($variables['primary']) && arg(0) == 'user') {
-
+  if (!empty($variables['primary'])) {
     $variables['primary']['#prefix'] = '';
-    $variables['primary']['#prefix'] .= '<ul class="tabs tabs--user">';
+    $variables['primary']['#prefix'] .= '<ul class="tabs tabs--primary primary">';
     $variables['primary']['#suffix'] = '</ul></div>';
-    $output .= drupal_render($variables['primary']);
-  }
-  elseif (!empty($variables['primary'])) {
-    $variables['primary']['#prefix'] = '';
-    $variables['primary']['#prefix'] .= '<ul class="tabs primary">';
-    $variables['primary']['#suffix'] = '</ul>';
     $output .= drupal_render($variables['primary']);
   }
   if (!empty($variables['secondary'])) {

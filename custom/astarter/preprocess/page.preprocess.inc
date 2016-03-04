@@ -50,7 +50,7 @@ function astarter_preprocess_page(&$variables) {
     $variables['title_attributes_array']['itemprop'] = 'name';
   }
 
-  if (arg(0) == 'user') {
+  if (!empty($variables['tabs']['#primary'])) {
     $variables['title_prefix'] = '<div class="main__header">';
   }
   else {
