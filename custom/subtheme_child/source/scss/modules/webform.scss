@@ -11,15 +11,7 @@ title: Webform
 category: Module - Webform
 ---
 
-Conforme module webform
-
-*/
-
-/*doc
----
-title: Progressbar
-category: Module - Webform
----
+Default Style CSS
 
 ```html_example
 
@@ -49,7 +41,7 @@ category: Module - Webform
     counter-reset: step;
   }
   li {
-    list-style-type: none;
+    list-style: none;
     text-transform: uppercase;
     position: relative;
     &:before {
@@ -150,4 +142,3 @@ category: Module - Webform
     float: right;
   }
 }
-

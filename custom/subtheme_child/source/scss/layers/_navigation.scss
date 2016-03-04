@@ -155,8 +155,14 @@ category: Layout - Menu
 @include mq("small") {
   .navigation {
     .menu {
+      a {
+        padding: 1em;
+      }
       li {
         li {
+          a {
+            padding: .5em 1em;
+          }
           border-top-width: 1px;
           border-top-style: solid;
           border-right-width: 1px;

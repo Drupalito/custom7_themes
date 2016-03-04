@@ -1,0 +1,34 @@
+
+// Helpers
+@import
+  '../helpers/vars',
+  '../helpers/functions',
+  '../helpers/mixins';
+
+/*doc
+---
+title: Addressfield
+category: Module - Addressfield
+---
+
+Default Style CSS
+
+*/
+.addressfield {
+  &-container,
+  &-container-inline {
+    .form-item {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-container {
+  }
+  &-container-inline {
+    .form-item {
+      float: left; /* LTR */
+      margin-right: 1em; /* LTR */
+    }
+  }
+}

@@ -34,13 +34,14 @@ category: Module - Comment
 
 .comments,
 .comment-form .node {
-  margin-top: 1.5em;
-  padding-top: 1.5em;
-  border-top: 1px solid #ccc;
+  margin-top: rhythm(1);
+  padding-top: rhythm(1);
+  border-top: pem(1px) solid #ccc;
 }
 
+.comment,
 .commentsAdd {
-  padding: 1.5em;
+  padding: rhythm(1);
   margin-top: rhythm(1);
   background: #f5f5f5;
 }
@@ -53,9 +54,6 @@ category: Module - Comment
 }
 
 .comment {
-  margin-top: rhythm(1);
-  padding: rhythm(1);
-  background: #f5f5f5;
   border: 2px solid #fff;
   &__header {
     border-bottom: pem(1px) solid #ccc;

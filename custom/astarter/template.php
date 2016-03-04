@@ -239,6 +239,20 @@ function astarter_css_alter(&$css) {
     $css[$name]['group'] = CSS_THEME;
     $css[$name]['weight'] = 0;
   }
+  if (isset($css['sites/all/modules/contrib/addressfield/addressfield.css'])) {
+    $name = 'sites/all/modules/contrib/addressfield/addressfield.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/addressfield.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
+  if (isset($css['modules/contextual/contextual.css'])) {
+    $name = 'modules/contextual/contextual.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/contextual.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0;
+  }
 
   // Load custom CSS module after
   foreach ($css as $key => $value) {
@@ -261,7 +275,7 @@ function astarter_css_alter(&$css) {
     'modules/book/book-rtl.css' => FALSE,
     // 'modules/comment/comment.css' => FALSE,
     'modules/comment/comment-rtl.css' => FALSE,
-    'modules/contextual/contextual.css' => FALSE,
+    // 'modules/contextual/contextual.css' => FALSE,
     'modules/dashboard/dashboard.css' => FALSE,
     'modules/dashboard/dashboard-rtl.css' => FALSE,
     'modules/dblog/dblog.css' => FALSE,
@@ -271,10 +285,10 @@ function astarter_css_alter(&$css) {
     'modules/field_ui/field_ui.css' => FALSE,
     'modules/field_ui/field_ui-rtl.css' => FALSE,
     'sites/all/modules/contrib/field_group/field_group.field_ui.css' => FALSE,
-    'modules/file/file.css' => FALSE,
+    // 'modules/file/file.css' => FALSE,
     // 'modules/filter/filter.css' => FALSE,
     'modules/filter/filter-rtl.css' => FALSE,
-    'modules/forum/forum.css' => FALSE,
+    // 'modules/forum/forum.css' => FALSE,
     'modules/forum/forum-rtl.css' => FALSE,
     'modules/help/help.css' => FALSE,
     'modules/locale/locale.css' => FALSE,

@@ -205,7 +205,7 @@ ins {
 mark,
 .highlight {
   padding: 2px 4px;
-  background: #ff0;
+  background: $highlight-mark-color;
   color: #000;
 }
 
@@ -670,16 +670,6 @@ th, th a {
   color: #fff;
 }
 
-th.active,
-th.active a {
-  background: #{map-get($colorz, 'primary')};
-  color: #fff;
-}
-
-td.active {
-  background: #ddd;
-}
-
 th,
 td {
   padding: rhythm(0.5) ($grid-gutter-width / 2);
@@ -723,6 +713,21 @@ tbody tr:nth-child(odd) {
 .views-row-even,
 tbody tr:nth-child(even) {
   background: #f7f7f7;
+}
+
+th.active,
+th.active a {
+  background: #{map-get($colorz, 'primary')};
+  color: #fff;
+}
+
+td.active {
+  tbody tr:nth-child(odd) & {
+    background: darken(#ececec, 5%);
+  }
+  tbody tr:nth-child(even) & {
+    background: darken(#f7f7f7, 5%);
+  }
 }
 
 .table-responsive {

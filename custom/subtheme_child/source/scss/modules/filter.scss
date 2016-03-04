@@ -11,9 +11,13 @@ title: Filter
 category: Module - Filter
 ---
 
-[TODO]
+Default Style CSS
 
 */
+.tips {
+  font-size: 80%;
+}
+
 .filter {
   &-help {
     a {
@@ -59,8 +63,4 @@ category: Module - Filter
     background: #{map-get($colorz, 'default')};
     color: #fff;
   }
-}
-
-.tips {
-  font-size: 80%;
 }
