@@ -22,12 +22,6 @@ function astarter_preprocess_html(&$variables, $hook) {
   );
 
   if ($variables['is_admin']) {
-    // Active Style CSS Debug for Admin.
-    drupal_add_css(drupal_get_path('theme', $theme_key) . '/css/screen-admin-drupal.css', array(
-      'group'      => CSS_THEME,
-      'preprocess' => FALSE,
-    ));
-
     // Active Style CSS Debug Grid for Admin.
     if (theme_get_setting('astarter_debug_css_grid')) {
       drupal_add_css(drupal_get_path('theme', $theme_key) . '/css/screen-debug-grid.css', array(

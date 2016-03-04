@@ -20,7 +20,7 @@ function astarter_menu_local_tasks(array $variables) {
   if (!empty($variables['primary'])) {
     $variables['primary']['#prefix'] = '';
     $variables['primary']['#prefix'] .= '<ul class="tabs tabs--primary primary">';
-    $variables['primary']['#suffix'] = '</ul></div>';
+    $variables['primary']['#suffix'] = '</ul>';
     $output .= drupal_render($variables['primary']);
   }
   if (!empty($variables['secondary'])) {

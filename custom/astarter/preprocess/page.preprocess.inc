@@ -50,13 +50,8 @@ function astarter_preprocess_page(&$variables) {
     $variables['title_attributes_array']['itemprop'] = 'name';
   }
 
-  if (!empty($variables['tabs']['#primary'])) {
+  if (!drupal_is_front_page()) {
     $variables['title_prefix'] = '<div class="main__header">';
-  }
-  else {
-    if (!drupal_is_front_page()) {
-      $variables['title_prefix'] = '<div class="main__header">';
-      $variables['title_suffix'] = '</div>';
-    }
+    $variables['title_suffix'] = '</div>';
   }
 }
