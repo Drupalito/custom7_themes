@@ -13,5 +13,5 @@
 ?>
 
 <div class="more-link">
-  <a href="<?php print $more_url ?>"><?php print $link_text; ?></a>
+  <a class="btn btn--primary btn--more-link" href="<?php print $more_url ?>"><span class="i i-arrow-right2" aria-hidden="true"></span> <?php print $link_text; ?></a>
 </div>
