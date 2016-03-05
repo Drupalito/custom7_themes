@@ -16,42 +16,54 @@ function astarter_preprocess_page(&$variables) {
   if (!empty($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
   }
-
+  // If is 404
   if ($status == "404 Not Found") {
     $variables['theme_hook_suggestions'][] = 'page__404';
-    // Remove sidebar left.
+  }
+
+  // If is Frontpage
+  if (arg(0) == 'user' || drupal_is_front_page() || $status == "404 Not Found") {
+    // Layout
     unset($variables['page']['sidebar_first']);
     unset($variables['page']['sidebar_second']);
   }
 
-  if (drupal_is_front_page()) {
-    // Remove sidebar left.
-    $variables['content_column_class'] = ' class="col-xs-12"';
-    unset($variables['page']['sidebar_first']);
-    unset($variables['page']['sidebar_second']);
-  }
+  $variables['main_prefix'] = array();
+  $variables['main_suffix'] = array();
+
+  $variables['content_attributes_array']['id'] = 'content';
+  $variables['title_attributes_array']['class'][] = 'main__title';
 
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = ' class="col-xs-12 col-sm-4"';
+    // Layout
+    $variables['content_attributes_array']['class'][] = 'col-xs-12';
+    $variables['content_attributes_array']['class'][] = 'col-sm-4';
   }
   elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = ' class="col-xs-12 col-sm-8"';
+    // Layout
+    $variables['content_attributes_array']['class'][] = 'col-xs-12';
+    $variables['content_attributes_array']['class'][] = 'col-sm-8';
   }
   else {
-    $variables['content_column_class'] = ' class="col-xs-12 col-sm-12"';
+    // Layout
+    $variables['content_attributes_array']['class'][] = 'col-xs-12';
   }
 
-  $variables['title_attributes_array']['class'][] = 'main__title';
-
+  // If is page node article
   if (isset($variables['node']->nid) && $variables['node']->type == 'article') {
-    $variables['main_prefix'] = '<div itemscope itemtype="http://schema.org/BlogPosting">';
-    $variables['main_suffix'] = '</div>';
+    // Add div on first
     $variables['title_attributes_array']['itemprop'] = 'name';
+    array_unshift($variables['main_prefix'], array('#markup' => '<div itemscope itemtype="http://schema.org/BlogPosting">'));
+    // Close div on end
+    array_push($variables['main_suffix'], array('#markup' => '</div>'));
   }
 
+  // If page different to frontpage
   if (!drupal_is_front_page()) {
-    $variables['title_prefix'] = '<div class="main__header">';
-    $variables['title_suffix'] = '</div>';
+    // Add div on first
+    array_unshift($variables['title_prefix'], array('#markup' => '<div class="main__header">'));
+    // Close div on end
+    array_push($variables['title_suffix'], array('#markup' => '</div>'));
   }
 }

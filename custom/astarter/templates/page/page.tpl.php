@@ -21,7 +21,7 @@
                 <img class="logo__image" src="<?php print $logo; ?>" alt="<?php print variable_get('site_name'); ?> (<?php print t('Home'); ?>)" />
               <?php endif; ?>
               <?php if ($site_name || $site_slogan): ?>
-                <span class="logo__content inbl amiddle pls">
+                <span class="logo__content">
                   <?php if ($site_name): ?>
                     <span class="logo__name h4 caps show mvn"><?php print $site_name; ?></span>
                   <?php endif; ?>
@@ -55,18 +55,17 @@
 
       <?php print render($page['breadcrumb']); ?>
 
-      <?php
-        // Render the sidebars to see if there's anything in them.
+      <?php // Render the sidebars to see if there's anything in them.
         $sidebar_first = render($page['sidebar_first']);
         if ($sidebar_first): ?>
-        <div class="aside aside--left col-xs-12 col-sm-4 xs-mbl">
+        <div class="aside aside--left col-xs-12 col-sm-4">
           <aside id="aside_left" role="complementary" class="aside__region">
             <?php print $sidebar_first; ?>
           </aside>
         </div>
       <?php endif; ?>
 
-      <div id="content"<?php print $content_column_class; ?>>
+      <div<?php print $content_attributes; ?>>
 
         <?php if ($messages): ?>
           <?php print $messages; ?>
@@ -91,11 +90,10 @@
         </main>
       </div>
 
-      <?php
-        // Render the sidebars to see if there's anything in them.
+      <?php // Render the sidebars to see if there's anything in them.
         $sidebar_second = render($page['sidebar_second']);
         if ($sidebar_second): ?>
-        <div class="aside aside--right col-xs-12 col-sm-4 xs-mtl">
+        <div class="aside aside--right col-xs-12 col-sm-4">
           <aside id="aside_right" role="complementary" class="aside__region">
             <?php print $sidebar_second; ?>
           </aside>
