@@ -17,15 +17,13 @@ function astarter_preprocess_comment(&$variables) {
   // Added ID to each comment.
   $variables['attributes_array']['id'][] = 'comment-' . $variables['comment']->cid;
 
+  $variables['attributes_array']['itemprop'][] = 'comment';
   $variables['attributes_array']['itemscope'][] = 'itemscope';
-  $variables['attributes_array']['itemtype'][] = 'http://schema.org/UserComments';
+  $variables['attributes_array']['itemtype'][] = 'http://schema.org/Comment';
 
-  // Helpful $content variable for templates.
+  // Comment is reply to pid
   if (!empty($variables['comment']->pid)) {
-    $variables['attributes_array']['itemprop'][] = 'discusses';
-  }
-  else {
-    $variables['attributes_array']['itemprop'][] = 'comment';
+    $variables['attributes_array']['itemref'][] = 'comment-' . $variables['comment']->pid;
   }
 
   $variables['picture'] = !empty($variables['picture']) ? '<span class="mrm">' . theme('user_picture', array('account' => $variables['elements']['#comment'])) . '</span>' : '';
@@ -52,11 +50,11 @@ function astarter_preprocess_comment(&$variables) {
 
   // Add pubdate to submitted variable.
   $variables['pubdate'] = $variables['created'];
-  $variables['submitted'] = t('!username replied on !datetime', array('!username' => $variables['author'], '!datetime' => $variables['pubdate']));
+  $variables['submitted'] = t('!username replied on !datetime', array('!username' => $variables['author'], '!datetime' => $variables['created']));
 
   // Clean reply link.
   $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['id'] = 'comment-' . $variables['comment']->cid . '-reply';
-  $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['itemprop'] = 'replyToUrl';
+  $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['itemprop'] = 'discussionUrl';
   $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['rel'] = 'nofollow';
   $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['class'][] = 'comment__link';
 

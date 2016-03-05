@@ -23,11 +23,11 @@
         <?php if (!empty($teaser)) : ?>
         <?php elseif (!empty($page)) : ?>
           <meta itemprop="url" content="<?php print url('node/' . $node->nid, array('absolute' => TRUE)); ?>" />
-          <meta itemprop="interactionCount" content="UserComments:<?php print $comment_count; ?>" />
+          <meta itemprop="commentCount" content="<?php print $comment_count; ?>" />
           <ul>
             <?php if (!empty($node->uid)) : ?><li><span id="author-<?php print check_plain(strip_tags($variables['name'])); ?>" itemprop="author" itemscope itemtype="http://schema.org/Person"><?php print l($variables['name'], 'user/' . $node->uid, array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))); ?></span></li><?php endif; ?>
             <li><?php print format_plural($comment_count, t('@count comment'), t('@count comments')); ?></li>
-            <li><time datetime="<?php print format_date($node->created, 'custom', 'c'); ?>" itemprop="dateCreated"><?php print format_date($created); ?></time></li>
+            <li><time datetime="<?php print format_date($node->created, 'custom', 'c'); ?>" itemprop="datePublished dateCreated"><?php print format_date($created); ?></time></li>
             <?php if ($node->created != $node->changed) : ?>
               <li><time datetime="<?php print format_date($node->changed, 'custom', 'c'); ?>" itemprop="dateModified"><?php print format_date($changed); ?></time></li>
             <?php endif; ?>
