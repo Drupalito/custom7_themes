@@ -58,9 +58,19 @@ Default markup. (`title` = `alt`)
 */
 .logo {
   @include mq("smaller") {
-    text-align: center;
-    .logo__content {
-      text-align: left;
+    &__content {
+      margin-top: 1em;
+      display: block;
+    }
+  }
+  @include mq("small") {
+    &__link {
+      display: table;
+    }
+    &__content {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 1em;
     }
   }
 }

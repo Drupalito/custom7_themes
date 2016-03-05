@@ -25,8 +25,7 @@ category: Module - Contextual Links
     border-bottom: 0;
     padding: 2px 5px;
     &:hover,
-    &:focus,
-    &:active {
+    &:focus {
       background: #ccc;
       color: #000;
     }
@@ -50,15 +49,22 @@ category: Module - Contextual Links
     html.js & {
       display: block;
     }
-    > a {
-      border-bottom: 0;
-      display: inline-block;
-      padding: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      line-height: 1;
-      color: #fff;
-      background: #d96459;
+  }
+
+  &-trigger {
+    border-bottom: 0;
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    background: #d96459;
+    &:hover,
+    &:focus,
+    &-active {
+      background: $highlight-mark-color;
+      color: #000;
     }
   }
 }

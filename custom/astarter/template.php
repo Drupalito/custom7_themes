@@ -57,9 +57,18 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
 
   }
 
-  if ($form_id == 'comment_node_article_form') {
+  if (in_array($form_id, array('comment_node_article_form'))) {
     $form['#prefix'] = '<div id="commentsAdd" class="commentsAdd">';
     $form['#prefix'] .= '<h2 class="comments__title commentsAdd__title">' . t('Add new comment') . '</h2>';
+    $form['#suffix'] = '</div>';
+    $form['actions']['#prefix'] = '<div class="commentsSubmit">';
+    $form['actions']['#suffix'] = '</div>';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
+  }
+
+  if (in_array($form_id, array('comment_node_forum_form'))) {
+    $form['#prefix'] = '<div id="commentsAdd" class="commentsAdd">';
+    $form['#prefix'] .= '<h2 class="comments__title commentsAdd__title">' . t('Your reply') . '</h2>';
     $form['#suffix'] = '</div>';
     $form['actions']['#prefix'] = '<div class="commentsSubmit">';
     $form['actions']['#suffix'] = '</div>';
@@ -325,6 +334,7 @@ function astarter_css_alter(&$css) {
     'sites/all/modules/contrib/panels/css/panels.css' => FALSE,
     'sites/all/modules/contrib/views/css/views.css' => FALSE,
     'sites/all/modules/contrib/ctools/css/ctools.css' => FALSE,
+    'sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.css' => FALSE,
   );
   $css = array_diff_key($css, $exclude);
 }

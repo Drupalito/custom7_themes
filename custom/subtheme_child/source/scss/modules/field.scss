@@ -18,21 +18,24 @@ category: Module - Field
   &-label {
     font-weight: bold;
   }
-  &-label-inline {
+  &--label-inline {
+    // Clearfix
     &:after {
       content: "";
       display: table;
       clear: both;
     }
     .field-label {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      margin-right: rhythm(.5);
       float: left;
-      width: 150px;
     }
-    .field-items {
-      margin-left: 150px + 10;
-    }
+  }
+  .node &--label-inline,
+  .node &--label-above {
+    margin-bottom: rhythm(.5);
+  }
+  &--label-inline,
+  &--label-above {
+    margin-bottom: 0;
   }
 }

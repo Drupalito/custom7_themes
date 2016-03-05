@@ -564,8 +564,11 @@ Drupal example HTML
   </form>
 
 */
-.form-wrapper button + button {
-  margin-left: 2em;
+.form-actions {
+  margin-top: rhythm(1);
+  button + button {
+    margin-left: 2em;
+  }
 }
 
 // .form-radios,

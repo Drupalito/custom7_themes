@@ -30,9 +30,12 @@ Default Style CSS
     }
   }
   &-wrapper {
+    border-bottom: pem(1px) solid #ccc;
     background: #fff;
-    padding: rhythm(0.5) rhythm(1);
     border-top: 0;
+  }
+  .fieldset-wrapper {
+    padding: rhythm(0.5) rhythm(1);
   }
 }
 
