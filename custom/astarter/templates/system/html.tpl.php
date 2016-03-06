@@ -19,7 +19,7 @@
 <?php print $styles; ?>
 <?php print $scripts; ?>
 </head>
-<body class="<?php print $classes; ?>"<?php print $attributes;?>>
+<body class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <p id="skiplinks" class="skiplinks">
   <a href="#navigation"><?php print t('Navigation'); ?></a>
   <a href="#main"><?php print t('Main content'); ?></a>
