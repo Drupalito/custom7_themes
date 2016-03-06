@@ -39,10 +39,6 @@ function astarter_form_element($variables) {
     );
   }
 
-  if (!empty($element['#type']) && $element['#type'] == 'radios') {
-    $attributes['class'][] = 'form-item--inline';
-  }
-
   // Add a class for disabled elements to facilitate cross-browser styling.
   if (!empty($element['#attributes']['disabled'])) {
     $attributes['class'][] = 'form-item--disabled';
