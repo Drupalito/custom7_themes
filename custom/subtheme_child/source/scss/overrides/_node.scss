@@ -10,7 +10,7 @@ Content type : **Node**
 */
 
 .header {
-  ul {
+  .meta {
     @extend .list-inline;
     @extend .list-separate;
     margin-top: 0;

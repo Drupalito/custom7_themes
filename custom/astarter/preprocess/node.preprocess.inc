@@ -97,6 +97,7 @@ function astarter_preprocess_node(&$variables, $hook) {
       '#theme' => 'item_list',
       '#type' => 'ul',
       '#items' => $node_meta,
+      '#attributes' => array('class' => array('meta'))
     );
   }
 
