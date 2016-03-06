@@ -47,10 +47,11 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
   .form-item {
     margin: 0;
   }
-  .form-type--radio,
-  .form-type--checkbox {
+  &.form-type--radio,
+  &.form-type--checkbox {
     label {
       display: inline-block;
+      vertical-align: middle;
       line-height: 1;
     }
   }

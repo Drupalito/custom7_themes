@@ -28,7 +28,7 @@ div.vertical-tabs {
 }
 .vertical-tabs fieldset.vertical-tabs-pane {
   margin: 0 !important;
-  padding: 0 rhythm(1);
+  padding: rhythm(1);
   border: 0;
 }
 fieldset.vertical-tabs-pane legend {
@@ -53,13 +53,8 @@ fieldset.vertical-tabs-pane fieldset legend {
   padding: 0.5em 0.6em;
   border-bottom: 0;
 }
-.vertical-tabs ul.vertical-tabs-list li a:focus strong,
-.vertical-tabs ul.vertical-tabs-list li a:active strong,
-.vertical-tabs ul.vertical-tabs-list li a:hover strong {
-  text-decoration: underline;
-}
 .vertical-tabs ul.vertical-tabs-list li a:hover {
-  outline: 1px dotted;
+  outline: 1px solid;
 }
 .vertical-tabs ul.vertical-tabs-list li.selected {
   background-color: #fff;
@@ -70,6 +65,7 @@ fieldset.vertical-tabs-pane fieldset legend {
 }
 .vertical-tabs ul.vertical-tabs-list .summary {
   display: block;
+  font-size: 80%;
 }
 .vertical-tabs ul.vertical-tabs ul.vertical-tabs-list .summary {
   line-height: normal;
