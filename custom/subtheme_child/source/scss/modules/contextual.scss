@@ -54,7 +54,7 @@ category: Module - Contextual Links
   &-trigger {
     border-bottom: 0;
     display: inline-block;
-    padding: 8px;
+    padding: 5px 8px;
     text-decoration: none;
     font-weight: bold;
     line-height: 1;
@@ -66,5 +66,10 @@ category: Module - Contextual Links
       background: $highlight-mark-color;
       color: #000;
     }
+  }
+
+  .block--locale &-wrapper {
+    text-align: left;
+    right: auto;
   }
 }

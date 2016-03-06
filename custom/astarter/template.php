@@ -34,6 +34,18 @@ function astarter_menu_tree__main_menu($variables) {
 }
 
 /**
+ * Implements theme_menu_tree().
+ *
+ * @see theme_menu_tree()
+ */
+function astarter_links__locale_block(&$variables) {
+  $variables['attributes']['class'][] = 'list-inline';
+  $variables['attributes']['class'][] = 'list-separate';
+  $content = theme_links($variables);
+  return $content;
+}
+
+/**
  * Implements hook_menu_breadcrumb_alter().
  *
  * @ingroup themeable
@@ -53,9 +65,6 @@ function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
  */
 function astarter_form_alter(&$form, &$form_state, $form_id) {
 
-  if ($form_id == 'user_login_block') {
-
-  }
 
   if (in_array($form_id, array('comment_node_article_form'))) {
     $form['#prefix'] = '<div id="commentsAdd" class="commentsAdd">';
@@ -73,6 +82,10 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['#prefix'] = '<div class="commentsSubmit">';
     $form['actions']['#suffix'] = '</div>';
     $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
+  }
+
+  if ($form_id == 'user_login_block') {
+
   }
 
   if ($form_id == 'user_register_form' ||
@@ -290,6 +303,7 @@ function astarter_css_alter(&$css) {
     'modules/dblog/dblog.css' => FALSE,
     'modules/dblog/dblog-rtl.css' => FALSE,
     // 'modules/field/theme/field.css' => FALSE,
+    'modules/field/theme/field-rtl.css' => FALSE,
     'modules/field/field-rtl.css' => FALSE,
     'modules/field_ui/field_ui.css' => FALSE,
     'modules/field_ui/field_ui-rtl.css' => FALSE,
@@ -297,7 +311,7 @@ function astarter_css_alter(&$css) {
     // 'modules/file/file.css' => FALSE,
     // 'modules/filter/filter.css' => FALSE,
     'modules/filter/filter-rtl.css' => FALSE,
-    // 'modules/forum/forum.css' => FALSE,
+    'modules/forum/forum.css' => FALSE,
     'modules/forum/forum-rtl.css' => FALSE,
     'modules/help/help.css' => FALSE,
     'modules/locale/locale.css' => FALSE,
@@ -315,7 +329,7 @@ function astarter_css_alter(&$css) {
     'modules/system/system.admin.css' => FALSE,
     'modules/system/system.admin-rtl.css' => FALSE,
     // 'modules/system/system.base.css' => FALSE,
-    // 'modules/system/system.base-rtl.css' => FALSE,
+    'modules/system/system.base-rtl.css' => FALSE,
     'modules/system/system.maintenance.css' => FALSE,
     // 'modules/system/system.menus.css' => FALSE,
     'modules/system/system.menus-rtl.css' => FALSE,
@@ -330,9 +344,11 @@ function astarter_css_alter(&$css) {
     'modules/user/user-rtl.css' => FALSE,
     // 'sites/all/modules/contrib/webform/css/webform.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor.css' => FALSE,
+    'sites/all/modules/contrib/ckeditor/css/ckeditor.editor.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor-rtl.css' => FALSE,
     'sites/all/modules/contrib/panels/css/panels.css' => FALSE,
     'sites/all/modules/contrib/views/css/views.css' => FALSE,
+    'sites/all/modules/contrib/views/css/views-rtl.css' => FALSE,
     'sites/all/modules/contrib/ctools/css/ctools.css' => FALSE,
     'sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.css' => FALSE,
   );
