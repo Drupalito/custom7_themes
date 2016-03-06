@@ -37,6 +37,11 @@ function astarter_preprocess_html(&$variables, $hook) {
     return;
   }
 
+  // If on an individual node page, add the node type to body classes.
+  if ($node = menu_get_object()) {
+    $variables['classes_array'][] = drupal_html_class('page--node-full');
+  }
+
   // Classes for body element.
   // Allows advanced theming based on context.
   // (home page, node of certain type, etc.).

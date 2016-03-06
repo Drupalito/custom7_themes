@@ -23,8 +23,7 @@ function astarter_preprocess_comment_wrapper(&$variables) {
   $variables['form_title_attributes_array']['class'][] = 'comments__title';
   $variables['form_title_attributes_array']['class'][] = 'commentsAdd__title';
 
-  $node = $variables['content']['comment_form']['#node'];
-  if (isset($node)) {
-    array_splice($variables['attributes_array']['class'], 1, 0, array('comments--' . $node->type));
+  if (isset($variables['content']['comment_form']['#node'])) {
+    array_splice($variables['attributes_array']['class'], 1, 0, array('comments--' . $variables['content']['comment_form']['#node']->type));
   }
 }

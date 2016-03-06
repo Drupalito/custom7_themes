@@ -17,9 +17,6 @@ function astarter_preprocess_comment(&$variables) {
   // Added ID to each comment.
   $variables['attributes_array']['id'][] = 'comment-' . $variables['comment']->cid;
 
-  $variables['attributes_array']['itemprop'][] = 'comment';
-  $variables['attributes_array']['itemscope'][] = 'itemscope';
-  $variables['attributes_array']['itemtype'][] = 'http://schema.org/Comment';
 
   // Comment is reply to pid
   if (!empty($variables['comment']->pid)) {
@@ -52,9 +49,38 @@ function astarter_preprocess_comment(&$variables) {
   $variables['pubdate'] = $variables['created'];
   $variables['submitted'] = t('!username replied on !datetime', array('!username' => $variables['author'], '!datetime' => $variables['created']));
 
+  $variables['content_attributes_array']['class'][] = 'comment__desciption';
+
+  if ($variables['node']->type == 'article') {
+
+    $variables['attributes_array']['itemprop'][] = 'comment';
+    $variables['attributes_array']['itemscope'][] = 'itemscope';
+    $variables['attributes_array']['itemtype'][] = 'http://schema.org/Comment';
+    $variables['content_attributes_array']['itemprop'] = 'description';
+    $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['itemprop'] = 'discussionUrl';
+
+    $variables['meta_author']['#markup'] = '<cite itemprop="publisher author" class="bold">' . $variables['author'] . '</cite>';
+
+    $variables['meta_comment_created']['#markup'] = '<time class="small" datetime="' . format_date($variables['comment']->created, 'custom', 'c') . '" itemprop="datePublished dateCreated">' . $variables['created'] . '</time>';
+
+    if ($variables['comment']->created != $variables['comment']->changed) {
+      $variables['meta_comment_changed']['#markup'] = '<time class="small" datetime="' . format_date($variables['comment']->changed, 'custom', 'c') . '" itemprop="dateModified">' . $variables['changed'] . '</time>';
+    }
+
+  }
+  else {
+
+    $variables['meta_author']['#markup'] = '<cite class="bold">' . $variables['author'] . '</cite>';
+
+    $variables['meta_comment_created']['#markup'] = '<time class="small" datetime="' . format_date($variables['comment']->created, 'custom', 'c') . '">' . $variables['created'] . '</time>';
+
+    if ($variables['comment']->created != $variables['comment']->changed) {
+      $variables['meta_comment_changed']['#markup'] = '<time class="small" datetime="' . format_date($variables['comment']->changed, 'custom', 'c') . '">' . $variables['changed'] . '</time>';
+    }
+  }
+
   // Clean reply link.
   $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['id'] = 'comment-' . $variables['comment']->cid . '-reply';
-  $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['itemprop'] = 'discussionUrl';
   $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['rel'] = 'nofollow';
   $variables['content']['links']['comment']['#links']['comment-reply']['attributes']['class'][] = 'comment__link';
 
