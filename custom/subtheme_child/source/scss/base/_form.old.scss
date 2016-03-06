@@ -1,4 +1,12 @@
 
+@if $active-form-support {
+
+$form-label-width: 200px;
+$form-label-marge: $grid-gutter-width;
+
+$form-background-color: #fff;
+$form-border-color:     #c0c0c0;
+
 form,
 fieldset,
 legend,
@@ -95,7 +103,7 @@ input[type="url"],
 input[type="submit"] {
   display: inline-block;
   padding: 0 5px;
-  line-height: normal; height: $inp-Height;
+  line-height: normal; height: 32px;
 }
 
 input[type="text"],
@@ -320,8 +328,93 @@ category: Base - Forms
 ```
 
 */
+
+@mixin formItem-block {
+  padding: 0;
+  > label,
+  > .label {
+    display: block;
+    margin-right: 0;
+    text-align: left;
+  }
+  label, .label {
+    position: relative;
+    top: auto; left: auto;
+    width: auto;
+  }
+}
+
+@mixin formItem-inline {
+  .form-item:first-child {
+    margin-right: 20px;
+  }
+  > .form-item {
+    float: left;
+  }
+}
+
+@mixin formItem {
+
+}
+
 .form-item {
-  @include formItem($inp-Height);
+  @extend .clearfix;
+  position: relative;
+  padding: 0 0 0 $form-label-width + $form-label-marge;
+  margin: 0 0 ($base-line-height / 2);
+  border: 0;
+  label,
+  .label {
+    @include bold;
+    @extend .inbl;
+    @extend .amiddle;
+    position: absolute;
+    top: 0; left: 0;
+    width: $form-label-width;
+    padding: 0;
+    margin-right: $form-label-marge;
+    line-height: 32px;
+    text-align: right;
+    > span {
+      display: inline-block;
+      line-height: normal;
+    }
+  }
+  .form-item {
+    padding: 0;
+    margin: 0;
+    label,
+    .label {
+      position: relative;
+      width: auto;
+      padding: 0;
+      margin-right: 0;
+      font-weight: normal;
+      text-align: left;
+    }
+  }
+}
+@include mq('smaller') {
+
+  .form-item {
+    padding-left: 0;
+    margin-left: 0;
+    label,
+    .label {
+      position: relative;
+      display: block;
+      width: auto;
+      margin-right: 0;
+      text-align: left;
+    }
+    .form-item {
+      label,
+      .label {
+        display: inline-block;
+      }
+    }
+  }
+
 }
 
 /*doc
@@ -381,6 +474,32 @@ fieldset {
 
 /*doc
 ---
+title: Field Block
+category: Base - Forms
+---
+
+Add class `form-item--block` on parent `div.form-item`
+
+```html_example
+
+  <div class="form-item form-item--block">
+    <span class="label">Email</span>
+    <strong>email@example.com</strong>
+  </div>
+  <div class="form-item form-item--block">
+    <label for="password">Password</label>
+    <input name="password" type="text" placeholder="Password" />
+  </div>
+
+```
+
+*/
+.form-item--block {
+  @include formItem-block;
+}
+
+/*doc
+---
 title: Field Inline
 category: Base - Forms
 ---
@@ -389,7 +508,7 @@ Add class `form-item--inline` on parent `div.form-item`
 
 ```html_example
 
-  <div class="form-item form-item--inline">
+  <div class="form-item form-item--block form-item--inline">
     <div class="form-item">
       <label for="Login">Login</label>
       <input name="Login" type="text" placeholder="Login" />
@@ -405,7 +524,7 @@ Add class `form-item--inline` on parent `div.form-item`
 */
 
 .form-item--inline {
-  @include formItem-inlineblock;
+  @include formItem-inline;
 }
 
 /*doc
@@ -428,6 +547,16 @@ Drupal example HTML
   margin-top: rhythm(1);
   button + button {
     margin-left: 2em;
+  }
+}
+
+.form-type--checkbox {
+  label {
+    position: relative;
+    width: auto;
+    margin-right: 0;
+    text-align: left;
+    line-height: 1;
   }
 }
 
@@ -473,7 +602,7 @@ Drupal example HTML
 div.password-confirm,
 .password-strength {
   @extend .pull-right;
-  line-height: $inp-Height;
+  line-height: 32px;
 }
 
 div.password-confirm {
@@ -492,12 +621,8 @@ div.password-confirm {
   }
 }
 
-.form-item.confirm-parent,
-.form-item .password-suggestions {
-  margin-top: rhythm(.5);
-}
-
-.form-item .password-suggestions {
+div.form-item div.password-suggestions {
+  margin-top: ($base-line-height / 2);
   padding: 10px 20px;
   border: 1px solid #B4B4B4;
 }
@@ -576,3 +701,6 @@ $field-placeholder: #999;
   color: $field-placeholder; }
 :-ms-input-placeholder { // Internet Explorer 10+
   color: $field-placeholder; }
+
+/* */
+} // end if

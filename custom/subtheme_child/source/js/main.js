@@ -168,6 +168,8 @@
         return false;
       });
 
+      Drupal.smoothScroll('.scroll');
+
       // Responsive menu
       $('#block-system-main-menu', context).navigation();
     }

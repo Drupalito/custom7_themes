@@ -184,112 +184,147 @@ function astarter_js_alter(&$js) {
 function astarter_css_alter(&$css) {
   global $theme_key;
 
-  if (isset($css['modules/filter/filter.css'])) {
-    $name = 'modules/filter/filter.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/filter.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['modules/poll/poll.css'])) {
-    $name = 'modules/poll/poll.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/poll.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['modules/search/search.css'])) {
-    $name = 'modules/search/search.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/search.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['modules/node/node.css'])) {
-    $name = 'modules/node/node.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/node.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['modules/block/block.css'])) {
-    $name = 'modules/block/block.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/block.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['modules/field/theme/field.css'])) {
-    $name = 'modules/field/theme/field.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/field.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['modules/comment/comment.css'])) {
-    $name = 'modules/comment/comment.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/comment.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
   if (isset($css['modules/system/system.base.css'])) {
     $name = 'modules/system/system.base.css';
     $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/system.base.css';
     $css[$name]['type'] = 'file';
     $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
   }
   if (isset($css['modules/system/system.menus.css'])) {
     $name = 'modules/system/system.menus.css';
     $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/system.menus.css';
     $css[$name]['type'] = 'file';
     $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
   }
-  if (isset($css['sites/all/modules/contrib/webform/css/webform.css'])) {
-    $name = 'sites/all/modules/contrib/webform/css/webform.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/webform.css';
+  if (isset($css['misc/vertical-tabs.css'])) {
+    $name = 'misc/vertical-tabs.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/vertical-tabs.css';
     $css[$name]['type'] = 'file';
     $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['sites/all/modules/contrib/date/date_api/date.css'])) {
-    $name = 'sites/all/modules/contrib/date/date_api/date.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/date_api.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
-  }
-  if (isset($css['sites/all/modules/contrib/addressfield/addressfield.css'])) {
-    $name = 'sites/all/modules/contrib/addressfield/addressfield.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/addressfield.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
   }
   if (isset($css['modules/contextual/contextual.css'])) {
     $name = 'modules/contextual/contextual.css';
     $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/contextual.css';
     $css[$name]['type'] = 'file';
     $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/field/theme/field.css'])) {
+    $name = 'modules/field/theme/field.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/field.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/filter/filter.css'])) {
+    $name = 'modules/filter/filter.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/filter.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/poll/poll.css'])) {
+    $name = 'modules/poll/poll.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/poll.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/search/search.css'])) {
+    $name = 'modules/search/search.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/search.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/node/node.css'])) {
+    $name = 'modules/node/node.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/node.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/block/block.css'])) {
+    $name = 'modules/block/block.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/block.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/comment/comment.css'])) {
+    $name = 'modules/comment/comment.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/comment.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/file/file.css'])) {
+    $name = 'modules/file/file.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/file.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['modules/forum/forum.css'])) {
+    $name = 'modules/forum/forum.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/forum.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['sites/all/modules/contrib/webform/css/webform.css'])) {
+    $name = 'sites/all/modules/contrib/webform/css/webform.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/webform.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['sites/all/modules/contrib/date/date_api/date.css'])) {
+    $name = 'sites/all/modules/contrib/date/date_api/date.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/date_api.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
+  if (isset($css['sites/all/modules/contrib/addressfield/addressfield.css'])) {
+    $name = 'sites/all/modules/contrib/addressfield/addressfield.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/addressfield.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
   }
 
   // Load custom CSS module after
   foreach ($css as $key => $value) {
     if (preg_match("@sites\/all\/modules\/custom@", $key)) {
       $css[$key]['group'] = CSS_THEME;
-      $css[$key]['weight'] = 0;
+      $css[$key]['weight'] = 0.0001;
     }
   }
 
   $exclude = array(
-    'misc/vertical-tabs.css' => FALSE,
+    // 'misc/vertical-tabs.css' => FALSE,
     // 'sites/all/modules/contrib/date/date_api/date.css' => FALSE,
     // 'sites/all/modules/contrib/date/date_repeat_field/date_repeat_field.css' => FALSE,
-    'sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css' => FALSE,
-    'sites/all/modules/contrib/files_undo_remove/files_undo_remove.css' => FALSE,
     'modules/aggregator/aggregator.css' => FALSE,
     'modules/aggregator/aggregator-rtl.css' => FALSE,
     // 'modules/block/block.css' => FALSE,
@@ -311,7 +346,7 @@ function astarter_css_alter(&$css) {
     // 'modules/file/file.css' => FALSE,
     // 'modules/filter/filter.css' => FALSE,
     'modules/filter/filter-rtl.css' => FALSE,
-    'modules/forum/forum.css' => FALSE,
+    // 'modules/forum/forum.css' => FALSE,
     'modules/forum/forum-rtl.css' => FALSE,
     'modules/help/help.css' => FALSE,
     'modules/locale/locale.css' => FALSE,
@@ -343,6 +378,7 @@ function astarter_css_alter(&$css) {
     'modules/user/user.css' => FALSE,
     'modules/user/user-rtl.css' => FALSE,
     // 'sites/all/modules/contrib/webform/css/webform.css' => FALSE,
+    'sites/all/modules/contrib/files_undo_remove/files_undo_remove.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor.editor.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor-rtl.css' => FALSE,

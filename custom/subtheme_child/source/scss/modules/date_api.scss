@@ -178,8 +178,8 @@ div.date-calendar-day span.month {
   text-transform: uppercase;
 }
 div.date-calendar-day span.day {
+  @include bold;
   font-size: 2em;
-  font-weight: bold;
 }
 div.date-calendar-day span.year {
   font-size: .9em;

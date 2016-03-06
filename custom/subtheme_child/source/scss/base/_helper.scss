@@ -63,16 +63,12 @@ title: Clearfix
 category: Base - Helpers
 ---
 
-* `.clearfix` ou `.clear`
+* `%clearfix`
 
 */
 
-.clear,
-.clearfix:after { clear: both; }
-
-.clearfix:after {
-  content: "";
-  display: table;
+.clearfix {
+  @extend %clearfix;
 }
 
 /*doc

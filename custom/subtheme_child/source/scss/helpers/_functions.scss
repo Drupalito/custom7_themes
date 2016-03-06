@@ -1,4 +1,12 @@
 
+%clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
 /*doc
 ---
 title: Convert px to em

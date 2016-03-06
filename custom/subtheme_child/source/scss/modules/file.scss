@@ -17,16 +17,12 @@ category: Module - File Manager
 .form-managed-file {
   white-space: nowrap;
   .btn {
-    font-size: 0;
     height: 32px;
     border-color: #ccc;
     position: relative;
-    left: -1px; top: -1px;
-    padding: 7px;
+    left: -1px;
+    padding: 6px;
     border-radius: 0 4px 4px 0;
-    &:before {
-      font-size: 16px;
-    }
   }
 }
 

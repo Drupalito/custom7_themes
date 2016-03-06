@@ -9,9 +9,16 @@ Content type : **Node**
 
 */
 
-// Node type article
-.node-type-article {
+.header {
+  ul {
+    @extend .list-inline;
+    @extend .list-separate;
+    margin-top: 0;
+  }
+}
 
+// Node type article
+.page--node-full {
   .main__header {
     border-bottom: 0;
     padding-bottom: 0;
@@ -21,10 +28,5 @@ Content type : **Node**
     border-bottom: 1px solid #ccc;
     padding-bottom: rhythm(0.5);
     margin-bottom: rhythm(1);
-    ul {
-      @extend .list-inline;
-      @extend .list-separate;
-      margin-top: 0;
-    }
   }
 }

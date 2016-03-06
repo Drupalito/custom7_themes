@@ -28,8 +28,12 @@ Default Style CSS
   </div>
 
 ```
-
 */
+
+.form-item.webform-container-inline {
+  @include formItem-inline($inp-Height);
+}
+
 .webform-progressbar {
   margin: rhythm(1) 0;
   &-number {
@@ -119,10 +123,6 @@ Default Style CSS
 /* */
 
 .webform-container-inline {
-  label {
-    display: inline;
-    margin-right: 1em;
-  }
   > div,
   > .form-item {
     display: inline-block;

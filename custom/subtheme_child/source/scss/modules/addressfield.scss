@@ -18,14 +18,13 @@ Default Style CSS
   &-container,
   &-container-inline {
     .form-item {
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
     }
   }
   &-container {
   }
   &-container-inline {
+    @extend %clearfix;
     .form-item {
       float: left; /* LTR */
       margin-right: 1em; /* LTR */

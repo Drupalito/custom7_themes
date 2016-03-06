@@ -36,8 +36,8 @@ Divers styles de typographie
 .capitalize  { text-transform: capitalize; }
 .no-caps     { font-variant: normal; }
 .regular     { font-weight: normal; font-style: normal; }
-.bold        { font-weight: bold; }
-.italic      { font-style: italic; }
+.bold        { @include bold; }
+.italic      { @include italic; }
 .underline   { text-decoration: underline; }
 .nounderline { text-decoration: none; border-bottom: 0; }
 .ellipsis    { text-overflow: ellipsis; }

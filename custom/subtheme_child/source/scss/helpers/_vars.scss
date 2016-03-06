@@ -1,7 +1,4 @@
 
-// Active form support.
-$active-form-support: true;
-
 // Typo size.
 $base-font-size:   16px;
 $base-line-height: 24px;
@@ -30,12 +27,15 @@ $font-families: (
   pre: (Menlo, Monaco, Consolas, "Courier New", monospace)
 );
 
-// $base-font: (
-//   font-family: map-get($font-families, sans-serif),
-//   line-height: $base-font-size,
-//   font-size: $base-line-height,
-//   color: map-get($colors, black),
-// );
+@mixin bold {
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin italic {
+  font-weight: normal;
+  font-style: italic;
+}
 
 /*doc
 ---
@@ -154,3 +154,11 @@ $container-sm: ((720px + $grid-gutter-width)) !default;
 $container-md: ((940px + $grid-gutter-width)) !default;
 // Large screen / wide desktop
 $container-lg: ((1140px + $grid-gutter-width)) !default;
+
+
+$inp-Height: 32px;
+$form-label-width: 200px;
+$form-label-marge: $grid-gutter-width;
+
+$form-background-color: #fff;
+$form-border-color:     #c0c0c0;
