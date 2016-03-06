@@ -1,18 +1,16 @@
 
-/*
+/**
+ * Configuration Mixins
+ */
 
-Configuration Mixins
-
-*/
+// Ne pas changer ces lignes.
 $browser-default-font-size:   16px;
 $rhythm-unit:                 'em';
 $relative-font-sizing:        true;
 $default-rhythm-border-style: solid;
 $font-unit: if($relative-font-sizing, 1em, $base-font-size);
 
-// bootstrap - More easily include all the states
-// for responsive-utilities.
-// [converter] $parent hack
+// bootstrap - [converter] $parent hack
 @mixin responsive-visibility($parent) {
   #{$parent} {
     display: block !important;
@@ -27,14 +25,33 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
 }
 
 @mixin formItem-inlineblock {
-  // .form-item:first-child {
-  //   margin-right: 20px;
-  // }
-  // > .form-item {
-  //   float: left;
-  // }
+  .form-item:first-child {
+    margin-right: 20px;
+  }
+  > .form-item {
+    float: left;
+  }
 }
 
+/*doc
+---
+title: Mixin: formItem
+category: Base - Forms
+---
+
+@mixin formItem
+
+-    __$inp-Height:__ Input height / line-height
+
+```
+
+  .form-item {
+    @include formItem(32px);
+  }
+
+```
+
+*/
 @mixin formItem($inp-Height) {
   @extend %clearfix;
   position: relative;
@@ -57,6 +74,25 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
   }
 }
 
+/*doc
+---
+title: Mixin: formItem-inline
+category: Base - Forms
+---
+
+@mixin formItem-inline
+
+-    __$inp-Height:__ Input height / line-height
+
+```
+
+  .form-item {
+    @include formItem-inline(32px);
+  }
+
+```
+
+*/
 @mixin formItem-inline($inp-Height) {
   @include mq('small') {
     padding: 0 0 0 $form-label-width + $form-label-marge;
@@ -91,18 +127,6 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
         text-align: left;
       }
     }
-  }
-}
-
-// @mixin establish-baseline
-@mixin establish-baseline($font-size: $base-font-size, $font-family: map-get($font-families, 'body')) {
-  $taille: ($font-size / $browser-default-font-size * 100%);
-  $line-height: rhythm(1, $font-size);
-  html {
-    font: #{$taille}/#{$line-height} $font-family;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
   }
 }
 
@@ -172,11 +196,20 @@ Variable `$keyword` possible egal to :
   }
 }
 
+// @mixin establish-baseline
+@mixin establish-baseline($font-size: $base-font-size, $font-family: map-get($font-families, 'body')) {
+  $taille: ($font-size / $browser-default-font-size * 100%);
+  $line-height: rhythm(1, $font-size);
+  html {
+    font: #{$taille}/#{$line-height} $font-family;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+}
+
 // Calculate rhythm units
 @function rhythm($lines: 1, $font-size: $base-font-size) {
-  // @if not $relative-font-sizing and $font-size != $base-font-size {
-  //   @warn "$relative-font-sizing is false but a relative font size was passed to the rhythm function";
-  // }
   $rhythm: $font-unit * $lines * $base-line-height / $font-size;
   @return $rhythm;
 }
