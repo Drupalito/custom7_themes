@@ -21,6 +21,11 @@ function astarter_preprocess_html(&$variables, $hook) {
     'dir' => $variables['language']->dir,
   );
 
+  // // Show a warning when the Omega theme is the active theme.
+  // if ($GLOBALS['theme'] == 'subtheme_child') {
+  //   drupal_set_message(t('astarter is a base theme and should never be used directly. Please see the included README or our <a href="http://aquelito.fr">support</a>.'), 'warning');
+  // }
+
   if ($variables['is_admin']) {
     // Active Style CSS Debug Grid for Admin.
     if (theme_get_setting('astarter_debug_css_grid')) {
