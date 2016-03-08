@@ -19,11 +19,14 @@ Content type : **Node**
 
 // Node type article
 .page--node-full {
-  .main__header {
-    border-bottom: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  .main {
+    &__header {
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
   }
+
   .header {
     border-bottom: 1px solid #ccc;
     padding-bottom: rhythm(0.5);

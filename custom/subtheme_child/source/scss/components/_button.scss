@@ -42,6 +42,7 @@ Pour une action, préférer un `<button>` à un lien `<a>`
   transition-timing-function: ease-in;
   transition-property: background-color;
   transition-duration: .250s;
+
   &:hover,
   &:focus,
   &:active,
@@ -51,6 +52,7 @@ Pour une action, préférer un `<button>` à un lien `<a>`
     background-color: #ccc;
     color: #fff;
   }
+
   // Kill phantom spacing and dotted
   // border that appears in Firefox.
   &::-moz-focus-inner {
@@ -101,7 +103,11 @@ Couleurs disponibles.
   .btn--#{$name} {
     background-color: $color;
     color: #fff;
-    &:hover, &:focus, &:active, &.active {
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
       border-color: $color;
       background-color: darken($color, 10%);
     }
@@ -153,8 +159,10 @@ category: Components - Buttons
   pointer-events: none;
 }
 
+// scss-lint:disable IdSelector
 .btn--submit + #edit-cancel {
   display: inline-block;
   margin-left: 20px;
   margin-top: 20px;
 }
+// scss-lint:enable IdSelector

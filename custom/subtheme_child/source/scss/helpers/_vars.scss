@@ -53,7 +53,7 @@ category: Global - Variables
 | h6  |  14px | <h6>.h6 Lorem Ipsum</h6>
 
 */
-$font_size: (
+$font-size: (
   h1: 28px,
   h2: 24px,
   h3: 20px,
@@ -97,22 +97,22 @@ $message: (
   info: (
     color: null,
     background: #477bb6,
-    icon:  '.i-info'
+    icon:  ".i-info"
   ),
   warning: (
     color: null,
     background: #ddae1e,
-    icon:  '.i-warning'
+    icon:  ".i-warning"
   ),
   error: (
     color: null,
     background: #b64747,
-    icon:  '.i-error'
+    icon:  ".i-error"
   ),
   status: (
     color: null,
     background: #77b647,
-    icon:  '.i-check'
+    icon:  ".i-check"
   )
 );
 
@@ -156,7 +156,7 @@ $container-md: ((940px + $grid-gutter-width)) !default;
 $container-lg: ((1140px + $grid-gutter-width)) !default;
 
 
-$inp-Height: 32px;
+$inp-height: 32px;
 $form-label-width: 200px;
 $form-label-marge: $grid-gutter-width;
 

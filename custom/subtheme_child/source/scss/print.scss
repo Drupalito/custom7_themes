@@ -1,20 +1,20 @@
 
-/*
-subtheme_child Drupal Theme
-Print style
-
-Black prints faster: h5bp.com/s
-
-Author : parms_owner <parms_email>
-MIT 2016
-
-*/
+/**
+ * subtheme_child Drupal Theme
+ * Print stylesheet
+ * Black prints faster: h5bp.com/s
+ *
+ * OWNER_NAME <OWNER_EMAIL>
+ * (CURRENT_YEAR)
+ */
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  'helpers/vars',
-  'helpers/functions',
-  'helpers/mixins';
+  "helpers/vars",
+  "helpers/functions",
+  "helpers/mixins";
+// scss-lint:enable Indentation
 
 * {
   background: transparent !important;
@@ -50,27 +50,36 @@ h6, .h6 {
   page-break-after: avoid;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6,
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
 blockquote,
-code, pre,
+code,
+pre,
 tr,
 img {
   page-break-inside: avoid;
 }
 
 a {
-  &, &:visited {
+  &,
+  &:visited {
     text-decoration: underline; // Souligner les liens
   }
+
   &[href]:after {
     content: " (" attr(href) ")"; // Affiche les liens
   }
+
   &.logo__link:after,
   &[href^="#"]:after,
   &[href^="javascript:"]:after {
     content: ""; // Don't show links for images, or javascript/internal links
   }
+
   ul &[href]:after,
   ol &[href]:after {
     content: "";
@@ -104,8 +113,11 @@ thead {
 }
 
 .noprint,
-.contentinfo, .aside,
-.skiplinks, .pagination, .message {
+.contentinfo,
+.aside,
+.skiplinks,
+.pagination,
+.message {
   display: none;
 }
 

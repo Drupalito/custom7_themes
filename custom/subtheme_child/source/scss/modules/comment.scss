@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -40,14 +42,15 @@ category: Module - Comment
 }
 
 .comment,
-.commentsAdd {
+.comments-add {
   padding: rhythm(1);
   margin-top: rhythm(1);
   background: #f5f5f5;
 }
 
-.commentsSubmit {
+.comments-submit {
   margin-bottom: rhythm(1);
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -55,11 +58,13 @@ category: Module - Comment
 
 .comment {
   border: 2px solid #fff;
+
   &__header {
     border-bottom: pem(1px) solid #ccc;
     padding-bottom: rhythm(0.5);
     margin-bottom: rhythm(0.5);
   }
+
   &__signature,
   .links {
     border-top: pem(1px) solid #ccc;
@@ -67,14 +72,16 @@ category: Module - Comment
     margin-top: rhythm(0.5);
     margin-bottom: 0;
   }
+
   &--unpublished {
-    $type: map-get($message, 'warning');
-    $background: map-get($type, 'background');
+    $type: map-get($message, "warning");
+    $background: map-get($type, "background");
     background: #{lighten($background, 45%)};
   }
+
   &--preview {
-    $type: map-get($message, 'info');
-    $background: map-get($type, 'background');
+    $type: map-get($message, "info");
+    $background: map-get($type, "background");
     background: #{lighten($background, 45%)};
     padding: 1.5em;
     margin-bottom: 1.5em;

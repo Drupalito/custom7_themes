@@ -26,14 +26,17 @@ category: Components - Progress bar
     border: 1px solid #666;
     background: #fff;
   }
+
   .filled {
     height: 1.5em;
     width: 5px;
-    background: #{map-get($colorz, 'default')};
+    background: #{map-get($colorz, "default")};
   }
+
   .percentage {
     @extend .pull-right;
   }
+
   .message {
     min-height: 100%;
     padding: 0;

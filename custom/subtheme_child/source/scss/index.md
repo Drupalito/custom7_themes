@@ -1,7 +1,7 @@
 
 # subtheme_child
 
-subtheme_child's sub theme for astarter created by [parms_owner](parms_owner_website).<br/>Please see the included README or our [support](parms_owner_website).
+subtheme_child's sub theme for astarter created by [OWNER_NAME](OWNER_WEBSITE).<br/>Please see the included README or our [support](OWNER_WEBSITE).
 
 The styleguide, settings components, and guidelines that help define the next Thème Drupal.
 

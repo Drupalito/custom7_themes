@@ -57,9 +57,6 @@ Le titre peut être caché avec `.hide`
 */
 
 .pagination {
-  &__title { }
-  &__list { }
-  &__item { }
   &__link,
   &--current strong {
     border: 1px solid;
@@ -71,17 +68,17 @@ Le titre peut être caché avec `.hide`
     padding: 0.5rem 0.9rem;
     color: #7d7d7d;
   }
+
   &--current strong {
-    background: #{map-get($colorz, 'primary')};
+    background: #{map-get($colorz, "primary")};
     color: #fff;
   }
+
   &__link {
     &:hover,
     &:focus {
-      background: #{map-get($colorz, 'default')};
+      background: #{map-get($colorz, "default")};
       color: #fff;
     }
   }
-  &__prev { }
-  &__next { }
 }

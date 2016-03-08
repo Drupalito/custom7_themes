@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,10 +16,12 @@ category: Module - Vertical Tabs
 [TODO]
 
 */
+
 div.vertical-tabs {
   margin: rhythm(1) 0 rhythm(1) 15em; /* LTR */
   border: 1px solid #ccc;
 }
+
 .vertical-tabs ul.vertical-tabs-list {
   width: 15em;
   list-style: none;

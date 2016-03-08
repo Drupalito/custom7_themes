@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,6 +16,7 @@ category: Module - Filter
 Default Style CSS
 
 */
+
 .tips {
   font-size: 80%;
 }
@@ -22,6 +25,7 @@ Default Style CSS
   &-help {
     a {
       border-bottom: 0;
+
       &:before {
         content: "\ed55";
         font-family: "icomoon";
@@ -29,11 +33,13 @@ Default Style CSS
       }
     }
   }
+
   &-wrapper {
     border-bottom: pem(1px) solid #ccc;
     background: #fff;
     border-top: 0;
   }
+
   .fieldset-wrapper {
     padding: rhythm(0.5) rhythm(1);
   }
@@ -43,6 +49,7 @@ Default Style CSS
   .form-item {
     padding-left: 0;
     margin-bottom: 0;
+
     label,
     .label {
       position: relative;
@@ -53,6 +60,7 @@ Default Style CSS
   }
 }
 
+// scss-lint:disable SelectorFormat
 .ckeditor_links {
   display: block;
   padding: rhythm(0.5) rhythm(1);
@@ -60,10 +68,13 @@ Default Style CSS
   border-bottom: 0;
   border-left: pem(1px) solid #ccc;
   background: #fff;
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     border-right: pem(1px) solid #ccc;
     border-left: pem(1px) solid #ccc;
-    background: #{map-get($colorz, 'default')};
+    background: #{map-get($colorz, "default")};
     color: #fff;
   }
 }
+// scss-lint:enable SelectorFormat

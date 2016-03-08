@@ -1,19 +1,23 @@
+// scss-lint:disable
 
-/*
-subtheme_child Drupal Theme
-Theme stylesheet
+/**
+ * subtheme_child Drupal Theme
+ * Theme stylesheet
+ *
+ * OWNER_NAME <OWNER_EMAIL>
+ * (CURRENT_YEAR)
+ */
 
-Author : parms_owner <parms_email>
-MIT 2016
-
-*/
+// scss-lint:disable Indentation
 
 // Helpers
 @import
-  'helpers/vars',
-  'helpers/functions',
-  'helpers/mixins';
+  "helpers/vars",
+  "helpers/functions",
+  "helpers/mixins";
 
 // Base
 @import
-  'themes/theme';
+  "themes/theme";
+
+// scss-lint:enable Indentation

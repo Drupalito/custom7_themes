@@ -48,13 +48,16 @@ category: Components - Breadcrumb
 
 .skiplinks {
   @extend .mvn;
+
   a {
     position: absolute;
     left: -9999px;
     z-index: 2;
+
     &:focus,
     &:active {
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       display: inline;
       padding: 5px 10px;
       background: #b00;

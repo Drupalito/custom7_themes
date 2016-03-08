@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,6 +16,7 @@ category: Module - Field Collection
 [TODO]
 
 */
+
 .field-collection-container {
   border-bottom: 1px solid #D3D7D9;
   margin-bottom: 1em;

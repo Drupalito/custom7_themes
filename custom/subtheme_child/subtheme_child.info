@@ -1,7 +1,7 @@
 core        = 7.x
 engine      = phptemplate
 name        = subtheme_child
-description = subtheme_child's sub theme for astarter created by <a href="parms_website">parms_owner</a>.<br />Please see the included README or our <a href="parms_website">support</a>.
+description = subtheme_child's sub theme for astarter created by <a href="OWNER_WEBSITE">OWNER_NAME</a>.<br />Please see the included README or our <a href="OWNER_WEBSITE">support</a>. (CURRENT_YEAR)
 screenshot  = screenshot.png
 base theme  = astarter
 
@@ -31,8 +31,8 @@ regions[page_top]    = Page top
 regions[page_bottom] = Page bottom
 
 ; Set the default values of settings on the theme-settings.php form.
-settings[subtheme_child_company_name]         = ''
-settings[subtheme_child_company_email]        = 'parms_owner_email'
+settings[subtheme_child_company_name]         = 'OWNER_NAME'
+settings[subtheme_child_company_email]        = 'OWNER_EMAIL'
 settings[subtheme_child_company_street_line1] = ''
 settings[subtheme_child_company_street_line2] = ''
 settings[subtheme_child_company_postal_code]  = ''

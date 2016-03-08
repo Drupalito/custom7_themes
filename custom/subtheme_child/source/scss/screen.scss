@@ -1,51 +1,55 @@
+// scss-lint:disable
 
-/*
-subtheme_child Drupal Theme
-Main stylesheet
+/**
+ * subtheme_child Drupal Theme
+ * Main stylesheet
+ *
+ * OWNER_NAME <OWNER_EMAIL>
+ * (CURRENT_YEAR)
+ */
 
-Author : parms_owner <parms_email>
-MIT 2016
-
-*/
+// scss-lint:disable Indentation
 
 // Helpers
 @import
-  'helpers/vars',
-  'helpers/functions',
-  'helpers/mixins';
+  "helpers/vars",
+  "helpers/functions",
+  "helpers/mixins";
 
 // Base
 @import
-  'base/fonts',
-  'base/reset',
-  'base/typo',
-  'base/helper',
-  'base/form';
+  "base/fonts",
+  "base/reset",
+  "base/typo",
+  "base/helper",
+  "base/form";
 
 // Components
 @import
-  'components/breadcrumb',
-  'components/button',
-  'components/icons',
-  'components/message',
-  'components/pagination',
-  'components/progress-bar',
-  'components/video',
-  'components/modal',
-  'components/tabs';
+  "components/breadcrumb",
+  "components/button",
+  "components/icons",
+  "components/message",
+  "components/pagination",
+  "components/progress-bar",
+  "components/video",
+  "components/modal",
+  "components/tabs";
 
 // Layers
 @import
-  'layers/grid',
-  'layers/layer',
-  'layers/header',
-  'layers/footer',
-  'layers/navigation',
-  'layers/aside';
+  "layers/grid",
+  "layers/layer",
+  "layers/header",
+  "layers/footer",
+  "layers/navigation",
+  "layers/aside";
 
 // Overrides Druapl
 @import
-  'overrides/block',
-  'overrides/field',
-  'overrides/node',
-  'overrides/search';
+  "overrides/block",
+  "overrides/field",
+  "overrides/node",
+  "overrides/search";
+
+// scss-lint:enable Indentation

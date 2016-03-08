@@ -63,10 +63,12 @@ Default markup. (`title` = `alt`)
       display: block;
     }
   }
+
   @include mq("small") {
     &__link {
       display: table;
     }
+
     &__content {
       display: table-cell;
       vertical-align: middle;

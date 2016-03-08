@@ -1,67 +1,11 @@
 
 /**
- * @file
- * A JavaScript file for the theme.
- *
  * subtheme_child Drupal Theme
+ * JavaScript file for the theme.
+ *
+ * OWNER_NAME <OWNER_EMAIL>
+ * (CURRENT_YEAR)
  */
-
-// ;(function($, window, document, undefined) {
-
-//   $.navigation = function(element, options) {
-
-//     var defaults = {
-//       title: "Menu",
-//       expanded: {
-//         title: "Open",
-//         icon: '<span class="i i-arrow-down" aria-hidden="true"></span>'
-//       }
-//     };
-
-//     var plugin = this;
-
-//     plugin.settings = {};
-
-//     var $element = $(element),
-//          element = element;
-
-//     var submenu = function() {
-
-//     };
-
-//     plugin.init = function() {
-//       plugin.settings = $.extend({}, defaults, options);
-
-//       return $element.each(function() {
-//         $(this).prepend('<p class="menu-button">' + plugin.settings.title + '</p>');
-//         $(this).find('.menu-button').on('click', function() {
-//           $(this).toggleClass('is-actived');
-//           var mainmenu = $(this).next('ul');
-//           if (mainmenu.hasClass('is-opened')) {
-//             mainmenu.hide().removeClass('is-opened');
-//           }
-//           else {
-//             mainmenu.show().addClass('is-opened');
-//           }
-//         });
-
-//         submenu();
-
-//       });
-//     };
-
-//     plugin.init();
-//   }
-
-//   $.fn.navigation = function(options) {
-//     return this.each(function() {
-//       if (undefined == $(this).data('navigation')) {
-//         var plugin = new $.navigation(this, options);
-//         $(this).data('navigation', plugin);
-//       }
-//     });
-//   }
-// })(jQuery, window, document);
 
 ;(function($, window, document, undefined) {
 
@@ -108,6 +52,9 @@
         plugin.submenu();
       });
     },
+    openSubmenu: function() {
+
+    },
     hasSubmenu: function() {
 
     },
@@ -115,7 +62,9 @@
       var plugin = this,
           $this = $(this.element);
 
-      $this.find('.menu__item--hasmenu').prepend('<button class="menu__btn menu__btn-menu">' + plugin.settings.expanded.icon + ' <span class="hide">' + plugin.settings.expanded.title + '</span></button>');
+      var $menuItem = $this.find('.menu__item--hasmenu');
+      $menuItem.prepend('<button class="menu__btn menu__btn-menu">' + plugin.settings.expanded.icon + ' <span class="hide">' + plugin.settings.expanded.title + '</span></button>');
+
       $this.find('.menu__btn').on('click', function(e) {
         var $el = $(this);
         var $ulSibling = $el.siblings('ul');

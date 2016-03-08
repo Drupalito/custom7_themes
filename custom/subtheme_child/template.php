@@ -35,6 +35,8 @@ function subtheme_child_page_alter(&$page) {
  * @ingroup themeable
  */
 function subtheme_child_html_head_alter(&$head_elements) {
+  $exclude = array();
+  $head_elements = array_diff_key($head_elements, $exclude);
 }
 
 /**

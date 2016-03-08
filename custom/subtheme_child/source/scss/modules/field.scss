@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,10 +16,12 @@ category: Module - Field
 [TODO]
 
 */
+
 .field {
   &-label {
     @include bold;
   }
+
   &--label-inline {
     // Clearfix
     &:after {
@@ -25,15 +29,18 @@ category: Module - Field
       display: table;
       clear: both;
     }
+
     .field-label {
       margin-right: rhythm(.5);
       float: left;
     }
   }
+
   .node &--label-inline,
   .node &--label-above {
     margin-bottom: rhythm(.5);
   }
+
   &--label-inline,
   &--label-above {
     margin-bottom: 0;

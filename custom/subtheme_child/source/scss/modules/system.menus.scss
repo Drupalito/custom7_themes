@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,17 +16,20 @@ category: Module - System menus
 [TODO]
 
 */
+
 ul li.expanded > a:before,
 ul li.collapsed > a:before {
   font-family: "icomoon";
   position: absolute;
-  top: 50%; right: 5px;
+  top: 50%;
+  right: 5px;
   margin-top: -12px;
 }
 
 ul li.expanded > a:before {
   content: "\edc9";
 }
+
 ul li.collapsed > a:before {
   content: "\edc8";
 }
@@ -34,5 +39,5 @@ ul li.collapsed > a:before {
 
 li a.active,
 li.active-trail > a {
-  color: #{map-get($colorz, 'primary')};
+  color: #{map-get($colorz, "primary")};
 }

@@ -26,17 +26,21 @@ category: Layout - Layer
 
 */
 
-.content, .main,
-.node, .block {
+.content,
+.main,
+.node,
+.block {
   position: relative;
 }
 
+// scss-lint:disable IdSelector
 .banner,
 #container,
 .contentinfo {
   padding-top: rhythm(1);
   padding-bottom: rhythm(1);
 }
+// scss-lint:enable IdSelector
 
 /*doc
 ---
@@ -65,15 +69,17 @@ category: Layout - Layer
   &__title {
     @extend .caps;
     margin-bottom: 0;
-    & + * {
+
+    + * {
       margin-top: 0;
     }
   }
+
   &__header {
-    border-top: pem(1px) solid #ccc;
-    padding-top: rhythm(0.5);
-    border-bottom: pem(1px) solid #ccc;
-    padding-bottom: rhythm(0.5);
     margin-bottom: rhythm(1);
+    padding-top: rhythm(0.5);
+    padding-bottom: rhythm(0.5);
+    border-top: pem(1px) solid #ccc;
+    border-bottom: pem(1px) solid #ccc;
   }
 }

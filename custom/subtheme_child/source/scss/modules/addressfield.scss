@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,16 +16,16 @@ category: Module - Addressfield
 Default Style CSS
 
 */
+
 .addressfield {
   &-container .form-item:last-child,
   &-container-inline.locality-block .form-item {
     margin-bottom: 0;
   }
-  &-container {
 
-  }
   &-container-inline {
     @extend %clearfix;
+
     .form-item {
       float: left; /* LTR */
       margin-right: 1em; /* LTR */

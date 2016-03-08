@@ -3,7 +3,10 @@
 @each $name, $color in $colorz {
   .#{$name}-color { color: $color; }
   .#{$name}-border { border-color: $color; }
-  .#{$name}-background { color: #fff; background-color: $color; }
+  .#{$name}-background {
+    background-color: $color;
+    color: #fff;
+  }
 }
 
 /*doc
@@ -30,18 +33,18 @@ Divers styles de typographie
 
 */
 
-.caps        { text-transform: uppercase; }
-.small-caps  { font-variant: small-caps; }
-.lower-caps  { text-transform: lowercase; }
-.capitalize  { text-transform: capitalize; }
-.no-caps     { font-variant: normal; }
-.regular     { font-weight: normal; font-style: normal; }
-.bold        { @include bold; }
-.italic      { @include italic; }
-.underline   { text-decoration: underline; }
+.caps { text-transform: uppercase; }
+.small-caps { font-variant: small-caps; }
+.lower-caps { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.no-caps { font-variant: normal; }
+.regular { font-weight: normal; font-style: normal; }
+.bold { @include bold; }
+.italic { @include italic; }
+.underline { text-decoration: underline; }
 .nounderline { text-decoration: none; border-bottom: 0; }
-.ellipsis    { text-overflow: ellipsis; }
-.strike      { text-decoration: line-through; }
+.ellipsis { text-overflow: ellipsis; }
+.strike { text-decoration: line-through; }
 
 /*doc
 ---
@@ -61,8 +64,8 @@ La justification n'est pas disponible car interdite en accessibilité pour des q
 
 */
 
-.text-left   { text-align: left; }
-.text-right  { text-align: right; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 .text-center { text-align: center; }
 
 /*doc
@@ -187,6 +190,7 @@ category: Base - Typo
 
 .list-inline {
   @extend .list-none;
+
   li {
     display: inline;
   }
@@ -194,6 +198,7 @@ category: Base - Typo
 
 .list-pull-left {
   @extend .list-none;
+
   li {
     @extend .pull-left;
   }
@@ -222,17 +227,16 @@ category: Base - Typo
 
 .list-separate {
   li {
-    & {
-      &:before {
-        content: " · ";
-        padding-left: 5px;
-        padding-right: 5px;
-      }
-      &:first-child:before {
-        content: "";
-        padding-left: 0;
-        padding-right: 0;
-      }
+    &:before {
+      content: " · ";
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    &:first-child:before {
+      content: "";
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
@@ -283,6 +287,7 @@ category: Base - Typo
 
 .definition-inline {
   @extend .clearfix;
+
   dt {
     @extend .ellipsis;
     @extend .pull-left;
@@ -290,6 +295,7 @@ category: Base - Typo
     // white-space: nowrap;
     width: 150px;
   }
+
   dd {
     margin-left: 150px + 10;
   }

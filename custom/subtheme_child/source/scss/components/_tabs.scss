@@ -8,19 +8,22 @@ category: Components - Tabs
 [TODO]
 
 */
+
 ul.links,
 .tabs--primary {
-  list-style-type: none;
-  padding-left: 0;
   @extend .list-inline;
   @extend .list-separate;
+  list-style-type: none;
+  padding-left: 0;
+
   a {
     text-transform: uppercase;
     border-bottom: 0;
   }
+
   .active {
     @extend .bold;
     border-bottom: 0;
-    color: #{map-get($colorz, 'primary')};
+    color: #{map-get($colorz, "primary")};
   }
 }

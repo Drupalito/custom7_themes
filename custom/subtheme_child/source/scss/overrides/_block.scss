@@ -21,15 +21,3 @@ category: Overrides - Block
 ```
 
 */
-
-// Block
-.block {
-  // Element
-  &__title {}
-  &__inner {}
-  &__header {}
-  &__content {}
-  // Modifier
-  &--first {}
-  &--last {}
-}

@@ -7,7 +7,6 @@ category: Components - Messages
 
 Message d'avertissement délivré par Drupal.
 
-
   <div role="alert" class="messages messages--info messages--icon clearfix">
     <h2 class="messages__title hide">Message</h2>
     <div class="messages__content">
@@ -29,7 +28,6 @@ Message d'avertissement délivré par Drupal.
       </ul>
     </div>
   </div>
-
 
 */
 
@@ -134,51 +132,66 @@ Modifier `.messages--warning` && `.messages--icon`
   margin: rhythm(1) 0;
   border-left: 1.5em solid;
   background: #ccc;
-  p, ul {
+
+  p,
+  ul {
     margin-top: 0;
     margin-bottom: 0;
-    // &:first-child { @extend .mtn; }
-    // &:last-child { @extend .mbn; }
   }
+
   a {
     @extend .bold;
+
     &:hover,
     &:focus,
     &:active {
       color: inherit;
     }
   }
+
   &__title,
   &__list {
     @extend .mvn;
   }
+
   &__content {
     position: relative;
   }
+
   &--icon {
+
+    // scss-lint:disable SelectorFormat
     .messages__content {
       position: relative;
       padding-left: 4.5em;
+
       &:before {
         @extend .i;
         position: absolute;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         font-size: 3em;
       }
     }
+    // scss-lint:enable SelectorFormat
   }
+
   @each $name, $values in $message {
-    $icon: map-get($values, 'icon');
-    $background: map-get($values, 'background');
+    $icon: map-get($values, "icon");
+    $background: map-get($values, "background");
+
     &--#{$name} {
       border-color: $background;
       background: lighten($background, 45%);
+
+      // scss-lint:disable SelectorFormat
       &.messages--icon .messages__content {
         &:before {
           @extend #{$icon};
           color: $background;
         }
       }
+      // scss-lint:enable SelectorFormat
     }
   }
 }
@@ -229,11 +242,14 @@ Combine `.text` with `.text--icon` and icon `.i-info`
     @extend .i;
     margin-right: 5px;
   }
+
   &--muted {
     color: #999;
   }
+
   @each $name, $values in $message {
-    $color: map-get($values, 'background');
+    $color: map-get($values, "background");
+
     &--#{$name} {
       color: $color;
     }
@@ -289,12 +305,18 @@ category: Components - Messages
 ```
 
 */
+
 @each $name, $values in $message {
-  $color: map-get($values, 'background');
-  $newName: #{$name};
-  @if $name=='status' { $newName: 'ok' }
-  table tr.#{$newName} {
+  $color: map-get($values, "background");
+  $new-name: #{$name};
+
+  @if $name == "status" {
+    $new-name: "ok";
+  }
+
+  table tr.#{$new-name} {
     background: lighten($color, 45%);
+
     td {
       color: $color;
     }
@@ -305,21 +327,21 @@ category: Components - Messages
 
 // [TODO]
 .mark--new {
-  $type: map-get($message, 'error');
-  background: #{map-get($type, 'background')};
+  $type: map-get($message, "error");
+  background: #{map-get($type, "background")};
   color: #fff;
 }
 
 // [TODO]
 .mark--unpublished {
-  $type: map-get($message, 'warning');
-  background: #{map-get($type, 'background')};
+  $type: map-get($message, "warning");
+  background: #{map-get($type, "background")};
   color: #fff;
 }
 
 // [TODO]
 .mark--updated {
-  $type: map-get($message, 'info');
-  background: #{map-get($type, 'background')};
+  $type: map-get($message, "info");
+  background: #{map-get($type, "background")};
   color: #fff;
 }

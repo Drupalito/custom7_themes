@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -14,6 +16,7 @@ category: Module - Block
 Default Style CSS
 
 */
+
 .block-region {
   background: $highlight-mark-color;
   padding: 10px;
@@ -27,6 +30,7 @@ Default Style CSS
   border-bottom: 0;
   background: #b00;
   color: #fff;
+
   &:hover,
   &:focus {
     background: darken(#b00, 10%);

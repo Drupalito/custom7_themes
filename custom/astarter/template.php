@@ -67,19 +67,19 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
 
 
   if (in_array($form_id, array('comment_node_article_form'))) {
-    $form['#prefix'] = '<div id="commentsAdd" class="commentsAdd">';
-    $form['#prefix'] .= '<h2 class="comments__title commentsAdd__title">' . t('Add new comment') . '</h2>';
+    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
+    $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Add new comment') . '</h2>';
     $form['#suffix'] = '</div>';
-    $form['actions']['#prefix'] = '<div class="commentsSubmit">';
+    $form['actions']['#prefix'] = '<div class="comments-submit">';
     $form['actions']['#suffix'] = '</div>';
     $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
   }
 
   if (in_array($form_id, array('comment_node_forum_form'))) {
-    $form['#prefix'] = '<div id="commentsAdd" class="commentsAdd">';
-    $form['#prefix'] .= '<h2 class="comments__title commentsAdd__title">' . t('Your reply') . '</h2>';
+    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
+    $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Your reply') . '</h2>';
     $form['#suffix'] = '</div>';
-    $form['actions']['#prefix'] = '<div class="commentsSubmit">';
+    $form['actions']['#prefix'] = '<div class="comments-submit">';
     $form['actions']['#suffix'] = '</div>';
     $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
   }
@@ -109,16 +109,6 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
  * @see hook_page_alter()
  */
 function astarter_page_alter(&$page) {
-
-  // // Logged in.
-  // if (!empty($page['content']['system_main']['content']['search_form'])) {
-  //   unset($page['content']['system_main']['content']['search_form']);
-  // }
-
-  // // Not logged in.
-  // if (!empty($page['content']['system_main']['search_form'])) {
-  //   unset($page['content']['system_main']['search_form']);
-  // }
 
   // Look in each visible region for blocks.
   foreach (system_region_list($GLOBALS['theme'], REGIONS_VISIBLE) as $region => $name) {

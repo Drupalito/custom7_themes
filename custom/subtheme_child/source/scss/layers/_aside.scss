@@ -19,37 +19,38 @@ Combine `.aside` with the modifier `.aside--right`
 
 */
 
-// Block
 .aside {
-
   .block {
     padding: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: #fff;
-    // Element
+
     &__title {
       padding-bottom: rhythm(0.5);
       border-bottom: pem(1px) solid #ccc;
       margin-bottom: rhythm(0.5);
     }
-    // Modifier
+
     &--first {
       @extend .mtn;
     }
-    // Modifier
+
     &--last {
       @extend .mbn;
     }
   }
+
   .block--menu {
     border: pem(1px) solid #ccc;
     background: #f2f2f2;
+
     .menu {
       display: block;
       position: relative;
       left: 0;
       width: auto;
+
       li {
         display: block;
         border-top: 0;
@@ -57,12 +58,7 @@ Combine `.aside` with the modifier `.aside--right`
     }
   }
 
-  // Modifier
-  &--right { }
-
   @include mq("smaller") {
-    & {
-      margin-bottom: 1.5em;
-    }
+    margin-bottom: 1.5em;
   }
 }

@@ -17,7 +17,7 @@ category: Base - Helpers
 .container-inline > div,
 .inbl { @include inline-block(none); }
 
-.atop    { vertical-align: top; }
+.atop { vertical-align: top; }
 .abottom { vertical-align: bottom; }
 .amiddle { vertical-align: middle; }
 
@@ -34,16 +34,17 @@ category: Base - Helpers
 
 */
 
-.hide, .none { display: none !important; }
-.show { display: block !important; }
+// scss-lint:disable ImportantRule
+.hide,
+.hidden,
+.none { display: none !important; }
 
-.hidden {
-  display: none !important;
-}
+.show { display: block !important; }
 
 .invisible { visibility: hidden; }
 
 .overhidden { overflow: hidden; }
+
 .overvisible { overflow: visible; }
 
 .element-invisible {
@@ -53,6 +54,7 @@ category: Base - Helpers
   background-color: transparent;
   border: 0;
 }
+// scss-lint:enable ImportantRule
 
 // Prevent text wrapping.
 .nowrap { white-space: nowrap; }
@@ -106,6 +108,7 @@ Size
 
 */
 
+// scss-lint:disable SingleLinePerSelector ImportantRule EmptyLineBetweenBlocks
 .ptn, .pvn, .pan { padding-top: 0 !important; }
 .pts, .pvs, .pas { padding-top: round($base-line-height / 4) !important; }
 .ptm, .pvm, .pam { padding-top: round($base-line-height / 2) !important; }
@@ -138,6 +141,7 @@ Size
 .mls, .mhs, .mas { margin-left: round($grid-gutter-width / 4) !important; }
 .mlm, .mhm, .mam { margin-left: round($grid-gutter-width / 2) !important; }
 .mll, .mhl, .mal { margin-left: $grid-gutter-width !important; }
+// scss-lint:enable SingleLinePerSelector ImportantRule EmptyLineBetweenBlocks
 
 //
 // Responsive: Utility classes
@@ -158,16 +162,17 @@ Size
 // Source: http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
 // Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
 
+// scss-lint:disable SingleLinePerSelector ImportantRule EmptyLineBetweenBlocks
 @at-root {
   @-ms-viewport {
     width: device-width;
   }
 }
 
-@include responsive-invisibility('.visible-xs');
-@include responsive-invisibility('.visible-sm');
-@include responsive-invisibility('.visible-md');
-@include responsive-invisibility('.visible-lg');
+@include responsive-invisibility(".visible-xs");
+@include responsive-invisibility(".visible-sm");
+@include responsive-invisibility(".visible-md");
+@include responsive-invisibility(".visible-lg");
 
 .visible-xs-block,
 .visible-xs-inline,
@@ -185,13 +190,15 @@ Size
 }
 
 @media (max-width: $screen-xs-max) {
-  @include responsive-visibility('.visible-xs');
+  @include responsive-visibility(".visible-xs");
 }
+
 .visible-xs-block {
   @media (max-width: $screen-xs-max) {
     display: block !important;
   }
 }
+
 .visible-xs-inline-block {
   @media (max-width: $screen-xs-max) {
     display: inline-block !important;
@@ -199,13 +206,15 @@ Size
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  @include responsive-visibility('.visible-sm');
+  @include responsive-visibility(".visible-sm");
 }
+
 .visible-sm-block {
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     display: block !important;
   }
 }
+
 .visible-sm-inline-block {
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
     display: inline-block !important;
@@ -213,13 +222,15 @@ Size
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-  @include responsive-visibility('.visible-md');
+  @include responsive-visibility(".visible-md");
 }
+
 .visible-md-block {
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
     display: block !important;
   }
 }
+
 .visible-md-inline-block {
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
     display: inline-block !important;
@@ -227,13 +238,15 @@ Size
 }
 
 @media (min-width: $screen-lg-min) {
-  @include responsive-visibility('.visible-lg');
+  @include responsive-visibility(".visible-lg");
 }
+
 .visible-lg-block {
   @media (min-width: $screen-lg-min) {
     display: block !important;
   }
 }
+
 .visible-lg-inline-block {
   @media (min-width: $screen-lg-min) {
     display: inline-block !important;
@@ -241,17 +254,19 @@ Size
 }
 
 @media (max-width: $screen-xs-max) {
-  @include responsive-invisibility('.hidden-xs');
+  @include responsive-invisibility(".hidden-xs");
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  @include responsive-invisibility('.hidden-sm');
+  @include responsive-invisibility(".hidden-sm");
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-  @include responsive-invisibility('.hidden-md');
+  @include responsive-invisibility(".hidden-md");
 }
 
 @media (min-width: $screen-lg-min) {
-  @include responsive-invisibility('.hidden-lg');
+  @include responsive-invisibility(".hidden-lg");
 }
+
+// scss-lint:enable SingleLinePerSelector ImportantRule EmptyLineBetweenBlocks

@@ -1,3 +1,4 @@
+// scss-lint:disable QualifyingElement
 
 form,
 fieldset,
@@ -58,14 +59,16 @@ textarea {
   // }
 }
 
-button, label {
+button,
+label {
   cursor: pointer;
 }
 
 // 1. Address Firefox 4+ setting `line-height` on `input` using `!important` in
 //    the UA stylesheet.
 // 2. Re-set default cursor for disabled elements.
-button, input {
+button,
+input {
   line-height: normal;
 }
 
@@ -95,7 +98,8 @@ input[type="url"],
 input[type="submit"] {
   display: inline-block;
   padding: 0 5px;
-  line-height: normal; height: $inp-Height;
+  line-height: normal;
+  height: $inp-height;
 }
 
 input[type="text"],
@@ -106,9 +110,11 @@ input[type="search"],
 input[type="email"],
 input[type="password"],
 input[type="url"],
-textarea, select {
+select,
+textarea {
   width: 100%;
   transition: background-color .3s ease;
+
   &:focus {
     border-color: #333;
     background-color: darken($form-background-color, 3%);
@@ -155,7 +161,7 @@ select {
   border-radius: 0;
   text-indent: 0.01px;
   text-overflow: ""; // ellipsis;
-  background: $form-background-color url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAQAAADvCgS4AAAAGklEQVR4AWNg+I8BcQGCyhAAXRlhpcQAQsoAMGIY6KADYAUAAAAASUVORK5CYII=') no-repeat 100% center;
+  background: $form-background-color url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAQAAADvCgS4AAAAGklEQVR4AWNg+I8BcQGCyhAAXRlhpcQAQsoAMGIY6KADYAUAAAAASUVORK5CYII=") no-repeat 100% center;
   -moz-appearance: none;
   -webkit-appearance: none;
   -webkit-radius: none;
@@ -294,6 +300,7 @@ category: Base - Forms
 ```
 
 */
+
 .field-required {
   font-size: pem(12px);
   line-height: 1.2;
@@ -320,8 +327,9 @@ category: Base - Forms
 ```
 
 */
+
 .form-item {
-  @include formItem($inp-Height);
+  @include form-item($inp-height);
 }
 
 /*doc
@@ -335,40 +343,49 @@ Collapsed
 [TODO]
 
 */
+
 fieldset {
   border: 1px solid #ccc;
-  border-top: 3px solid #{map-get($colorz, 'primary')};
+  border-top: 3px solid #{map-get($colorz, "primary")};
   padding: $base-line-height;
   margin: 0 0 rhythm(1);
+
   &.collapsed {
     position: relative;
     padding-bottom: 0;
+
     a {
-      color: #{map-get($colorz, 'primary')};
+      color: #{map-get($colorz, "primary")};
     }
+
     .fieldset-legend {
       display: block;
     }
+
     html.js & {
       border-bottom-width: 0;
       border-left-width: 0;
       border-right-width: 0;
       height: 1em;
     }
-    html.js & .fieldset-wrapper {
-      display: none;
-    }
   }
+
+  html.js .fieldset-wrapper {
+    display: none;
+  }
+
   legend {
-    padding: 0 $base-line-height/2;
+    padding: 0 ($base-line-height / 2);
     margin: 0;
-    margin-left: -($base-line-height/2)/2;
+    margin-left: -(($base-line-height / 2) / 2);
     font-size: pem(18px);
     font-weight: 700;
+
     a {
       border-bottom: 0;
     }
   }
+
 }
 
 .fieldset-wrapper > .form-item:last-child {
@@ -405,7 +422,7 @@ Add class `form-item--inline` on parent `div.form-item`
 */
 
 .form-item--inline {
-  @include formItem-inlineblock;
+  @include form-item-inlineblock;
 }
 
 /*doc
@@ -424,8 +441,10 @@ Drupal example HTML
   </form>
 
 */
+
 .form-actions {
   margin-top: rhythm(1);
+
   button + button {
     margin-left: 2em;
   }
@@ -470,10 +489,12 @@ Drupal example HTML
   </form>
 
 */
+
+// scss-lint:disable MergeableSelector
 div.password-confirm,
 .password-strength {
   @extend .pull-right;
-  line-height: $inp-Height;
+  line-height: $inp-height;
 }
 
 div.password-confirm {
@@ -484,6 +505,7 @@ div.password-confirm {
   &-title {
     display: inline-block;
   }
+
   &-text {
     @extend .pull-right;
     font-weight: 700;
@@ -499,8 +521,9 @@ div.password-confirm {
 
 .form-item .password-suggestions {
   padding: 10px 20px;
-  border: 1px solid #B4B4B4;
+  border: 1px solid #b4b4b4;
 }
+// scss-lint:enable MergeableSelector
 
 /*doc
 ---
@@ -532,25 +555,26 @@ category: Base - Forms
   </form>
 
 */
+
 @each $name, $values in $message {
-  $color: map-get($values, 'background');
+  $color: map-get($values, "background");
+
   .has--#{$name} {
-    @if map-get($values, 'color') {
+    @if map-get($values, "color") {
       @extend .text--#{$name};
-      // color: map-get($values, 'color');
-    }
-    @else {
+      // color: map-get($values, "color");
+    } @else {
       @extend .text--#{$name};
       // color: $color;
     }
   }
+
   .has--#{$name} input,
   .has--#{$name} select,
   .has--#{$name} textarea {
-    @if map-get($values, 'color') {
-      border-color: map-get($values, 'color');
-    }
-    @else {
+    @if map-get($values, "color") {
+      border-color: map-get($values, "color");
+    } @else {
       border-color: $color;
     }
   }
@@ -567,6 +591,8 @@ Couleurs de placeholder : ne pas fusionner les sélecteurs !
 @see http://stackoverflow.com/a/2610741
 
 */
+
+// scss-lint:disable VendorPrefix
 $field-placeholder: #999;
 ::-webkit-input-placeholder { // WebKit browsers
   color: $field-placeholder; }
@@ -576,3 +602,6 @@ $field-placeholder: #999;
   color: $field-placeholder; }
 :-ms-input-placeholder { // Internet Explorer 10+
   color: $field-placeholder; }
+// scss-lint:enable VendorPrefix
+
+// scss-lint:enable QualifyingElement

@@ -1,20 +1,21 @@
+// scss-lint:disable
 
-/*
-subtheme_child Drupal Theme
-Internet Explorer 8
-
-IE8 : deprecated
-
-Author : parms_owner <parms_email>
-MIT 2016
-
-*/
+/**
+ * subtheme_child Drupal Theme
+ * Internet Explorer 8
+ * IE8 : deprecated
+ *
+ * OWNER_NAME <OWNER_EMAIL>
+ * (CURRENT_YEAR)
+ */
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  'helpers/vars',
-  'helpers/functions',
-  'helpers/mixins';
+  "helpers/vars",
+  "helpers/functions",
+  "helpers/mixins";
+// scss-lint:enable Indentation
 
 .btn[disabled],
 .btn--disabled {
@@ -22,7 +23,9 @@ MIT 2016
 }
 
 .clearfix { zoom: 1; }
-ul, ol { margin-left: 0; }
+
+ul,
+ol { margin-left: 0; }
 kbd { font-size: 85%; } // bugfix IE7
 legend { margin-left: -7px; } // bugfix IE7 (http://jamesfrank.info/2011/06/18/fieldset-legends-ie7/)
 
@@ -52,7 +55,9 @@ input[type="checkbox"] {
 
 select {
   padding: 6px 5px 5px;
-  &, &:hover {
+
+  &,
+  &:hover {
     background-image: none;
   }
 }

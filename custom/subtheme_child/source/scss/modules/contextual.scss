@@ -1,9 +1,11 @@
 
 // Helpers
+// scss-lint:disable Indentation
 @import
-  '../helpers/vars',
-  '../helpers/functions',
-  '../helpers/mixins';
+  "../helpers/vars",
+  "../helpers/functions",
+  "../helpers/mixins";
+// scss-lint:enable Indentation
 
 /*doc
 ---
@@ -12,6 +14,7 @@ category: Module - Contextual Links
 ---
 
 */
+
 .contextual-links {
   display: none;
   padding-left: 0;
@@ -20,10 +23,12 @@ category: Module - Contextual Links
   font-size: 80%;
   border: 1px solid #ccc;
   background: #fff;
+
   a {
     display: block;
     border-bottom: 0;
     padding: 2px 5px;
+
     &:hover,
     &:focus {
       background: #ccc;
@@ -34,6 +39,7 @@ category: Module - Contextual Links
   &-region {
     outline: none;
     position: relative;
+
     &-active {
       outline: 2px dashed $highlight-mark-color;
     }
@@ -43,9 +49,11 @@ category: Module - Contextual Links
     display: none;
     font-size: 90%;
     position: absolute;
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
     z-index: 10;
     text-align: right;
+
     html.js & {
       display: block;
     }
@@ -60,6 +68,7 @@ category: Module - Contextual Links
     line-height: 1;
     color: #fff;
     background: #d96459;
+
     &:hover,
     &:focus,
     &-active {
