@@ -9,6 +9,7 @@ category: Components - Tabs
 
 */
 
+// scss-lint:disable QualifyingElement
 ul.links,
 .tabs--primary {
   @extend .list-inline;
@@ -26,4 +27,6 @@ ul.links,
     border-bottom: 0;
     color: #{map-get($colorz, "primary")};
   }
+
 }
+// scss-lint:enable QualifyingElement

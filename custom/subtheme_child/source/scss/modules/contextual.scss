@@ -53,10 +53,9 @@ category: Module - Contextual Links
     right: 0;
     z-index: 10;
     text-align: right;
-
-    html.js & {
-      display: block;
-    }
+    // scss-lint:disable QualifyingElement
+    html.js & { display: block; }
+    // scss-lint:enable QualifyingElement
   }
 
   &-trigger {
