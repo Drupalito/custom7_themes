@@ -3,7 +3,7 @@
  * Configuration Mixins
  */
 
-// Ne pas changer ces lignes.
+// Do not change these lines.
 $browser-default-font-size:   16px;
 $rhythm-unit:                 "em";
 $relative-font-sizing:        true;
@@ -34,12 +34,12 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
   // scss-lint:enable ImportantRule
 }
 
-/// bootstrap - responsive invisibility
-/// @mixin   responsive-invisibility
-/// @param   $parent {String} class name
-/// @see     @mixin responsive-visibility
+/// Drupal - Item form field
+/// @mixin   form-item
+/// @param   $inp-height {String} Line Height
+/// @see     @mixin form-item-inline
 /// @usage:
-/// =responsive-invisibility("hidden-xs")
+/// =form-item(32px)
 @mixin form-item($inp-height) {
   @extend %clearfix;
   position: relative;
@@ -65,6 +65,12 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
   }
 }
 
+/// Drupal webform - Item form field Inline (responsive version is block)
+/// @mixin   form-item-inline
+/// @param   $inp-height {String} Line Height
+/// @see     @mixin form-item
+/// @usage:
+/// =form-item-inline(32px)
 @mixin form-item-inline($inp-height) {
   @include mq("small") {
     padding: 0 0 0 $form-label-width + $form-label-marge;
@@ -107,6 +113,12 @@ $font-unit: if($relative-font-sizing, 1em, $base-font-size);
   }
 }
 
+/// Custom - ???
+/// @mixin   form-item-inlineblock
+/// @todo    Check utiliiy
+/// @see     @mixin form-item
+/// @usage:
+/// =form-item-inlineblock
 @mixin form-item-inlineblock {
   .form-item:first-child {
     margin-right: 20px;
@@ -152,9 +164,10 @@ category: Global - Mixins
 
 Variable `$keyword` possible egal to :
 
-* `large` : screen and min-width: 1200px
-* `medium` : screen and min-width: 769px
-* `small` : screen and max-width: 768px
+* `large` : min-width: 1200px
+* `medium` : min-width: 769px
+* `small` : min-width: 768px
+* `smaller` : max-width: 768px
 
 @mixin mq
 

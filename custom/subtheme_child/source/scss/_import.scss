@@ -1,19 +1,15 @@
 
-// Import Variables / Helpers
-@import "import";
-
 /**
  * subtheme_child Drupal Theme
- * Debug stylesheet
+ * Import variables, mixins, functions
  *
  * OWNER_NAME <OWNER_EMAIL>
  * (CURRENT_YEAR)
  */
 
 // scss-lint:disable Indentation
-
-// Layers
 @import
-  "helpers/debug-grid";
-
+  "helpers/vars",
+  "helpers/functions",
+  "helpers/mixins";
 // scss-lint:enable Indentation

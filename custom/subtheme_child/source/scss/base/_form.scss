@@ -367,11 +367,19 @@ fieldset {
       border-left-width: 0;
       border-right-width: 0;
       height: 1em;
+
+      .fieldset-wrapper {
+        display: none;
+      }
     }
   }
 
-  html.js .fieldset-wrapper {
-    display: none;
+  &.collapsible {
+    position: relative;
+
+    .fieldset-legend {
+      display: block;
+    }
   }
 
   legend {
@@ -385,7 +393,6 @@ fieldset {
       border-bottom: 0;
     }
   }
-
 }
 
 .fieldset-wrapper > .form-item:last-child {

@@ -1,11 +1,6 @@
 
-// Helpers
-// scss-lint:disable Indentation
-@import
-  "../helpers/vars",
-  "../helpers/functions",
-  "../helpers/mixins";
-// scss-lint:enable Indentation
+// Import Variables / Helpers
+@import "../import";
 
 /*doc
 ---
@@ -13,10 +8,11 @@ title: System menus
 category: Module - System menus
 ---
 
-[TODO]
+Default Style CSS
 
 */
 
+// scss-lint:disable QualifyingElement
 ul li.expanded > a:before,
 ul li.collapsed > a:before {
   font-family: "icomoon";
@@ -33,11 +29,10 @@ ul li.expanded > a:before {
 ul li.collapsed > a:before {
   content: "\edc8";
 }
-// ul li.leaf > a:before {
-//   content: "\ed5e";
-// }
 
 li a.active,
 li.active-trail > a {
   color: #{map-get($colorz, "primary")};
 }
+
+// scss-lint:enable QualifyingElement

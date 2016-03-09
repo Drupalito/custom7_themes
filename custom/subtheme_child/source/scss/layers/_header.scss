@@ -57,6 +57,21 @@ Default markup. (`title` = `alt`)
 
 */
 .logo {
+  &__name {
+    @extend .h4;
+    @extend .caps;
+    @extend .mvn;
+  }
+
+  &__name,
+  &__slogan {
+    display: block;
+  }
+
+  &__link {
+    @extend .nounderline;
+  }
+
   @include mq("smaller") {
     &__content {
       margin-top: 1em;

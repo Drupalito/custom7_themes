@@ -1,11 +1,6 @@
 
-// Helpers
-// scss-lint:disable Indentation
-@import
-  "../helpers/vars",
-  "../helpers/functions",
-  "../helpers/mixins";
-// scss-lint:enable Indentation
+// Import Variables / Helpers
+@import "../import";
 
 /*doc
 ---
@@ -13,74 +8,75 @@ title: Vertical Tabs
 category: Module - Vertical Tabs
 ---
 
-[TODO]
+Default Style CSS
 
 */
 
-div.vertical-tabs {
+.vertical-tabs {
   margin: rhythm(1) 0 rhythm(1) 15em; /* LTR */
   border: 1px solid #ccc;
+
+  &-list {
+    width: 15em;
+    list-style: none;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin: -1px 0 -1px -15em; /* LTR */
+    float: left; /* LTR */
+  }
+
+  &-pane {
+    margin: 0;
+    padding: rhythm(1) rhythm(1) 0;
+    border: 0;
+
+    legend {
+      display: none;
+    }
+
+    fieldset legend {
+      display: block;
+    }
+  }
+
+  .form-type-textfield input {
+    width: 100%;
+  }
 }
 
-.vertical-tabs ul.vertical-tabs-list {
-  width: 15em;
-  list-style: none;
-  border-top: 1px solid #ccc;
-  padding: 0;
-  margin: -1px 0 -1px -15em; /* LTR */
-  float: left; /* LTR */
-}
-.vertical-tabs fieldset.vertical-tabs-pane {
-  margin: 0 !important;
-  padding: rhythm(1);
-  border: 0;
-}
-fieldset.vertical-tabs-pane legend {
-  display: none;
-}
-fieldset.vertical-tabs-pane fieldset legend {
-  display: block;
-}
+// Layout of each tab
+.vertical-tabs-list {
 
-/* Layout of each tab */
-.vertical-tabs ul.vertical-tabs-list li {
-  background: #ebebeb;
-  border: 1px solid #ccc;
-  border-top: 0;
-  padding: 0;
-  margin: 0;
-}
+  .summary {
+    display: block;
+    font-size: 80%;
+  }
 
-.vertical-tabs ul.vertical-tabs-list li a {
-  display: block;
-  text-decoration: none;
-  padding: 0.5em 0.6em;
-  border-bottom: 0;
-}
-.vertical-tabs ul.vertical-tabs-list li a:hover {
-  outline: 1px solid;
-}
-.vertical-tabs ul.vertical-tabs-list li.selected {
-  background-color: #fff;
-  border-right-width: 0; /* LTR */
-}
-.vertical-tabs ul.vertical-tabs-list .selected strong {
-  color: #000;
-}
-.vertical-tabs ul.vertical-tabs-list .summary {
-  display: block;
-  font-size: 80%;
-}
-.vertical-tabs ul.vertical-tabs ul.vertical-tabs-list .summary {
-  line-height: normal;
-  margin-bottom: 0;
-}
+  li {
+    background: #ebebeb;
+    border: 1px solid #ccc;
+    border-top: 0;
+    padding: 0;
+    margin: 0;
 
-/**
- * Prevent text inputs from overflowing when container is too narrow. "width" is
- * applied to override hardcoded cols or size attributes and used in conjunction
- * with "box-sizing" to prevent box model issues from occurring in most browsers.
-*/
-.vertical-tabs .form-type-textfield input {
-  width: 100%;
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 0.5em 0.6em;
+      border-bottom: 0;
+
+      &:hover,
+      &:focus {
+        outline: 1px solid;
+      }
+    }
+
+    // scss-lint:disable QualifyingElement EmptyLineBetweenBlocks
+    &.selected {
+      background: #fff;
+      border-right-width: 0; /* LTR */
+      strong { color: #000; }
+    }
+    // scss-lint:enable QualifyingElement EmptyLineBetweenBlocks
+  }
 }

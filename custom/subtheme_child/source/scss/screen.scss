@@ -1,4 +1,6 @@
-// scss-lint:disable
+
+// Import Variables / Helpers
+@import "import";
 
 /**
  * subtheme_child Drupal Theme
@@ -9,12 +11,6 @@
  */
 
 // scss-lint:disable Indentation
-
-// Helpers
-@import
-  "helpers/vars",
-  "helpers/functions",
-  "helpers/mixins";
 
 // Base
 @import

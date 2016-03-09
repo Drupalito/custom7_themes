@@ -27,9 +27,11 @@ Content type : **Node**
     }
   }
 
-  .header {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: rhythm(0.5);
-    margin-bottom: rhythm(1);
+  .node {
+    &__content {
+      border-top: 1px solid #ccc;
+      padding-top: rhythm(1);
+      margin-top: rhythm(0.5);
+    }
   }
 }

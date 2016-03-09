@@ -1,17 +1,14 @@
 
-// Helpers
-// scss-lint:disable Indentation
-@import
-  "../helpers/vars",
-  "../helpers/functions",
-  "../helpers/mixins";
-// scss-lint:enable Indentation
+// Import Variables / Helpers
+@import "../import";
 
 /*doc
 ---
 title: Contextual Links
 category: Module - Contextual Links
 ---
+
+Default Style CSS
 
 */
 
