@@ -230,9 +230,9 @@ scss/
 ```
 
 * Le dossier `/base` regroupe les fichiers contient les fichiers CSS de bases ;
-* Le dossier `/components` contient les  composants CSS ;
-* Le dossier `/pages` contient les styles spécifiques pour les  pages ;
-* Le dossier `/vendors` contient les feuilles CSS dédiées aux plugins.
+* Le dossier `/components` contient les composants CSS ;
+* Le dossier `/modules` contient les CSS des modules  ;
+* Le dossier `/pages` contient les styles spécifiques pour les  pages.
 
 > **En cas d'un multi-sites, un dossier `/share` peut être créé pour partager les styles entre différents sites.**
 

@@ -31,6 +31,9 @@ function astarter_preprocess_page(&$variables) {
   $variables['main_prefix'] = array();
   $variables['main_suffix'] = array();
 
+  // Enable logo module for display logo
+  $variables['site_logo'] = module_exists('logo') ? theme('logo') : NULL;
+
   $variables['content_attributes_array']['id'] = 'content';
   $variables['title_attributes_array']['class'][] = 'main__title';
 

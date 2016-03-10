@@ -15,23 +15,7 @@
     <header id="banner" role="banner" class="banner__region container">
       <div class="row row-sm-height">
         <div class="col-xs-12 col-sm-8">
-          <div class="logo">
-            <p class="logo__inner"><a href="<?php print $front_page; ?>" title="<?php print variable_get('site_name'); ?> (<?php print t('Home'); ?>)" rel="home" class="logo__link nounderline">
-              <?php if ($logo): ?>
-                <img class="logo__image" src="<?php print $logo; ?>" alt="<?php print variable_get('site_name'); ?> (<?php print t('Home'); ?>)" />
-              <?php endif; ?>
-              <?php if ($site_name || $site_slogan): ?>
-                <span class="logo__content">
-                  <?php if ($site_name): ?>
-                    <span class="logo__name h4 caps show mvn"><?php print $site_name; ?></span>
-                  <?php endif; ?>
-                  <?php if ($site_slogan): ?>
-                    <span class="logo__slogan show"><?php print $site_slogan; ?></span>
-                  <?php endif; ?>
-                </span>
-              <?php endif; ?>
-            </a></p>
-          </div>
+          <?php print $site_logo; ?>
         </div>
         <div class="col-xs-12 col-sm-4">
           <div class="branding">
