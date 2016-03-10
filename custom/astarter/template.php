@@ -8,6 +8,9 @@
 /**
  * Implements hook_theme_registry_alter().
  *
+ * @param $theme_registry
+ *   The entire cache of theme registry information, post-processing.
+ *
  * @see hook_theme_registry_alter()
  */
 function astarter_theme_registry_alter(&$registry) {
@@ -27,7 +30,13 @@ function astarter_theme_registry_alter(&$registry) {
 /**
  * Implements theme_menu_tree().
  *
+ * @param $variables
+ *   An associative array containing:
+ *   - tree: An HTML string containing the tree's items.
+ *
+ * @see template_preprocess_menu_tree()
  * @see theme_menu_tree()
+ * @ingroup themeable
  */
 function astarter_menu_tree__main_menu($variables) {
   return '<ul class="menu">' . $variables['tree'] . '</ul>';
@@ -36,7 +45,13 @@ function astarter_menu_tree__main_menu($variables) {
 /**
  * Implements theme_menu_tree().
  *
+ * @param $variables
+ *   An associative array containing:
+ *   - tree: An HTML string containing the tree's items.
+ *
+ * @see template_preprocess_menu_tree()
  * @see theme_menu_tree()
+ * @ingroup themeable
  */
 function astarter_links__locale_block(&$variables) {
   $variables['attributes']['class'][] = 'list-inline';
@@ -48,7 +63,15 @@ function astarter_links__locale_block(&$variables) {
 /**
  * Implements hook_menu_breadcrumb_alter().
  *
- * @ingroup themeable
+ * @param $active_trail
+ *   An array containing breadcrumb links for the current page.
+ * @param $item
+ *   The menu router item of the current page.
+ *
+ * @see drupal_set_breadcrumb()
+ * @see menu_get_active_breadcrumb()
+ * @see menu_get_active_trail()
+ * @see menu_set_active_trail()
  */
 function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
   foreach ($active_trail as $id => $trail) {
@@ -61,6 +84,17 @@ function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
 /**
  * Implements hook_form_alter().
  *
+ * @param $form
+ *   Nested array of form elements that comprise the form.
+ * @param $form_state
+ *   A keyed array containing the current state of the form. The arguments
+ *   that drupal_get_form() was originally called with are available in the
+ *   array $form_state['build_info']['args'].
+ * @param $form_id
+ *   String representing the name of the form itself. Typically this is the
+ *   name of the function that generated the form.
+ *
+ * @see hook_form_FORM_ID_alter()
  * @see hook_form_alter()
  */
 function astarter_form_alter(&$form, &$form_state, $form_id) {
@@ -105,6 +139,9 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implements hook_page_alter().
  *
+ * @param $page
+ *   Nested array of renderable elements that make up the page.
+ *
  * @see hook_page_alter()
  */
 function astarter_page_alter(&$page) {
@@ -133,7 +170,11 @@ function astarter_page_alter(&$page) {
  * Remove meta content type
  * Remove shortlink
  *
- * @ingroup themeable
+ * @param $head_elements
+ *   An array of all Head elements
+ *   being requested on the page.
+ *
+ * @see hook_html_head_alter()
  */
 function astarter_html_head_alter(&$head_elements) {
 
@@ -154,6 +195,10 @@ function astarter_html_head_alter(&$head_elements) {
  * Remove files_undo_remove.js
  * Remove tableheader.js
  *
+ * @param $js
+ *   An array of all JS items (files and inline JS)
+ *   being requested on the page.
+ *
  * @see hook_js_alter()
  */
 function astarter_js_alter(&$js) {
@@ -167,6 +212,10 @@ function astarter_js_alter(&$js) {
  * Implements hook_css_alter().
  *
  * Removes some default Drupal CSS.
+ *
+ * @param $css
+ *   An array of all CSS items (files and inline CSS)
+ *   being requested on the page.
  *
  * @see hook_css_alter()
  */
