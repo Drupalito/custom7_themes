@@ -75,16 +75,10 @@ input {
 button[disabled],
 input[disabled],
 textarea[disabled],
-select[disabled],
-input[type="radio"][disabled] + label,
-input[type="checkbox"][disabled] + label {
+select[disabled] {
+  opacity: .5;
   cursor: not-allowed; // 2
-  background-color: #eee;
-}
-
-input[type="radio"][disabled] + label,
-input[type="checkbox"][disabled] + label {
-  background-color: transparent;
+  background-color: $form-disable;
 }
 
 input[type="text"],
@@ -116,24 +110,24 @@ textarea {
   transition: background-color .3s ease;
 
   &:focus {
-    border-color: #333;
-    background-color: darken($form-background-color, 3%);
+    border-color: #{map-get($colorz, "primary")};
+    background-color: darken($form-background-color, 1%);
   }
 }
 
 textarea,
 input[type="file"] {
-  padding: 5px;
-}
-
-input[type="submit"] {
-  padding: 0 10px;
+  padding: 6px;
 }
 
 input[type="file"] {
   display: inline-block;
   font-size: 80%;
   line-height: 0;
+}
+
+input[type="submit"] {
+  padding: 0 10px;
 }
 
 // 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -148,11 +142,6 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer; // 3
   -webkit-appearance: button; // 2
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  vertical-align: baseline;
 }
 
 select {
@@ -187,6 +176,68 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+
+
+/*
+---
+title: Custom radio & Checkbox
+category: Base - Forms
+---
+
+*/
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+
+  + label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.5em;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin-right: .25em;
+      padding: 0;
+      width: 1em !important;
+      height: 1em !important;
+      outline: none;
+      border: 1px solid $form-border-color;
+      background: $form-background-color;
+      transition: background 0.5s ease;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      cursor: pointer;
+      border-color: #{map-get($colorz, "primary")};
+    }
+  }
+
+  &:checked + label:before,
+  &:disabled:checked + label:before {
+    border-color: #{map-get($colorz, "primary")};
+    background: #{map-get($colorz, "primary")};
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+
+  &:disabled + label:before,
+  &:disabled + label:before {
+    opacity: .5;
+    cursor: not-allowed;
+    border-color: $form-disable;
+    background-color: $form-disable;
+  }
+}
+
+input[type="radio"] + label:before {
+  border-radius: 50%;
 }
 
 /*doc
