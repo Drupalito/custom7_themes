@@ -5,7 +5,7 @@
  * Returns HTML for a region with bare minimum HTML.
  *
  * Complete documentation for this file is available online.
- * @see https://drupal.org/node/1728134
+ * @see https://drupal.org/node/1728112
  */
 ?>
 <?php if ($content): ?>
