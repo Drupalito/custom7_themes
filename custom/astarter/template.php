@@ -65,7 +65,6 @@ function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
  */
 function astarter_form_alter(&$form, &$form_state, $form_id) {
 
-
   if (in_array($form_id, array('comment_node_article_form'))) {
     $form['#prefix'] = '<div id="comments-add" class="comments-add">';
     $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Add new comment') . '</h2>';
@@ -309,6 +308,14 @@ function astarter_css_alter(&$css) {
       $css[$key]['group'] = CSS_THEME;
       $css[$key]['weight'] = 0.0001;
     }
+  }
+
+  // [TODO]
+  if (isset($css['sites/all/themes/custom/subtheme_child/css/print.css'])) {
+    $name = 'sites/all/themes/custom/subtheme_child/css/print.css';
+    $css[$name]['group'] = 200;
+    $css[$name]['weight'] = 9999999;
+    // $css[$name]['every_page'] = TRUE;
   }
 
   $exclude = array(
