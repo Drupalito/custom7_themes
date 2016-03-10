@@ -151,8 +151,7 @@ Default Style CSS
 
 /* */
 
-.webform-previous {
-  + button {
-    float: right;
-  }
+.webform-next,
+.webform-previous + button {
+  float: right;
 }
