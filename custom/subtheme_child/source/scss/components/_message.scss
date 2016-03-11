@@ -184,6 +184,10 @@ Modifier `.messages--warning` && `.messages--icon`
       border-color: $background;
       background: lighten($background, 45%);
 
+      a {
+        color: $background;
+      }
+
       // scss-lint:disable SelectorFormat
       &.messages--icon .messages__content {
         &:before {

@@ -9,7 +9,6 @@ screenshot  = screenshot.png
 ; stylesheets[print][]  = css/print.css
 
 ; Optionally add some JavaScripts to your theme.
-; scripts[] = js/vendor.js
 ; scripts[] = js/main.js
 
 ; This section lists the regions defined in Starter

@@ -95,19 +95,19 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#title'         => t('Theme development settings'),
     '#weight'        => 5,
   );
-  $form['themedev']['astarter_header_fix'] = array(
+  $form['themedev']['astarter_navigation_fix'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'checkbox',
     '#prefix'        => '<h3>' . t('Options page') . '</h3>',
-    '#title'         => t('Header Fix on top page'),
+    '#title'         => t('Navigation Fix on top page'),
     '#default_value' => theme_get_setting('astarter_header_fix'),
-    '#description'   => t('Fixed Banner'),
+    '#description'   => t('Fixed Navigation.'),
   );
   $form['themedev']['astarter_debug_css_grid'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'checkbox',
     '#title'         => t('Debug CSS rythm and grid'),
     '#default_value' => theme_get_setting('astarter_debug_css_grid'),
-    '#description'   => t('Display rythm and grid overlay.'),
+    '#description'   => t('Display rythm and grid overlay (Only admin).'),
   );
 }
