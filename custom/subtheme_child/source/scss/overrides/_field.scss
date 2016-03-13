@@ -10,6 +10,6 @@ category: Overrides - Field
 .field--name-field-image {
   .node--full & {
     @extend .text-center;
-    @extend .mvl;
+    @extend .mbl;
   }
 }
