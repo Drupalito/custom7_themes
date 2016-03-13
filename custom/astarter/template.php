@@ -350,6 +350,14 @@ function astarter_css_alter(&$css) {
     $css[$name]['weight'] = 0.0001;
     // $css[$name]['every_page'] = TRUE;
   }
+  if (isset($css['sites/all/modules/contrib/field_collection/field_collection.theme.css'])) {
+    $name = 'sites/all/modules/contrib/field_collection/field_collection.theme.css';
+    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/field_collection.css';
+    $css[$name]['type'] = 'file';
+    $css[$name]['group'] = CSS_THEME;
+    $css[$name]['weight'] = 0.0001;
+    // $css[$name]['every_page'] = TRUE;
+  }
 
   // Load custom CSS module after
   foreach ($css as $key => $value) {
