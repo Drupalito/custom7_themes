@@ -11,6 +11,8 @@
  * (CURRENT_YEAR)
  */
 
+// scss-lint:disable ImportantRule QualifyingElement
+
 * {
   background: transparent !important;
   color: #000 !important;
@@ -35,6 +37,7 @@ body,
   width: auto !important;
 }
 
+// scss-lint:disable SingleLinePerSelector
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -58,6 +61,7 @@ tr,
 img {
   page-break-inside: avoid;
 }
+// scss-lint:enable SingleLinePerSelector
 
 a {
   &,
@@ -69,11 +73,13 @@ a {
     content: " (" attr(href) ")"; // Affiche les liens
   }
 
+  // scss-lint:disable SelectorFormat
   &.logo__link:after,
   &[href^="#"]:after,
   &[href^="javascript:"]:after {
     content: ""; // Don't show links for images, or javascript/internal links
   }
+  // scss-lint:enable SelectorFormat
 
   ul &[href]:after,
   ol &[href]:after {
@@ -121,3 +127,5 @@ thead {
   display: block;
   margin-bottom: 1.5em;
 }
+
+// scss-lint:enable ImportantRule QualifyingElement

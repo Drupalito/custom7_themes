@@ -19,6 +19,18 @@ category: Module - Search
   legend {
     padding: rhythm(1) rhythm(.5);
   }
+
+  .btn {
+    border-radius: 0;
+    font-size: 1em;
+    width: auto;
+    padding: 1em;
+    height: auto;
+
+    &:before {
+      margin-right: 0.5em;
+    }
+  }
 }
 
 // .search-form {
@@ -46,19 +58,6 @@ category: Module - Search
 // .search-results .search-info {
 //   font-size: 0.85em;
 // }
-
-.search-advanced {
-  .btn {
-    border-radius: 0;
-    font-size: 1em;
-    width: auto;
-    padding: 1em;
-    height: auto;
-    &:before {
-      margin-right: 0.5em;
-    }
-  }
-}
 
 .criterion {
   &--keywords {
