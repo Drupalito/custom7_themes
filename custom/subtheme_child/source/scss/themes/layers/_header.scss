@@ -59,9 +59,10 @@ Default markup. (`title` = `alt`)
 
 .logo {
   &__name {
-    @extend .h4;
-    @extend .caps;
-    @extend .mvn;
+    @include bold;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 150%;
   }
 
   &__name,
@@ -70,7 +71,7 @@ Default markup. (`title` = `alt`)
   }
 
   &__link {
-    @extend .nounderline;
+    border-bottom: 0;
   }
 
   @include mq("smaller") {

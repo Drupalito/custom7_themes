@@ -17,6 +17,7 @@
   "base/fonts",
   "base/reset",
   "base/typo",
+  "base/grid",
   "base/helper",
   "base/form";
 
@@ -27,11 +28,10 @@
 
 // Layers
 @import
-  "layers/grid",
   "helpers/debug-grid";
 
 // scss-lint:enable Indentation
 
-body.cke_show_borders {
-  padding: 10px;
-}
+// scss-lint:disable QualifyingElement SelectorFormat
+body.cke_show_borders { padding: 10px; }
+// scss-lint:enable QualifyingElement SelectorFormat

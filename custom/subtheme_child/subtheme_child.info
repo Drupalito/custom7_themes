@@ -7,6 +7,7 @@ base theme  = astarter
 
 ; Then we add our own stylesheet.
 stylesheets[screen][] = css/screen.css
+stylesheets[theme][] = css/screen-theme.css
 stylesheets[print][]  = css/print.css
 
 ; Optionally add some JavaScripts to your theme.

@@ -17,35 +17,20 @@
   "base/fonts",
   "base/reset",
   "base/typo",
+  "base/grid",
   "base/helper",
   "base/form";
 
 // Components
 @import
-  "components/breadcrumb",
-  "components/button",
   "components/icons",
+  "components/breadcrumb",
   "components/message",
   "components/pagination",
   "components/progress-bar",
+  "components/tabs",
   "components/video",
-  "components/modal",
-  "components/tabs";
-
-// Layers
-@import
-  "layers/grid",
-  "layers/layer",
-  "layers/header",
-  "layers/footer",
-  "layers/navigation",
-  "layers/aside";
-
-// Overrides Druapl
-@import
-  "overrides/block",
-  "overrides/field",
-  "overrides/node",
-  "overrides/search";
+  "components/button",
+  "components/modal";
 
 // scss-lint:enable Indentation

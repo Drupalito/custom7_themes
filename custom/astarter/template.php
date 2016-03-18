@@ -221,206 +221,243 @@ function astarter_js_alter(&$js) {
  */
 function astarter_css_alter(&$css) {
   global $theme_key;
+  $theme_current = drupal_get_path('theme',$theme_key);
 
-  if (isset($css['modules/system/system.base.css'])) {
-    $name = 'modules/system/system.base.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/system.base.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/system/system.menus.css'])) {
-    $name = 'modules/system/system.menus.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/system.menus.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['misc/vertical-tabs.css'])) {
-    $name = 'misc/vertical-tabs.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/vertical-tabs.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/contextual/contextual.css'])) {
-    $name = 'modules/contextual/contextual.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/contextual.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/field/theme/field.css'])) {
-    $name = 'modules/field/theme/field.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/field.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/filter/filter.css'])) {
-    $name = 'modules/filter/filter.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/filter.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/poll/poll.css'])) {
-    $name = 'modules/poll/poll.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/poll.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/search/search.css'])) {
-    $name = 'modules/search/search.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/search.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/node/node.css'])) {
-    $name = 'modules/node/node.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/node.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/block/block.css'])) {
-    $name = 'modules/block/block.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/block.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/comment/comment.css'])) {
-    $name = 'modules/comment/comment.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/comment.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/file/file.css'])) {
-    $name = 'modules/file/file.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/file.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['modules/forum/forum.css'])) {
-    $name = 'modules/forum/forum.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/forum.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['sites/all/modules/contrib/webform/css/webform.css'])) {
-    $name = 'sites/all/modules/contrib/webform/css/webform.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/webform.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['sites/all/modules/contrib/date/date_api/date.css'])) {
-    $name = 'sites/all/modules/contrib/date/date_api/date.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/date_api.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['sites/all/modules/contrib/addressfield/addressfield.css'])) {
-    $name = 'sites/all/modules/contrib/addressfield/addressfield.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/addressfield.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-  if (isset($css['sites/all/modules/contrib/field_collection/field_collection.theme.css'])) {
-    $name = 'sites/all/modules/contrib/field_collection/field_collection.theme.css';
-    $css[$name]['data'] = drupal_get_path('theme', $theme_key) . '/css/modules/field_collection.css';
-    $css[$name]['type'] = 'file';
-    $css[$name]['group'] = CSS_THEME;
-    $css[$name]['weight'] = 0.0001;
-    // $css[$name]['every_page'] = TRUE;
-  }
-
-  // Load custom CSS module after
-  foreach ($css as $key => $value) {
-    if (preg_match("@sites\/all\/modules\/custom@", $key)) {
-      $css[$key]['group'] = CSS_THEME;
-      $css[$key]['weight'] = 0.0001;
+  foreach ($css as &$item) {
+    if ($item['group'] == CSS_SYSTEM) {
+      $item['type'] = 'file';
+      $item['group'] = 200;
+      $item['weight'] = $item['weight'] + 100;
+    }
+    if ($item['group'] == 0) {
+      $item['type'] = 'file';
+      $item['group'] = 300;
+      $item['weight'] = $item['weight'] + 100;
+    }
+    if ($item['media'] == 'theme') {
+      $item['media'] = 'screen';
+      $item['group'] = 500;
+    }
+    if ($item['media'] == 'print') {
+      $item['group'] = 600;
     }
   }
 
-  // [TODO]
-  if (isset($css['sites/all/themes/custom/subtheme_child/css/print.css'])) {
-    $name = 'sites/all/themes/custom/subtheme_child/css/print.css';
-    $css[$name]['group'] = 200;
-    $css[$name]['weight'] = 9999999;
-    // $css[$name]['every_page'] = TRUE;
+
+  // Clean up core and contrib module CSS.
+  $overrides = array(
+    'addressfield' => array(
+      'addressfield.css' => array(
+        'theme' => 'addressfield.css',
+      ),
+    ),
+    'block' => array(
+      'block.css' => array(
+        'theme' => 'block.css',
+      ),
+    ),
+    'comment' => array(
+      'comment.css' => array(
+        'theme' => 'comment.css',
+      ),
+      'comment-rtl.css' => array(
+        'theme' => 'comment-rtl.css',
+      ),
+    ),
+    'contextual' => array(
+      'contextual.css' => array(
+        'theme' => 'contextual.css',
+      ),
+      'contextual-rtl.css' => array(
+        'theme' => 'contextual-rtl.css',
+      ),
+    ),
+    'date' => array(
+      'date_api/date.css' => array(
+        'theme' => 'date_api.css',
+      ),
+      'date_api/date-rtl.css' => array(
+        'theme' => 'date_api-rtl.css',
+      ),
+    ),
+    'field' => array(
+      'theme/field.css' => array(
+        'theme' => 'field.css',
+      ),
+      'theme/field-rtl.css' => array(
+        'theme' => 'field-rtl.css',
+      ),
+    ),
+    'field_collection' => array(
+      'field_collection.css' => array(
+        'theme' => 'field_collection.css',
+      ),
+      'field_collection-rtl.css' => array(
+        'theme' => 'field_collection-rtl.css',
+      ),
+    ),
+    'file' => array(
+      'file.css' => array(
+        'theme' => 'file.css',
+      ),
+    ),
+    'filter' => array(
+      'filter.css' => array(
+        'theme' => 'filter.css',
+      ),
+    ),
+    'forum' => array(
+      'forum.css' => array(
+        'theme' => 'forum.css',
+      ),
+      'forum-rtl.css' => array(
+        'theme' => 'forum-rtl.css',
+      ),
+    ),
+    'node' => array(
+      'node.css' => array(
+        'theme' => 'node.css',
+      ),
+      'node-rtl.css' => array(
+        'theme' => 'node-rtl.css',
+      ),
+    ),
+    'poll' => array(
+      'poll.css' => array(
+        'theme' => 'poll.css',
+      ),
+      'poll-rtl.css' => array(
+        'theme' => 'poll-rtl.css',
+      ),
+    ),
+    'search' => array(
+      'search.css' => array(
+        'theme' => 'search.css',
+      ),
+      'search-rtl.css' => array(
+        'theme' => 'search-rtl.css',
+      ),
+    ),
+    'system' => array(
+      'system.base.css' => array(
+        'base' => 'system.base.css',
+      ),
+      'system.base-rtl.css' => array(
+        'base' => 'system.base-rtl.css',
+      ),
+      'system.theme.css' => array(
+        'theme' => 'system.theme.css',
+      ),
+      'system.theme-rtl.css' => array(
+        'theme' => 'system.theme-rtl.css',
+      ),
+      'system.admin.css' => array(
+        'admin' => 'system.admin.css',
+      ),
+      'system.admin-rtl.css' => array(
+        'admin' => 'system.admin-rtl.css',
+      ),
+      'system.menus.css' => array(
+        'theme' => 'system.menus.css',
+      ),
+      'system.menus-rtl.css' => array(
+        'theme' => 'system.menus-rtl.css',
+      ),
+    ),
+    'vertical-tabs' => array(
+      'misc/vertical-tabs.css' => array(
+        'theme' => 'vertical-tabs.css',
+      ),
+      'misc/vertical-tabs-rtl.css' => array(
+        'theme' => 'vertical-tabs-rtl.css',
+      ),
+    ),
+    'webform' => array(
+      'css/webform.css' => array(
+        'theme' => 'webform.css',
+      ),
+      'css/webform-rtl.css' => array(
+        'theme' => 'webform-rtl.css',
+      ),
+    ),
+  );
+
+  // Check if we are on an admin page. Otherwise, we can skip admin CSS.
+  $path = current_path();
+  $types = path_is_admin($path) ? array('base', 'theme', 'admin') : array('base', 'theme');
+  // Add a special case for the block demo page.
+  $types = strpos($path, 'admin/structure/block/demo') === 0 ? array_merge($types, array('demo')) : $types;
+
+  foreach ($overrides as $module => $files) {
+    // We gathered the CSS files with paths relative to the providing module.
+    $path = drupal_get_path('module', $module);
+
+    foreach ($files as $file => $items) {
+      if (isset($css[$path . '/' . $file]) || empty($path) && isset($css[$file])) {
+        // Keep a copy of the original file array so we can merge that with our
+        // overrides in order to keep the 'weight' and 'group' declarations.
+
+        if (!empty($path)) {
+          $original = $css[$path . '/' . $file];
+          unset($css[$path . '/' . $file]);
+        }
+        else {
+          $original = $css[$file];
+          unset($css[$file]);
+        }
+
+        // Omega 4.x tries to follow the pattern described in
+        // http://drupal.org/node/1089868 for declaring CSS files. Therefore, it
+        // may take more than a single file to override a .css file added by
+        // core. This gives us better granularity when overriding .css files
+        // in a sub-theme.
+        foreach ($types as $type) {
+          if (isset($items[$type])) {
+            $original['weight'] = isset($original['weight']) ? $original['weight'] : 0;
+
+            // Always add a tiny value to the weight, to conserve the insertion order.
+            $original['weight'] += count($css) / 10000;
+
+            $css[$theme_current . '/css/modules/' . $module . '/' . $items[$type]] = array(
+              'data' => $theme_current . '/css/modules/' . $module . '/' . $items[$type],
+            ) + $original;
+          }
+        }
+      }
+    }
   }
 
   $exclude = array(
-    // 'misc/vertical-tabs.css' => FALSE,
-    // 'sites/all/modules/contrib/date/date_api/date.css' => FALSE,
-    // 'sites/all/modules/contrib/date/date_repeat_field/date_repeat_field.css' => FALSE,
+    'modules/field/theme/field-rtl.css' => FALSE,
+    'modules/node/node-rtl.css' => FALSE,
+    'modules/field/field-rtl.css' => FALSE,
+    'modules/filter/filter-rtl.css' => FALSE,
+    'modules/forum/forum-rtl.css' => FALSE,
+    'modules/comment/comment-rtl.css' => FALSE,
+    'modules/poll/poll-rtl.css' => FALSE,
+    'modules/search/search-rtl.css' => FALSE,
     'modules/aggregator/aggregator.css' => FALSE,
     'modules/aggregator/aggregator-rtl.css' => FALSE,
-    // 'modules/block/block.css' => FALSE,
     'modules/book/book.css' => FALSE,
     'modules/book/book-rtl.css' => FALSE,
-    // 'modules/comment/comment.css' => FALSE,
-    'modules/comment/comment-rtl.css' => FALSE,
-    // 'modules/contextual/contextual.css' => FALSE,
     'modules/dashboard/dashboard.css' => FALSE,
     'modules/dashboard/dashboard-rtl.css' => FALSE,
     'modules/dblog/dblog.css' => FALSE,
     'modules/dblog/dblog-rtl.css' => FALSE,
-    // 'modules/field/theme/field.css' => FALSE,
-    'modules/field/theme/field-rtl.css' => FALSE,
-    'modules/field/field-rtl.css' => FALSE,
     'modules/field_ui/field_ui.css' => FALSE,
     'modules/field_ui/field_ui-rtl.css' => FALSE,
     'sites/all/modules/contrib/field_group/field_group.field_ui.css' => FALSE,
-    // 'modules/file/file.css' => FALSE,
-    // 'modules/filter/filter.css' => FALSE,
-    'modules/filter/filter-rtl.css' => FALSE,
-    // 'modules/forum/forum.css' => FALSE,
-    'modules/forum/forum-rtl.css' => FALSE,
     'modules/help/help.css' => FALSE,
     'modules/locale/locale.css' => FALSE,
     'modules/locale/locale-rtl.css' => FALSE,
     'modules/menu/menu.css' => FALSE,
-    // 'modules/node/node.css' => FALSE,
-    'modules/node/node-rtl.css' => FALSE,
     'modules/openid/openid.css' => FALSE,
     'modules/openid/openid-rtl.css' => FALSE,
-    // 'modules/poll/poll.css' => FALSE,
-    'modules/poll/poll-rtl.css' => FALSE,
     'modules/profile/profile.css' => FALSE,
-    // 'modules/search/search.css' => FALSE,
-    'modules/search/search-rtl.css' => FALSE,
     'modules/system/system.admin.css' => FALSE,
     'modules/system/system.admin-rtl.css' => FALSE,
-    // 'modules/system/system.base.css' => FALSE,
     'modules/system/system.base-rtl.css' => FALSE,
     'modules/system/system.maintenance.css' => FALSE,
-    // 'modules/system/system.menus.css' => FALSE,
     'modules/system/system.menus-rtl.css' => FALSE,
     'modules/system/system.messages.css' => FALSE,
     'modules/system/system.messages-rtl.css' => FALSE,
@@ -431,7 +468,6 @@ function astarter_css_alter(&$css) {
     'modules/update/update.css' => FALSE,
     'modules/user/user.css' => FALSE,
     'modules/user/user-rtl.css' => FALSE,
-    // 'sites/all/modules/contrib/webform/css/webform.css' => FALSE,
     'sites/all/modules/contrib/files_undo_remove/files_undo_remove.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor.css' => FALSE,
     'sites/all/modules/contrib/ckeditor/css/ckeditor.editor.css' => FALSE,
