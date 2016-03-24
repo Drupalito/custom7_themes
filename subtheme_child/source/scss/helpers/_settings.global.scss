@@ -1,11 +1,15 @@
 
+// Settings Global
+// ===============
+
 // Typo size.
 $base-font-size:   16px;
 $base-line-height: 24px;
+
+// Body background.
+$body-background: #fff;
 // Body color.
-$body-background:    #fff;
-// Body Text color.
-$body-color:         #333;
+$body-color: #333;
 
 // Links colors.
 $link-color:         #0075e1;
@@ -17,7 +21,7 @@ $link-color-visited: #0075e1;
 $selection-background: #fff8ab;
 $selection-color: #666;
 
-// Background color html <mark>
+// Background color html <mark>.
 $highlight-mark-color: #ff0;
 
 // Font stack.
@@ -27,11 +31,19 @@ $font-families: (
   pre: (Menlo, Monaco, Consolas, "Courier New", monospace)
 );
 
+/// Mixin bold.
+/// @see    @mixin italic
+/// @usage:
+/// =bold
 @mixin bold {
   font-weight: bold;
   font-style: normal;
 }
 
+/// Misin italic.
+/// @see    @mixin bold
+/// @usage:
+/// =italic
 @mixin italic {
   font-weight: normal;
   font-style: italic;
@@ -97,70 +109,21 @@ $message: (
   info: (
     color: null,
     background: #477bb6,
-    icon:  ".i-info"
+    icon:  ".i-info",
   ),
   warning: (
     color: null,
     background: #ddae1e,
-    icon:  ".i-warning"
+    icon:  ".i-warning",
   ),
   error: (
     color: null,
     background: #b64747,
-    icon:  ".i-error"
+    icon:  ".i-error",
   ),
   status: (
     color: null,
     background: #77b647,
-    icon:  ".i-check"
+    icon:  ".i-check",
   )
 );
-
-// Grid
-// ====
-
-// Extra small screen / phone
-$screen-xs: 480px !default;
-$screen-xs-min: $screen-xs !default;
-// Small screen / tablet
-$screen-sm: 768px !default;
-$screen-sm-min: $screen-sm !default;
-// Medium screen / desktop
-$screen-md: 992px !default;
-$screen-md-min: $screen-md !default;
-// Large screen / wide desktop
-$screen-lg: 1200px !default;
-$screen-lg-min: $screen-lg !default;
-
-// So media queries don't overlap when required, provide a maximum
-$screen-xs-max: ($screen-sm-min - 1) !default;
-$screen-sm-max: ($screen-md-min - 1) !default;
-$screen-md-max: ($screen-lg-min - 1) !default;
-
-// Grid system
-// ===========
-
-// Number of columns in the grid.
-$grid-columns: 12 !default;
-// Padding between columns.
-$grid-gutter-width: 30px !default;
-
-// Container sizes
-// ===============
-
-// Small screen / tablet
-$container-sm: ((720px + $grid-gutter-width)) !default;
-// Medium screen / desktop
-$container-md: ((940px + $grid-gutter-width)) !default;
-// Large screen / wide desktop
-$container-lg: ((1140px + $grid-gutter-width)) !default;
-
-
-$inp-height: 32px;
-$form-label-width: 200px;
-$form-label-marge: $grid-gutter-width;
-
-$form-background-color: #fff;
-$form-border-color:     #c0c0c0;
-$form-hover: map-get($colorz, "primary");
-$form-disable: #e2e2e2;

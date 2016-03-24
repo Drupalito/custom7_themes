@@ -1,0 +1,12 @@
+
+// Settings Form
+// =============
+
+$inp-height: 32px;
+$form-label-width: 200px;
+$form-label-marge: $grid-gutter-width;
+
+$form-background-color: #fff;
+$form-border-color:     #c0c0c0;
+$form-hover: map-get($colorz, "primary");
+$form-disable: #e2e2e2;

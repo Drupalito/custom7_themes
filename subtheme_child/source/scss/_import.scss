@@ -9,7 +9,11 @@
 
 // scss-lint:disable Indentation
 @import
-  "helpers/vars",
+  "helpers/settings.global",
+  "helpers/settings.grid",
+  "helpers/settings.form",
   "helpers/functions",
-  "helpers/mixins";
+  "helpers/mixins.global";
+  "helpers/mixins.grid";
+  "helpers/mixins.form";
 // scss-lint:enable Indentation

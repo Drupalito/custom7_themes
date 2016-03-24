@@ -1,0 +1,98 @@
+
+// Mixins Form
+// ===========
+
+/// Drupal - Item form field
+/// @mixin   form-item
+/// @param   $inp-height {String} Line Height
+/// @see     @mixin form-item-inline
+/// @usage:
+/// =form-item(32px)
+@mixin form-item($inp-height) {
+  @extend %clearfix;
+  position: relative;
+  margin: 0 0 rhythm(.5);
+
+  label {
+    @include bold;
+    display: block;
+    line-height: $inp-height;
+  }
+
+  .form-item {
+    margin: 0;
+  }
+
+  &.form-type--radio,
+  &.form-type--checkbox {
+    label {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  }
+}
+
+/// Drupal webform - Item form field Inline (responsive version is block)
+/// @mixin   form-item-inline
+/// @param   $inp-height {String} Line Height
+/// @see     @mixin form-item
+/// @usage:
+/// =form-item-inline(32px)
+@mixin form-item-inline($inp-height) {
+  @include mq("small") {
+    padding: 0 0 0 $form-label-width + $form-label-marge;
+
+    label,
+    .label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $form-label-width;
+      margin-right: $form-label-marge;
+      text-align: right;
+    }
+
+    .form-item {
+      padding-left: 0;
+      margin-bottom: 0;
+
+      label,
+      .label {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width: auto;
+        margin-right: 0;
+        font-weight: normal;
+        text-align: left;
+      }
+    }
+
+    .form-type--radio,
+    .form-type--checkbox {
+      label {
+        position: relative;
+        width: auto;
+        margin-right: 0;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/// Custom - ???
+/// @mixin   form-item-inlineblock
+/// @todo    Check utiliiy
+/// @see     @mixin form-item
+/// @usage:
+/// =form-item-inlineblock
+@mixin form-item-inlineblock {
+  .form-item:first-child {
+    margin-right: 20px;
+  }
+
+  > .form-item {
+    float: left;
+  }
+}
