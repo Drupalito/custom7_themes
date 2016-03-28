@@ -101,17 +101,32 @@ Couleurs disponibles.
 
 @each $name, $color in $colorz {
   .btn--#{$name} {
-    background-color: $color;
-    color: #fff;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      border-color: $color;
-      background-color: darken($color, 10%);
-    }
+    @include btn-theme(#fff, $color);
   }
+}
+
+
+.btn--edit-submit {
+  $background: map-get($colorz, "primary");
+  @include btn-theme(#fff, $background);
+}
+
+.btn--edit-add {
+  $type: map-get($message, "status");
+  $background: map-get($type, "background");
+  @include btn-theme(#fff, $background);
+}
+
+.btn--edit-preview {
+  $type: map-get($message, "info");
+  $background: map-get($type, "background");
+  @include btn-theme(#fff, $background);
+}
+
+.btn--edit-delete {
+  $type: map-get($message, "error");
+  $background: map-get($type, "background");
+  @include btn-theme(#fff, $background);
 }
 
 /*doc

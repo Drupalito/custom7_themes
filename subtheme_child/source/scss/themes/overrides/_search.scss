@@ -39,7 +39,7 @@ category: Overrides - Search
 
     &:hover,
     &:focus {
-      background: #{map-get($colorz, "primary")};
+      background: #{map-get($colorz, "secondary")};
     }
 
     &:before {

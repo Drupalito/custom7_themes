@@ -28,7 +28,7 @@ Default Style CSS
 */
 
 .form-item.webform-container-inline {
-  @include form-item-inline($inp-height);
+  @include form-item-inline($input-height);
 }
 
 .webform-progressbar {
@@ -40,7 +40,7 @@ Default Style CSS
   }
 
   ul {
-    overflow: hidden;
+    // overflow: hidden;
     counter-reset: step;
   }
 
@@ -80,13 +80,23 @@ Default Style CSS
       color: #333;
     }
 
-    &.current {
+    &.step {
       color: #{map-get($colorz, "default")};
 
       &:before,
       &:after {
         background: #{map-get($colorz, "default")};
         color: #fff;
+      }
+    }
+
+    &.current {
+      @include bold;
+      &:before {
+        margin-top: -3px;
+        width: 2em;
+        height: 2em;
+        line-height: 2;
       }
     }
   }
@@ -141,7 +151,7 @@ Default Style CSS
   }
 
   // scss-lint:disable ImportantRule
-  .description { display: block !important; }
+  .description { display: block; }
   // scss-lint:enable ImportantRule
 
   // scss-lint:disable QualifyingElement
@@ -154,4 +164,19 @@ Default Style CSS
 .webform-next,
 .webform-previous + button {
   float: right;
+}
+
+.webform-previous {
+  $background: map-get($colorz, "secondary");
+  @include btn-theme(#fff, $background);
+}
+
+.webform-next {
+  $background: map-get($colorz, "default");
+  @include btn-theme(#fff, $background);
+}
+
+.webform-submit {
+  $background: map-get($colorz, "primary");
+  @include btn-theme(#fff, $background);
 }

@@ -20,6 +20,13 @@ category: Layout - Layer
 */
 
 .banner {
+  background: #{map-get($colorz, "primary")};
+
+  &,
+  a {
+    color: #fff;
+  }
+
   @include mq("smaller") {
     .col-xs-12.col-sm-8 {
       margin-bottom: 1em;

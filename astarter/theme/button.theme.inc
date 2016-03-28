@@ -27,6 +27,21 @@ function astarter_button($variables) {
     $element['#attributes']['class'][] = 'btn--disabled';
   }
 
+  if (isset($element['#attributes']['id'])) {
+
+    if (strstr($element['#attributes']['id'], 'edit-submit-') != false || strstr($element['#attributes']['id'], 'edit-actions-submit') != false) {
+      $element['#attributes']['class'][] = 'btn--edit-submit';
+    }
+    if (strstr($element['#attributes']['id'], 'edit-add') != false) {
+      $element['#attributes']['class'][] = 'btn--edit-add';
+    }
+    if (strstr($element['#attributes']['id'], 'edit-delete') != false) {
+      $element['#attributes']['class'][] = 'btn--edit-add';
+    }
+
+    $element['#attributes']['class'][] = 'btn--' . $element['#attributes']['id'];
+  }
+
   $element['#attributes']['class'] = array_unique($element['#attributes']['class']);
 
   return '<button' . drupal_attributes($element['#attributes']) . '>' . $label . '</button>';

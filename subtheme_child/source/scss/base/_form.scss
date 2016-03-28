@@ -93,7 +93,7 @@ input[type="submit"] {
   display: inline-block;
   padding: 0 5px;
   line-height: normal;
-  height: $inp-height;
+  height: $input-height;
 }
 
 input[type="text"],
@@ -194,7 +194,7 @@ input[type="checkbox"] {
     display: inline-block;
     cursor: pointer;
     position: relative;
-    padding-left: 1.5em;
+    padding-left: pem($base-line-height, 15px);
 
     &:before {
       content: "";
@@ -202,8 +202,8 @@ input[type="checkbox"] {
       vertical-align: middle;
       position: absolute;
       left: 0;
-      bottom: 0;
-      margin-right: .25em;
+      top: 50%;
+      margin-top: -0.5em;
       padding: 0;
       width: 1em;
       height: 1em;
@@ -380,7 +380,7 @@ category: Base - Forms
 */
 
 .form-item {
-  @include form-item($inp-height);
+  @include form-item($input-height);
 }
 
 /*doc
@@ -552,7 +552,7 @@ Drupal example HTML
 div.password-confirm,
 .password-strength {
   @extend .pull-right;
-  line-height: $inp-height;
+  line-height: $input-height;
 }
 
 div.password-confirm {

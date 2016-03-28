@@ -1,0 +1,22 @@
+
+// Mixins Buttons
+// ==============
+
+/// Add color for button
+/// @mixin   btn-theme
+/// @param   $color {hexa} Color Font
+/// @param   $background {hexa} Background Color
+/// @usage:
+/// =btn-theme(#fff, #000)
+@mixin btn-theme($color:#fff, $background:#000) {
+  background-color: $background;
+  color: $color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    border-color: $background;
+    background-color: darken($background, 10%);
+  }
+}

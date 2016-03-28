@@ -9,13 +9,13 @@ $base-line-height: 24px;
 // Body background.
 $body-background: #fff;
 // Body color.
-$body-color: #333;
+$body-color: #705241;
 
 // Links colors.
-$link-color:         #0075e1;
-$link-color-hover:   #c21;
-$link-color-active:  #c21;
-$link-color-visited: #0075e1;
+$link-color:         #B14437;
+$link-color-hover:   #2C4A4A;
+$link-color-active:  #2C4A4A;
+$link-color-visited: #B14437;
 
 // Selection text.
 $selection-background: #fff8ab;
@@ -88,15 +88,15 @@ Available for selectors :
 
 | Key | Hexa  | Background | Colorz
 |-----|-------|------------|--------
-| default | <span style="color:#0075e1">#0075e1</span> | <span class="default-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="default-color pas">Lorem Ipsum</span>
-| primary | <span style="color:#c21">#c21</span> | <span class="primary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="primary-color pas">Lorem Ipsum</span>
-| secondary | <span style="color:#333">#333</span> | <span class="secondary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="secondary-color pas">Lorem Ipsum</span>
+| default | <span style="color:#B14437">#B14437</span> | <span class="default-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="default-color pas">Lorem Ipsum</span>
+| primary | <span style="color:#2C4A4A">#2C4A4A</span> | <span class="primary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="primary-color pas">Lorem Ipsum</span>
+| secondary | <span style="color:#705241">#705241</span> | <span class="secondary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="secondary-color pas">Lorem Ipsum</span>
 
 */
 $colorz: (
-  default:   #0075e1,
-  primary:   #c21,
-  secondary: #333,
+  default:   #B14437,
+  primary:   #2C4A4A,
+  secondary: #705241,
 );
 
 /// Theme Message

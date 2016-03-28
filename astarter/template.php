@@ -99,35 +99,6 @@ function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
  */
 function astarter_form_alter(&$form, &$form_state, $form_id) {
 
-  if (in_array($form_id, array('comment_node_article_form'))) {
-    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
-    $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Add new comment') . '</h2>';
-    $form['#suffix'] = '</div>';
-    $form['actions']['#prefix'] = '<div class="comments-submit">';
-    $form['actions']['#suffix'] = '</div>';
-    $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
-  }
-
-  if (in_array($form_id, array('comment_node_forum_form'))) {
-    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
-    $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Your reply') . '</h2>';
-    $form['#suffix'] = '</div>';
-    $form['actions']['#prefix'] = '<div class="comments-submit">';
-    $form['actions']['#suffix'] = '</div>';
-    $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
-  }
-
-  if ($form_id == 'user_login_block') {
-
-  }
-
-  if ($form_id == 'user_register_form' ||
-     $form_id == 'user_pass' ||
-     $form_id == 'user_login' ||
-     $form_id == 'user_profile_form') {
-    $form['actions']['submit']['#attributes']['class'][] = 'btn--primary';
-  }
-
   if ($form_id == 'user_register_form' ||
      $form_id == 'user_login' ||
      $form_id == 'user_profile_form') {

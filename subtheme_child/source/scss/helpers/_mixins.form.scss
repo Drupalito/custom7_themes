@@ -4,11 +4,11 @@
 
 /// Drupal - Item form field
 /// @mixin   form-item
-/// @param   $inp-height {String} Line Height
+/// @param   $input-height {String} Line Height
 /// @see     @mixin form-item-inline
 /// @usage:
 /// =form-item(32px)
-@mixin form-item($inp-height) {
+@mixin form-item($input-height) {
   @extend %clearfix;
   position: relative;
   margin: 0 0 rhythm(.5);
@@ -16,7 +16,7 @@
   label {
     @include bold;
     display: block;
-    line-height: $inp-height;
+    line-height: $input-height;
   }
 
   .form-item {
@@ -24,22 +24,29 @@
   }
 
   &.form-type--radio,
-  &.form-type--checkbox {
+  &.form-type--checkbox,
+  &.form-type--checkboxes {
+    // margin: 0;
     label {
       display: inline-block;
       vertical-align: middle;
-      line-height: 1;
+      line-height: pem($base-line-height);
+    }
+
+    .description {
+      display: block;
+      padding-left: pem($base-line-height, 12px);
     }
   }
 }
 
 /// Drupal webform - Item form field Inline (responsive version is block)
 /// @mixin   form-item-inline
-/// @param   $inp-height {String} Line Height
+/// @param   $input-height {String} Line Height
 /// @see     @mixin form-item
 /// @usage:
 /// =form-item-inline(32px)
-@mixin form-item-inline($inp-height) {
+@mixin form-item-inline($input-height) {
   @include mq("small") {
     padding: 0 0 0 $form-label-width + $form-label-marge;
 
