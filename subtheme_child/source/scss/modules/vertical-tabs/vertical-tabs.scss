@@ -76,6 +76,15 @@ Default Style CSS
       background: #fff;
       border-right-width: 0; /* LTR */
       strong { color: #000; }
+
+      a {
+        border-left: 5px solid;
+
+        &:hover,
+        &:focus {
+          outline: 0;
+        }
+      }
     }
     // scss-lint:enable QualifyingElement EmptyLineBetweenBlocks
   }

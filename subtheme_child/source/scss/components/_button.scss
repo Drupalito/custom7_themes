@@ -22,17 +22,17 @@ Pour une action, préférer un `<button>` à un lien `<a>`
 .btn {
   @extend .inbl;
   @extend .amiddle;
+  @include bold;
   position: relative;
   overflow: visible;
-  padding: 12px 16px;
+  padding: rhythm(.5) rhythm(1);
   margin: 0;
-  border: 1px solid transparent;
+  border: 0;
   text-decoration: none;
   text-align: center;
   font-size: 1em;
   font-family: sans-serif;
   line-height: normal;
-  border-radius: 4px;
   background-clip: padding-box;
   background-color: #eee;
   color: #333;
@@ -42,13 +42,13 @@ Pour une action, préférer un `<button>` à un lien `<a>`
   transition-timing-function: ease-in;
   transition-property: background-color;
   transition-duration: .250s;
+  appearance: none;
 
   &:hover,
   &:focus,
   &:active,
   &.active {
     text-decoration: none;
-    border-color: #ccc;
     background-color: #ccc;
     color: #fff;
   }
