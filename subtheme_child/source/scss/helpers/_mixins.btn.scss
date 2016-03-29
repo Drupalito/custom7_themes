@@ -16,7 +16,26 @@
   &:focus,
   &:active,
   &.active {
-    border-color: $background;
     background-color: darken($background, 10%);
+  }
+}
+
+/// Add color for button outline
+/// @mixin   btn-outline
+/// @param   $color {hexa} Color font & border
+/// @usage:
+/// =btn-outline(#fff, #000)
+@mixin btn-outline($color:#000) {
+  box-shadow: inset 0 0 0 2px $color;
+  background-color: #fff;
+  color: $color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    box-shadow: inset 0 0 0 2px darken($color, 10%);
+    background-color: lighten($color, 50%);
+    color: darken($color, 10%);
   }
 }

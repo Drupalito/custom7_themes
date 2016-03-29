@@ -13,6 +13,12 @@
 function astarter_preprocess_page(&$variables) {
   $status = drupal_get_http_header("status");
 
+  // Add class for navigation fixed
+  $variables['navigation_fixed'] = '';
+  if (!$variables['is_admin'] && theme_get_setting('astarter_navigation_fix')) {
+    $variables['navigation_fixed'] = ' navigation--fixed';
+  }
+
   if (!empty($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__node__' . $variables['node']->type;
   }

@@ -13,5 +13,7 @@
  * @see hook_preprocess()
  */
 function astarter_preprocess_maintenance_page(&$variables, $hook) {
-
+  if (module_exists('token')) {
+    $variables["content"] = token_replace($variables["content"]);
+  }
 }

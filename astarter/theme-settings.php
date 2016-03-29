@@ -34,13 +34,21 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
   );
 
   // Create the form using Forms API.
-  $form['breadcrumb'] = array(
+  $form['themesettings'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'fieldset',
-    '#title'         => t('Breadcrumb settings'),
-    '#weight'        => 4,
+    '#title'         => t('Theme Settings'),
+    '#weight'        => 2,
   );
-  $form['breadcrumb']['astarter_breadcrumb'] = array(
+  $form['themesettings']['astarter_navigation_fix'] = array(
+    '#group'         => 'verticalTabs',
+    '#type'          => 'checkbox',
+    '#prefix'        => '<h3 style="margin-bottom:5px;">' . t('Options page') . '</h3>',
+    '#title'         => t('Navigation Fix on top page'),
+    '#default_value' => theme_get_setting('astarter_navigation_fix'),
+    '#description'   => t('Fixed Navigation.'),
+  );
+  $form['themesettings']['astarter_breadcrumb'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'select',
     '#title'         => t('Display breadcrumb'),
@@ -51,7 +59,7 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
       'no'    => t('No'),
     ),
   );
-  $form['breadcrumb']['breadcrumb_options'] = array(
+  $form['themesettings']['breadcrumb_options'] = array(
     '#group'  => 'verticalTabs',
     '#type'   => 'container',
     '#states' => array(
@@ -60,7 +68,7 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
       ),
     ),
   );
-  $form['breadcrumb']['breadcrumb_options']['astarter_breadcrumb_separator'] = array(
+  $form['themesettings']['breadcrumb_options']['astarter_breadcrumb_separator'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'textfield',
     '#title'         => t('Breadcrumb separator'),
@@ -69,13 +77,13 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#size'          => 5,
     '#maxlength'     => 10,
   );
-  $form['breadcrumb']['breadcrumb_options']['astarter_breadcrumb_home'] = array(
+  $form['themesettings']['breadcrumb_options']['astarter_breadcrumb_home'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'checkbox',
     '#title'         => t('Show home page link in breadcrumb'),
     '#default_value' => theme_get_setting('astarter_breadcrumb_home'),
   );
-  $form['breadcrumb']['breadcrumb_options']['astarter_breadcrumb_trailing'] = array(
+  $form['themesettings']['breadcrumb_options']['astarter_breadcrumb_trailing'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'checkbox',
     '#title'         => t('Append a separator to the end of the breadcrumb'),
@@ -94,14 +102,6 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#type'          => 'fieldset',
     '#title'         => t('Theme development settings'),
     '#weight'        => 5,
-  );
-  $form['themedev']['astarter_navigation_fix'] = array(
-    '#group'         => 'verticalTabs',
-    '#type'          => 'checkbox',
-    '#prefix'        => '<h3>' . t('Options page') . '</h3>',
-    '#title'         => t('Navigation Fix on top page'),
-    '#default_value' => theme_get_setting('astarter_header_fix'),
-    '#description'   => t('Fixed Navigation.'),
   );
   $form['themedev']['astarter_debug_css_grid'] = array(
     '#group'         => 'verticalTabs',

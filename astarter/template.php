@@ -99,6 +99,22 @@ function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
  */
 function astarter_form_alter(&$form, &$form_state, $form_id) {
 
+  if (in_array($form_id, array('comment_node_article_form'))) {
+    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
+    $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Add comment') . '</h2>';
+    $form['#suffix'] = '</div>';
+    $form['actions']['#prefix'] = '<div class="comments-submit">';
+    $form['actions']['#suffix'] = '</div>';
+  }
+
+  if (in_array($form_id, array('comment_node_forum_form', 'comment_node_book_form'))) {
+    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
+    $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Your reply') . '</h2>';
+    $form['#suffix'] = '</div>';
+    $form['actions']['#prefix'] = '<div class="comments-submit">';
+    $form['actions']['#suffix'] = '</div>';
+  }
+
   if ($form_id == 'user_register_form' ||
      $form_id == 'user_login' ||
      $form_id == 'user_profile_form') {
@@ -225,6 +241,11 @@ function astarter_css_alter(&$css) {
     'block' => array(
       'block.css' => array(
         'theme' => 'block.css',
+      ),
+    ),
+    'book' => array(
+      'book.css' => array(
+        'theme' => 'book.css',
       ),
     ),
     'comment' => array(
@@ -409,8 +430,7 @@ function astarter_css_alter(&$css) {
     'modules/search/search-rtl.css' => FALSE,
     'modules/aggregator/aggregator.css' => FALSE,
     'modules/aggregator/aggregator-rtl.css' => FALSE,
-    'modules/book/book.css' => FALSE,
-    'modules/book/book-rtl.css' => FALSE,
+    // 'modules/book/book-rtl.css' => FALSE,
     'modules/dashboard/dashboard.css' => FALSE,
     'modules/dashboard/dashboard-rtl.css' => FALSE,
     'modules/dblog/dblog.css' => FALSE,

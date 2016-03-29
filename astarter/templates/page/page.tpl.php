@@ -17,7 +17,7 @@
         <div class="col-xs-12 col-sm-8">
           <?php print $site_logo; ?>
         </div>
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-4 noprint">
           <div class="branding">
             <?php print render($page['header']); ?>
           </div>
@@ -26,7 +26,7 @@
     </header>
   </div>
 
-  <div class="navigation page-navigation noprint">
+  <div class="navigation<?php print $navigation_fixed; ?> page-navigation noprint">
     <nav id="navigation" role="navigation" aria-label="<?php print t('Primary navigation'); ?>" class="navigation__region container">
       <div class="row">
         <?php print render($page['navigation']); ?>
