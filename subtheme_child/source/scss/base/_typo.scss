@@ -293,10 +293,10 @@ category: Base - Typo
     @extend .pull-left;
     @extend .overhidden;
     // white-space: nowrap;
-    width: 150px;
+    width: $definition-inline-width;
   }
 
   dd {
-    margin-left: 150px + 10;
+    margin-left: $definition-inline-width + 10;
   }
 }

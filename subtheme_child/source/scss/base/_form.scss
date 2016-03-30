@@ -85,7 +85,6 @@ input[type="text"],
 input[type="tel"],
 input[type="color"],
 input[type="number"],
-input[type="search"],
 input[type="email"],
 input[type="password"],
 input[type="url"],
@@ -100,7 +99,6 @@ input[type="text"],
 input[type="tel"],
 input[type="color"],
 input[type="number"],
-input[type="search"],
 input[type="email"],
 input[type="password"],
 input[type="url"],
@@ -110,8 +108,8 @@ textarea {
   transition: background-color .3s ease;
 
   &:focus {
-    border-color: #{map-get($colorz, "primary")};
-    background-color: darken($form-background-color, 1%);
+    $color-focus: map-get($colorz, "primary");
+    box-shadow: 0 0 2px $color-focus, 0 0 5px $color-focus;
   }
 }
 
@@ -146,11 +144,12 @@ input[type="submit"] {
 
 select {
   width: auto;
-  padding: 6px 30px 5px 5px;
+  padding: 0 30px 0 5px;
   border-radius: 0;
   text-indent: 0.01px;
   text-overflow: ""; // ellipsis;
   background: $form-background-color url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAQAAADvCgS4AAAAGklEQVR4AWNg+I8BcQGCyhAAXRlhpcQAQsoAMGIY6KADYAUAAAAASUVORK5CYII=") no-repeat 100% center;
+  height: $input-height;
   -moz-appearance: none;
   -webkit-appearance: none;
   -webkit-radius: none;
@@ -161,7 +160,7 @@ select {
 //    (include `-moz` to future-proof).
 // 3. Removes inner padding and search cancel button in Safari 5 and Chrome on OS X.
 input[type="search"] {
-  box-sizing: content-box; // 2
+  // box-sizing: content-box; // 2
   -webkit-appearance: textfield; // 1
   &::-webkit-search-cancel-button,
   &::-webkit-search-decoration {
@@ -630,10 +629,20 @@ category: Base - Forms
   .has--#{$name} input,
   .has--#{$name} select,
   .has--#{$name} textarea {
+    border-left-width: 4px;
     @if map-get($values, "color") {
       border-color: map-get($values, "color");
+
+      &:focus {
+        $color-focus: map-get($values, "color");
+        box-shadow: 0 0 2px $color-focus, 0 0 5px $color-focus;
+      }
     } @else {
       border-color: $color;
+
+      &:focus {
+        box-shadow: 0 0 2px $color, 0 0 5px $color;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@ $base-line-height: 24px;
 // Body background.
 $body-background: #fff;
 // Body color.
-$body-color: #705241;
+$body-color: #333;
 
 // Links colors.
 $link-color:         #B14437;
@@ -27,9 +27,11 @@ $highlight-mark-color: #ff0;
 // Font stack.
 $font-families: (
   body: ("Lato", Helvetica, Arial, sans-serif),
-  headline: ("Lato", Helvetica, Arial, sans-serif),
+  headline: (Helvetica, Arial, sans-serif),
   pre: (Menlo, Monaco, Consolas, "Courier New", monospace)
 );
+
+$definition-inline-width: 150px;
 
 /// Mixin bold.
 /// @see    @mixin italic

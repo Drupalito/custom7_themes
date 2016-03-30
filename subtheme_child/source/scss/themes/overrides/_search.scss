@@ -18,12 +18,13 @@ category: Overrides - Search
 */
 
 .search {
+
   .btn {
     border: 0;
     outline: none;
     cursor: pointer;
-    height: 36px;
-    width: 36px;
+    height: 2.5rem;
+    width: 2.5rem;
     max-width: 100%;
     padding: 0;
     display: inline-block;
@@ -44,25 +45,52 @@ category: Overrides - Search
 
     &:before {
       top: 0;
-      font-size: 16px;
+      font-size: 1.4rem;
     }
   }
 
-  .form-text {
+  &__input {
     box-sizing: border-box;
     -webkit-appearance: none;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     float: left;
-    height: 36px;
+    height: 2.5rem;
     margin: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    width: calc(100% - 36px);
+    padding: .5rem;
+    width: calc(100% - 2.5rem);
 
     + .btn {
       left: -1px;
     }
+  }
+}
+
+.search--advanced {
+  .btn {
+    height: 3rem;
+    width: 9rem;
+    font-size: 0;
+    line-height: 1;
+    font-size: 120%;
+
+    &:before {
+      content: "";
+      display: none;
+    }
+  }
+
+  .search__input {
+    height: 3rem;
+    padding: 1rem;
+    width: calc(100% - 9rem);
+  }
+}
+
+.search-advanced {
+  .btn {
+    padding: 0 1rem;
+    width: auto;
   }
 }
 
