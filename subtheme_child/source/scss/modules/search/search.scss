@@ -70,5 +70,15 @@ html.js fieldset.search-advanced {
         margin-bottom: 0;
       }
     }
+
+    .form-item {
+      label {
+        line-height: 1.5em;
+      }
+    }
+
+    .form-text {
+      height: 2rem;
+    }
   }
 }
