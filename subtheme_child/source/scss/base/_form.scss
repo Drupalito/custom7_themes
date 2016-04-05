@@ -617,13 +617,7 @@ category: Base - Forms
   $color: map-get($values, "background");
 
   .has--#{$name} {
-    @if map-get($values, "color") {
-      @extend .text--#{$name};
-      // color: map-get($values, "color");
-    } @else {
-      @extend .text--#{$name};
-      // color: $color;
-    }
+    @extend .text--#{$name};
   }
 
   .has--#{$name} input,

@@ -112,7 +112,6 @@ Utiliser souvent par le WYSIWYG pour aligner les images Ã  gauche, centrer, ou Ã
 <p><img class="alignnone" src="http://lorempixel.com/150/150/animals/4" width="150" height="150" alt="" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, ratione, quo, aliquid, quasi minus quia a accusantium ad obcaecati vitae adipisci eos facere dicta. Ex, in consequuntur tenetur eius laborum quisquam porro sequi. Molestias, ex libero cum eligendi magni laboriosam.</p>
 
 */
-
 .alignleft {
   @extend .pull-left;
   margin-right: $grid-gutter-width;
@@ -126,7 +125,7 @@ Utiliser souvent par le WYSIWYG pour aligner les images Ã  gauche, centrer, ou Ã
 }
 
 .alignnone {
-  @extend .clear;
+  @extend .clearfix;
   margin-left: 0;
   margin-right: 0;
   display: block;
@@ -158,11 +157,9 @@ category: Base - Typo
 ```
 
 */
-
 .list-none,
 .item-list ul {
-  list-style-type: none;
-  padding-left: 0;
+  @include list-none;
 }
 
 /*doc
@@ -187,21 +184,8 @@ category: Base - Typo
 ```
 
 */
-
 .list-inline {
-  @extend .list-none;
-
-  li {
-    display: inline;
-  }
-}
-
-.list-pull-left {
-  @extend .list-none;
-
-  li {
-    @extend .pull-left;
-  }
+  @include list-inline;
 }
 
 /*doc
@@ -224,21 +208,8 @@ category: Base - Typo
 ```
 
 */
-
 .list-separate {
-  li {
-    &:before {
-      content: " Â· ";
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-
-    &:first-child:before {
-      content: "";
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
+  @include list-separate;
 }
 
 /*doc
@@ -284,19 +255,6 @@ category: Base - Typo
 ```
 
 */
-
 .definition-inline {
-  @extend .clearfix;
-
-  dt {
-    @extend .ellipsis;
-    @extend .pull-left;
-    @extend .overhidden;
-    // white-space: nowrap;
-    width: $definition-inline-width;
-  }
-
-  dd {
-    margin-left: $definition-inline-width + 10;
-  }
+  @include definition-inline;
 }

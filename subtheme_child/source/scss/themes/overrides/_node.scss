@@ -11,8 +11,8 @@ Content type : **Node**
 
 .header {
   .meta {
-    @extend .list-inline;
-    @extend .list-separate;
+    @include list-inline;
+    @include list-separate;
     margin-top: 0;
   }
 }

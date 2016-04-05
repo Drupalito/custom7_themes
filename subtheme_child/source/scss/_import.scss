@@ -8,13 +8,21 @@
  */
 
 // scss-lint:disable Indentation
+// Custom settings
 @import
   "helpers/settings.global",
   "helpers/settings.grid",
-  "helpers/settings.form",
-  "helpers/functions",
+  "helpers/settings.form";
+
+// Custom functions
+@import
+  "helpers/functions";
+
+// Custom mixins
+@import
   "helpers/mixins.global",
   "helpers/mixins.grid",
+  "helpers/mixins.form",
   "helpers/mixins.btn",
-  "helpers/mixins.form";
+  "helpers/mixins.list";
 // scss-lint:enable Indentation

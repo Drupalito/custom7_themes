@@ -93,13 +93,3 @@ category: Overrides - Search
     width: auto;
   }
 }
-
-.search-results {
-  .odd {
-    @extend .views-row-odd;
-  }
-
-  .even {
-    @extend .views-row-even;
-  }
-}

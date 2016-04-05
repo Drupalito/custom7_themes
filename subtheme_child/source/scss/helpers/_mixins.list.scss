@@ -1,0 +1,66 @@
+
+// Mixins Lists
+// ============
+
+/// Misin list-none.
+/// @see    @mixin list-inline @mixin list-separate @mixin definition-inline
+/// @usage:
+/// =list-none
+@mixin list-none {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/// Misin list-inline.
+/// @see    @mixin list-none @mixin list-separate @mixin definition-inline
+/// @usage:
+/// =list-inline
+@mixin list-inline {
+  @include list-none;
+  li {
+    display: inline;
+  }
+}
+
+/// Misin list-separate.
+/// @see    @mixin list-none @mixin list-inline @mixin definition-inline
+/// @usage:
+/// =list-separate
+@mixin list-separate {
+  li {
+    &:before {
+      content: " · ";
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    &:first-child:before {
+      content: "";
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+/// Misin definition-inline.
+/// @see    @mixin list-none @mixin list-inline @mixin list-separate
+/// @usage:
+/// =definition-inline
+@mixin definition-inline($width:$definition-inline-width, $ellipsis:true) {
+  @include clearfix;
+
+  dt {
+    float: left;
+    width: $width;
+
+    @if ($ellipsis) {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  dd {
+    margin-left: $width + 10;
+  }
+}

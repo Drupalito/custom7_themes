@@ -17,29 +17,41 @@ category: Module - System base
   overflow: hidden;
   position: absolute;
   z-index: 100;
+
+  ul {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    background: #fff;
+    color: #000;
+    cursor: default;
+    white-space: pre;
+  }
 }
-#autocomplete ul {
-  list-style: none;
-  list-style-image: none;
-  margin: 0;
-  padding: 0;
-}
-#autocomplete li {
-  background: #fff;
-  color: #000;
-  cursor: default;
-  white-space: pre;
-  zoom: 1; /* IE7 */
-}
+
 /* Animated throbber */
-html.js input.form-autocomplete {
-  background-image: url(/misc/throbber-inactive.png);
-  background-position: 100% center; /* LTR */
-  background-repeat: no-repeat;
+html.js {
+  input.form-autocomplete {
+    background-image: url(/misc/throbber-inactive.png);
+    background-position: 100% center; /* LTR */
+    background-repeat: no-repeat;
+  }
+  input.throbbing {
+    background-image: url(/misc/throbber-active.gif);
+    background-position: 100% center; /* LTR */
+  }
 }
-html.js input.throbbing {
-  background-image: url(/misc/throbber-active.gif);
-  background-position: 100% center; /* LTR */
+
+/**
+ * For anything you want to hide on page load when JS is enabled, so
+ * that you can use the JS to control visibility and avoid flicker.
+ */
+html.js .js-hide {
+  display: none;
 }
 
 /**
@@ -47,14 +59,14 @@ html.js input.throbbing {
  *
  * @see textarea.js
  */
+
 .form-textarea-wrapper textarea {
-  display: block;
   margin: 0;
   width: 100%;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  display: block;
   box-sizing: border-box;
 }
+
 .resizable-textarea .grippie {
   background: #eee url(/misc/grippie.png) no-repeat center 2px;
   border: 1px solid #ddd;
@@ -135,14 +147,6 @@ tr .ajax-progress .throbber {
 }
 .ajax-progress-bar {
   width: 16em;
-}
-
-/**
- * For anything you want to hide on page load when JS is enabled, so
- * that you can use the JS to control visibility and avoid flicker.
- */
-html.js .js-hide {
-  display: none;
 }
 
 /**
