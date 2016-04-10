@@ -9,84 +9,13 @@ $relative-font-sizing:        true;
 $default-rhythm-border-style: solid;
 $font-unit: if($relative-font-sizing, 1em, $base-font-size);
 
-/// bootstrap - responsive visibility
-/// @mixin   responsive-visibility
-/// @param   $parent {String} class name
-/// @see     @mixin responsive-invisibility
-/// @usage:
-/// =responsive-visibility("visible-xs")
-@mixin responsive-visibility($parent) {
-  // scss-lint:disable ImportantRule
-  #{$parent} { display: block !important; }
-  // scss-lint:enable ImportantRule
-}
-
-/// bootstrap - responsive invisibility
-/// @mixin   responsive-invisibility
-/// @param   $parent {String} class name
-/// @see     @mixin responsive-visibility
-/// @usage:
-/// =responsive-invisibility("hidden-xs")
-@mixin responsive-invisibility($parent) {
-  // scss-lint:disable ImportantRule
-  #{$parent} { display: none !important; }
-  // scss-lint:enable ImportantRule
-}
-
-/*doc
----
-title: Inline-block
-category: Global - Mixins
----
-
-@mixin inline-block
-
--    __$alignment:__ Vertiale alignment
-
-```
-
-  .class__name {
-    @include inline-block("top");
-  }
-
-```
-
-*/
-
-@mixin inline-block($alignment: top) {
-  display: inline-block;
-  @if $alignment and $alignment != none {
-    vertical-align: $alignment;
-  }
-}
-
-/*doc
----
-title: Media Queries
-category: Global - Mixins
----
-
-Variable `$keyword` possible egal to :
-
-* `large` : min-width: 1200px
-* `medium` : min-width: 769px
-* `small` : min-width: 768px
-* `smaller` : max-width: 768px
-
-@mixin mq
-
--    __$keyword:__ Media queries name
-
-```
-
-  @include mq("large") {
-    ...
-  }
-
-```
-
-*/
-
+/// Media queries size
+/// @param {string} $keyword [smaller|small|medium|large] - Media queries name
+/// @example scss - Usage SCSS
+///   @include mq("smaller") { ... }
+///   @include mq("small") { ... }
+///   @include mq("medium") { ... }
+///   @include mq("large") { ... }
 @mixin mq($keyword) {
   @if $keyword == smaller {
     @media (max-width: $screen-sm-min) { @content; }
@@ -103,7 +32,11 @@ Variable `$keyword` possible egal to :
 }
 
 // establish-baseline
-@mixin establish-baseline($font-size: $base-font-size, $font-family: map-get($font-families, "body")) {
+@mixin establish-baseline(
+  $font-size: $base-font-size,
+  $font-family: map-get($font-families, "body")
+  ) {
+
   $taille: ($font-size / $browser-default-font-size * 100%);
   $line-height: rhythm(1, $font-size);
 
@@ -131,7 +64,7 @@ Variable `$keyword` possible egal to :
   @return $lines;
 }
 
-@mixin font-size($taille:$base-font-size) {
+@mixin font-size($taille: $base-font-size) {
   font-size: $font-unit * $taille / $base-font-size;
   line-height: rhythm(lines-for-font-size($taille), if($relative-font-sizing, $taille, $base-font-size));
 }

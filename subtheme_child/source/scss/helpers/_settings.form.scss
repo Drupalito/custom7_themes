@@ -2,11 +2,30 @@
 // Settings Form
 // =============
 
+/// Input & select height
+/// @type String
 $input-height: 42px;
+
+/// Field inline, label width
+/// @type String
 $form-label-width: 200px;
+
+/// Field inline, label marge right
+/// @type String
 $form-label-marge: $grid-gutter-width;
 
+/// Field background color
+/// @type Color
 $form-background-color: #fff;
+
+/// Field border color
+/// @type Color
 $form-border-color: #c0c0c0;
+
+/// Field border color hover
+/// @type Color
 $form-hover: map-get($colorz, "primary");
+
+/// Field background disable
+/// @type Color
 $form-disable: #e2e2e2;

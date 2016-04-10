@@ -2,12 +2,14 @@
 // Mixins Form
 // ===========
 
-/// Drupal - Item form field
-/// @mixin   form-item
-/// @param   $input-height {String} Line Height
-/// @see     @mixin form-item-inline
-/// @usage:
-/// =form-item(32px)
+/// Item form field
+/// @group Drupal
+/// @see form-item-inline
+/// @param {String} $input-height [$input-height] - Line Height
+/// @example scss - Usage SCSS
+///   .form-item {
+///     @include form-item(32px);
+///   }
 @mixin form-item($input-height) {
   @extend %clearfix;
   position: relative;
@@ -40,12 +42,13 @@
   }
 }
 
-/// Drupal webform - Item form field Inline (responsive version is block)
-/// @mixin   form-item-inline
-/// @param   $input-height {String} Line Height
-/// @see     @mixin form-item
-/// @usage:
-/// =form-item-inline(32px)
+/// Webform - Item form field Inline (responsive version is block)
+/// @group Drupal
+/// @see form-item
+/// @param {String} $input-height [$input-height] - Line Height
+///   .form-item {
+///     @include form-item-inline(32px);
+///   }
 @mixin form-item-inline($input-height) {
   @include mq("small") {
     padding: 0 0 0 $form-label-width + $form-label-marge;
@@ -89,11 +92,9 @@
 }
 
 /// Custom - ???
-/// @mixin   form-item-inlineblock
-/// @todo    Check utiliiy
-/// @see     @mixin form-item
-/// @usage:
-/// =form-item-inlineblock
+/// @group Drupal
+/// @todo Check utiliiy
+/// @see form-item
 @mixin form-item-inlineblock {
   .form-item:first-child {
     margin-right: 20px;

@@ -2,13 +2,20 @@
 // Settings Global
 // ===============
 
-// Typo size.
-$base-font-size:   16px;
-$base-line-height: 24px;
+/// Base font size
+/// @type Length
+$base-font-size: 16px !default;
 
-// Body background.
+/// Base line-height
+/// @type Length
+$base-line-height: 24px !default;
+
+/// Body background.
+/// @type Color
 $body-background: #fff;
-// Body color.
+
+/// Body color.
+/// @type Color
 $body-color: #333;
 
 // Links colors.
@@ -17,11 +24,16 @@ $link-color-hover:   #2C4A4A;
 $link-color-active:  #2C4A4A;
 $link-color-visited: #B14437;
 
-// Selection text.
+/// Selection text color.
+/// @type Color
 $selection-background: #fff8ab;
+
+/// Selection text background.
+/// @type Color
 $selection-color: #666;
 
-// Background color html <mark>.
+/// Background color html <mark>.
+/// @type Color
 $highlight-mark-color: #ff0;
 
 // Font stack.
@@ -31,21 +43,27 @@ $font-families: (
   pre: (Menlo, Monaco, Consolas, "Courier New", monospace)
 );
 
+/// default `<dt>` width
+/// @type string
 $definition-inline-width: 150px;
 
-/// Mixin bold.
-/// @see    @mixin italic
-/// @usage:
-/// =bold
+/// Définie la typo bold
+/// @see italic
+/// @example scss
+///   p {
+///     @include bold;
+///   }
 @mixin bold {
   font-weight: bold;
   font-style: normal;
 }
 
-/// Misin italic.
-/// @see    @mixin bold
-/// @usage:
-/// =italic
+/// Définie la typo italic
+/// @see bold
+/// @example scss
+///   p {
+///     @include italic;
+///   }
 @mixin italic {
   font-weight: normal;
   font-style: italic;
@@ -104,28 +122,29 @@ $colorz: (
 /// Theme Message
 /// @type Map
 /// @prop {Map} theme
-/// @prop {Color} message.key.color  - Theme color
-/// @prop {Number} message.key.index - Theme background color
-/// @prop {String} message.key.icon  - Theme icon
+/// @prop {Color} message.info.color [#477bb6] - Theme color
+/// @prop {String} message.info.icon [i-info] - Theme icon
+/// @prop {Color} message.warning.color [#ddae1e] - Theme color
+/// @prop {String} message.warning.icon [i-warning] - Theme icon
+/// @prop {Color} message.error.color [#b64747] - Theme color
+/// @prop {String} message.error.icon [i-error] - Theme icon
+/// @prop {Color} message.status.color [#77b647] - Theme color
+/// @prop {String} message.status.icon [i-check] - Theme icon
 $message: (
   info: (
-    color: null,
-    background: #477bb6,
+    color: #477bb6,
     icon:  ".i-info",
   ),
   warning: (
-    color: null,
-    background: #ddae1e,
+    color: #ddae1e,
     icon:  ".i-warning",
   ),
   error: (
-    color: null,
-    background: #b64747,
+    color: #b64747,
     icon:  ".i-error",
   ),
   status: (
-    color: null,
-    background: #77b647,
+    color: #77b647,
     icon:  ".i-check",
   )
 );

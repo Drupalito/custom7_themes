@@ -113,19 +113,19 @@ Couleurs disponibles.
 
 .btn--edit-add {
   $type: map-get($message, "status");
-  $background: map-get($type, "background");
+  $background: map-get($type, "color");
   @include btn-theme(#fff, $background);
 }
 
 .btn--edit-preview {
   $type: map-get($message, "info");
-  $background: map-get($type, "background");
+  $background: map-get($type, "color");
   @include btn-theme(#fff, $background);
 }
 
 .btn--edit-delete {
   $type: map-get($message, "error");
-  $background: map-get($type, "background");
+  $background: map-get($type, "color");
   @include btn-theme(#fff, $background);
 }
 

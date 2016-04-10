@@ -42,7 +42,7 @@ Content type : **Node**
 
   &--unpublished {
     $type: map-get($message, "warning");
-    $background: map-get($type, "background");
+    $background: map-get($type, "color");
     background: #{lighten($background, 45%)};
   }
 

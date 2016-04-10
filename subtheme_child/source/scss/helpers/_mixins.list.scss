@@ -2,19 +2,27 @@
 // Mixins Lists
 // ============
 
-/// Misin list-none.
-/// @see    @mixin list-inline @mixin list-separate @mixin definition-inline
-/// @usage:
-/// =list-none
+/// Mixin list-none.
+/// @see list-inline
+/// @see list-separate
+/// @see definition-inline
+/// @example scss - Usage SCSS
+///   ul {
+///     @include list-none;
+///   }
 @mixin list-none {
   list-style-type: none;
   padding-left: 0;
 }
 
-/// Misin list-inline.
-/// @see    @mixin list-none @mixin list-separate @mixin definition-inline
-/// @usage:
-/// =list-inline
+/// Mixin list-inline.
+/// @see list-none
+/// @see list-separate
+/// @see definition-inline
+/// @example scss - Usage SCSS
+///   ul {
+///     @include list-inline;
+///   }
 @mixin list-inline {
   @include list-none;
   li {
@@ -22,10 +30,14 @@
   }
 }
 
-/// Misin list-separate.
-/// @see    @mixin list-none @mixin list-inline @mixin definition-inline
-/// @usage:
-/// =list-separate
+/// Mixin list-separate.
+/// @see list-none
+/// @see list-inline
+/// @see definition-inline
+/// @example scss - Usage SCSS
+///   ul {
+///     @include list-separate;
+///   }
 @mixin list-separate {
   li {
     &:before {
@@ -42,12 +54,22 @@
   }
 }
 
-/// Misin definition-inline.
-/// @see    @mixin list-none @mixin list-inline @mixin list-separate
-/// @usage:
-/// =definition-inline
-@mixin definition-inline($width:$definition-inline-width, $ellipsis:true) {
-  @include clearfix;
+/// Mixin definition-inline.
+/// @see list-none
+/// @see list-inline
+/// @see list-separate
+/// @param {Length} $width [$definition-inline-width] - Legend width
+/// @param {Boolean} $ellipsis [true] - Active ellipsis
+/// @example scss - Usage SCSS
+///   dl {
+///     @include definition-inline;
+///   }
+@mixin definition-inline(
+  $width: $definition-inline-width,
+  $ellipsis: true
+  ) {
+
+  @extend %clearfix;
 
   dt {
     float: left;

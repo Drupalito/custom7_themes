@@ -178,7 +178,7 @@ Modifier `.messages--warning` && `.messages--icon`
 
   @each $name, $values in $message {
     $icon: map-get($values, "icon");
-    $background: map-get($values, "background");
+    $background: map-get($values, "color");
 
     &--#{$name} {
       border-color: $background;
@@ -252,7 +252,7 @@ Combine `.text` with `.text--icon` and icon `.i-info`
   }
 
   @each $name, $values in $message {
-    $color: map-get($values, "background");
+    $color: map-get($values, "color");
 
     &--#{$name} {
       color: $color;
@@ -311,7 +311,7 @@ category: Components - Messages
 */
 
 @each $name, $values in $message {
-  $color: map-get($values, "background");
+  $color: map-get($values, "color");
   $new-name: #{$name};
 
   @if $name == "status" {
@@ -332,20 +332,20 @@ category: Components - Messages
 // [TODO]
 .mark--new {
   $type: map-get($message, "error");
-  background: #{map-get($type, "background")};
+  background: #{map-get($type, "color")};
   color: #fff;
 }
 
 // [TODO]
 .mark--unpublished {
   $type: map-get($message, "warning");
-  background: #{map-get($type, "background")};
+  background: #{map-get($type, "color")};
   color: #fff;
 }
 
 // [TODO]
 .mark--updated {
   $type: map-get($message, "info");
-  background: #{map-get($type, "background")};
+  background: #{map-get($type, "color")};
   color: #fff;
 }
