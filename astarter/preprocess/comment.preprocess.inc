@@ -17,8 +17,7 @@ function astarter_preprocess_comment(&$variables) {
   // Added ID to each comment.
   $variables['attributes_array']['id'][] = 'comment-' . $variables['comment']->cid;
 
-
-  // Comment is reply to pid
+  // Comment is reply to pid.
   if (!empty($variables['comment']->pid)) {
     $variables['attributes_array']['itemref'][] = 'comment-' . $variables['comment']->pid;
   }

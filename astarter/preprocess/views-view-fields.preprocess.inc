@@ -11,8 +11,8 @@
  * Exemple to use : Create another function :
  *   astarter_preprocess_views_view_fields__VIEWNAME__DISPLAY
  *
- * Original fonction Drupal
- * Only change name class CSS
+ * Original fonction Drupal.
+ * Only change name class CSS.
  *
  * @see hook_preprocess()
  */
@@ -24,15 +24,16 @@ function astarter_preprocess_views_view_fields(&$variables) {
     }
   }
 
-  // Original fonction Drupal
-  // Only change name class CSS
+  // Original fonction Drupal.
+  // Only change name class CSS.
   $view = $variables['view'];
 
   // Loop through the fields for this view.
   $previous_inline = FALSE;
-  $variables['fields'] = array(); // ensure it's at least an empty array.
+  // Ensure it's at least an empty array.
+  $variables['fields'] = array();
   foreach ($view->field as $id => $field) {
-    // render this even if set to exclude so it can be used elsewhere.
+    // Render this even if set to exclude so it can be used elsewhere.
     $field_output = $view->style_plugin->get_field($view->row_index, $id);
     $empty = $field->is_value_empty($field_output, $field->options['empty_zero']);
     if (empty($field->options['exclude']) && (!$empty || (empty($field->options['hide_empty']) && empty($variables['options']['hide_empty'])))) {
@@ -51,7 +52,7 @@ function astarter_preprocess_views_view_fields(&$variables) {
           if ($class) {
             $class .= ' ';
           }
-          $class .=  $classes;
+          $class .= $classes;
         }
 
         $pre = '<' . $object->element_type;
@@ -61,8 +62,9 @@ function astarter_preprocess_views_view_fields(&$variables) {
         $field_output = $pre . '>' . $field_output . '</' . $object->element_type . '>';
       }
 
-      // Protect ourself somewhat for backward compatibility. This will prevent
-      // old templates from producing invalid HTML when no element type is selected.
+      // Protect ourself somewhat for backward compatibility.
+      // This will prevent old templates from producing
+      // invalid HTML when no element type is selected.
       if (empty($object->element_type)) {
         $object->element_type = 'span';
       }
@@ -72,7 +74,8 @@ function astarter_preprocess_views_view_fields(&$variables) {
         $object->raw = $variables['row']->{$view->field[$id]->field_alias};
       }
       else {
-        $object->raw = NULL; // make sure it exists to reduce NOTICE
+        // Make sure it exists to reduce NOTICE.
+        $object->raw = NULL;
       }
 
       if (!empty($variables['options']['separator']) && $previous_inline && $object->inline && $object->content) {

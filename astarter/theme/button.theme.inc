@@ -29,13 +29,13 @@ function astarter_button($variables) {
 
   if (isset($element['#attributes']['id'])) {
 
-    if (strstr($element['#attributes']['id'], 'edit-submit-') != false || strstr($element['#attributes']['id'], 'edit-actions-submit') != false) {
+    if (strstr($element['#attributes']['id'], 'edit-submit-') != FALSE || strstr($element['#attributes']['id'], 'edit-actions-submit') != FALSE) {
       $element['#attributes']['class'][] = 'btn--edit-submit';
     }
-    if (strstr($element['#attributes']['id'], 'edit-add') != false) {
+    if (strstr($element['#attributes']['id'], 'edit-add') != FALSE) {
       $element['#attributes']['class'][] = 'btn--edit-add';
     }
-    if (strstr($element['#attributes']['id'], 'edit-delete') != false) {
+    if (strstr($element['#attributes']['id'], 'edit-delete') != FALSE) {
       $element['#attributes']['class'][] = 'btn--edit-add';
     }
 

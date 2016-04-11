@@ -91,8 +91,8 @@ function astarter_breadcrumb(&$variables) {
       '#theme' => 'container',
       '#children' => $output,
       '#attributes' => array(
-        'id' => 'breadcrumb'
-      )
+        'id' => 'breadcrumb',
+      ),
     );
     return render($render_output);
   }

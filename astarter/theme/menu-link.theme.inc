@@ -8,7 +8,7 @@
 /**
  * Implements theme_menu_link().
  *
- * Remove \n
+ * Remove \n.
  *
  * @ingroup themeable
  */
@@ -16,19 +16,19 @@ function astarter_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
-  // Add support HTML
+  // Add support HTML.
   $element['#localized_options']['html'] = TRUE;
 
   array_unshift($element['#attributes']['class'], 'menu__item');
 
-  // Add class if item is expanded
+  // Add class if item is expanded.
   if (in_array('expanded', $element['#attributes']['class'])) {
     array_splice($element['#attributes']['class'], 1, 0, array('menu__item--expanded'));
   }
 
   if ($element['#below']) {
     $sub_menu = drupal_render($element['#below']);
-    // Add class if item has submenu
+    // Add class if item has submenu.
     array_splice($element['#attributes']['class'], 1, 0, array('menu__item--hasmenu'));
   }
 

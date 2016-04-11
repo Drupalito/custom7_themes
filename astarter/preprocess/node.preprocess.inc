@@ -77,7 +77,7 @@ function astarter_preprocess_node(&$variables, $hook) {
     }
   }
 
-  else if ($variables['display_submitted']) {
+  elseif ($variables['display_submitted']) {
 
     if (!empty($variables['uid'])) {
 
@@ -97,7 +97,7 @@ function astarter_preprocess_node(&$variables, $hook) {
       '#theme' => 'item_list',
       '#type' => 'ul',
       '#items' => $node_meta,
-      '#attributes' => array('class' => array('meta'))
+      '#attributes' => array('class' => array('meta')),
     );
   }
 
@@ -118,12 +118,12 @@ function astarter_preprocess_node(&$variables, $hook) {
       $variables['content']['links']['comment']['#links']['comment-comments']['attributes']['title'] = $variables['content']['links']['comment']['#links']['comment-comments']['title'] . ' ' . t('on') . ' ' . $variables['title'];
     }
 
-    // Teaser : remove add comment link
+    // Teaser : remove add comment link.
     if (isset($variables['content']['links']['comment']['#links']['comment-add'])) {
       unset($variables['content']['links']['comment']['#links']['comment-add']);
     }
 
-    // Teaser : remove new comment link
+    // Teaser : remove new comment link.
     if (isset($variables['content']['links']['comment']['#links']['comment-new-comments'])) {
       unset($variables['content']['links']['comment']['#links']['comment-new-comments']);
     }

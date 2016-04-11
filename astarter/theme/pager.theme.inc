@@ -46,10 +46,31 @@ function astarter_pager($variables) {
   }
   // End of generation loop preparation.
 
-  $li_first = theme('pager_first', array('text' => (isset($tags[0]) ? $tags[0] : t('<span class="i i-arrow-left"></span> First page')), 'element' => $element, 'parameters' => $parameters));
-  $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('<span class="i i-arrow-left"></span> Previous')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-  $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('Next page <span class="i i-arrow-right"></span>')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-  $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : t('Last page <span class="i i-arrow-right"></span>')), 'element' => $element, 'parameters' => $parameters));
+  $li_first = theme('pager_first', array(
+    'text' => (isset($tags[0]) ? $tags[0] : t('<span class="i i-arrow-left"></span> First page')),
+    'element' => $element,
+    'parameters' => $parameters,
+  ));
+
+  $li_previous = theme('pager_previous', array(
+    'text' => (isset($tags[1]) ? $tags[1] : t('<span class="i i-arrow-left"></span> Previous')),
+    'element' => $element,
+    'interval' => 1,
+    'parameters' => $parameters,
+  ));
+
+  $li_next = theme('pager_next', array(
+    'text' => (isset($tags[3]) ? $tags[3] : t('Next page <span class="i i-arrow-right"></span>')),
+    'element' => $element,
+    'interval' => 1,
+    'parameters' => $parameters,
+  ));
+
+  $li_last = theme('pager_last', array(
+    'text' => (isset($tags[4]) ? $tags[4] : t('Last page <span class="i i-arrow-right"></span>')),
+    'element' => $element,
+    'parameters' => $parameters,
+  ));
 
   if ($pager_total[$element] > 1) {
     if ($li_first) {
@@ -82,7 +103,12 @@ function astarter_pager($variables) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array('pagination__item'),
-            'data'  => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
+            'data'  => theme('pager_previous', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => ($pager_current - $i),
+              'parameters' => $parameters,
+            )),
           );
         }
         if ($i == $pager_current) {
@@ -94,7 +120,12 @@ function astarter_pager($variables) {
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array('pagination__item'),
-            'data'  => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
+            'data'  => theme('pager_next', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => ($i - $pager_current),
+              'parameters' => $parameters,
+            )),
           );
         }
       }
