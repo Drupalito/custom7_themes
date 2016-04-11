@@ -35,7 +35,7 @@ category: Layout - Layer
 }
 
 .branding {
-  text-align: right;
+  text-align: right; /* LTR */
 }
 
 /*doc
@@ -96,7 +96,7 @@ Default markup. (`title` = `alt`)
     &__content {
       display: table-cell;
       vertical-align: middle;
-      padding-left: 1em;
+      padding-left: 1em; /* LTR */
     }
   }
 }

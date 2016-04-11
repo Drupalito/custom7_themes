@@ -237,6 +237,9 @@ function astarter_css_alter(&$css) {
       'addressfield.css' => array(
         'theme' => 'addressfield.css',
       ),
+      'addressfield-rtl.css' => array(
+        'theme' => 'addressfield-rtl.css',
+      ),
     ),
     'block' => array(
       'block.css' => array(
@@ -420,14 +423,6 @@ function astarter_css_alter(&$css) {
   }
 
   $exclude = array(
-    'modules/field/theme/field-rtl.css' => FALSE,
-    'modules/node/node-rtl.css' => FALSE,
-    'modules/field/field-rtl.css' => FALSE,
-    'modules/filter/filter-rtl.css' => FALSE,
-    'modules/forum/forum-rtl.css' => FALSE,
-    'modules/comment/comment-rtl.css' => FALSE,
-    'modules/poll/poll-rtl.css' => FALSE,
-    'modules/search/search-rtl.css' => FALSE,
     'modules/aggregator/aggregator.css' => FALSE,
     'modules/aggregator/aggregator-rtl.css' => FALSE,
     // 'modules/book/book-rtl.css' => FALSE,

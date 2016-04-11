@@ -67,7 +67,7 @@ category: Layout - Layer
 
 .main {
   &__title {
-    @extend .caps;
+    text-transform: uppercase;
     margin-bottom: 0;
 
     + * {

@@ -14,7 +14,7 @@ category: Components - Tabs
   @extend .list-inline;
   @extend .list-separate;
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 0; /* LTR */
 
   a {
     text-transform: uppercase;

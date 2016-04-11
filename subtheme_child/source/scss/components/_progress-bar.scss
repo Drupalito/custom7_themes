@@ -34,7 +34,7 @@ category: Components - Progress bar
   }
 
   .percentage {
-    @extend .pull-right;
+    float: right; /* LTR */
   }
 
   .message {

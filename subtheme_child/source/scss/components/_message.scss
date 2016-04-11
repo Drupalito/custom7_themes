@@ -126,11 +126,10 @@ Modifier `.messages--warning` && `.messages--icon`
 */
 
 .messages {
-  @extend .mtn;
   min-height: $base-line-height * 4;
   padding: 1.5em;
-  margin: rhythm(1) 0;
-  border-left: 1.5em solid;
+  margin: 0 0 rhythm(1); /* LTR */
+  border-left: 1.5em solid; /* LTR */
   background: #ccc;
 
   p,
@@ -151,7 +150,7 @@ Modifier `.messages--warning` && `.messages--icon`
 
   &__title,
   &__list {
-    @extend .mvn;
+    margin: 0;
   }
 
   &__content {
@@ -163,13 +162,13 @@ Modifier `.messages--warning` && `.messages--icon`
     // scss-lint:disable SelectorFormat
     .messages__content {
       position: relative;
-      padding-left: 4.5em;
+      padding-left: 4.5em; /* LTR */
 
       &:before {
         @extend .i;
         position: absolute;
         top: 0;
-        left: 0;
+        left: 0; /* LTR */
         font-size: 3em;
       }
     }
@@ -244,7 +243,7 @@ Combine `.text` with `.text--icon` and icon `.i-info`
 .text {
   &--icon:before {
     @extend .i;
-    margin-right: 5px;
+    margin-right: 5px; /* LTR */
   }
 
   &--muted {

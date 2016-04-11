@@ -51,13 +51,13 @@ category: Components - Breadcrumb
 
   a {
     position: absolute;
-    left: -9999px;
+    left: -9999px; /* LTR */
     z-index: 2;
 
     &:focus,
     &:active {
       top: 0;
-      left: 0;
+      left: 0; /* LTR */
       display: inline;
       padding: 5px 10px;
       background: #b00;

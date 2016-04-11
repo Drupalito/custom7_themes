@@ -144,11 +144,11 @@ input[type="submit"] {
 
 select {
   width: auto;
-  padding: 0 30px 0 5px;
+  padding: 0 30px 0 5px; /* LTR */
   border-radius: 0;
   text-indent: 0.01px;
   text-overflow: ""; // ellipsis;
-  background: $form-background-color url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAQAAADvCgS4AAAAGklEQVR4AWNg+I8BcQGCyhAAXRlhpcQAQsoAMGIY6KADYAUAAAAASUVORK5CYII=") no-repeat 100% center;
+  background: $form-background-color url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAQAAADvCgS4AAAAGklEQVR4AWNg+I8BcQGCyhAAXRlhpcQAQsoAMGIY6KADYAUAAAAASUVORK5CYII=") no-repeat 100% center; /* LTR */
   height: $input-height;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -193,7 +193,7 @@ input[type="checkbox"] {
     display: inline-block;
     cursor: pointer;
     position: relative;
-    padding-left: pem($base-line-height, 15px);
+    padding-left: pem($base-line-height, 15px); /* LTR */
 
     &:before {
       content: "";
@@ -435,7 +435,7 @@ fieldset {
   legend {
     padding: 0 ($base-line-height / 2);
     margin: 0;
-    margin-left: -(($base-line-height / 2) / 2);
+    margin-left: -(($base-line-height / 2) / 2); /* LTR */
     font-size: pem(18px);
     font-weight: 700;
 
@@ -503,7 +503,7 @@ Drupal example HTML
   margin-top: rhythm(1);
 
   button + button {
-    margin-left: 2em;
+    margin-left: 2em; /* LTR */
   }
 }
 
@@ -550,7 +550,7 @@ Drupal example HTML
 // scss-lint:disable MergeableSelector
 div.password-confirm,
 .password-strength {
-  @extend .pull-right;
+  @extend .pull-right; /* LTR */
   line-height: $input-height;
 }
 
@@ -564,10 +564,10 @@ div.password-confirm {
   }
 
   &-text {
-    @extend .pull-right;
+    @extend .pull-right; /* LTR */
     font-weight: 700;
     font-style: normal;
-    margin-left: 5px;
+    margin-left: 5px; /* LTR */
   }
 }
 
@@ -623,7 +623,7 @@ category: Base - Forms
   .has--#{$name} input,
   .has--#{$name} select,
   .has--#{$name} textarea {
-    border-left-width: 4px;
+    border-left-width: 4px; /* LTR */
     @if map-get($values, "color") {
       border-color: map-get($values, "color");
 

@@ -214,7 +214,7 @@ mark,
 }
 
 dd {
-  margin-left: 0;
+  margin-left: 0; /* LTR */
 }
 
 /*doc
@@ -259,7 +259,7 @@ category: Base - Base
 
 ul,
 ol {
-  padding-left: rhythm(1);
+  padding-left: rhythm(1); /* LTR */
 }
 
 li {
@@ -431,8 +431,8 @@ category: Base - Base
 
 pre,
 blockquote {
-  padding-left: 1.5em;
-  border-left: 1.5em solid;
+  padding-left: 1.5em; /* LTR */
+  border-left: 1.5em solid; /* LTR */
   clear: both;
 }
 
@@ -451,10 +451,10 @@ category: Base - Base
 */
 
 blockquote {
-  font-style: italic;
+  @include italic;
 
   cite {
-    @extend .show;
+    display: block;
     font-size: 80%;
     font-style: normal;
     color: #666;
@@ -687,7 +687,7 @@ th,
 td {
   padding: rhythm(0.5) ($grid-gutter-width / 2);
   border-bottom: 1px solid #ccc;
-  text-align: left;
+  text-align: left; /* LTR */
 
   .views-row-last & {
     border-bottom: 0;
