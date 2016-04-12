@@ -3,10 +3,10 @@
 // =============
 
 // Do not change these lines.
-$browser-default-font-size:   16px;
-$rhythm-unit:                 "em";
-$relative-font-sizing:        true;
-$default-rhythm-border-style: solid;
+$browser-default-font-size:   16px !default;
+$rhythm-unit:                 "em" !default;
+$relative-font-sizing:        true !default;
+$default-rhythm-border-style: solid !default;
 $font-unit: if($relative-font-sizing, 1em, $base-font-size);
 
 /// Media queries size

@@ -47,7 +47,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: #{map-get($font-families, "print")};
   page-break-after: avoid;
 }
 
@@ -126,7 +126,9 @@ thead {
 }
 
 .alignleft,
-.alignright {
+.alignright,
+.alignone {
+  float: none;
   display: block;
   margin-bottom: 1.5em;
 }

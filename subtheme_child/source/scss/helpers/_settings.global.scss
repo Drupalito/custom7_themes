@@ -12,40 +12,41 @@ $base-line-height: 24px !default;
 
 /// Body background.
 /// @type Color
-$body-background: #fff;
+$body-background: #fff !default;
 
 /// Body color.
 /// @type Color
-$body-color: #333;
+$body-color: #333 !default;
 
 // Links colors.
-$link-color:         #b14437;
-$link-color-hover:   #2c4a4a;
-$link-color-active:  #2c4a4a;
-$link-color-visited: #b14437;
+$link-color:         #b14437 !default;
+$link-color-hover:   #2c4a4a !default;
+$link-color-active:  #2c4a4a !default;
+$link-color-visited: #b14437 !default;
 
 /// Selection text color.
 /// @type Color
-$selection-background: #fff8ab;
+$selection-background: #fff8ab !default;
 
 /// Selection text background.
 /// @type Color
-$selection-color: #666;
+$selection-color: #666 !default;
 
 /// Background color html <mark>.
 /// @type Color
-$highlight-mark-color: #ff0;
+$highlight-mark-color: #ff0 !default;
 
 // Font stack.
 $font-families: (
   body: ("Lato", Helvetica, Arial, sans-serif),
-  headline: (Helvetica, Arial, sans-serif),
-  pre: (Menlo, Monaco, Consolas, "Courier New", monospace)
-);
+  headline: ("Helvetica Neue", Helvetica, Arial, sans-serif),
+  pre: (Menlo, Monaco, Consolas, "Courier New", monospace),
+  print: ("Helvetica Neue", Helvetica, Arial, sans-serif)
+) !default;
 
 /// default `<dt>` width
 /// @type string
-$definition-inline-width: 150px;
+$definition-inline-width: 150px !default;
 
 /// Définie la typo bold
 /// @see italic
@@ -92,7 +93,7 @@ $font-size: (
   h4: 18px,
   h5: 16px,
   h6: 14px
-);
+) !default;
 
 /*doc
 ---
@@ -117,7 +118,7 @@ $colorz: (
   default:   #b14437,
   primary:   #2c4a4a,
   secondary: #705241,
-);
+) !default;
 
 /// Theme Message
 /// @type Map
@@ -147,4 +148,4 @@ $message: (
     color: #77b647,
     icon:  ".i-check",
   )
-);
+) !default;
