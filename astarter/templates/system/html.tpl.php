@@ -10,7 +10,7 @@
 ?>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie9 no-js"<?php print $html_attributes; ?>><![endif]-->
-<html class="no-js"<?php print $html_attributes; ?>>
+<html<?php print $html_attributes; ?>>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@
 <?php print $styles; ?>
 <?php print $scripts; ?>
 </head>
-<body class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<body<?php print $attributes; ?>>
 <p id="skiplinks" class="skiplinks">
   <a href="#navigation"><?php print t('Navigation'); ?></a>
   <a href="#main"><?php print t('Main content'); ?></a>

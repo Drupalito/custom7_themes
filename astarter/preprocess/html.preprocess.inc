@@ -19,6 +19,7 @@ function astarter_preprocess_html(&$variables, $hook) {
   $variables['html_attributes_array'] = array(
     'lang'  => $variables['language']->language,
     'dir' => $variables['language']->dir,
+    'class' => array('no-js'),
   );
 
   if ($variables['is_admin']) {
@@ -89,4 +90,7 @@ function astarter_preprocess_html(&$variables, $hook) {
         break;
     }
   }
+
+  $variables['attributes_array']['class'] = array();
+  $variables['attributes_array']['class'] = $variables['classes_array'] + $variables['attributes_array']['class'];
 }
