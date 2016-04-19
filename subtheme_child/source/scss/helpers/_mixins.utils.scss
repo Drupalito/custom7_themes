@@ -31,12 +31,17 @@
 /// Inline-block
 /// @param $alignment [top|middle|bottom] - Vertiale alignment
 /// @example scss - Usage SCSS
-///   span {
+///   .foo {
 ///     @include inline-block("middle");
 ///   }
 ///
-///   a {
+///   .bar {
 ///     @include inline-block("top");
+///   }
+/// @example css - Result CSS
+///   .foo {
+///     display: inline-block;
+///     vertical-align: top;
 ///   }
 @mixin inline-block(
   $alignment: top

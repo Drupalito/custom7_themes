@@ -50,7 +50,7 @@ $definition-inline-width: 150px !default;
 
 /// Définie la typo bold
 /// @see italic
-/// @example scss
+/// @example scss - Usage SCSS
 ///   p {
 ///     @include bold;
 ///   }
@@ -61,7 +61,7 @@ $definition-inline-width: 150px !default;
 
 /// Définie la typo italic
 /// @see bold
-/// @example scss
+/// @example scss - Usage SCSS
 ///   p {
 ///     @include italic;
 ///   }
@@ -123,14 +123,14 @@ $colorz: (
 /// Theme Message
 /// @type Map
 /// @prop {Map} theme
-/// @prop {Color} message.info.color [#477bb6] - Theme color
-/// @prop {String} message.info.icon [i-info] - Theme icon
-/// @prop {Color} message.warning.color [#ddae1e] - Theme color
-/// @prop {String} message.warning.icon [i-warning] - Theme icon
-/// @prop {Color} message.error.color [#b64747] - Theme color
-/// @prop {String} message.error.icon [i-error] - Theme icon
-/// @prop {Color} message.status.color [#77b647] - Theme color
-/// @prop {String} message.status.icon [i-check] - Theme icon
+/// @prop {Color} message.info.color [#477bb6] - Alerte info : couleur
+/// @prop {String} message.info.icon [i-info] - Alerte info : icône
+/// @prop {Color} message.warning.color [#ddae1e] - Alerte warning : couleur
+/// @prop {String} message.warning.icon [i-warning] - Alerte warning : icône
+/// @prop {Color} message.error.color [#b64747] - Alerte erreur : couleur
+/// @prop {String} message.error.icon [i-error] - Alerte erreur : icône
+/// @prop {Color} message.status.color [#77b647] - Alerte succès : couleur
+/// @prop {String} message.status.icon [i-check] - Alerte succès : icône
 $message: (
   info: (
     color: #477bb6,
