@@ -11,7 +11,7 @@
 
 <div id="page" class="page">
 
-  <div class="banner page-banner">
+  <div class="page-banner banner">
     <header id="banner" role="banner" class="banner__region container">
       <div class="row row-sm-height">
         <div class="col-xs-12 col-sm-8">
@@ -26,7 +26,7 @@
     </header>
   </div>
 
-  <div class="navigation<?php print $navigation_fixed; ?> page-navigation noprint">
+  <div class="page-navigation navigation<?php print $navigation_fixed; ?> noprint">
     <nav id="navigation" role="navigation" aria-label="<?php print t('Primary navigation'); ?>" class="navigation__region container">
       <div class="row">
         <?php print render($page['navigation']); ?>
@@ -88,7 +88,7 @@
     </div>
   </div>
 
-  <div class="contentinfo page-contentinfo">
+  <div class="page-contentinfo contentinfo">
     <footer id="contentinfo" role="contentinfo" class="contentinfo__region container">
       <div class="row">
         <?php print render($page['footer']); ?>
