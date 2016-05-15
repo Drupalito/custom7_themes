@@ -20,6 +20,6 @@ function astarter_preprocess_taxonomy_term(&$variables) {
     'taxonomy-term--' . $machine_name . '--' . $view_mode,
   );
 
-  $variables['content_attributes_title_array']['class'][] = 'taxonomy__title';
+  $variables['title_attributes_array']['class'][] = 'taxonomy__title';
   $variables['content_attributes_array']['class'][] = 'taxonomy__content';
 }
