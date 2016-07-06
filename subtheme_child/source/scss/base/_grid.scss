@@ -1,9 +1,16 @@
 
+// @file: _form.scss
+// Grille float bootstrap like
+
 /*doc
 ---
 title: Grid
 category: Layout - Grid
 ---
+
+* `.container`
+* `.row` représente une rangée
+* `col-*` représente une colonne
 
 */
 
@@ -50,6 +57,33 @@ Rows contain and clear the floats of your columns.
   justify-content: center;
 }
 
+.row-xs-noborder {
+  margin-left: 0;
+  margin-right: 0;
+
+  > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.row-xs-eqheight {
+  display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    display: flex;
+  }
+}
+
+.col-top {
+  align-self: flex-start;
+}
+
+.col-bottom {
+  align-self: flex-end;
+}
+
 /*
 Columns
 
@@ -82,6 +116,25 @@ to tablets.
     align-items: center;
     justify-content: center;
   }
+
+  .row-sm-noborder {
+    margin-left: 0;
+    margin-right: 0;
+
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .row-sm-eqheight {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      display: flex;
+    }
+  }
 }
 
 /*
@@ -98,6 +151,25 @@ Columns, offsets, pushes, and pulls for the desktop device range.
     align-items: center;
     justify-content: center;
   }
+
+  .row-md-noborder {
+    margin-left: 0;
+    margin-right: 0;
+
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .row-md-eqheight {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      display: flex;
+    }
+  }
 }
 
 /*
@@ -113,5 +185,24 @@ Columns, offsets, pushes, and pulls for the large desktop device range.
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .row-lg-noborder {
+    margin-left: 0;
+    margin-right: 0;
+
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .row-lg-eqheight {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      display: flex;
+    }
   }
 }
