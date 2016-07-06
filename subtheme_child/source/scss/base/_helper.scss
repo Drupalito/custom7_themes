@@ -1,4 +1,7 @@
 
+// @file: _form.scss
+// Helpers, classe atomique
+
 /*doc
 ---
 title: Inline-block (Elements)
@@ -169,11 +172,15 @@ Size
   }
 }
 
-@include responsive-invisibility(".visible-xs");
-@include responsive-invisibility(".visible-sm");
-@include responsive-invisibility(".visible-md");
-@include responsive-invisibility(".visible-lg");
+//
+// Responsive: Visibility classes
+// => Bootstrap like
+// --------------------------------------------------
 
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
 .visible-xs-block,
 .visible-xs-inline,
 .visible-xs-inline-block,
@@ -190,83 +197,31 @@ Size
 }
 
 @media (max-width: $screen-xs-max) {
-  @include responsive-visibility(".visible-xs");
-}
-
-.visible-xs-block {
-  @media (max-width: $screen-xs-max) {
-    display: block !important;
-  }
-}
-
-.visible-xs-inline-block {
-  @media (max-width: $screen-xs-max) {
-    display: inline-block !important;
-  }
+  .hidden-xs { display: none !important; }
+  .visible-xs,
+  .visible-xs-block { display: block !important; }
+  .visible-xs-inline-block { display: inline-block !important; }
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  @include responsive-visibility(".visible-sm");
-}
-
-.visible-sm-block {
-  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    display: block !important;
-  }
-}
-
-.visible-sm-inline-block {
-  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    display: inline-block !important;
-  }
+  .hidden-sm { display: none !important; }
+  .visible-sm,
+  .visible-sm-block { display: block !important; }
+  .visible-sm-inline-block { display: inline-block !important; }
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-  @include responsive-visibility(".visible-md");
-}
-
-.visible-md-block {
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    display: block !important;
-  }
-}
-
-.visible-md-inline-block {
-  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    display: inline-block !important;
-  }
+  .hidden-md { display: none !important; }
+  .visible-md,
+  .visible-md-block { display: block !important; }
+  .visible-md-inline-block { display: inline-block !important; }
 }
 
 @media (min-width: $screen-lg-min) {
-  @include responsive-visibility(".visible-lg");
-}
-
-.visible-lg-block {
-  @media (min-width: $screen-lg-min) {
-    display: block !important;
-  }
-}
-
-.visible-lg-inline-block {
-  @media (min-width: $screen-lg-min) {
-    display: inline-block !important;
-  }
-}
-
-@media (max-width: $screen-xs-max) {
-  @include responsive-invisibility(".hidden-xs");
-}
-
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  @include responsive-invisibility(".hidden-sm");
-}
-
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-  @include responsive-invisibility(".hidden-md");
-}
-
-@media (min-width: $screen-lg-min) {
-  @include responsive-invisibility(".hidden-lg");
+  .hidden-lg { display: none !important; }
+  .visible-lg,
+  .visible-lg-block { display: block !important; }
+  .visible-lg-inline-block { display: inline-block !important; }
 }
 
 // scss-lint:enable SingleLinePerSelector ImportantRule EmptyLineBetweenBlocks
