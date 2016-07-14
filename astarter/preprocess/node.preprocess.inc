@@ -128,6 +128,11 @@ function astarter_preprocess_node(&$variables, $hook) {
       unset($variables['content']['links']['comment']['#links']['comment-new-comments']);
     }
 
+    // Teaser : remove forbidden comment link.
+    if (isset($variables['content']['links']['comment']['#links']['comment_forbidden'])) {
+      unset($variables['content']['links']['comment']['#links']['comment_forbidden']);
+    }
+
     // Teaser : clean link 'readmore'.
     $variables['content']['links']['node']['#links']['node-readmore']['attributes']['rel'] = 'bookmark';
     $variables['content']['links']['node']['#links']['node-readmore']['title'] = '<span class="i i-arrow-right2" aria-hidden="true"></span> ' . t('Read more');
