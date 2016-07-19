@@ -33,11 +33,11 @@ Combine `.aside` with the modifier `.aside--right`
     }
 
     &--first {
-      @extend .mtn;
+      margin-top: 0 !important;
     }
 
     &--last {
-      @extend .mbn;
+      margin-bottom: 0 !important;
     }
   }
 
