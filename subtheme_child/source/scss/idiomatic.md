@@ -23,7 +23,7 @@ Le but est de disposer d'un code maintenable facile à mettre en place sur l'ens
 ## 2. Indentation
 
 * **Ne jamais mélanger espaces** et tabulations (configurer son éditeur) ;
-* Privilégier les espaces, de préférence : **2 espaces en CSS** ;
+* Privilégier les espaces, de préférence, régle aussi sur Drupal : **2 espaces en CSS** ;
 
 Le fichier `.editorconfig` contient les options requises. Plus d'informations sur [editorconfig.org](http://editorconfig.org).
 
@@ -38,7 +38,7 @@ Prendre le temps de décrire les composants, comment ils fonctionnent, leurs lim
 La façon de commenter doit être simple et similaire dans toute base de code.
 
 * Placer les commentaires sur une nouvelle ligne au-dessus de leur sujet ;
-* Éviter les commentaires en fin de ligne ;
+* Éviter les commentaires en fin de ligne, sauf pour le LTR `/* LTR */` ;
 * Garder une longueur de ligne de taille raisonnable, par exemple 80 caractères ;
 * Utiliser les commentaires comme bon vous semble pour diviser le code CSS en parties distinctes ;
 * Rédiger les commentaires avec des majuscules et des minuscules et gardez une indentation constante pour le texte.
@@ -84,11 +84,11 @@ Le format de code choisi doit assurer :
     property: value; // Good
   }
 
-  .className {}  // Bad
-  .CLASSNAME {}  // Bad
-  .class_name {} // Bad
-  .class-name{}  // Bad
-  .class-name {} // Good
+  .className {}   // Bad
+  .CLASSNAME {}   // Bad
+  .class_name {}  // Bad
+  .class-name{}   // Bad
+  .class-name {}  // Good
   .class__name {} // Good
 
   // Sélécteurs successifs (une par ligne)
@@ -97,7 +97,7 @@ Le format de code choisi doit assurer :
   .selector-2,
   .selector-3 {} // Good
 
-  // One liners
+  // Une propriété
   .one-liner { margin: 0; border-radius: 5px; font-size: 15px; } // Bad
   .one-liner { margin: 0; } // Good: une propriété
 
@@ -178,8 +178,6 @@ Par exemple, pour créer un `block header` contenant un logo :
 .header-logo   /* Bad */
 .header--logo  /* Good (modifier) */
 .header__logo  /* Bad (elements) */
-/* exception avec l'utilisation des helpers */
-.header.mbn    /* Good (`.mbn` = helper donc autorisé) */
 ```
 
 ## 6. Organisation
@@ -198,18 +196,16 @@ scss/
 ├── screen.scss
 ├── print.scss
 ├── base
-│   ├── _colorz.scss
 │   ├── _fonts.scss
 │   ├── _from.scss
+│   ├── _grid.scss
 │   ├── _helpers.scss
 │   ├── _reset.scss
-│   ├── _spacing.scss
 │   └── _typo.scss
 ├── components
 │   ├── _breadcrumb.scss
 │   ├── _button.scss
-│   ├── _comments.scss
-│   ├── _icon.scss
+│   ├── _icons.scss
 │   ├── _message.scss
 │   ├── _pagination.scss
 │   └── …
@@ -230,11 +226,10 @@ scss/
 ```
 
 * Le dossier `/base` regroupe les fichiers contient les fichiers CSS de bases ;
+* Le dossier `/helpers` contient les paramètres du projets et les mixins ;
 * Le dossier `/components` contient les composants CSS ;
 * Le dossier `/modules` contient les CSS des modules  ;
 * Le dossier `/pages` contient les styles spécifiques pour les  pages.
-
-> **En cas d'un multi-sites, un dossier `/share` peut être créé pour partager les styles entre différents sites.**
 
 Fichiers contenus dans le dossier `/base`.
 

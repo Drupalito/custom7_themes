@@ -114,27 +114,27 @@ Utiliser souvent par le WYSIWYG pour aligner les images Ã  gauche, centrer, ou Ã
 */
 .alignleft {
   @extend .pull-left;
-  margin-right: $grid-gutter-width;
   margin-left: 0;
+  margin-right: $grid-gutter-width;
 }
 
 .alignright {
   @extend .pull-right;
-  margin-right: 0;
   margin-left: $grid-gutter-width;
+  margin-right: 0;
 }
 
 .alignnone {
   @extend .clearfix;
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
   display: block;
 }
 
 .aligncenter {
   @extend .alignnone;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 /*doc

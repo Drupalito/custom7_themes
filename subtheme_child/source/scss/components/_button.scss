@@ -21,9 +21,9 @@ category: Components - Buttons
 */
 
 .btn {
-  @extend .inbl;
-  @extend .amiddle;
   @include bold;
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
   overflow: visible;
   padding: rhythm(.5) rhythm(1);
@@ -175,10 +175,10 @@ category: Components - Buttons
   pointer-events: none;
 }
 
-// scss-lint:disable IdSelector
-.btn--submit + #edit-cancel {
+// [TODO] Vérifier si ce changement tient dans le temps
+// .btn--submit + #edit-cancel {
+.btn--submit + a {
   display: inline-block;
   margin-left: 20px; /* LTR */
   margin-top: 20px;
 }
-// scss-lint:enable IdSelector
