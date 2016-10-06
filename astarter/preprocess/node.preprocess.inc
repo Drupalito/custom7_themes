@@ -56,7 +56,7 @@ function astarter_preprocess_node(&$variables, $hook) {
   // Add display_submitted.
   $variables['submitted'] = array();
 
-  if ($variables['display_submitted'] && $css_view_mode != 'teaser' && $variables['type'] == 'article') {
+  if ($variables['display_submitted'] && $css_view_mode == 'full' && $variables['type'] == 'article') {
 
     $variables['content_attributes_array']['itemprop'] = 'articleBody';
 
