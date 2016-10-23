@@ -61,7 +61,7 @@ function astarter_preprocess_node(&$variables, $hook) {
     $variables['content_attributes_array']['itemprop'] = 'articleBody';
 
     if (!empty($variables['uid'])) {
-      $node_meta[] = '<span id="author-' . check_plain(strip_tags($variables['name'])) . '" itemprop="author" itemscope itemtype="http://schema.org/Person">' . l($variables['name'], 'user/' . $variables['uid'], array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))) . '</span>';
+      $node_meta[] = '<span id="author-' . check_plain(strip_tags($variables['name'])) . '" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">' . l('<span itemprop="name">' . strip_tags($variables['name']) . '</span>', 'user/' . $variables['uid'], array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))) . '</span>';
     }
 
     if ($variables['nid'] && $variables['comment'] != COMMENT_NODE_CLOSED) {
