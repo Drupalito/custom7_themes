@@ -100,7 +100,7 @@ function astarter_menu_breadcrumb_alter(&$active_trail, $item) {
 function astarter_form_alter(&$form, &$form_state, $form_id) {
 
   if (in_array($form_id, array('comment_node_article_form'))) {
-    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
+    $form['#prefix'] = '<div id="comments-add" class="comments-add noprint">';
     $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Add comment') . '</h2>';
     $form['#suffix'] = '</div>';
     $form['actions']['#prefix'] = '<div class="comments-submit">';
@@ -108,7 +108,7 @@ function astarter_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if (in_array($form_id, array('comment_node_forum_form', 'comment_node_book_form'))) {
-    $form['#prefix'] = '<div id="comments-add" class="comments-add">';
+    $form['#prefix'] = '<div id="comments-add" class="comments-add noprint">';
     $form['#prefix'] .= '<h2 class="comments__title comments-add__title">' . t('Your reply') . '</h2>';
     $form['#suffix'] = '</div>';
     $form['actions']['#prefix'] = '<div class="comments-submit">';
@@ -208,28 +208,14 @@ function astarter_js_alter(&$js) {
  */
 function astarter_css_alter(&$css) {
   global $theme_key;
-  $theme_current = drupal_get_path('theme',$theme_key);
+  $theme_parent_path = $GLOBALS['theme_path'];
 
   foreach ($css as &$item) {
-    if ($item['group'] == CSS_SYSTEM) {
-      $item['type'] = 'file';
-      $item['group'] = 200;
-      $item['weight'] = $item['weight'] + 100;
-    }
-    if ($item['group'] == 0) {
-      $item['type'] = 'file';
-      $item['group'] = 300;
-      $item['weight'] = $item['weight'] + 100;
-    }
-    if ($item['media'] == 'theme') {
-      $item['media'] = 'screen';
-      $item['group'] = 500;
-    }
-    if ($item['media'] == 'print') {
-      $item['group'] = 600;
+    if ($item['media'] == 'screen') {
+      $item['group'] = CSS_SYSTEM;
+      $item['weight'] = $item['weight'] - 100;
     }
   }
-
 
   // Clean up core and contrib module CSS.
   $overrides = array(
@@ -273,6 +259,11 @@ function astarter_css_alter(&$css) {
       ),
       'date_api/date-rtl.css' => array(
         'theme' => 'date_api-rtl.css',
+      ),
+    ),
+    'lang_dropdown' => array(
+      'ddslick/ddsDefault.css' => array(
+        'theme' => 'ddslick.css',
       ),
     ),
     'field' => array(
@@ -352,6 +343,9 @@ function astarter_css_alter(&$css) {
       'system.admin-rtl.css' => array(
         'admin' => 'system.admin-rtl.css',
       ),
+      'system.messages.css' => array(
+        'theme' => 'system.messages.css',
+      ),
       'system.menus.css' => array(
         'theme' => 'system.menus.css',
       ),
@@ -359,14 +353,14 @@ function astarter_css_alter(&$css) {
         'theme' => 'system.menus-rtl.css',
       ),
     ),
-    'vertical-tabs' => array(
-      'misc/vertical-tabs.css' => array(
-        'theme' => 'vertical-tabs.css',
-      ),
-      'misc/vertical-tabs-rtl.css' => array(
-        'theme' => 'vertical-tabs-rtl.css',
-      ),
-    ),
+    // 'vertical-tabs' => array(
+    //   'misc/vertical-tabs.css' => array(
+    //     'theme' => 'vertical-tabs.css',
+    //   ),
+    //   'misc/vertical-tabs-rtl.css' => array(
+    //     'theme' => 'vertical-tabs-rtl.css',
+    //   ),
+    // ),
     'webform' => array(
       'css/webform.css' => array(
         'theme' => 'webform.css',
@@ -387,42 +381,51 @@ function astarter_css_alter(&$css) {
     // We gathered the CSS files with paths relative to the providing module.
     $path = drupal_get_path('module', $module);
 
-    foreach ($files as $file => $items) {
-      if (isset($css[$path . '/' . $file]) || empty($path) && isset($css[$file])) {
-        // Keep a copy of the original file array so we can merge that with our
-        // overrides in order to keep the 'weight' and 'group' declarations.
+    if (module_exists($module) === true) {
+      foreach ($files as $file => $items) {
+        if (isset($css[$path . '/' . $file]) || empty($path) && isset($css[$file])) {
+          // Keep a copy of the original file array so we can merge that with our
+          // overrides in order to keep the 'weight' and 'group' declarations.
 
-        if (!empty($path)) {
-          $original = $css[$path . '/' . $file];
-          unset($css[$path . '/' . $file]);
-        }
-        else {
-          $original = $css[$file];
-          unset($css[$file]);
-        }
+          if (!empty($path)) {
+            $original = $css[$path . '/' . $file];
+            unset($css[$path . '/' . $file]);
+          }
+          else {
+            $original = $css[$file];
+            unset($css[$file]);
+          }
 
-        // Omega 4.x tries to follow the pattern described in
-        // http://drupal.org/node/1089868 for declaring CSS files. Therefore, it
-        // may take more than a single file to override a .css file added by
-        // core. This gives us better granularity when overriding .css files
-        // in a sub-theme.
-        foreach ($types as $type) {
-          if (isset($items[$type])) {
-            $original['weight'] = isset($original['weight']) ? $original['weight'] : 0;
+          // Omega 4.x tries to follow the pattern described in
+          // http://drupal.org/node/1089868 for declaring CSS files. Therefore, it
+          // may take more than a single file to override a .css file added by
+          // core. This gives us better granularity when overriding .css files
+          // in a sub-theme.
+          foreach ($types as $type) {
+            if (isset($items[$type])) {
+              $original['weight'] = isset($original['weight']) ? $original['weight'] : 0;
 
-            // Always add a tiny value to the weight, to conserve the insertion order.
-            $original['weight'] += count($css) / 10000;
+              // Always add a tiny value to the weight, to conserve the insertion order.
+              $original['weight'] += count($css) / 10000;
 
-            $css[$theme_current . '/css/modules/' . $module . '/' . $items[$type]] = array(
-              'data' => $theme_current . '/css/modules/' . $module . '/' . $items[$type],
-            ) + $original;
+              $css[$theme_parent_path . '/css/modules/' . $module . '/' . $items[$type]] = array(
+                'data' => $theme_parent_path . '/css/modules/' . $module . '/' . $items[$type],
+              ) + $original;
+            }
           }
         }
       }
     }
   }
 
+  // Define banner background color
+  $logo_color = theme_get_setting('astarter_bannercolor');
+  if (isset($logo_color) && $logo_color == 'light') {
+    $css[$theme_parent_path . '/css/theme.banner.darken.css']['data'] = $theme_parent_path . '/css/theme.banner.lighten.css';
+  }
+
   $exclude = array(
+    'misc/vertical-tabs.css' => FALSE,
     'modules/aggregator/aggregator.css' => FALSE,
     'modules/aggregator/aggregator-rtl.css' => FALSE,
     // 'modules/book/book-rtl.css' => FALSE,
@@ -445,9 +448,7 @@ function astarter_css_alter(&$css) {
     'modules/system/system.base-rtl.css' => FALSE,
     'modules/system/system.maintenance.css' => FALSE,
     'modules/system/system.menus-rtl.css' => FALSE,
-    'modules/system/system.messages.css' => FALSE,
     'modules/system/system.messages-rtl.css' => FALSE,
-    'modules/system/system.theme.css' => FALSE,
     'modules/system/system.theme-rtl.css' => FALSE,
     'modules/taxonomy/taxonomy.css' => FALSE,
     'modules/tracker/tracker.css' => FALSE,
@@ -463,6 +464,7 @@ function astarter_css_alter(&$css) {
     'sites/all/modules/contrib/views/css/views-rtl.css' => FALSE,
     'sites/all/modules/contrib/ctools/css/ctools.css' => FALSE,
     'sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.css' => FALSE,
+    'sites/all/modules/contrib/date/date_views/css/date_views.css' => FALSE,
   );
   $css = array_diff_key($css, $exclude);
 }

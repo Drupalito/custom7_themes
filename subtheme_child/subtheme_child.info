@@ -7,7 +7,7 @@ base theme  = astarter
 
 ; Then we add our own stylesheet.
 stylesheets[screen][] = css/screen.css
-stylesheets[theme][] = css/screen-theme.css
+stylesheets[screen][] = css/screen.theme.css
 stylesheets[print][]  = css/print.css
 
 ; Optionally add some JavaScripts to your theme.
@@ -15,6 +15,7 @@ scripts[] = js/main.js
 
 ; This section lists the regions defined in Starter
 regions[header]         = Banner (Header)
+regions[full_screen]    = Full Screen Viewport
 regions[navigation]     = Primary Navigation (Nav)
 regions[highlighted]    = Highlighted
 regions[help]           = Help
@@ -46,6 +47,9 @@ settings[subtheme_child_breadcrumb_home]      = 1
 settings[subtheme_child_breadcrumb_trailing]  = 0
 settings[subtheme_child_breadcrumb_title]     = 1
 settings[subtheme_child_rebuild_registry]     = 1
+
+settings[astarter_bannercolor]          = dark
+settings[astarter_menu_home_item]       = 0
 
 settings[subtheme_child_header_fix]           = 0
 settings[subtheme_child_debug_css_grid]       = 0

@@ -49,6 +49,7 @@ function astarter_preprocess_node(&$variables, $hook) {
   $variables['title_attributes_array']['class'][] = 'node__title';
   $variables['content_attributes_array']['class'][] = 'node__content';
   $variables['content']['links']['#attributes']['class'][] = 'node__links';
+  $variables['content']['links']['#attributes']['class'][] = 'noprint';
 
   // Change modifier classes to use BEM syntax.
   $variables['classes_array'] = preg_replace('/^node-/', 'node--', $variables['classes_array']);

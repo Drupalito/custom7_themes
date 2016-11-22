@@ -15,6 +15,6 @@
 function astarter_preprocess_links(&$variables) {
   // Change modifier classes to use BEM syntax.
   if (isset($variables['attributes']['class'])) {
-    $variables['attributes']['class'] = preg_replace('/^inline$/', 'list-inline', $variables['attributes']['class']);
+    $variables['attributes']['class'] = preg_replace('/^inline$/', 'list-inline noprint', $variables['attributes']['class']);
   }
 }

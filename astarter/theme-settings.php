@@ -34,19 +34,50 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
   );
 
   // Create the form using Forms API.
-  $form['themesettings'] = array(
+  $form['themeheader'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'fieldset',
-    '#title'         => t('Theme Settings'),
-    '#weight'        => 2,
+    '#title'         => t('Header'),
+    '#weight'        => 0,
   );
-  $form['themesettings']['astarter_navigation_fix'] = array(
+  $form['themeheader']['astarter_bannercolor'] = array(
+    '#group'         => 'verticalTabs',
+    '#type'          => 'radios',
+    '#title'         => t('Banner background color'),
+    '#default_value' => theme_get_setting('astarter_bannercolor'),
+    '#options'       => array(
+      'light' => t('Lighten'),
+      'dark'  => t('Darken'),
+    ),
+  );
+  $form['themeheader']['astarter_menu_home_item'] = array(
     '#group'         => 'verticalTabs',
     '#type'          => 'checkbox',
-    '#prefix'        => '<h3 style="margin-bottom:5px;">' . t('Options page') . '</h3>',
+    '#title'         => t('Convert Home item menu to icon'),
+    '#default_value' => theme_get_setting('astarter_menu_home_item'),
+    '#description'   => t('Font icon'),
+  );
+
+  $form['themenavigation'] = array(
+    '#group'         => 'verticalTabs',
+    '#type'          => 'fieldset',
+    '#title'         => t('Navigation'),
+    '#weight'        => 1,
+  );
+  $form['themenavigation']['astarter_navigation_fix'] = array(
+    '#group'         => 'verticalTabs',
+    '#type'          => 'checkbox',
     '#title'         => t('Navigation Fix on top page'),
     '#default_value' => theme_get_setting('astarter_navigation_fix'),
     '#description'   => t('Fixed Navigation.'),
+  );
+
+  // Create the form using Forms API.
+  $form['themesettings'] = array(
+    '#group'         => 'verticalTabs',
+    '#type'          => 'fieldset',
+    '#title'         => t('Breadcrumb'),
+    '#weight'        => 2,
   );
   $form['themesettings']['astarter_breadcrumb'] = array(
     '#group'         => 'verticalTabs',
@@ -55,7 +86,6 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#default_value' => theme_get_setting('astarter_breadcrumb'),
     '#options'       => array(
       'yes'   => t('Yes'),
-      'admin' => t('Only in admin section'),
       'no'    => t('No'),
     ),
   );

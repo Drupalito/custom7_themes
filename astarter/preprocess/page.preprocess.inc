@@ -28,6 +28,10 @@ function astarter_preprocess_page(&$variables) {
     $variables['theme_hook_suggestions'][] = 'page__404';
   }
 
+  if (theme_get_setting('astarter_breadcrumb') == 'no') {
+    unset($variables['page']['breadcrumb']);
+  }
+
   // If is Frontpage.
   if (arg(0) == 'user' || drupal_is_front_page() || $status == "404 Not Found") {
     // Layout.
@@ -64,6 +68,8 @@ function astarter_preprocess_page(&$variables) {
   if (isset($variables['node']->nid) && $variables['node']->type == 'article') {
     // Add div on first.
     $variables['title_attributes_array']['itemprop'] = 'name';
+    $variables['title_attributes_array']['itemprop'] = 'headline';
+
     array_unshift($variables['main_prefix'], array('#markup' => '<div itemscope itemtype="http://schema.org/BlogPosting">'));
     // Close div on end.
     array_push($variables['main_suffix'], array('#markup' => '</div>'));

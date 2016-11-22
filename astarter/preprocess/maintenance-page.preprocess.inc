@@ -13,7 +13,11 @@
  * @see hook_preprocess()
  */
 function astarter_preprocess_maintenance_page(&$variables, $hook) {
+
+  // Enable logo module for display logo.
+  $variables['site_logo'] = module_exists('logo') ? theme('logo') : NULL;
+
   if (module_exists('token')) {
-    $variables["content"] = token_replace($variables["content"]);
+    $variables['content'] = token_replace($variables['content']);
   }
 }
