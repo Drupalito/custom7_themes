@@ -15,7 +15,7 @@
     });
   };
 
-  Drupal.behaviors.portail = {
+  Drupal.behaviors.astarter = {
     attach: function(context, settings) {
 
       var position = $(window).scrollTop();

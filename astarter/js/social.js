@@ -1,5 +1,4 @@
 
-
 (function ($, window, Drupal) {
   Drupal.behaviors.scrolltotop = {
     attach: function (context, settings) {
