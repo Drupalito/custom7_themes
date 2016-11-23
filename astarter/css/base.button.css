@@ -1,0 +1,182 @@
+
+/*doc
+---
+title: Button
+category: Components - Buttons
+---
+
+* Base button style.
+* Use `.btn` CSS class.
+* Use `a` or `button` tag.
+
+```html_example
+
+  <button class="btn">Submit</button>
+  <input id="submit" name="submit" class="btn" type="submit" value="Submit" />
+  <span class="btn">Submit</span>
+  <a href="#" class="btn">Submit</a>
+
+```
+
+*/
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 700;
+  font-style: normal;
+  position: relative;
+  overflow: visible;
+  padding: 0.75em 1.5em;
+  margin: 0;
+  border: 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+  text-transform: uppercase;
+  background-clip: padding-box;
+  background-color: #eee;
+  border-radius: 4px;
+  color: #333;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  transition-timing-function: ease-in;
+  transition-property: background-color;
+  transition-duration: .250s;
+  appearance: none;
+}
+  .btn:hover,
+  .btn:focus,
+  .btn:active,
+  .btn.active {
+    text-decoration: none;
+    background-color: #ccc;
+    color: #fff;
+  }
+  .btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+/*doc
+---
+title: Buttons Colorz
+category: Components - Buttons
+---
+
+Couleurs disponibles.
+
+* `.btn` - Bouton de base
+* `.btn--default` - Couleur défault
+* `.btn--primary` - Couleur primaire
+* `.btn--secondary` - Couleur secondaire
+
+  <button class="btn">btn</button>
+  <input id="submit" name="submit" class="btn" type="submit" value="btn" />
+  <span class="btn">btn</span>
+  <a href="#" class="btn">btn</a>
+  <br />
+
+  <button class="btn btn--default">btn--default</button>
+  <input id="submit" name="submit" class="btn btn--default" type="submit" value="btn--default" />
+  <span class="btn btn--default">btn--default</span>
+  <a href="#" class="btn btn--default">btn--default</a>
+  <br />
+
+  <button class="btn btn--primary">btn--primary</button>
+  <input id="submit" name="submit" class="btn btn--primary" type="submit" value="btn--primary" />
+  <span class="btn btn--primary">btn--primary</span>
+  <a href="#" class="btn btn--primary">btn--primary</a>
+
+*/
+.btn--default {
+  background-color: #E11B27;
+  color: #fff;
+}
+.btn--default:hover,
+.btn--default:focus,
+.btn--default:active,
+.btn--default.active {
+  background-color: #b3161f;
+}
+
+.btn--primary {
+  background-color: #333;
+  color: #fff;
+}
+.btn--primary:hover,
+.btn--primary:focus,
+.btn--primary:active,
+.btn--primary.active {
+  background-color: #1a1a1a;
+}
+
+.btn--secondary {
+  background-color: #4d4b58;
+  color: #fff;
+}
+.btn--secondary:hover,
+.btn--secondary:focus,
+.btn--secondary:active,
+.btn--secondary.active {
+  background-color: #278f21;
+}
+
+.btn--edit-submit {
+  background-color: #E11B27;
+  color: #fff;
+}
+.btn--edit-submit:hover,
+.btn--edit-submit:focus,
+.btn--edit-submit:active,
+.btn--edit-submit.active {
+  background-color: #b3161f;
+}
+
+.btn--edit-add {
+  background-color: #77b647;
+  color: #fff;
+}
+.btn--edit-add:hover,
+.btn--edit-add:focus,
+.btn--edit-add:active,
+.btn--edit-add.active {
+  background-color: #5f9139;
+}
+
+.btn--edit-preview {
+  background-color: #477bb6;
+  color: #fff;
+}
+.btn--edit-preview:hover,
+.btn--edit-preview:focus,
+.btn--edit-preview:active,
+.btn--edit-preview.active {
+  background-color: #396291;
+}
+
+.btn--edit-delete {
+  background-color: #b64747;
+  color: #fff;
+}
+.btn--edit-delete:hover,
+.btn--edit-delete:focus,
+.btn--edit-delete:active,
+.btn--edit-delete.active {
+  background-color: #913939;
+}
+
+.btn[disabled],
+.btn--disabled {
+  opacity: .65;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn--submit + #edit-cancel {
+  display: inline-block;
+  margin-left: 20px; /* LTR */
+  margin-top: 20px;
+}

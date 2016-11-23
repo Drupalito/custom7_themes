@@ -1,0 +1,28 @@
+
+/*doc
+---
+title: Header
+category: Layout - Layer
+---
+
+```html_example
+
+  <div class="banner">
+    <header id="banner" role="banner" class="container clearfix">
+      <div class="row">
+        ...
+      </div>
+    </header>
+  </div>
+
+```
+
+*/
+
+.banner {
+  background: #fff;
+}
+.banner,
+.banner a {
+  color: #222;
+}

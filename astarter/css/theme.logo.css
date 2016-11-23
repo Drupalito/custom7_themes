@@ -1,0 +1,59 @@
+
+/*doc
+---
+title: Logo
+category: Layout - Layer
+---
+
+Default markup. (`title` = `alt`)
+
+```html_example
+
+  <div class="logo">
+    <p class="logo__inner">
+      <a href="/" title="starterProjectName, Lorem ipsum dolor sit (Home)" rel="home" class="logo__link nounderline">
+        <img class="logo__image" src="http://placehold.it/250x72" alt="starterProjectName, Lorem ipsum dolor sit (Home)">
+        <span class="logo__content inbl amiddle pls">
+          <span class="logo__name h4 caps show mvn">starterProjectName</span>
+          <span class="logo__slogan show">Lorem ipsum dolor sit</span>
+        </span>
+      </a>
+    </p>
+  </div>
+
+```
+
+*/
+.logo__name {
+  font-weight: bold;
+  font-style: normal;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 150%;
+}
+
+.logo__name,
+.logo__slogan {
+  display: block;
+}
+
+.logo__image {
+  width: 55px;
+}
+
+.logo__link {
+  display: table;
+  border-bottom: 0;
+  color: #fff;
+}
+
+.logo__link:hover,
+.logo__link:focus {
+  color: inherit;
+}
+
+.logo__content {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 1em; /* LTR */
+}

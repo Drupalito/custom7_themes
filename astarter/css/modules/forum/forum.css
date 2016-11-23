@@ -1,0 +1,34 @@
+
+/*doc
+---
+title: Forum
+category: Module - Forum
+---
+
+[TODO]
+
+*/
+.forum-icon {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.4em;
+  background-image: image-url("/misc/forum-icons.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.forum-icon--new {
+  background-position: -24px 0;
+}
+.forum-icon--hot {
+  background-position: -48px 0;
+}
+.forum-icon--hot-new {
+  background-position: -72px 0;
+}
+.forum-icon--sticky {
+  background-position: -96px 0;
+}
+.forum-icon--closed {
+  background-position: -120px 0;
+}

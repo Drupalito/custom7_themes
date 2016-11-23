@@ -1,0 +1,107 @@
+
+/**
+ * Lectra Drupal Theme
+ * Print stylesheet
+ * Black prints faster: h5bp.com/s
+ *
+ * Ajouter ce fichier à votre page pour appliquer
+ * les CSS d'impression.
+ *
+ * OWNER_NAME <OWNER_EMAIL>
+ * (CURRENT_YEAR)
+ */
+* {
+  background: transparent !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  text-rendering: optimizeLegibility; }
+
+body {
+  font-family: serif;
+  font-size: 12pt;
+  background: #fff !important;
+  color: #333 !important; }
+
+body,
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  page-break-after: avoid; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+blockquote,
+code,
+pre,
+tr,
+img {
+  page-break-inside: avoid; }
+
+a, a:visited {
+  text-decoration: underline; }
+
+a[href]:after {
+  content: " (" attr(href) ")"; }
+
+a.logo__link:after,
+a[href^="#"]:after,
+a[href^="javascript:"]:after {
+  content: ""; }
+
+ul a[href]:after,
+ol a[href]:after {
+  content: ""; }
+
+abbr[title]:after,
+dfn[title]:after {
+  content: " (" attr(title) ")"; }
+
+p,
+blockquote {
+  orphans: 3;
+  widows: 3; }
+
+img {
+  max-width: 100% !important; }
+
+pre,
+blockquote {
+  border: 1px solid #999; }
+
+thead {
+  display: table-header-group; }
+
+.tabs,
+.main__edit,
+.contextual-links-wrapper,
+.noprint,
+.messages,
+.contentinfo,
+.aside,
+.skiplinks,
+.pagination,
+.message {
+  display: none;
+}
+
+.alignleft,
+.alignright,
+.alignone {
+  float: none;
+  display: block;
+  margin-bottom: 1.5em;
+}

@@ -1,0 +1,29 @@
+
+/*doc
+---
+title: Block
+category: Module - Block
+---
+
+Default Style CSS
+
+*/
+.block-region {
+  background: #ff0;
+  padding: 10px;
+}
+
+.block-demo-backlink {
+  left: 0; /* LTR */
+  position: fixed;
+  z-index: 499;
+  padding: 10px;
+  border-bottom: 0;
+  background: #b00;
+  color: #fff;
+}
+.block-demo-backlink:hover,
+.block-demo-backlink:focus {
+  background: #880000;
+  color: #fff;
+}

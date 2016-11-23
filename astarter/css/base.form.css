@@ -1,0 +1,665 @@
+
+/*doc
+---
+title: Form
+category: Layout - Form
+---
+
+*/
+form,
+fieldset,
+legend,
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+legend,
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+  width: 100%;
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #1c1c1c;
+  color: #1c1c1c;
+}
+
+legend {
+  white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  vertical-align: baseline;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input,
+select,
+textarea {
+  outline: 0;
+  border: 1px solid #c0c0c0;
+  background: #fff;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+  font-family: inherit;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button[disabled],
+input[disabled],
+textarea[disabled],
+select[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+  background-color: #e2e2e2;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="color"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="submit"] {
+  display: inline-block;
+  padding: 0 5px;
+  line-height: normal;
+  height: 42px;
+}
+
+input[type="text"]:not(.search__input),
+input[type="tel"],
+input[type="color"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  transition: background-color .3s ease;
+}
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="url"]:focus,
+  select:focus,
+  textarea:focus {
+    box-shadow: 0 0 2px #333, 0 0 5px #333;
+  }
+
+textarea,
+input[type="file"] {
+  padding: 6px;
+}
+
+input[type="file"] {
+  display: inline-block;
+  font-size: 80%;
+  line-height: 0;
+}
+
+input[type="submit"] {
+  padding: 0 10px;
+}
+
+button,
+html input[type="button"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+select {
+  width: auto;
+  max-width: 100%;
+  padding: 0 30px 0 5px; /* LTR */
+  border-radius: 0;
+  text-indent: 0.01px;
+  text-overflow: "";
+  background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAQAAADvCgS4AAAAGklEQVR4AWNg+I8BcQGCyhAAXRlhpcQAQsoAMGIY6KADYAUAAAAASUVORK5CYII=") no-repeat 100% center; /* LTR */
+  height: 42px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-radius: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/*
+---
+title: Custom radio & Checkbox
+category: Base - Forms
+---
+
+*/
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 1.6em; /* LTR */
+  }
+    input[type="radio"] + label:before,
+    input[type="checkbox"] + label:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -0.5em;
+      padding: 0;
+      width: 1em;
+      height: 1em;
+      outline: none;
+      border: 1px solid #c0c0c0;
+      background: #fff;
+      transition: background 0.5s ease;
+    }
+    input[type="radio"] + label:hover:before, input[type="radio"] + label:focus:before,
+    input[type="checkbox"] + label:hover:before,
+    input[type="checkbox"] + label:focus:before {
+      cursor: pointer;
+      border-color: #333;
+    }
+  input[type="radio"]:checked + label:before,
+  input[type="radio"]:disabled:checked + label:before,
+  input[type="checkbox"]:checked + label:before,
+  input[type="checkbox"]:disabled:checked + label:before {
+    border-color: #333;
+    background: #333;
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+  input[type="radio"]:disabled + label:before,
+  input[type="radio"]:disabled + label:before,
+  input[type="checkbox"]:disabled + label:before,
+  input[type="checkbox"]:disabled + label:before {
+    opacity: .5;
+    cursor: not-allowed;
+    border-color: #e2e2e2;
+    background-color: #e2e2e2;
+  }
+
+input[type="radio"] + label:before {
+  border-radius: 50%;
+}
+
+/*doc
+---
+title: All inputs
+category: Base - Forms
+---
+
+```html_example
+
+  <form action="" id="formExample">
+    <div class="form-item">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" />
+    </div>
+    <div class="form-item has--error">
+      <label for="email">Email</label>
+      <input class="field-txt error" id="email" name="email" type="email" />
+      <br /><small>Error 1 : Enter valid email address, eg toto@domaine.com.</small>
+    </div>
+    <div class="form-item">
+      <label for="password">Password</label>
+      <input name="password" type="password" value="Password" />
+    </div>
+    <div class="form-item">
+      <label for="url">Url</label>
+      <input id="url" name="url" type="url" />
+    </div>
+    <div class="form-item">
+      <label for="message">Textarea</label>
+      <textarea cols="30" id="message" name="message" rows="5"></textarea>
+    </div>
+    <div class="form-item">
+      <label for="message">Disabled textarea</label>
+      <textarea cols="30" id="message" name="message" rows="5" disabled="disabled"></textarea>
+    </div>
+    <div class="form-item">
+      <label for="file">File</label>
+      <input id="file" name="file" type="file" />
+    </div>
+    <div class="form-item">
+      <label for="select">Select</label>
+      <select id="select" name="select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="select">Disabled select</label>
+      <select id="select" name="select" disabled="disabled">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <div class="form-item">
+        <input id="radio_off" name="optionsRadios" type="radio" />
+        <label for="radio_off">Radio is off</label>
+        <br />
+        <input id="radio_on" name="optionsRadios" type="radio" checked="checked" />
+        <label for="radio_on">Radio is on</label>
+        <br />
+        <input id="radio_off_disabled" name="optionsRadiosDisabled" type="radio" disabled="disabled" />
+        <label class="text--muted" for="radio_off_disabled">Disabled radio is off</label>
+        <br />
+        <input id="radio_on_disabled" name="optionsRadiosDisabled" type="radio" checked="checked" disabled="disabled" />
+        <label class="text--muted" for="radio_on_disabled">Disabled radio is on</label>
+      </div>
+    </div>
+    <div class="form-item">
+      <div class="form-item">
+        <input id="checkbox_off" name="optionsCheckboxes" type="checkbox" />
+        <label for="checkbox_off">Checkbox is off</label>
+        <br />
+        <input id="checkbox_on" name="optionsCheckboxes" type="checkbox" checked="checked" />
+        <label for="checkbox_on">Checkbox is on</label>
+        <br />
+        <input id="checkbox_off_disabled" name="optionsCheckboxesDisabled" type="checkbox" disabled="disabled" />
+        <label class="text--muted" for="checkbox_off_disabled">Disabled checkbox is off</label>
+        <br />
+        <input id="checkbox_on_disabled" name="optionsCheckboxesDisabled" type="checkbox" checked="checked" disabled="disabled" />
+        <label class="text--muted" for="checkbox_on_disabled">Disabled checkbox is on</label>
+      </div>
+    </div>
+    <div class="form-item">
+      <button class="btn btn--primary" type="submit" name="submit">Send your message</button>
+      <button class="btn btn--cancel" type="submit" name="cancel">Cancel</button>
+    </div>
+  </form>
+
+```
+
+*/
+/*doc
+---
+title: Field required
+category: Base - Forms
+---
+
+[TODO]
+
+```html_example
+
+  <abbr class="field-required" title="This field is required.">*</abbr>
+
+```
+
+*/
+.field-required {
+  font-size: 0.75em;
+  line-height: 1.2;
+  color: #666;
+}
+
+/*doc
+---
+title: Field static
+category: Base - Forms
+---
+
+```html_example
+
+  <div class="form-item">
+    <span class="label">Email</span>
+    <strong>email@example.com</strong>
+  </div>
+  <div class="form-item">
+    <label for="password">Password</label>
+    <input name="password" type="text" placeholder="Password" />
+  </div>
+
+```
+
+*/
+.form-item {
+  position: relative;
+  margin: 0 0 0.75em;
+}
+
+.form-item:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+  .form-item label {
+    font-weight: 700;
+    font-style: normal;
+    display: block;
+    line-height: 42px;
+  }
+  .form-item .form-item {
+    margin: 0;
+  }
+  .form-item.form-type--radio label,
+  .form-item.form-type--checkbox label,
+  .form-item.form-type--checkboxes label {
+    line-height: 1.5em;
+  }
+  .form-item.form-type--radio .description,
+  .form-item.form-type--checkbox .description,
+  .form-item.form-type--checkboxes .description {
+    display: block;
+    padding-left: 2em;
+  }
+
+/*doc
+---
+title: Fieldset + Legend
+category: Base - Forms
+---
+
+Collapsed
+
+[TODO]
+
+*/
+fieldset {
+  border: 1px solid #ccc;
+  border-top: 3px solid #333;
+  padding: 24px;
+  margin: 0 0 1.5em;
+}
+  fieldset.collapsed {
+    position: relative;
+    padding-bottom: 0;
+  }
+    fieldset.collapsed a {
+      color: #333;
+    }
+    fieldset.collapsed .fieldset-legend {
+      display: block;
+    }
+    html.js fieldset.collapsed {
+      border-bottom-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      height: 1em;
+    }
+      html.js fieldset.collapsed .fieldset-wrapper {
+        display: none;
+      }
+  fieldset.collapsible {
+    position: relative;
+  }
+    fieldset.collapsible .fieldset-legend {
+      display: block;
+    }
+  fieldset legend {
+    padding: 0 12px;
+    margin: 0;
+    margin-left: -6px; /* LTR */
+    font-size: 1.125em;
+    font-weight: 700;
+  }
+    fieldset legend a {
+      border-bottom: 0;
+    }
+
+.fieldset-wrapper > .form-item:last-child {
+  margin-bottom: 0;
+}
+
+.fieldset-description {
+  padding-bottom: 1em;
+}
+
+/*doc
+---
+title: Field Inline
+category: Base - Forms
+---
+
+Add class `form-item--inline` on parent `div.form-item`
+
+```html_example
+
+  <div class="form-item form-item--inline">
+    <div class="form-item">
+      <label for="Login">Login</label>
+      <input name="Login" type="text" placeholder="Login" />
+    </div>
+    <div class="form-item">
+      <label for="password">Password</label>
+      <input name="password" type="text" placeholder="Password" />
+    </div>
+  </div>
+
+```
+
+*/
+.form-item--inline .form-item:first-child {
+  margin-right: 20px;
+}
+
+.form-item--inline > .form-item {
+  float: left;
+}
+
+/*doc
+---
+title: Action confirm
+category: Base - Forms
+---
+
+Drupal example HTML
+
+  <form action="" id="formConfirm">
+    <div><p>This action cannot be undone.</p>
+    <div class="form-actions form-wrapper">
+      <button name="op" value="Confirm" type="submit" class="btn btn--primary btn--submit form-submit">Confirm</button><a href="#" id="edit-cancel">Cancel</a></div>
+    </div>
+  </form>
+
+*/
+.form-actions {
+  margin-top: 1.5em;
+}
+.form-actions button + button {
+  margin-left: 2em; /* LTR */
+}
+
+/*doc
+---
+title: Password Confirm
+category: Base - Forms
+---
+
+Drupal example HTML
+
+  <form action="" id="formPassword">
+    <div class="form-item form-type--password-confirm form-item--password-confirm">
+      <label for="edit-password-confirm">Password confirm </label>
+      <div class="form-item form-type--password form-item--password-confirm-pass1 password-parent"><div class="password-strength"><div class="password-strength-text" aria-live="assertive">Weak</div><div class="password-strength-title">Password strength:</div><div class="password-indicator"><div class="indicator" style="width: 0%;"></div></div></div>
+      <label for="edit-password-confirm-pass1">Password </label>
+      <input class="password-field form-text password-processed" type="password" id="edit-password-confirm-pass1" name="password_confirm[pass1]" size="60" maxlength="128">
+    </div>
+    <div class="form-item form-type--password form-item--password-confirm-pass2 confirm-parent">
+      <div class="password-confirm" style="visibility: hidden;">Passwords match: <span></span></div>
+        <label for="edit-password-confirm-pass2">Confirm password </label>
+        <input class="password-confirm form-text" type="password" id="edit-password-confirm-pass2" name="password_confirm[pass2]" size="60" maxlength="128">
+      </div>
+    </div>
+  </form>
+
+*/
+div.password-confirm,
+.password-strength {
+  float: right; /* LTR */
+  line-height: 42px;
+}
+
+div.password-confirm {
+  visibility: hidden;
+}
+
+.password-strength-title {
+  display: inline-block;
+}
+
+.password-strength-text {
+  margin-left: 5px; /* LTR */
+  float: right; /* LTR */
+  font-weight: 700;
+  font-style: normal;
+}
+
+.form-item.confirm-parent,
+.form-item .password-suggestions {
+  margin-top: 0.75em;
+}
+
+.form-item .password-suggestions {
+  padding: 10px 20px;
+  border: 1px solid #b4b4b4;
+}
+
+/*doc
+---
+title: Field states
+category: Base - Forms
+---
+
+  <form action="" id="formErrors">
+    <div class="form-item has--info">
+      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
+      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
+      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
+    </div>
+    <div class="form-item has--warning">
+      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
+      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
+      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
+    </div>
+    <div class="form-item has--error">
+      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
+      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
+      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
+    </div>
+    <div class="form-item has--status">
+      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
+      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
+      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
+    </div>
+  </form>
+
+*/
+.has--info input,
+.has--info select,
+.has--info textarea {
+  border-left-width: 4px; /* LTR */
+  border-color: #477bb6;
+}
+  .has--info input:focus,
+  .has--info select:focus,
+  .has--info textarea:focus {
+    box-shadow: 0 0 2px #477bb6, 0 0 5px #477bb6;
+  }
+
+.has--warning input,
+.has--warning select,
+.has--warning textarea {
+  border-left-width: 4px; /* LTR */
+  border-color: #ddae1e;
+}
+  .has--warning input:focus,
+  .has--warning select:focus,
+  .has--warning textarea:focus {
+    box-shadow: 0 0 2px #ddae1e, 0 0 5px #ddae1e;
+  }
+
+.has--error input,
+.has--error select,
+.has--error textarea {
+  border-left-width: 4px; /* LTR */
+  border-color: #b64747;
+}
+  .has--error input:focus,
+  .has--error select:focus,
+  .has--error textarea:focus {
+    box-shadow: 0 0 2px #b64747, 0 0 5px #b64747;
+  }
+
+.has--status input,
+.has--status select,
+.has--status textarea {
+  border-left-width: 4px; /* LTR */
+  border-color: #77b647;
+}
+  .has--status input:focus,
+  .has--status select:focus,
+  .has--status textarea:focus {
+    box-shadow: 0 0 2px #77b647, 0 0 5px #77b647;
+  }
+
+/*doc
+---
+title: Placeholder
+category: Base - Forms
+---
+
+Couleurs de placeholder : ne pas fusionner les sélecteurs !
+
+@see http://stackoverflow.com/a/2610741
+
+*/
+::-webkit-input-placeholder { color: #999; }
+:-moz-placeholder { color: #999; }
+::-moz-placeholder { color: #999; }
+:-ms-input-placeholder { color: #999; }

@@ -1,0 +1,123 @@
+
+/*doc
+---
+title: Search
+category: Module - Search
+---
+
+```html_example
+
+  <div id="search" class="search">
+    <form class="search__form" role="search" action="/" method="post" id="search-form">
+      <input title="Search by keywords" placeholder="Enter your keywords…" type="search" name="search_block_form" value="" size="30" class="search__input form-text" /><button class="search__submit" title="Search on website Starter" type="submit" name="op"><span class="i i-search" aria-hidden="true"></span> Search</button>
+    </form>
+  </div>
+
+```
+
+*/
+.search .btn {
+  border-radius: 0;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  height: 2.1rem;
+  width: 2.1rem;
+  max-width: 100%;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0;
+  line-height: 1;
+  background: #E11B27;
+  color: #fff;
+}
+.search .btn:hover,
+.search .btn:focus {
+  background: #333;
+}
+.search .btn:before {
+  top: 0;
+  font-size: 1rem;
+}
+
+.search__input {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+  float: left;
+  height: 2.1rem;
+  margin: 0;
+  padding: .5rem;
+  width: calc(100% - 2.1rem);
+}
+.search__input + .btn {
+  left: -1px;
+}
+
+@media (max-width: 767px) {
+  .search-box {
+    padding: 1em;
+    border-top: 1px solid #d00b30;
+    background: #d00b30;
+  }
+}
+
+/*doc
+---
+title: Search Advanced
+category: Module - Search
+---
+
+[TODO]
+
+*/
+.search--advanced .btn {
+  height: 3rem;
+  width: 9rem;
+  line-height: 1;
+  font-size: 120%;
+}
+.search--advanced .btn:before {
+  content: "";
+  display: none;
+}
+
+.search--advanced .search__input {
+  height: 3rem;
+  padding: 1rem;
+  width: calc(100% - 9rem);
+}
+
+.search-advanced {
+  border: 0.0625em solid #ccc;
+  padding: 0 1.5em 1.5em;
+}
+.search-advanced legend {
+  padding: 1.5em 0.75em;
+}
+.search-advanced .btn {
+  border-radius: 0;
+  font-size: 1em;
+  width: auto;
+  padding: 1em;
+  height: auto;
+}
+
+html.js fieldset.search-advanced {
+  height: auto;
+}
+
+.criterion--keywords .form-item label {
+  line-height: 1.5em;
+}
+
+.criterion--keywords .form-item:last-child {
+  margin-bottom: 0;
+}
+
+.criterion--keywords .form-text {
+  height: 2rem;
+}

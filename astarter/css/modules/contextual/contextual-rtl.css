@@ -1,0 +1,23 @@
+
+/*doc
+---
+title: Contextual Links - RTL
+category: Module - Contextual Links
+---
+
+[RTL]
+
+Default Style CSS
+
+*/
+.contextual-links {
+  padding-right: 0;
+}
+.contextual-links-wrapper {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+.block--locale .contextual-links-wrapper {
+  text-align: right;
+}

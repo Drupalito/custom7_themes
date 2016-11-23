@@ -1,0 +1,58 @@
+
+/*doc
+---
+title: Footer
+category: Layout - Layer
+---
+
+```html_example
+
+  <div class="contentinfo">
+    <footer id="contentinfo" role="contentinfo" class="container clearfix">
+      <div class="row">
+        ...
+      </div>
+    </footer>
+  </div>
+
+```
+
+*/
+
+.address p {
+  margin: .5em 0;
+}
+
+.page-complementary {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background: #252525;
+  color: #7e7e7e;
+}
+
+.page-complementary .block__title {
+  margin-bottom: .75em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ddd;
+}
+
+.page-contentinfo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #161324;
+  color: #fff;
+}
+
+.page-contentinfo a {
+  color: #fff;
+}
+
+.page-contentinfo a:hover,
+.page-contentinfo a:focus {
+  color: inherit;
+}

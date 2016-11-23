@@ -1,0 +1,132 @@
+
+/*doc
+---
+title: Helper
+category: Layout - Helper
+---
+
+*/
+
+.size-8x { font-size: 8em; }
+.size-7x { font-size: 7em; }
+.size-6x { font-size: 6em; }
+.size-5x { font-size: 5em; }
+.size-4x { font-size: 4em; }
+.size-3x { font-size: 3em; }
+.size-2x { font-size: 2.5em; }
+.size-1x { font-size: 1em; }
+
+/*doc
+---
+title: Spacing
+category: Base - Helpers
+---
+
+Should be used to modify the default spacing between objects (not between nodes of the same object)
+Please use judiciously. You want to be using defaults most of the time, these are exceptions!
+
+`<type><location><size>`
+
+Type
+
+* `<p>` : padding
+* `<m>` : margin
+
+Location
+
+* `<a>` : all
+* `<t>` : top
+* `<r>` : right
+* `<b>` : bottom
+* `<l>` : left
+* `<h>` : horizontal
+* `<v>` : vertical
+
+Size
+
+* `<s> small` : #{6px}
+* `<m> medium` : #{12px}
+* `<l> large` : #{30px}
+* `<n> none` : 0px
+
+*/
+
+.ptn, .pvn, .pan { padding-top: 0 !important; }
+.pts, .pvs, .pas { padding-top: 6px !important; }
+.ptm, .pvm, .pam { padding-top: 12px !important; }
+.ptl, .pvl, .pal { padding-top: 24px !important; }
+.prn, .phn, .pan { padding-right: 0 !important; }
+.prs, .phs, .pas { padding-right: 8px !important; }
+.prm, .phm, .pam { padding-right: 15px !important; }
+.prl, .phl, .pal { padding-right: 30px !important; }
+.pbn, .pvn, .pan { padding-bottom: 0 !important; }
+.pbs, .pvs, .pas { padding-bottom: 6px !important; }
+.pbm, .pvm, .pam { padding-bottom: 12px !important; }
+.pbl, .pvl, .pal { padding-bottom: 24px !important; }
+.pln, .phn, .pan { padding-left: 0 !important; }
+.pls, .phs, .pas { padding-left: 8px !important; }
+.plm, .phm, .pam { padding-left: 15px !important; }
+.pll, .phl, .pal { padding-left: 30px !important; }
+.mtn, .mvn, .man { margin-top: 0 !important; }
+.mts, .mvs, .mas { margin-top: 6px !important; }
+.mtm, .mvm, .mam { margin-top: 12px !important; }
+.mtl, .mvl, .mal { margin-top: 24px !important; }
+.mrn, .mhn, .man { margin-right: 0 !important; }
+.mrs, .mhs, .mas { margin-right: 8px !important; }
+.mrm, .mhm, .mam { margin-right: 15px !important; }
+.mrl, .mhl, .mal { margin-right: 30px !important; }
+.mbn, .mvn, .man { margin-bottom: 0 !important; }
+.mbs, .mvs, .mas { margin-bottom: 6px !important; }
+.mbm, .mvm, .mam { margin-bottom: 12px !important; }
+.mbl, .mvl, .mal { margin-bottom: 24px !important; }
+.mln, .mhn, .man { margin-left: 0 !important; }
+.mls, .mhs, .mas { margin-left: 8px !important; }
+.mlm, .mhm, .mam { margin-left: 15px !important; }
+.mll, .mhl, .mal { margin-left: 30px !important; }
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-xs { display: none !important; }
+  .visible-xs,
+  .visible-xs-block { display: block !important; }
+  .visible-xs-inline-block { display: inline-block !important; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm { display: none !important; }
+  .visible-sm,
+  .visible-sm-block { display: block !important; }
+  .visible-sm-inline-block { display: inline-block !important; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md { display: none !important; }
+  .visible-md,
+  .visible-md-block { display: block !important; }
+  .visible-md-inline-block { display: inline-block !important; }
+}
+
+@media (min-width: 1200px) {
+  .hidden-lg { display: none !important; }
+  .visible-lg,
+  .visible-lg-block { display: block !important; }
+  .visible-lg-inline-block { display: inline-block !important; }
+}

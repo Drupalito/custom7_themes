@@ -1,0 +1,31 @@
+
+/*doc
+---
+title: Webform - RTL
+category: Module - Webform
+---
+
+*/
+.webform-progressbar li:after {
+  left: auto;
+  right: -50%;
+}
+
+@media (max-width: 768px) {
+  .webform-progressbar li:before {
+    margin-left: .5em;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .webform-progressbar li {
+    float: right;
+  }
+}
+
+/* */
+.webform-next,
+.webform-previous + button {
+  float: left;
+}

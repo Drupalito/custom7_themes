@@ -1,0 +1,40 @@
+
+/*doc
+---
+title: Skiplinks
+category: Components - Breadcrumb
+---
+
+* Mandatory
+* Display on focus
+
+```html_example
+
+  <p class="skiplinks" id="skiplinks">
+    <a href="#navigation">Menu</a>
+    <a href="#main">Contenu principal</a>
+  </p>
+
+```
+
+*/
+
+.skiplinks {
+  margin: 0;
+}
+
+.skiplinks a {
+  position: absolute;
+  left: -9999px; /* LTR */
+  z-index: 2;
+}
+
+.skiplinks a:focus,
+.skiplinks a:active {
+  top: 0;
+  left: 0; /* LTR */
+  display: inline;
+  padding: 5px 10px;
+  background: #b00;
+  color: #fff;
+}
