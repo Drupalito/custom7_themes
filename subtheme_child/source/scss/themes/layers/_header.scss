@@ -77,6 +77,10 @@ Default markup. (`title` = `alt`)
     display: block;
   }
 
+  &__image {
+    width: 55px;
+  }
+
   &__link {
     border-bottom: 0;
   }
