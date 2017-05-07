@@ -11,7 +11,10 @@
  * Exemple to use : Create another function :
  *   astarter_preprocess_views_view__VIEWNAME__DISPLAY
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_views_view()
  */
 function astarter_preprocess_views_view(&$variables) {
   if (isset($variables['view']->name)) {

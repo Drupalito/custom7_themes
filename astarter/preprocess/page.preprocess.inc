@@ -8,7 +8,10 @@
 /**
  * Implements hook_preprocess_page().
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_page()
  */
 function astarter_preprocess_page(&$variables) {
   $status = drupal_get_http_header("status");

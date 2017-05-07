@@ -8,7 +8,10 @@
 /**
  * Implements hook_preprocess_taxonomy_term().
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_taxonomy_term()
  */
 function astarter_preprocess_taxonomy_term(&$variables) {
   $view_mode = drupal_html_class($variables['view_mode']);

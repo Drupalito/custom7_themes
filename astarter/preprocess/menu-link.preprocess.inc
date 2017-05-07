@@ -10,7 +10,10 @@
  *
  * Intercepts the links to change inline class to list-inline.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_menu_link()
  */
 function astarter_preprocess_menu_link(&$variables) {
   // Reference the menu item

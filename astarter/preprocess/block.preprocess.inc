@@ -10,7 +10,12 @@
  *
  * Override or insert variables into the block templates.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @param $hook
+ *   The name of the theme hook being called ("block" in this case).
  * @see hook_preprocess()
+ * @see hook_preprocess_block()
  */
 function astarter_preprocess_block(&$variables, $hook) {
 

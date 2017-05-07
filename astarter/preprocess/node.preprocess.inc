@@ -10,7 +10,12 @@
  *
  * Override or insert variables into the node templates.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @param $hook
+ *   The name of the theme hook being called ("node" in this case).
  * @see hook_preprocess()
+ * @see hook_preprocess_node()
  */
 function astarter_preprocess_node(&$variables, $hook) {
 

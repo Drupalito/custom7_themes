@@ -8,7 +8,10 @@
 /**
  * Implements hook_preprocess_poll_results__block().
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_poll_results__block()
  */
 function astarter_preprocess_poll_results(&$variables) {
   // Change the links to a render array with sensible.

@@ -6,11 +6,14 @@
  */
 
 /**
- * Implements template_preprocess_webform_element().
+ * Implements hook_preprocess_webform_element().
  *
  * Override or insert variables into the block templates.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_webform_element()
  */
 function astarter_preprocess_webform_element(&$variables) {
   $element = &$variables['element'];

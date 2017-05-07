@@ -10,7 +10,10 @@
  *
  * Override or insert variables into the comment templates.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_comment()
  */
 function astarter_preprocess_comment(&$variables) {
 

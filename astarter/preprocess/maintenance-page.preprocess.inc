@@ -10,7 +10,12 @@
  *
  * Override or insert variables into the maintenance page template.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @param $hook
+ *   The name of the theme hook being called ("maintenance_page" in this case).
  * @see hook_preprocess()
+ * @see hook_preprocess_maintenance_page()
  */
 function astarter_preprocess_maintenance_page(&$variables, $hook) {
 

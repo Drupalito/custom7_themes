@@ -13,7 +13,10 @@
  * Exemple to use : Create another function :
  *   astarter_preprocess_field__FIELD_NAME
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_field()
  */
 function astarter_preprocess_field(&$variables) {
   $function = __FUNCTION__ . '__' . $variables['element']['#field_name'];

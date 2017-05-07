@@ -10,7 +10,12 @@
  *
  * Override or insert variables into the html template.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @param $hook
+ *   The name of the theme hook being called ("html" in this case).
  * @see hook_preprocess()
+ * @see hook_preprocess_html()
  */
 function astarter_preprocess_html(&$variables, $hook) {
   global $theme_key;

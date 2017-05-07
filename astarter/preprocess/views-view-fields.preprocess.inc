@@ -14,7 +14,10 @@
  * Original fonction Drupal.
  * Only change name class CSS.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @see hook_preprocess()
+ * @see hook_preprocess_views_view_fields()
  */
 function astarter_preprocess_views_view_fields(&$variables) {
   if (isset($variables['view']->name)) {

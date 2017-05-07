@@ -8,7 +8,12 @@
 /**
  * Implements hook_preprocess_region().
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @param $hook
+ *   The name of the theme hook being called ("node" in this case).
  * @see hook_preprocess()
+ * @see hook_preprocess_region()
  */
 function astarter_preprocess_region(&$variables, $hook) {
   // Sidebar regions get some extra classes and a common template suggestion.
