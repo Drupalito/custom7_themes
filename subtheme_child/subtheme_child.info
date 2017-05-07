@@ -48,8 +48,8 @@ settings[subtheme_child_breadcrumb_trailing]  = 0
 settings[subtheme_child_breadcrumb_title]     = 1
 settings[subtheme_child_rebuild_registry]     = 1
 
-settings[astarter_bannercolor]          = dark
-settings[astarter_menu_home_item]       = 0
+settings[subtheme_child_bannercolor]          = dark
+settings[subtheme_child_menu_home_item]       = 0
 
 settings[subtheme_child_header_fix]           = 0
 settings[subtheme_child_debug_css_grid]       = 0
