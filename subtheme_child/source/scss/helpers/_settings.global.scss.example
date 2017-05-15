@@ -20,9 +20,9 @@ $body-color: BODY_COLOR !default;
 
 // Links colors.
 $link-color:         LINK_COLOR !default;
-$link-color-hover:   LINK_COLOR_HOVER !default;
-$link-color-active:  LINK_COLOR_ACTIVE !default;
-$link-color-visited: LINK_COLOR_VISITED !default;
+$link-color-hover:   LINK_HOVER !default;
+$link-color-active:  LINK_ACTIVE !default;
+$link-color-visited: LINK_VISITED !default;
 
 /// Selection text color.
 /// @type Color
