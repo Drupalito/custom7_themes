@@ -46,7 +46,7 @@ $font-families: (
 
 /// default `<dt>` width
 /// @type string
-$definition-inline-width: DEFINITION_INLINE_WIDTH: !default;
+$definition-inline-width: DEFINITION_INLINE_WIDTH !default;
 
 /// Définie la typo bold
 /// @see italic
