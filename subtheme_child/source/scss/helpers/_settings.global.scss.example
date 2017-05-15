@@ -4,49 +4,49 @@
 
 /// Base font size
 /// @type Length
-$base-font-size: 16px !default;
+$base-font-size: BASE_FONT_SIZE !default;
 
 /// Base line-height
 /// @type Length
-$base-line-height: 24px !default;
+$base-line-height: BASE_LINE_HEIGHT !default;
 
 /// Body background.
 /// @type Color
-$body-background: #fff !default;
+$body-background: BODY_BACKGROUND !default;
 
 /// Body color.
 /// @type Color
-$body-color: #333 !default;
+$body-color: BODY_COLOR !default;
 
 // Links colors.
-$link-color:         #f31b44 !default;
-$link-color-hover:   #161324 !default;
-$link-color-active:  #161324 !default;
-$link-color-visited: #f31b44 !default;
+$link-color:         LINK_COLOR !default;
+$link-color-hover:   LINK_COLOR_HOVER !default;
+$link-color-active:  LINK_COLOR_ACTIVE !default;
+$link-color-visited: LINK_COLOR_VISITED !default;
 
 /// Selection text color.
 /// @type Color
-$selection-background: #fff8ab !default;
+$selection-background: SELECTION_BACKGROUND !default;
 
 /// Selection text background.
 /// @type Color
-$selection-color: #666 !default;
+$selection-color: SELECTION_COLOR !default;
 
 /// Background color html <mark>.
 /// @type Color
-$highlight-mark-color: #ff0 !default;
+$highlight-mark-color: HIGHLIGHT_MARK_COLOR !default;
 
 // Font stack.
 $font-families: (
-  body:     ("Lato", Helvetica, Arial, sans-serif),
-  headline: ("Helvetica Neue", Helvetica, Arial, sans-serif),
-  pre:      (Menlo, Monaco, Consolas, "Courier New", monospace),
-  print:    ("Helvetica Neue", Helvetica, Arial, sans-serif)
+  body:     FONT_FAMILY_BODY,
+  headline: FONT_FAMILY_HEADLINE,
+  pre:      FONT_FAMILY_PRE,
+  print:    FONT_FAMILY_PRINT
 ) !default;
 
 /// default `<dt>` width
 /// @type string
-$definition-inline-width: 150px !default;
+$definition-inline-width: DEFINITION_INLINE_WIDTH: !default;
 
 /// Définie la typo bold
 /// @see italic
@@ -87,12 +87,12 @@ category: Global - Variables
 
 */
 $font-size: (
-  h1: 28px,
-  h2: 24px,
-  h3: 20px,
-  h4: 18px,
-  h5: 16px,
-  h6: 14px
+  h1: FONT_SIZE_H1,
+  h2: FONT_SIZE_H2,
+  h3: FONT_SIZE_H3,
+  h4: FONT_SIZE_H4,
+  h5: FONT_SIZE_H5,
+  h6: FONT_SIZE_H6
 ) !default;
 
 /*doc
@@ -115,9 +115,9 @@ Available for selectors :
 
 */
 $colorz: (
-  default:   #f31b44,
-  primary:   #161324,
-  secondary: #343140,
+  default:   COLORZ_DEFAULT,
+  primary:   COLORZ_PRIMARY,
+  secondary: COLORZ_SECONDARY,
 ) !default;
 
 /// Theme Message
