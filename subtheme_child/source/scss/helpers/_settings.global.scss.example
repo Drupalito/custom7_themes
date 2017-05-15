@@ -38,10 +38,10 @@ $highlight-mark-color: HIGHLIGHT_MARK_COLOR !default;
 
 // Font stack.
 $font-families: (
-  body:     FONT_FAMILIES_BODY,
-  headline: FONT_FAMILIES_HEADLINE,
-  pre:      FONT_FAMILIES_PRE,
-  print:    FONT_FAMILIES_PRINT
+  body:     (FONT_FAMILIES_BODY),
+  headline: (FONT_FAMILIES_HEADLINE),
+  pre:      (FONT_FAMILIES_PRE),
+  print:    (FONT_FAMILIES_PRINT)
 ) !default;
 
 /// default `<dt>` width
