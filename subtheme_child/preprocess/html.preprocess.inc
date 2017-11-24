@@ -16,6 +16,6 @@ function subtheme_child_preprocess_html(&$variables, $hook) {
   global $theme_key;
 
   // Google Font
-  drupal_add_css('https://fonts.googleapis.com/css?family=Lato:400,700,400italic', array('type' => 'external'));
+  // drupal_add_css('https://fonts.googleapis.com/css?family=Lato:400,700,400italic', array('type' => 'external'));
 
 }
