@@ -402,8 +402,8 @@ category: Base - Media Elements
 */
 
 hr {
-  @extend .clear;
   $color-hr: #000;
+  clear: both;
   height: 0;
   padding: 0;
   margin: 0 0 ($base-line-height - 1px);

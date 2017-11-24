@@ -78,12 +78,12 @@ category: Global - Variables
 
 | Key | Value | Example
 |-----|-------|--------
-| h1  |  28px | <h1>.h1 Lorem Ipsum</h1>
-| h2  |  24px | <h2>.h2 Lorem Ipsum</h2>
-| h3  |  20px | <h3>.h3 Lorem Ipsum</h3>
-| h4  |  18px | <h4>.h4 Lorem Ipsum</h4>
-| h5  |  16px | <h5>.h5 Lorem Ipsum</h5>
-| h6  |  14px | <h6>.h6 Lorem Ipsum</h6>
+| h1  |  FONT_SIZE_H1 | <h1>.h1 Lorem Ipsum</h1>
+| h2  |  FONT_SIZE_H2 | <h2>.h2 Lorem Ipsum</h2>
+| h3  |  FONT_SIZE_H3 | <h3>.h3 Lorem Ipsum</h3>
+| h4  |  FONT_SIZE_H4 | <h4>.h4 Lorem Ipsum</h4>
+| h5  |  FONT_SIZE_H5 | <h5>.h5 Lorem Ipsum</h5>
+| h6  |  FONT_SIZE_H6 | <h6>.h6 Lorem Ipsum</h6>
 
 */
 $font-size: (
@@ -109,9 +109,9 @@ Available for selectors :
 
 | Key | Hexa  | Background | Colorz
 |-----|-------|------------|--------
-| default | <span style="color:#f31b44">#f31b44</span> | <span class="default-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="default-color pas">Lorem Ipsum</span>
-| primary | <span style="color:#161324">#161324</span> | <span class="primary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="primary-color pas">Lorem Ipsum</span>
-| secondary | <span style="color:#343140">#343140</span> | <span class="secondary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="secondary-color pas">Lorem Ipsum</span>
+| default | <span style="color:COLORZ_DEFAULT">COLORZ_DEFAULT</span> | <span class="default-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="default-color pas">Lorem Ipsum</span>
+| primary | <span style="color:COLORZ_PRIMARY">COLORZ_PRIMARY</span> | <span class="primary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="primary-color pas">Lorem Ipsum</span>
+| secondary | <span style="color:COLORZ_SECONDARY">COLORZ_SECONDARY</span> | <span class="secondary-background bl pas" sytle="width:200px;height:30px">Lorem Ipsum</span> | <span class="secondary-color pas">Lorem Ipsum</span>
 
 */
 $colorz: (
