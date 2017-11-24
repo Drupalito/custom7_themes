@@ -74,6 +74,7 @@ select[disabled] {
 
 input[type="text"],
 input[type="tel"],
+input[type="date"],
 input[type="color"],
 input[type="number"],
 input[type="email"],
@@ -88,6 +89,7 @@ input[type="submit"] {
 
 input[type="text"],
 input[type="tel"],
+input[type="date"],
 input[type="color"],
 input[type="number"],
 input[type="email"],
@@ -234,12 +236,257 @@ input[type="radio"] + label:before {
 
 /*doc
 ---
+title: Field required
+category: Base - Forms
+show: false
+---
+
+[TODO]
+
+```html
+  <abbr class="field-required" title="This field is required.">*</abbr>
+```
+
+*/
+
+.field-required {
+  font-size: pem(12px);
+  line-height: 1.2;
+  color: #666;
+}
+
+/*doc
+---
+title: Field static
+category: Base - Forms
+---
+
+```html
+  <div class="form-item">
+    <span class="label">Email</span>
+    <strong>email@example.com</strong>
+  </div>
+  <div class="form-item">
+    <label for="password">Password</label>
+    <input name="password" type="text" placeholder="Password" />
+  </div>
+```
+
+*/
+
+.form-item {
+  @include form-item($input-height);
+}
+
+/*doc
+---
+title: Field Inline
+category: Base - Forms
+---
+
+Add class `form-item--inline` on parent `div.form-item`
+
+```html
+  <div class="form-item form-item--inline">
+    <div class="form-item">
+      <label for="Login">Login</label>
+      <input name="Login" type="text" placeholder="Login" />
+    </div>
+    <div class="form-item">
+      <label for="password">Password</label>
+      <input name="password" type="text" placeholder="Password" />
+    </div>
+  </div>
+```
+
+*/
+
+.form-item--inline {
+  @include form-item-inline;
+}
+
+/*doc
+---
+title: Fieldset + Legend
+category: Base - Forms
+---
+
+Collapsed
+
+[TODO]
+
+*/
+
+fieldset {
+  border: 1px solid #ccc;
+  border-top: 3px solid #{map-get($colorz, "primary")};
+  padding: $base-line-height;
+  margin: 0 0 rhythm(1);
+
+  &.collapsed {
+    position: relative;
+    padding-bottom: 0;
+
+    a {
+      color: #{map-get($colorz, "primary")};
+    }
+
+    .fieldset-legend {
+      display: block;
+    }
+
+    html.js & {
+      border-bottom-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      height: 1em;
+
+      .fieldset-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  &.collapsible {
+    position: relative;
+
+    .fieldset-legend {
+      display: block;
+    }
+  }
+
+  legend {
+    padding: 0 ($base-line-height / 2);
+    margin: 0;
+    margin-left: -(($base-line-height / 2) / 2); /* LTR */
+    font-size: pem(18px);
+    font-weight: 700;
+
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+.fieldset-wrapper > .form-item:last-child {
+  margin-bottom: 0;
+}
+
+.fieldset-description {
+  padding-bottom: 1em;
+}
+
+/*doc
+---
+title: Action confirm
+category: Base - Forms
+---
+
+Drupal example HTML
+
+```html
+  <form action="" id="formConfirm">
+    <div><p>This action cannot be undone.</p>
+    <div class="form-actions form-wrapper">
+      <button name="op" value="Confirm" type="submit" class="btn btn--primary btn--submit form-submit">Confirm</button><a href="#" id="edit-cancel">Cancel</a></div>
+    </div>
+  </form>
+```
+
+*/
+
+.form-actions {
+  margin-top: rhythm(1);
+
+  button + button {
+    margin-left: 2em; /* LTR */
+  }
+}
+
+// .form-radios,
+// .form-checkboxes,
+// .container-inline-date {
+//   .form-item {
+//     display: inline-block;
+//     margin-right: 10px;
+//   }
+// }
+
+// .form-item--date-day,
+// .form-item--date-month,
+// .form-item--date-year {
+//   display: inline-block;
+// }
+
+/*doc
+---
+title: Password Confirm
+category: Base - Forms
+---
+
+Drupal example HTML
+
+```html
+  <form action="" id="formPassword">
+    <div class="form-item form-type--password-confirm form-item--password-confirm">
+      <label for="edit-password-confirm">Password confirm </label>
+      <div class="form-item form-type--password form-item--password-confirm-pass1 password-parent"><div class="password-strength"><div class="password-strength-text" aria-live="assertive">Weak</div><div class="password-strength-title">Password strength:</div><div class="password-indicator"><div class="indicator" style="width: 0%;"></div></div></div>
+      <label for="edit-password-confirm-pass1">Password </label>
+      <input class="password-field form-text password-processed" type="password" id="edit-password-confirm-pass1" name="password_confirm[pass1]" size="60" maxlength="128">
+    </div>
+    <div class="form-item form-type--password form-item--password-confirm-pass2 confirm-parent">
+      <div class="password-confirm" style="visibility: hidden;">Passwords match: <span></span></div>
+        <label for="edit-password-confirm-pass2">Confirm password </label>
+        <input class="password-confirm form-text" type="password" id="edit-password-confirm-pass2" name="password_confirm[pass2]" size="60" maxlength="128">
+      </div>
+    </div>
+  </form>
+```
+
+*/
+
+// scss-lint:disable MergeableSelector
+div.password-confirm,
+.password-strength {
+  @extend .pull-right; /* LTR */
+  line-height: $input-height;
+}
+
+div.password-confirm {
+  visibility: hidden;
+}
+
+.password-strength {
+  &-title {
+    display: inline-block;
+  }
+
+  &-text {
+    @extend .pull-right; /* LTR */
+    font-weight: 700;
+    font-style: normal;
+    margin-left: 5px; /* LTR */
+  }
+}
+
+.form-item.confirm-parent,
+.form-item .password-suggestions {
+  margin-top: rhythm(.5);
+}
+
+.form-item .password-suggestions {
+  padding: 10px 20px;
+  border: 1px solid #b4b4b4;
+}
+// scss-lint:enable MergeableSelector
+
+/*doc
+---
 title: All inputs
 category: Base - Forms
 ---
 
-```html_example
-
+```html
   <form action="" id="formExample">
     <div class="form-item">
       <label for="name">Name</label>
@@ -323,386 +570,15 @@ category: Base - Forms
       <button class="btn btn--cancel" type="submit" name="cancel">Cancel</button>
     </div>
   </form>
-
 ```
 
 */
-
-/*doc
----
-title: Field required
-category: Base - Forms
----
-
-[TODO]
-
-```html_example
-
-  <abbr class="field-required" title="This field is required.">*</abbr>
-
-```
-
-*/
-
-.field-required {
-  font-size: pem(12px);
-  line-height: 1.2;
-  color: #666;
-}
-
-/*doc
----
-title: Field static
-category: Base - Forms
----
-
-```html_example
-
-  <div class="form-item">
-    <span class="label">Email</span>
-    <strong>email@example.com</strong>
-  </div>
-  <div class="form-item">
-    <label for="password">Password</label>
-    <input name="password" type="text" placeholder="Password" />
-  </div>
-
-```
-
-*/
-
-.form-item {
-  @include form-item($input-height);
-}
-
-/*doc
----
-title: Fieldset + Legend
-category: Base - Forms
----
-
-Collapsed
-
-[TODO]
-
-*/
-
-fieldset {
-  border: 1px solid #ccc;
-  border-top: 3px solid #{map-get($colorz, "primary")};
-  padding: $base-line-height;
-  margin: 0 0 rhythm(1);
-
-  &.collapsed {
-    position: relative;
-    padding-bottom: 0;
-
-    a {
-      color: #{map-get($colorz, "primary")};
-    }
-
-    .fieldset-legend {
-      display: block;
-    }
-
-    html.js & {
-      border-bottom-width: 0;
-      border-left-width: 0;
-      border-right-width: 0;
-      height: 1em;
-
-      .fieldset-wrapper {
-        display: none;
-      }
-    }
-  }
-
-  &.collapsible {
-    position: relative;
-
-    .fieldset-legend {
-      display: block;
-    }
-  }
-
-  legend {
-    padding: 0 ($base-line-height / 2);
-    margin: 0;
-    margin-left: -(($base-line-height / 2) / 2); /* LTR */
-    font-size: pem(18px);
-    font-weight: 700;
-
-    a {
-      border-bottom: 0;
-    }
-  }
-}
-
-.fieldset-wrapper > .form-item:last-child {
-  margin-bottom: 0;
-}
-
-.fieldset-description {
-  padding-bottom: 1em;
-}
-
-/*doc
----
-title: Field Inline
-category: Base - Forms
----
-
-Add class `form-item--inline` on parent `div.form-item`
-
-```html_example
-
-  <div class="form-item form-item--inline">
-    <div class="form-item">
-      <label for="Login">Login</label>
-      <input name="Login" type="text" placeholder="Login" />
-    </div>
-    <div class="form-item">
-      <label for="password">Password</label>
-      <input name="password" type="text" placeholder="Password" />
-    </div>
-  </div>
-
-```
-
-*/
-
-.form-item--inline {
-  @include form-item-inlineblock;
-}
-
-/*doc
----
-title: Action confirm
-category: Base - Forms
----
-
-Drupal example HTML
-
-  <form action="" id="formConfirm">
-    <div><p>This action cannot be undone.</p>
-    <div class="form-actions form-wrapper">
-      <button name="op" value="Confirm" type="submit" class="btn btn--primary btn--submit form-submit">Confirm</button><a href="#" id="edit-cancel">Cancel</a></div>
-    </div>
-  </form>
-
-*/
-
-.form-actions {
-  margin-top: rhythm(1);
-
-  button + button {
-    margin-left: 2em; /* LTR */
-  }
-}
-
-// .form-radios,
-// .form-checkboxes,
-// .container-inline-date {
-//   .form-item {
-//     display: inline-block;
-//     margin-right: 10px;
-//   }
-// }
-
-// .form-item--date-day,
-// .form-item--date-month,
-// .form-item--date-year {
-//   display: inline-block;
-// }
-
-/*doc
----
-title: Password Confirm
-category: Base - Forms
----
-
-Drupal example HTML
-
-  <form action="" id="formPassword">
-    <div class="form-item form-type--password-confirm form-item--password-confirm">
-      <label for="edit-password-confirm">Password confirm </label>
-      <div class="form-item form-type--password form-item--password-confirm-pass1 password-parent"><div class="password-strength"><div class="password-strength-text" aria-live="assertive">Weak</div><div class="password-strength-title">Password strength:</div><div class="password-indicator"><div class="indicator" style="width: 0%;"></div></div></div>
-      <label for="edit-password-confirm-pass1">Password </label>
-      <input class="password-field form-text password-processed" type="password" id="edit-password-confirm-pass1" name="password_confirm[pass1]" size="60" maxlength="128">
-    </div>
-    <div class="form-item form-type--password form-item--password-confirm-pass2 confirm-parent">
-      <div class="password-confirm" style="visibility: hidden;">Passwords match: <span></span></div>
-        <label for="edit-password-confirm-pass2">Confirm password </label>
-        <input class="password-confirm form-text" type="password" id="edit-password-confirm-pass2" name="password_confirm[pass2]" size="60" maxlength="128">
-      </div>
-    </div>
-  </form>
-
-*/
-
-// scss-lint:disable MergeableSelector
-div.password-confirm,
-.password-strength {
-  @extend .pull-right; /* LTR */
-  line-height: $input-height;
-}
-
-div.password-confirm {
-  visibility: hidden;
-}
-
-.password-strength {
-  &-title {
-    display: inline-block;
-  }
-
-  &-text {
-    @extend .pull-right; /* LTR */
-    font-weight: 700;
-    font-style: normal;
-    margin-left: 5px; /* LTR */
-  }
-}
-
-.form-item.confirm-parent,
-.form-item .password-suggestions {
-  margin-top: rhythm(.5);
-}
-
-.form-item .password-suggestions {
-  padding: 10px 20px;
-  border: 1px solid #b4b4b4;
-}
-// scss-lint:enable MergeableSelector
-
-/*doc
----
-title: Field states
-category: Base - Forms
----
-
-  <form action="" id="formErrors">
-    <div class="form-item has--info">
-      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
-      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
-      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </div>
-    <div class="form-item has--warning">
-      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
-      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
-      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </div>
-    <div class="form-item has--error">
-      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
-      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
-      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </div>
-    <div class="form-item has--status">
-      <label for="email">Email <abbr class="field-required" title="This field is required.">*</abbr></label>
-      <input aria-labelledby="error_email" class="field-txt error" name="email" type="email" required="required" aria-required="true" />
-      <br /><small id="error_email"> Error 1 : Enter valid email address, eg toto@domaine.com.</small>
-    </div>
-  </form>
-
-*/
-
-@each $name, $values in $message {
-  $color: map-get($values, "background");
-
-  .has--#{$name} {
-    @extend .text--#{$name};
-  }
-
-  .has--#{$name} input,
-  .has--#{$name} select,
-  .has--#{$name} textarea {
-    border-left-width: 4px; /* LTR */
-    @if map-get($values, "color") {
-      border-color: map-get($values, "color");
-
-      &:focus {
-        $color-focus: map-get($values, "color");
-        box-shadow: 0 0 2px $color-focus, 0 0 5px $color-focus;
-      }
-    } @else {
-      border-color: $color;
-
-      &:focus {
-        box-shadow: 0 0 2px $color, 0 0 5px $color;
-      }
-    }
-  }
-}
-
-/*doc
----
-title: Texte alerte
-category: Components - Messages
----
-
-```html_example
-
-  <p class="text text--muted mvn">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, magni voluptatum, earum porro asperiores, quam quos dolorum quia quae quod laborum consequuntur. Laboriosam voluptates ex minus quidem a non officiis.</p>
-  <p class="text text--info mvn">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--error mvn">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--warning mvn">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--status mvn">Lorem ipsum dolor sit amet.</p>
-
-```
-*/
-
-/*doc
----
-title: Texte alerte icons
-category: Components - Messages
----
-
-Combine `.text` with `.text--icon` and icon `.i-info`
-
-```html_example
-
-  <p class="text text--muted mvn text--icon i-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, magni voluptatum, earum porro asperiores, quam quos dolorum quia quae quod laborum consequuntur. Laboriosam voluptates ex minus quidem a non officiis.</p>
-  <p class="text text--info mvn text--icon i-info">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--error mvn text--icon i-error">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--warning mvn text--icon i-warning">Lorem ipsum dolor sit amet.</p>
-  <p class="text text--status mvn text--icon i-check">Lorem ipsum dolor sit amet.</p>
-
-  <p class="ok">Lorem ipsum dolor sit amet.</p>
-  <p class="warning">Lorem ipsum dolor sit amet.</p>
-  <p class="error">Lorem ipsum dolor sit amet.</p>
-
-```
-
-*/
-
-.text {
-  &--icon:before {
-    @extend .i;
-    margin-right: 5px; /* LTR */
-  }
-
-  &--muted {
-    color: #999;
-  }
-
-  @each $name, $values in $message {
-    $color: map-get($values, "color");
-
-    &--#{$name} {
-      color: $color;
-    }
-  }
-}
-
-// Drupal default style
-.ok      { @extend .text--status; }
-.warning { @extend .text--warning; }
-.error   { @extend .text--error; }
 
 /*doc
 ---
 title: Placeholder
 category: Base - Forms
+show: false
 ---
 
 Couleurs de placeholder : ne pas fusionner les sélecteurs !

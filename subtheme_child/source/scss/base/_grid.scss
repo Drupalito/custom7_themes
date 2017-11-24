@@ -6,6 +6,7 @@
 ---
 title: Grid
 category: Layout - Grid
+show: false
 ---
 
 * `.container`
@@ -74,6 +75,10 @@ Rows contain and clear the floats of your columns.
   > div {
     display: flex;
   }
+
+  > div > div {
+    width: 100%;
+  }
 }
 
 .col-top {
@@ -134,6 +139,10 @@ to tablets.
     > div {
       display: flex;
     }
+
+    > div > div {
+      width: 100%;
+    }
   }
 }
 
@@ -169,6 +178,10 @@ Columns, offsets, pushes, and pulls for the desktop device range.
     > div {
       display: flex;
     }
+
+    > div > div {
+      width: 100%;
+    }
   }
 }
 
@@ -203,6 +216,10 @@ Columns, offsets, pushes, and pulls for the large desktop device range.
 
     > div {
       display: flex;
+    }
+
+    > div > div {
+      width: 100%;
     }
   }
 }

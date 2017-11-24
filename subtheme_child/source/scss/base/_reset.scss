@@ -206,11 +206,17 @@ ins {
   color: #005d23;
 }
 
-mark,
-.highlight {
-  padding: 2px 4px;
+mark {
+  padding: 0 4px;
   background: $highlight-mark-color;
   color: #000;
+  font-size: 85%;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.highlight {
+  color: map-get($colorz, "default");
 }
 
 dd {
@@ -223,8 +229,7 @@ title: Ordered list and Unordered list
 category: Base - Base
 ---
 
-```html_example
-
+```html
   <ul>
     <li>Unordered list test</li>
     <li>Another list element. Lorem ipsum dolor sit amet, consectetur elit.</li>
@@ -252,7 +257,6 @@ category: Base - Base
       </ul>
     </li>
   </ul>
-
 ```
 
 */
@@ -288,115 +292,24 @@ category: Base - Base
 
 Mise en forme d'une adresse postale
 
-```html_example
-
+```html
   <address>
     <p>
-      <strong>Axel Roche,</strong><br />
-      184 rue du Bled,<br />
-      33000 Bordeaux (France)<br />
-      <abbr title="Téléphone">Tél.</abbr> : 06 58 28 56 67<br />
-      <abbr title="Fax">Fax.</abbr> : 05 57 55 55 55
-      <a href="mailto:axel@aquelito.fr">axel@aquelito.fr</a><br />
+      <strong>Axel Roche,</strong><a href="mailto:axel@aquelito.fr">axel@aquelito.fr</a><br/>
+      184 rue du Bled,<br/>
+      33000 Bordeaux (France)<br/>
+      <abbr title="Téléphone">Tél.</abbr> : 06 58 28 56 67<br/>
+      <abbr title="Fax">Fax.</abbr> : 05 57 55 55 55<br/>
       <a href="http://aquelito.fr">aquelito.fr</a>
     </p>
   </address>
   <address class="mtl">
     <p>
-      <strong>John.doe</strong><br />
-      <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a><br />
+      <strong>John.doe</strong><br/>
+      <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a><br/>
       <a href="http://google.com">Google.com</a>
     </p>
   </address>
-
-```
-
-*/
-
-/*doc
----
-title: Images
-category: Base - Media Elements
----
-
-iframe & image & object & video
-
-```html_example
-
-  <img src="http://lorempixel.com//825/400/animals/1" alt="" />
-
-```
-
-*/
-
-img,
-svg,
-object,
-video {
-  max-width: 100%; // to prevent overflow
-  vertical-align: middle; // Supprime l'espace indésirable appraissant sous les images
-  height: auto; // to keep aspect ratio
-  width: auto; // bugfix IE8
-}
-
-a img,
-iframe {
-  border: 0; // bugfix IE8, FF3.6 (Supprime la bordure des images se trouvant dans un lien.)
-}
-
-/*doc
----
-title: Figcaption
-category: Base - Media Elements
----
-
-```html_example
-
-  <figure>
-    <img src="http://lorempixel.com//825/400/animals/2" alt="Some animals image" />
-    <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</figcaption>
-  </figure>
-
-```
-
-*/
-
-figcaption {
-  @extend .italic;
-  font-size: 0.85em;
-}
-
-/*doc
----
-title: Thumbnails
-category: Base - Media Elements
----
-
-```html_example
-
-  <div class="row">
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="http://lorempixel.com/300/300/animals/3" alt="" />
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="http://lorempixel.com/300/300/animals/4" alt="" />
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="http://lorempixel.com/300/300/animals/5" alt="" />
-      </a>
-    </div>
-    <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img src="http://lorempixel.com/300/300/animals/6" alt="" />
-      </a>
-    </div>
-  </div>
-
 ```
 
 */
@@ -419,12 +332,10 @@ title: Blockquote
 category: Base - Base
 ---
 
-```html_example
-
+```html
   <blockquote>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</p>
   </blockquote>
-
 ```
 
 */
@@ -442,10 +353,8 @@ title: Blockquote cite
 category: Base - Base
 ---
 
-```html_example
-
+```html
   <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
-
 ```
 
 */
@@ -493,6 +402,14 @@ title: Quotes
 category: Base - Base
 ---
 
+```html
+  <p lang="en"><q>EN: Eius, natus vitae similique impedit quod dolor</q></p>
+  <p lang="de"><q>DE: Eius, natus vitae similique impedit quod dolor</q></p>
+  <p lang="fr"><q>FR: Eius, natus vitae similique impedit quod dolor</q></p>
+  <p lang="es"><q>ES: Eius, natus vitae similique impedit quod dolor</q></p>
+  <p lang="it"><q>IT: Eius, natus vitae similique impedit quod dolor</q></p>
+```
+
 */
 
 // { quotes: '“' '”' '‘' '’'; }
@@ -516,262 +433,6 @@ q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 // :lang(de) q { quotes:"\201E" "\201C" "\201A" "\2018"; }
 // :lang(es) q { quotes:"\00AB" "\00BB" "\2039" "\203A"; }
 // :lang(it) q { quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D"; }
-
-/*doc
----
-title: Table
-category: Base - Table
----
-
-```html_example
-
-  <table>
-    <caption>Jimi Hendrix - albums</caption>
-    <thead>
-      <tr>
-        <th>Album</th>
-        <th>Year</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>Album</th>
-        <th>Year</th>
-        <th>Price</th>
-      </tr>
-    </tfoot>
-    <tbody>
-      <tr>
-        <td>Are You Experienced</td>
-        <td>1967</td>
-        <td>$10.00</td>
-      </tr>
-      <tr>
-        <td>Axis: Bold as Love</td>
-        <td>1967</td>
-        <td>$12.00</td>
-      </tr>
-      <tr>
-        <td>Electric Ladyland</td>
-        <td>1968</td>
-        <td>$10.00</td>
-      </tr>
-      <tr>
-        <td>Band of Gypsys</td>
-        <td>1970</td>
-        <td>$12.00</td>
-      </tr>
-    </tbody>
-  </table>
-
-```
-
-*/
-
-/*doc
----
-title: Table Responsive
-category: Base - Table
----
-
-Faire une table responsive ajouté un wrapper autour de l'élément `<table>`
-`<div class="table-responsive">`
-
-```html_example
-
-  <div class="table-responsive">
-    <table>
-      ...
-    </table>
-  </div>
-
-```
-
-*/
-
-/*doc
----
-title: Table Striped
-category: Base - Table
----
-
-```html_example
-
-  <table class="table">
-    <caption>Jimi Hendrix - albums</caption>
-    <thead>
-      <tr>
-        <th>Album</th>
-        <th>Year</th>
-        <th>Price</th>
-        <th>Price</th>
-        <th>Price</th>
-        <th>Price</th>
-        </tr>
-    </thead>
-    <tfoot>
-      <tr>
-        <th>Album</th>
-        <th>Year</th>
-        <th>Price</th>
-        <th>Price</th>
-        <th>Price</th>
-        <th>Price</th>
-      </tr>
-    </tfoot>
-    <tbody>
-      <tr>
-        <td>Are You Experienced</td>
-        <td>1967</td>
-        <td>$10.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-      </tr>
-      <tr>
-        <td>Axis: Bold as Love</td>
-        <td>1967</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-      </tr>
-      <tr>
-        <td>Electric Ladyland</td>
-        <td>1968</td>
-        <td>$10.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-      </tr>
-      <tr>
-        <td>Band of Gypsys</td>
-        <td>1970</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-        <td>$12.00</td>
-      </tr>
-    </tbody>
-  </table>
-
-```
-
-*/
-
-table {
-  caption-side: top;
-
-  &,
-  &.table {
-    width: 100%;
-    max-width: 100%;
-    display: table;
-    border-collapse: collapse; // fusion des bordures
-    vertical-align: top;
-  }
-}
-
-.table--fixed {
-  table-layout: fixed;
-}
-
-th,
-th a {
-  background: $body-color;
-  color: #fff;
-}
-
-th,
-td {
-  padding: rhythm(0.5) ($grid-gutter-width / 2);
-  border-bottom: 1px solid #ccc;
-  text-align: left; /* LTR */
-
-  .views-row-last & {
-    border-bottom: 0;
-  }
-}
-
-tfoot {
-  th,
-  td {
-    border-bottom: 0;
-  }
-}
-
-caption,
-table td {
-  color: #666;
-}
-
-caption {
-  @extend .italic;
-  @extend .mbm;
-}
-
-tbody {
-  border: 1px solid #ccc;
-
-  tr {
-    > * + * {
-      border-left: 1px solid #ccc;
-    }
-  }
-}
-
-.views-row-odd,
-tbody tr:nth-child(odd) {
-  background: #ececec;
-}
-
-.views-row-even,
-tbody tr:nth-child(even) {
-  background: #f7f7f7;
-}
-
-th.active,
-th.active a {
-  background: #{map-get($colorz, "primary")};
-  color: #fff;
-}
-
-td.active {
-  tbody tr:nth-child(odd) & {
-    background: darken(#ececec, 5%);
-  }
-
-  tbody tr:nth-child(even) & {
-    background: darken(#f7f7f7, 5%);
-  }
-}
-
-.table-responsive {
-  width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  border: 1px solid #ccc;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-
-  th,
-  td {
-    white-space: nowrap;
-  }
-
-  td {
-    .views-row-last & {
-      border-bottom: 0;
-    }
-  }
-
-  tbody {
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-  }
-}
 
 /* */
 

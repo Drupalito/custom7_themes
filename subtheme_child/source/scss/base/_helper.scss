@@ -4,12 +4,11 @@
 
 /*doc
 ---
+show: false
 title: Inline-block (Elements)
 category: Base - Helpers
 ---
 
-* `.none` - Display: none
-* `.bl` - Display: block
 * `.inbl` - Display: inline-block
 * `.inbl.atop` - Alignment top (default)
 * `.inbl.amiddle` - Alignment middle
@@ -26,14 +25,14 @@ category: Base - Helpers
 
 /*doc
 ---
+show: false
 title: Hide Elements
 category: Base - Helpers
 ---
 
-* `.show` - Affichage en mode `display-block`
-* `.hide` ou `.hidden` ou `.none` - Cacher en mode `display-none`
+* `.show` - Affichage en mode `display-block` !important
+* `.hide` ou `.hidden` ou `.none` - Cacher en mode `display-none` !important
 * `.invisible` - Cacher `visibility-hidden`
-* `.element-invisible` - Cacher de facon accessible
 
 */
 
@@ -43,38 +42,11 @@ category: Base - Helpers
 .none { display: none !important; }
 
 .show { display: block !important; }
-
 .invisible { visibility: hidden; }
-
 .overhidden { overflow: hidden; }
-
 .overvisible { overflow: visible; }
 
-.element-invisible {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
 // scss-lint:enable ImportantRule
-
-// Prevent text wrapping.
-.nowrap { white-space: nowrap; }
-
-/*doc
----
-title: Clearfix
-category: Base - Helpers
----
-
-* `%clearfix`
-
-*/
-
-.clearfix {
-  @extend %clearfix;
-}
 
 /*doc
 ---
@@ -87,12 +59,12 @@ Please use judiciously. You want to be using defaults most of the time, these ar
 
 `<type><location><size>`
 
-Type
+### Type
 
 * `<p>` : padding
 * `<m>` : margin
 
-Location
+### Location
 
 * `<a>` : all
 * `<t>` : top
@@ -102,12 +74,19 @@ Location
 * `<h>` : horizontal
 * `<v>` : vertical
 
-Size
+### Size
 
 * `<s> small` : #{round($base-line-height / 4)}
 * `<m> medium` : #{round($base-line-height / 2)}
 * `<l> large` : #{$grid-gutter-width}
 * `<n> none` : 0px
+
+### Exemple
+
+* `.mts` : margin top small
+* `.mlm` : margin left medium
+* `.pal` : padding all large
+* `.pbs` : padding bottom small
 
 */
 

@@ -1,0 +1,258 @@
+
+// @file: _table.scss
+// Table style
+
+/*doc
+---
+title: Table
+category: Base - Table
+---
+
+```html
+  <table>
+    <caption>Jimi Hendrix - albums</caption>
+    <thead>
+      <tr>
+        <th>Album</th>
+        <th>Year</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Album</th>
+        <th>Year</th>
+        <th>Price</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Are You Experienced</td>
+        <td>1967</td>
+        <td>$10.00</td>
+      </tr>
+      <tr>
+        <td>Axis: Bold as Love</td>
+        <td>1967</td>
+        <td>$12.00</td>
+      </tr>
+      <tr>
+        <td>Electric Ladyland</td>
+        <td>1968</td>
+        <td>$10.00</td>
+      </tr>
+      <tr>
+        <td>Band of Gypsys</td>
+        <td>1970</td>
+        <td>$12.00</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+*/
+
+/*doc
+---
+title: Table Responsive
+category: Base - Table
+---
+
+Faire une table responsive ajouté un wrapper autour de l'élément `<table>`
+`<div class="table-responsive">`
+
+```html
+  <div class="table-responsive">
+    <table>
+      ...
+    </table>
+  </div>
+```
+
+*/
+
+/*doc
+---
+title: Table Striped
+category: Base - Table
+---
+
+```html
+  <table class="table">
+    <caption>Jimi Hendrix - albums</caption>
+    <thead>
+      <tr>
+        <th>Album</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Price</th>
+        <th>Price</th>
+        <th>Price</th>
+        </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>Album</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Price</th>
+        <th>Price</th>
+        <th>Price</th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <td>Are You Experienced</td>
+        <td>1967</td>
+        <td>$10.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+      </tr>
+      <tr>
+        <td>Axis: Bold as Love</td>
+        <td>1967</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+      </tr>
+      <tr>
+        <td>Electric Ladyland</td>
+        <td>1968</td>
+        <td>$10.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+      </tr>
+      <tr>
+        <td>Band of Gypsys</td>
+        <td>1970</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+        <td>$12.00</td>
+      </tr>
+    </tbody>
+  </table>
+```
+
+*/
+
+table {
+  caption-side: top;
+
+  &,
+  &.table {
+    width: 100%;
+    max-width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse; // fusion des bordures
+    vertical-align: top;
+  }
+}
+
+.table--fixed {
+  table-layout: fixed;
+}
+
+th,
+th a {
+  background: $body-color;
+  color: #fff;
+}
+
+th,
+td {
+  padding: rhythm(0.5) ($grid-gutter-width / 2);
+  border-bottom: 1px solid #ccc;
+  text-align: left; /* LTR */
+
+  .views-row-last & {
+    border-bottom: 0;
+  }
+}
+
+tfoot {
+  th,
+  td {
+    border-bottom: 0;
+  }
+}
+
+caption,
+table td {
+  color: #666;
+}
+
+caption {
+  @extend .italic;
+  @extend .mbm;
+}
+
+tbody {
+  border: 1px solid #ccc;
+
+  th {
+    background: #f1f1f1;
+    color: inherit;
+  }
+  tr {
+    > * + * {
+      border-left: 1px solid #ccc;
+    }
+  }
+}
+
+.views-row-odd,
+tbody tr:nth-child(odd) {
+  background: #ececec;
+}
+
+.views-row-even,
+tbody tr:nth-child(even) {
+  background: #f7f7f7;
+}
+
+th.active,
+th.active a {
+  background: #{map-get($colorz, "primary")};
+  color: #fff;
+}
+
+td.active {
+  tbody tr:nth-child(odd) & {
+    background: darken(#ececec, 5%);
+  }
+
+  tbody tr:nth-child(even) & {
+    background: darken(#f7f7f7, 5%);
+  }
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border: 1px solid #ccc;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  th,
+  td {
+    // white-space: nowrap;
+  }
+
+  td {
+    .views-row-last & {
+      border-bottom: 0;
+    }
+  }
+
+  tbody {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+}

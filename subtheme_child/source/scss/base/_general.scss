@@ -1,0 +1,54 @@
+
+/*doc
+---
+type: helpers
+title: Clearfix
+category: Base - Helpers
+---
+
+Micro Clearfix to clear floats. [http://nicolasgallagher.com/micro-clearfix-hack/](http://nicolasgallagher.com/micro-clearfix-hack/)
+
+Les divs interieurs contient sont des float.
+
+Deux moyens pour l'utiliser
+
+* CSS: `.clearfix`
+* SCSS: `@extend %clearfix`
+
+```html
+  <div class="clearfix">
+    <p class="pull-left mvn">Paragraphe gauche</p>
+    <p class="pull-right mvn">Paragraphe droite</p>
+  </div>
+```
+
+*/
+.clearfix {
+  @extend %clearfix;
+}
+
+/*doc
+---
+title: A11Y
+category: Base - Helpers
+---
+
+La classe CSS `.a11y` ou `.element-invisible` permet de cacher un texte de manière accessible.
+
+Conforme avec le référentiel d'accessibilité RGAA.
+
+*/
+
+.a11y,
+.element-invisible {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
