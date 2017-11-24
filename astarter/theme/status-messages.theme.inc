@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file
+ * @file status-messages.theme.inc
  * Contains the theme function override for 'status_messages'.
  */
 
@@ -10,6 +10,9 @@
  *
  * Change output HTML
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_status_messages()
  * @ingroup themeable
  */
 function astarter_status_messages($variables) {

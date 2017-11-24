@@ -10,6 +10,9 @@
  *
  * Change `span` to `abbr`
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_form_required_marker()
  * @ingroup themeable
  */
 function astarter_form_required_marker($variables) {

@@ -1,8 +1,14 @@
 <?php
 
 /**
- * @file
- * Theme functions override
+ * @file template.php
+ *
+ * Theme functions override.
+ *
+ * @package     ASTARTER
+ * @author      OWNER_NAME <OWNER_EMAIL>
+ * @version     v.1.0 (CURRENT_YEAR)
+ * @copyright   Copyright (c) CURRENT_YEAR, aquelito
  */
 
 /**

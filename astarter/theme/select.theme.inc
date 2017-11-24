@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file
+ * @file select.theme.inc
  * Contains the theme function override for 'pager'.
  */
 
@@ -10,6 +10,9 @@
  *
  * Add wrapper `.select` (custom select)
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_select()
  * @ingroup themeable
  */
 function astarter_select($variables) {

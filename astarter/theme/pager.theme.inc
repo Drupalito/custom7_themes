@@ -1,15 +1,18 @@
 <?php
 
 /**
- * @file
+ * @file pager.theme.inc
  * Contains the theme function override for 'pager'.
  */
 
 /**
- * Implements hook_pager().
+ * Implements theme_pager().
  *
  * TODO
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_pager()
  * @ingroup themeable
  */
 function astarter_pager($variables) {

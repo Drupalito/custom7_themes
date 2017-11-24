@@ -12,6 +12,9 @@
  * Add default class `.btn`
  * Add default class `.btn--<type>`
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_button()
  * @ingroup themeable
  */
 function astarter_button($variables) {

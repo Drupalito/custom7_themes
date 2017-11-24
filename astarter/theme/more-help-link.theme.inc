@@ -10,6 +10,9 @@
  *
  * Add icon
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_more_help_link()
  * @ingroup themeable
  */
 function astarter_more_help_link($variables) {

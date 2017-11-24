@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file
+ * @file progress-bar.theme.inc
  * Contains the theme function override for 'progress_bar'.
  */
 
@@ -10,6 +10,9 @@
  *
  * Change output HTML
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_progress_bar()
  * @ingroup themeable
  */
 function astarter_progress_bar($variables) {

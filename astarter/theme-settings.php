@@ -1,8 +1,14 @@
 <?php
 
 /**
- * @file
- * Theme setting callbacks for the starter theme.
+ * @file theme-settings.php
+ *
+ * Theme setting callbacks for the ASTARTER theme.
+ *
+ * @package     ASTARTER
+ * @author      OWNER_NAME <OWNER_EMAIL>
+ * @version     v.1.0 (CURRENT_YEAR)
+ * @copyright   Copyright (c) CURRENT_YEAR, aquelito
  */
 
 /**

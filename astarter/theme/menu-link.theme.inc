@@ -8,8 +8,11 @@
 /**
  * Implements theme_menu_link().
  *
- * Remove \n.
+ * Remove "\n".
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_menu_link()
  * @ingroup themeable
  */
 function astarter_menu_link(array $variables) {

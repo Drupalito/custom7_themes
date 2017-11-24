@@ -10,6 +10,9 @@
  *
  * Remove Title Hn
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_menu_local_tasks()
  * @ingroup themeable
  */
 function astarter_menu_local_tasks(array $variables) {

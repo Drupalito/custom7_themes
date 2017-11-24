@@ -12,6 +12,9 @@
  * Change class name
  * Add class error field
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_form_element()
  * @ingroup themeable
  */
 function astarter_form_element($variables) {

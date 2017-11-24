@@ -10,6 +10,9 @@
  *
  * Theme the form element, add the error, when one occurred.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_ife_form_element()
  * @ingroup themeable
  */
 function astarter_ife_form_element($variables) {

@@ -1,13 +1,16 @@
 <?php
 
 /**
- * @file
+ * @file breadcrumb.theme.inc
  * Contains the theme function override for 'breadcrumb'.
  */
 
 /**
  * Implements theme_breadcrumb().
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_breadcrumb()
  * @ingroup themeable
  */
 function astarter_breadcrumb(&$variables) {

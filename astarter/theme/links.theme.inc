@@ -10,6 +10,9 @@
  *
  * TODO : comment_reply
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_links()
  * @ingroup themeable
  */
 function astarter_links($links, $attributes = array('class' => 'links')) {

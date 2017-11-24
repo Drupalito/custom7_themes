@@ -10,6 +10,9 @@
  *
  * Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_date()
  * @ingroup themeable
  */
 function astarter_date($variables) {
@@ -37,6 +40,8 @@ function astarter_date($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_timezone($variables) {
@@ -56,6 +61,8 @@ function astarter_date_timezone($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_select($variables) {
@@ -77,6 +84,8 @@ function astarter_date_select($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_text($variables) {
@@ -102,6 +111,8 @@ function astarter_date_text($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_select_element($variables) {
@@ -116,6 +127,8 @@ function astarter_date_select_element($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_textfield_element($variables) {
@@ -130,6 +143,8 @@ function astarter_date_textfield_element($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_part_hour_prefix($variables) {
@@ -144,6 +159,8 @@ function astarter_date_part_hour_prefix($variables) {
  *
  * TODO : Initial function theme
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
  * @ingroup themeable
  */
 function astarter_date_part_minsec_prefix($variables) {

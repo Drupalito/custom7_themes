@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file
+ * @file views_mini_pager.theme.inc
  * Contains the theme function override for 'pager'.
  */
 
@@ -10,14 +10,17 @@
  *
  * TODO
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_views_mini_pager()
  * @ingroup themeable
  */
-function astarter_views_mini_pager($vars) {
+function astarter_views_mini_pager($variables) {
   global $pager_page_array, $pager_total;
 
-  $tags = $vars['tags'];
-  $element = $vars['element'];
-  $parameters = $vars['parameters'];
+  $tags = $variables['tags'];
+  $element = $variables['element'];
+  $parameters = $variables['parameters'];
 
   // Current is the page we are currently paged to.
   $pager_current = $pager_page_array[$element] + 1;

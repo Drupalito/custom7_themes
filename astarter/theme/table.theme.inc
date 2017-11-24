@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file
+ * @file table.theme.inc
  * Contains the theme function override for 'table'.
  */
 
@@ -10,6 +10,9 @@
  *
  * Add container `.table-responsive`
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @see theme_table()
  * @ingroup themeable
  */
 function astarter_table($variables) {
