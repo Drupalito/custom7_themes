@@ -70,7 +70,7 @@ function astarter_preprocess_node(&$variables, $hook) {
       $node_meta[] = '<span id="author-' . check_plain(strip_tags($variables['name'])) . '" itemprop="author publisher" itemscope itemtype="http://schema.org/Person">' . l('<span itemprop="name">' . strip_tags($variables['name']) . '</span>', 'user/' . $variables['uid'], array('html' => TRUE, 'attributes' => array('itemprop' => array('url')))) . '</span>';
     }
 
-    if ($variables['nid'] && $variables['comment'] != COMMENT_NODE_CLOSED) {
+    if ($variables['nid'] && defined('COMMENT_NODE_CLOSED') && $variables['comment'] != COMMENT_NODE_CLOSED) {
 
       $node_meta[] = l(format_plural($variables['comment_count'], t('@count comment'), t('@count comments')), 'node/' . $variables['nid'], array('fragment' => 'comments', 'attributes' => array('class' => array('scroll')))) . '<meta itemprop="commentCount" content="' . $variables['comment_count'] . '" />';
     }
