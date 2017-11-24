@@ -10,6 +10,10 @@
  *
  * Override or insert variables in the html_tag theme function.
  *
+ * @param $variables
+ *   An array of variables to pass to the theme function.
+ * @param $hook
+ *   The name of the bootstrap hook to invoke.
  * @see hook_process()
  */
 function astarter_process_html_tag(&$variables) {
