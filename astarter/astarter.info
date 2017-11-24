@@ -28,7 +28,7 @@ stylesheets[screen][] = css/theme.main.css
 stylesheets[print][]  = css/base.print.css
 
 ; Optionally add some JavaScripts to your theme.
-; scripts[] = js/main.js
+scripts[] = js/main-astarter.js
 
 ; This section lists the regions defined in Starter
 regions[header]         = Banner (Header)
