@@ -29,7 +29,9 @@
       smoothScroll('.scroll');
 
       // Responsive menu
-      $('#block-system-main-menu', context).navigation();
+      if (jQuery.fn.navigation) {
+        $('#block-system-main-menu', context).navigation();
+      }
 
     }
   };
