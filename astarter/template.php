@@ -281,11 +281,8 @@ function astarter_css_alter(&$css) {
       ),
     ),
     'field_collection' => array(
-      'field_collection.css' => array(
+      'field_collection.theme.css' => array(
         'theme' => 'field_collection.css',
-      ),
-      'field_collection-rtl.css' => array(
-        'theme' => 'field_collection-rtl.css',
       ),
     ),
     'file' => array(
