@@ -70,3 +70,7 @@ settings[astarter_menu_home_item]       = 0
 
 settings[astarter_header_fix]           = 0
 settings[astarter_debug_css_grid]       = 0
+
+settings[astarter_libraries_wow]        = 0
+settings[astarter_libraries_owl]        = 0
+settings[astarter_libraries_bootstrap]  = 0
