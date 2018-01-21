@@ -53,3 +53,7 @@ settings[subtheme_child_menu_home_item]       = 0
 
 settings[subtheme_child_header_fix]           = 0
 settings[subtheme_child_debug_css_grid]       = 0
+
+settings[subtheme_child_libraries_wow]        = 0
+settings[subtheme_child_libraries_owl]        = 0
+settings[subtheme_child_libraries_bootstrap]  = 0
