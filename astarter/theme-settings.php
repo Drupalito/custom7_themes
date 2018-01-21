@@ -132,6 +132,48 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
     ),
   );
 
+
+  if (libraries_get_path('wow') || libraries_get_path('bootstrap') || libraries_get_path('owl-carousel')) {
+
+    // Create the form using Forms API.
+    $form['themelibraries'] = array(
+      '#group'         => 'verticalTabs',
+      '#type'          => 'fieldset',
+      '#title'         => t('Libraries'),
+      '#weight'        => 3,
+    );
+
+    if (libraries_get_path('wow')) {
+      $form['themelibraries']['astarter_libraries_wow'] = array(
+        '#group'         => 'verticalTabs',
+        '#type'          => 'checkbox',
+        '#title'         => t('Actived WOW libraries'),
+        '#default_value' => theme_get_setting('astarter_libraries_wow'),
+        '#description'   => t('Documentation and plugins, <a href="http://mynameismatthieu.com/WOW" target="_blank">read this link</a>'),
+      );
+    }
+
+    if (libraries_get_path('owl-carousel')) {
+      $form['themelibraries']['astarter_libraries_owl'] = array(
+        '#group'         => 'verticalTabs',
+        '#type'          => 'checkbox',
+        '#title'         => t('Actived owl-carousel libraries'),
+        '#default_value' => theme_get_setting('astarter_libraries_owl'),
+        '#description'   => t('Documentation and plugins, <a href="https://owlcarousel2.github.io/OwlCarousel2/" target="_blank">read this link</a>'),
+      );
+    }
+
+    if (libraries_get_path('bootstrap')) {
+      $form['themelibraries']['astarter_libraries_bootstrap'] = array(
+        '#group'         => 'verticalTabs',
+        '#type'          => 'checkbox',
+        '#title'         => t('Actived Bootstrap libraries'),
+        '#default_value' => theme_get_setting('astarter_libraries_bootstrap'),
+        '#description'   => t('Documentation and plugins, <a href="http://getbootstrap.com/javascript" target="_blank">read this link</a>'),
+      );
+    }
+  }
+
   // Create the form using Forms API.
   $form['themedev'] = array(
     '#group'         => 'verticalTabs',
