@@ -16,6 +16,16 @@
 function astarter_preprocess_page(&$variables) {
   $status = drupal_get_http_header("status");
 
+  if (theme_get_setting('astarter_libraries_wow')) {
+    libraries_load('wow');
+  }
+  if (theme_get_setting('astarter_libraries_owl')) {
+    libraries_load('owl-carousel');
+  }
+  if (theme_get_setting('astarter_libraries_bootstrap')) {
+    libraries_load('bootstrap');
+  }
+
   // Add class for navigation fixed.
   $variables['navigation_fixed'] = '';
   if (!$variables['is_admin'] && theme_get_setting('astarter_navigation_fix')) {
