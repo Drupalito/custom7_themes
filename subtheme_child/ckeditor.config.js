@@ -18,6 +18,22 @@ CKEDITOR.editorConfig = function(config) {
   // The minimum editor width, in pixels, when resizing it with the resize handle.
   config.resize_minWidth = 320;
 
+  config.format_tags = 'p;h2;h3;h4;pre;address';
+
+  config.format_h2 = { element: 'h2', attributes: { 'class': 'titre1' } };
+  config.format_h3 = { element: 'h3', attributes: { 'class': 'titre2' } };
+  config.format_pre = { element: 'pre', attributes: { 'class': 'editorCode' } };
+
+  config.colorButton_foreStyle = {
+    element: 'span',
+    styles: { 'color': '#(color)' }
+  };
+
+  config.colorButton_backStyle = {
+    element: 'span',
+    styles: { 'background-color': '#(color)' }
+  };
+
   // Protect PHP code tags (<?...?>) so CKEditor will not break them when
   // switching from Source to WYSIWYG.
   // Uncommenting this line doesn't mean the user will not be able to type PHP

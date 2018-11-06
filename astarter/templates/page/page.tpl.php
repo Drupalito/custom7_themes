@@ -16,6 +16,7 @@
       <div class="row row-sm-height">
         <div class="col-xs-12 col-sm-8">
           <?php print $site_logo; ?>
+          <button class="hamburger hamburger--collapse visible-xs-inline-block" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
         </div>
         <div class="col-xs-12 col-sm-4 noprint">
           <div class="branding">

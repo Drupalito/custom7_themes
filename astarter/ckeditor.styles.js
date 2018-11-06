@@ -11,14 +11,7 @@ if(typeof(CKEDITOR) !== 'undefined') {
   CKEDITOR.addStylesSet('drupal',
   [
     // Block Styles
-    { name: 'Paragraph', element: 'p' },
-    { name: 'Heading 2', element: 'h2' },
-    { name: 'Heading 3', element: 'h3' },
-    { name: 'Heading 4', element: 'h4' },
-    { name: 'Heading 5', element: 'h5' },
-    { name: 'Heading 6', element: 'h6' },
-    { name: 'Pre Text', element: 'pre' },
-    { name: 'Address', element: 'address' },
+    // { name: 'Paragraph', element: 'p' },
 
     // Inline Styles
     // { name: 'Strong'        , element: 'strong', overrides : 'b' },

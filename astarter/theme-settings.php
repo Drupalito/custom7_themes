@@ -33,6 +33,15 @@ function astarter_form_system_theme_settings_alter(&$form, $form_state, $form_id
     return;
   }
 
+  $form['theme_settings']['#collapsible'] = TRUE;
+  $form['theme_settings']['#collapsed'] = TRUE;
+
+  $form['logo']['#collapsible'] = TRUE;
+  $form['logo']['#collapsed'] = TRUE;
+
+  $form['favicon']['#collapsible'] = TRUE;
+  $form['favicon']['#collapsed'] = TRUE;
+
   $form['verticalTabs'] = array(
     '#type' => 'vertical_tabs',
     '#weight' => -10,
