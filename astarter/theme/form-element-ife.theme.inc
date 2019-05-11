@@ -23,7 +23,7 @@ function astarter_ife_form_element($variables) {
   if (isset($variables['element']['#ife_error']) && $variables['element']['#ife_error']) {
 
     $new_element = str_replace("\n</div>\n", '', $element);
-    $error = '<p class="smaller text--error mvn">' . $variables['element']['#ife_error'] . '</p>';
+    $error = '<p class="smaller text--error my-0">' . $variables['element']['#ife_error'] . '</p>';
 
     if (isset($variables['element']['#ife_error_position']) && $variables['element']['#ife_error_position'] == IFE_POSITION_INLINE_MESSAGE_BEFORE) {
       $output = $new_element . $error . '</div>';

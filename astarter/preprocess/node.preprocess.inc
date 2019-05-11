@@ -116,7 +116,7 @@ function astarter_preprocess_node(&$variables, $hook) {
   }
 
   if ($css_view_mode == 'teaser') {
-    $variables['title_attributes_array']['class'][] = 'mbn';
+    $variables['title_attributes_array']['class'][] = 'mb-0';
 
     // Teaser : clean link 'number comments'.
     if (isset($variables['content']['links']['comment']['#links']['comment-comments'])) {

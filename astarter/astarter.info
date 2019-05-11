@@ -4,32 +4,35 @@ name        = astarter
 description = Theme created by <a href="http://aquelito.fr">aQuelito</a>.<br />Please see the included README or our <a href="http://aquelito.fr">support</a>.
 screenshot  = screenshot.png
 
-; Base stylesheets
-stylesheets[screen][] = css/base.reset.css
-stylesheets[screen][] = css/base.form.css
-stylesheets[screen][] = css/base.grid.css
-stylesheets[screen][] = css/base.text.css
-stylesheets[screen][] = css/base.button.css
-stylesheets[screen][] = css/base.icons.css
-stylesheets[screen][] = css/base.helper.css
-stylesheets[screen][] = css/base.skiplinks.css
-stylesheets[screen][] = css/base.vertical-tabs.css
-; stylesheets[screen][] = css/component.base.css
-; stylesheets[screen][] = css/component.effect.css
+# ; Base stylesheets
+stylesheets[screen][] = css/screen-base.min.css
+stylesheets[screen][] = css/screen-components.min.css
+stylesheets[screen][] = css/screen-theme.min.css
+# stylesheets[screen][] = css/base.reset.css
+# stylesheets[screen][] = css/base.form.css
+# stylesheets[screen][] = css/base.grid.css
+# stylesheets[screen][] = css/base.text.css
+# stylesheets[screen][] = css/base.button.css
+# stylesheets[screen][] = css/base.icons.css
+# stylesheets[screen][] = css/base.helper.css
+# stylesheets[screen][] = css/base.skiplinks.css
+# stylesheets[screen][] = css/base.vertical-tabs.css
+# ; stylesheets[screen][] = css/component.base.css
+# ; stylesheets[screen][] = css/component.effect.css
 
-; Theme base stylesheets
-stylesheets[screen][] = css/theme.logo.css
-stylesheets[screen][] = css/theme.banner.css
-stylesheets[screen][] = css/theme.banner.darken.css
-stylesheets[screen][] = css/theme.contentinfo.css
-stylesheets[screen][] = css/theme.sidebar.css
-stylesheets[screen][] = css/theme.navigation.css
-stylesheets[screen][] = css/theme.main.css
-stylesheets[print][]  = css/base.print.css
+# ; Theme base stylesheets
+# stylesheets[screen][] = css/theme.logo.css
+# stylesheets[screen][] = css/theme.banner.css
+# stylesheets[screen][] = css/theme.banner.darken.css
+# stylesheets[screen][] = css/theme.contentinfo.css
+# stylesheets[screen][] = css/theme.sidebar.css
+# stylesheets[screen][] = css/theme.navigation.css
+# stylesheets[screen][] = css/theme.main.css
+# stylesheets[print][]  = css/base.print.css
 
 ; Optionally add some JavaScripts to your theme.
 scripts[] = js/jquery.navigation.js
-scripts[] = js/main-astarter.js
+scripts[] = js/main.js
 
 ; This section lists the regions defined in Starter
 regions[header]         = Banner (Header)

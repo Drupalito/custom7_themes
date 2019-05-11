@@ -22,7 +22,7 @@
 ?>
 <div class="webform-progressbar clearfix">
   <?php if ($progressbar_bar): ?>
-    <ul class="list-none mvn">
+    <ul class="list-none my-0">
       <?php for ($n = 1; $n <= $page_count; $n++): ?>
         <li class="webform-progressbar__item<?php if ($n < $page_num) { print ' step completed'; }; ?><?php if ($n == $page_num) { print ' step current'; }; ?>" style="width: <?php print number_format((100/$page_count), 6, '.', ''); ?>%"><?php if ($progressbar_pagebreak_labels): ?><span class="webform-progressbar__label"><?php print check_plain($page_labels[$n - 1]); ?></span><?php endif; ?>
         </li>

@@ -12,7 +12,7 @@ hide($content['links']);
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="comment__header">
-    <p class="mvn">
+    <p class="my-0">
       <?php if (!empty($submitted)): ?>
         <?php print $picture ?>
         <span class="inbl amiddle">

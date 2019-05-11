@@ -17,7 +17,7 @@
  */
 ?>
 <div class="poll-bars">
-  <div class="poll-bars__text"><p class="mvn"><span class="bold"><?php print $title; ?></span> - <small class="poll-bars__percent"><?php print $percentage; ?>%</small></p></div>
+  <div class="poll-bars__text"><p class="my-0"><span class="bold"><?php print $title; ?></span> - <small class="poll-bars__percent"><?php print $percentage; ?>%</small></p></div>
   <div class="poll-bars__bar">
     <div style="width: <?php print $percentage; ?>%;" class="foreground"></div>
   </div>

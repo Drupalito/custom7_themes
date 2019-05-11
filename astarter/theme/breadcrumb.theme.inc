@@ -85,7 +85,7 @@ function astarter_breadcrumb(&$variables) {
       $i++;
     }
 
-    $output = '<p class="mvn">';
+    $output = '<p class="my-0">';
     $output .= '<span>' . $variables['title'] . '&nbsp;:</span> ';
     $output .= $output_breadcrumb;
     $output .= '</p>';

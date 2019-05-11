@@ -63,7 +63,7 @@ function astarter_file_entity_download_link($variables) {
   // since then l() will escape the link text.
   $variables['text'] = token_replace($variables['text'], array('file' => $file), array('clear' => TRUE, 'sanitize' => !empty($uri['options']['html'])));
 
-  $html = '<span class="file__icon">' . $icon . '</span><span class="file__content"><span class="file__title h4 mvn">' . $variables['text'] . '</span> <small class="file__meta default-color">' . $mime_name[$mimetype] . ' - ' . format_size($file->filesize) . '</small></span>';
+  $html = '<span class="file__icon">' . $icon . '</span><span class="file__content"><span class="file__title h4 my-0">' . $variables['text'] . '</span> <small class="file__meta default-color">' . $mime_name[$mimetype] . ' - ' . format_size($file->filesize) . '</small></span>';
 
   $output = l($html, $uri['path'], $uri['options']);
   return $output;
