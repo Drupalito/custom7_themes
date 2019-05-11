@@ -1,9 +1,10 @@
 
 # Build Files
-# */css/
-# */js
-# */images
-# */fonts
+*/css/
+*/js
+*/images
+*/fonts
+*/libraries
 
 # Ignore paths that contain generated content.
 cache/
