@@ -10,7 +10,7 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
-    <header class="header mbm">
+    <header class="header mb-3">
       <?php if (!$page && $title): ?>
         <?php print render($title_prefix); ?>
           <h2<?php print $title_attributes; ?>><a class="node__link" href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>

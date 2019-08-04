@@ -21,7 +21,7 @@
 <div class="poll-results poll-results--block">
   <p class="h4 bold"><?php print $title ?></p>
   <?php print $results ?>
-  <div class="poll-results__total mtl">
+  <div class="poll-results__total mt-4">
     <p class="bold"><?php print t('Total votes&nbsp;: @votes', array('@votes' => $votes)); ?></p>
   </div>
 </div>

@@ -25,7 +25,7 @@ function astarter_preprocess_comment(&$variables) {
     $variables['attributes_array']['itemref'][] = 'comment-' . $variables['comment']->pid;
   }
 
-  $variables['picture'] = !empty($variables['picture']) ? '<span class="mrm">' . theme('user_picture', array('account' => $variables['elements']['#comment'])) . '</span>' : '';
+  $variables['picture'] = !empty($variables['picture']) ? '<span class="mr-2">' . theme('user_picture', array('account' => $variables['elements']['#comment'])) . '</span>' : '';
 
   // If comment subjects are disabled, don't display them.
   if (variable_get('comment_subject_field_' . $variables['node']->type, 1) == 0) {

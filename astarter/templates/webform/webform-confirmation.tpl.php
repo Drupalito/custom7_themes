@@ -30,7 +30,7 @@
     <?php endif; ?>
   </div>
 
-  <div class="links mtm">
+  <div class="links mt-3">
     <a class="btn btn--primary" href="<?php print $url; ?>"><span class="i i-arrow-left2" aria-hidden="true"></span> <?php print t('Go back to the form') ?></a>
   </div>
 </div>

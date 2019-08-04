@@ -21,11 +21,11 @@
 ?>
 <div class="poll-results">
   <?php print $results; ?>
-  <div class="poll-results__total mtl">
+  <div class="poll-results__total mt-4">
     <p class="bold"><?php print t('Total votes&nbsp;: @votes', array('@votes' => $votes)); ?></p>
   </div>
   <?php if (!empty($cancel_form)): ?>
-    <div class="mtl">
+    <div class="mt-4">
       <?php print $cancel_form; ?>
     </div>
   <?php endif; ?>
